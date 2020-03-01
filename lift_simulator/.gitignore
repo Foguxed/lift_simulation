@@ -4,6 +4,7 @@
 *.war
 *.ear
 hs_err_pid*
+/libs/
 
 ## Robovm
 /ios/robovm-build/
@@ -30,6 +31,26 @@ www-test/
 *.iml
 /android/out/
 com_crashlytics_export_strings.xml
+
+## Eclipse
+
+.classpath
+.project
+.metadata/
+/android/bin/
+/core/bin/
+/desktop/bin/
+/html/bin/
+/ios/bin/
+/ios-moe/bin/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
 
 ## NetBeans
 
