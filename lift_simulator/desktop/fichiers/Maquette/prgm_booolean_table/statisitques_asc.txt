@@ -1,0 +1,1 @@
+nbPersonnesTransportees:18,deceleration:6.66E-7,acceleration:9.32E-7,deplacementTotal:15.999783,tempsEntreePersonne:1,tempsOuverturePortes:10700,capacitePersonnes:5,vitesse:2.3800001E-4

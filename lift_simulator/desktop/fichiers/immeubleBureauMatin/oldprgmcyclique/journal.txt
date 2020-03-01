@@ -1,0 +1,1619 @@
+[0:0:0:0:0]{nbAscenseurs:1,etageMin:0,type:creationImmeuble,etageMax:8}
+[0:0:0:28:727]{etage:0,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:28:727]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:28:727]{description:0¤p0¤p0¤p28¤p727 nouveau getProchain haut false,type:ligneConsole}
+[0:0:0:28:727]{description:0¤p0¤p0¤p28¤p727 vBas2 [],type:ligneConsole}
+[0:0:0:28:727]{description:0¤p0¤p0¤p28¤p727 vHaut2 [0],type:ligneConsole}
+[0:0:0:28:727]{description:0¤p0¤p0¤p28¤p727 premiereVal 0,type:ligneConsole}
+[0:0:0:28:727]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:0:28:727]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:0:30:727]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:0:30:727]{ascId:1,persId:0,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:0:31:927]{ascId:1,persId:0,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:0:31:927]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:0:31:927]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:31:927]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:0:31:927]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:0:33:927]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 nouveau getProchain haut false,type:ligneConsole}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 vBas2 [],type:ligneConsole}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 vHaut2 [],type:ligneConsole}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 premiereVal null,type:ligneConsole}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 nouveau getProchain haut true,type:ligneConsole}
+[0:0:0:33:927]{description:0¤p0¤p0¤p33¤p927 vHaut [4],type:ligneConsole}
+[0:0:0:33:927]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.0,oldInitPos:0.0,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:0,type:ascDep,oldInitSpeed:0.0}
+[0:0:0:36:813]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:0:36:832]{etage:0,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:36:832]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:36:832]{description:0¤p0¤p0¤p36¤p832 nouveau getProchain haut true,type:ligneConsole}
+[0:0:0:36:832]{description:0¤p0¤p0¤p36¤p832 vHaut [4],type:ligneConsole}
+[0:0:0:36:832]{description:0¤p0¤p0¤p36¤p832 premiereVal 4,type:ligneConsole}
+[0:0:0:37:926]{ascId:1,newacceleration:0.0,newInitPos:0.95952016,oldInitPos:0.0,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:33927,type:ascDep,oldInitSpeed:0.0}
+[0:0:0:38:93]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:0:38:573]{etage:0,destination:4,nbPersonnes:2,type:persInput}
+[0:0:0:40:177]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:0:42:260]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:0:42:260]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.0398402,oldInitPos:0.95952016,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:37926,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:0:46:259]{ascId:1,newacceleration:0.0,newInitPos:3.99984,oldInitPos:3.0398402,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:42260,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:0:46:259]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:0:46:259]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:0:48:259]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:0:48:259]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:49:459]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:49:459]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:49:459]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:49:459]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:0:51:459]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 nouveau getProchain haut true,type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 vHaut [],type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 vBas [],type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 premiereVal null,type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 nouveau getProchain haut false,type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 vBas2 [],type:ligneConsole}
+[0:0:0:51:459]{description:0¤p0¤p0¤p51¤p459 vHaut2 [0],type:ligneConsole}
+[0:0:0:51:459]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.99984,oldInitPos:3.99984,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:46259,type:ascDep,oldInitSpeed:0.0}
+[0:0:0:54:345]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:0:55:458]{ascId:1,newacceleration:0.0,newInitPos:3.04032,oldInitPos:3.99984,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:51459,type:ascDep,oldInitSpeed:0.0}
+[0:0:0:55:625]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:0:57:708]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:0:59:792]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:0:59:792]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.9599998,oldInitPos:3.04032,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:55458,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:1:3:791]{ascId:1,newacceleration:0.0,newInitPos:-5.9604645E-8,oldInitPos:0.9599998,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:59792,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:1:3:791]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:1:3:791]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:1:5:791]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:1:5:791]{ascId:1,persId:1,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:1:6:991]{ascId:1,persId:1,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:1:6:991]{ascId:1,persId:2,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:1:6:991]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:1:8:191]{ascId:1,persId:2,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:1:8:191]{ascId:1,persId:3,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:1:8:191]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:1:9:391]{ascId:1,persId:3,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:1:9:391]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:1:9:391]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:9:391]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:1:9:391]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:1:11:391]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 nouveau getProchain haut false,type:ligneConsole}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 vBas2 [],type:ligneConsole}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 vHaut2 [],type:ligneConsole}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 premiereVal null,type:ligneConsole}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 nouveau getProchain haut true,type:ligneConsole}
+[0:0:1:11:391]{description:0¤p0¤p1¤p11¤p391 vHaut [4],type:ligneConsole}
+[0:0:1:11:391]{ascId:1,newacceleration:1.2000001E-7,newInitPos:-5.9604645E-8,oldInitPos:-5.9604645E-8,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:63791,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:12:258]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:1:12:258]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:12:258]{description:0¤p0¤p1¤p12¤p258 nouveau getProchain haut true,type:ligneConsole}
+[0:0:1:12:258]{description:0¤p0¤p1¤p12¤p258 vHaut [4],type:ligneConsole}
+[0:0:1:12:258]{description:0¤p0¤p1¤p12¤p258 premiereVal 4,type:ligneConsole}
+[0:0:1:14:277]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:1:15:390]{ascId:1,newacceleration:0.0,newInitPos:0.9595201,oldInitPos:-5.9604645E-8,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:71391,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:15:557]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:1:17:641]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:1:17:691]{etage:7,destination:5,nbPersonnes:2,type:persInput}
+[0:0:1:17:691]{etage:7,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:17:691]{description:0¤p0¤p1¤p17¤p691 nouveau getProchain haut true,type:ligneConsole}
+[0:0:1:17:691]{description:0¤p0¤p1¤p17¤p691 vHaut [4],type:ligneConsole}
+[0:0:1:17:691]{description:0¤p0¤p1¤p17¤p691 premiereVal 4,type:ligneConsole}
+[0:0:1:19:724]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:1:19:724]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.0398402,oldInitPos:0.9595201,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:75390,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:20:264]{etage:6,destination:8,nbPersonnes:2,type:persInput}
+[0:0:1:20:264]{etage:6,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:23:723]{ascId:1,newacceleration:0.0,newInitPos:3.99984,oldInitPos:3.0398402,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:79724,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:23:723]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:1:23:723]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:1:25:723]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:1:25:723]{persId:1,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:26:923]{persId:1,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:26:923]{persId:2,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:28:123]{persId:2,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:28:123]{persId:3,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:29:323]{persId:3,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:29:323]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:29:323]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:29:323]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:1:30:985]{etage:7,destination:6,nbPersonnes:1,type:persInput}
+[0:0:1:31:323]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:1:31:323]{description:0¤p0¤p1¤p31¤p323 nouveau getProchain haut true,type:ligneConsole}
+[0:0:1:31:323]{description:0¤p0¤p1¤p31¤p323 vHaut [6],type:ligneConsole}
+[0:0:1:31:323]{description:0¤p0¤p1¤p31¤p323 premiereVal 6,type:ligneConsole}
+[0:0:1:31:323]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.99984,oldInitPos:3.99984,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:83723,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:34:209]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:1:35:322]{ascId:1,newacceleration:0.0,newInitPos:4.95936,oldInitPos:3.99984,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:91323,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:35:490]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:1:35:490]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.04,oldInitPos:4.95936,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:95322,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:39:419]{etage:3,destination:6,nbPersonnes:1,type:persInput}
+[0:0:1:39:419]{etage:3,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:39:489]{ascId:1,newacceleration:0.0,newInitPos:6.0,oldInitPos:5.04,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:95490,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:39:489]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:1:39:489]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:1:41:489]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:1:41:489]{ascId:1,persId:7,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:1:42:689]{ascId:1,persId:7,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:1:42:689]{ascId:1,persId:8,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:1:42:689]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:1:43:889]{ascId:1,persId:8,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:1:43:889]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:1:43:889]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:43:889]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:1:43:889]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:1:45:889]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:1:45:889]{description:0¤p0¤p1¤p45¤p889 nouveau getProchain haut true,type:ligneConsole}
+[0:0:1:45:889]{description:0¤p0¤p1¤p45¤p889 vHaut [8],type:ligneConsole}
+[0:0:1:45:889]{description:0¤p0¤p1¤p45¤p889 premiereVal 8,type:ligneConsole}
+[0:0:1:45:889]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.0,oldInitPos:6.0,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:99489,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:48:775]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:1:49:888]{ascId:1,newacceleration:0.0,newInitPos:6.9595203,oldInitPos:6.0,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:105889,type:ascDep,oldInitSpeed:0.0}
+[0:0:1:50:55]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:1:50:55]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.0396805,oldInitPos:6.9595203,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:109888,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:54:54]{ascId:1,newacceleration:0.0,newInitPos:7.9996805,oldInitPos:7.0396805,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:110055,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:1:54:54]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:1:54:54]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:1:56:54]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:1:56:54]{persId:7,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:57:254]{persId:7,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:57:254]{persId:8,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:58:454]{persId:8,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:58:454]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:58:454]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:1:58:454]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:2:0:454]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 nouveau getProchain haut true,type:ligneConsole}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 vHaut [],type:ligneConsole}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 vBas [],type:ligneConsole}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 premiereVal null,type:ligneConsole}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 nouveau getProchain haut false,type:ligneConsole}
+[0:0:2:0:454]{description:0¤p0¤p2¤p0¤p454 vBas2 [7],type:ligneConsole}
+[0:0:2:0:454]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.9996805,oldInitPos:7.9996805,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:114054,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:3:340]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:2:3:340]{ascId:1,newacceleration:1.2000001E-7,newInitPos:7.499941,oldInitPos:7.9996805,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4632004E-4,oldDepTime:120454,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:6:226]{ascId:1,newacceleration:0.0,newInitPos:7.000201,oldInitPos:7.499941,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:123340,type:ascDep,oldInitSpeed:-3.4632004E-4}
+[0:0:2:6:226]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:2:6:226]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:2:8:226]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:2:8:226]{ascId:1,persId:5,animDuree:1200,etage:7,creationNotice:true,type:persEntree}
+[0:0:2:9:426]{ascId:1,persId:5,animDuree:1200,etage:7,creationNotice:false,type:persEntree}
+[0:0:2:9:426]{ascId:1,persId:6,animDuree:1200,etage:7,creationNotice:true,type:persEntree}
+[0:0:2:9:426]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:2:10:626]{ascId:1,persId:6,animDuree:1200,etage:7,creationNotice:false,type:persEntree}
+[0:0:2:10:626]{ascId:1,persId:9,animDuree:1200,etage:7,creationNotice:true,type:persEntree}
+[0:0:2:10:626]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:2:11:826]{ascId:1,persId:9,animDuree:1200,etage:7,creationNotice:false,type:persEntree}
+[0:0:2:11:826]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:11:826]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:2:11:826]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:2:11:826]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:2:13:826]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:2:13:826]{description:0¤p0¤p2¤p13¤p826 nouveau getProchain haut false,type:ligneConsole}
+[0:0:2:13:826]{description:0¤p0¤p2¤p13¤p826 vBas2 [5¤v 6],type:ligneConsole}
+[0:0:2:13:826]{description:0¤p0¤p2¤p13¤p826 premiereVal 6,type:ligneConsole}
+[0:0:2:13:826]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.000201,oldInitPos:7.000201,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:126226,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:16:713]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:2:16:713]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.500115,oldInitPos:7.000201,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4644004E-4,oldDepTime:133826,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:19:600]{ascId:1,newacceleration:0.0,newInitPos:6.0000286,oldInitPos:6.500115,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:136713,type:ascDep,oldInitSpeed:-3.4644004E-4}
+[0:0:2:19:600]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:2:19:600]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:2:21:600]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:2:21:600]{persId:9,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:22:800]{persId:9,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:22:800]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:22:800]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:22:800]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:2:24:800]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:2:24:800]{description:0¤p0¤p2¤p24¤p800 nouveau getProchain haut false,type:ligneConsole}
+[0:0:2:24:800]{description:0¤p0¤p2¤p24¤p800 vBas2 [5],type:ligneConsole}
+[0:0:2:24:800]{description:0¤p0¤p2¤p24¤p800 premiereVal 5,type:ligneConsole}
+[0:0:2:24:800]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.0000286,oldInitPos:6.0000286,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:139600,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:27:686]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:2:27:686]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.500289,oldInitPos:6.0000286,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4632004E-4,oldDepTime:144800,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:29:2]{etage:3,destination:4,nbPersonnes:1,type:persInput}
+[0:0:2:30:572]{ascId:1,newacceleration:0.0,newInitPos:5.0005493,oldInitPos:5.500289,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:147686,type:ascDep,oldInitSpeed:-3.4632004E-4}
+[0:0:2:30:572]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:2:30:572]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:2:32:35]{etage:2,destination:0,nbPersonnes:1,type:persInput}
+[0:0:2:32:35]{etage:2,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:32:572]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:2:32:572]{persId:5,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:33:772]{persId:5,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:33:772]{persId:6,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:34:972]{persId:6,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:34:972]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:34:972]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:34:972]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:2:36:972]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:2:36:972]{description:0¤p0¤p2¤p36¤p972 nouveau getProchain haut false,type:ligneConsole}
+[0:0:2:36:972]{description:0¤p0¤p2¤p36¤p972 vBas2 [2],type:ligneConsole}
+[0:0:2:36:972]{description:0¤p0¤p2¤p36¤p972 premiereVal 2,type:ligneConsole}
+[0:0:2:36:972]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.0005493,oldInitPos:5.0005493,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:150572,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:39:859]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:2:40:971]{ascId:1,newacceleration:0.0,newInitPos:4.041029,oldInitPos:5.0005493,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:156972,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:41:139]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:2:43:223]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:2:43:223]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.960069,oldInitPos:4.041029,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:160971,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:2:45:541]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:2:47:222]{ascId:1,newacceleration:0.0,newInitPos:2.0000691,oldInitPos:2.960069,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:163223,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:2:47:222]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:2:47:222]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:2:49:222]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:2:49:222]{ascId:1,persId:12,animDuree:1200,etage:2,creationNotice:true,type:persEntree}
+[0:0:2:50:422]{ascId:1,persId:12,animDuree:1200,etage:2,creationNotice:false,type:persEntree}
+[0:0:2:50:422]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:2:50:422]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:2:50:422]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:2:50:422]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:2:52:422]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:2:52:422]{description:0¤p0¤p2¤p52¤p422 nouveau getProchain haut false,type:ligneConsole}
+[0:0:2:52:422]{description:0¤p0¤p2¤p52¤p422 vBas2 [0],type:ligneConsole}
+[0:0:2:52:422]{description:0¤p0¤p2¤p52¤p422 premiereVal 0,type:ligneConsole}
+[0:0:2:52:422]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.0000691,oldInitPos:2.0000691,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:167222,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:53:314]{etage:0,destination:8,nbPersonnes:4,type:persInput}
+[0:0:2:55:308]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:2:56:421]{ascId:1,newacceleration:0.0,newInitPos:1.040549,oldInitPos:2.0000691,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:172422,type:ascDep,oldInitSpeed:0.0}
+[0:0:2:56:588]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:2:56:588]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.960389,oldInitPos:1.040549,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:176421,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:3:0:587]{ascId:1,newacceleration:0.0,newInitPos:3.8915873E-4,oldInitPos:0.960389,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:176588,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:3:0:587]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:3:0:587]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:3:2:587]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:3:2:587]{persId:12,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:3:787]{persId:12,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:3:787]{ascId:1,persId:4,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:3:4:93]{etage:0,destination:5,nbPersonnes:1,type:persInput}
+[0:0:3:4:987]{ascId:1,persId:4,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:3:4:987]{ascId:1,persId:13,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:3:4:987]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:3:6:187]{ascId:1,persId:13,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:3:6:187]{ascId:1,persId:14,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:3:6:187]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:3:7:387]{ascId:1,persId:14,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:3:7:387]{ascId:1,persId:15,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:3:7:387]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:3:8:115]{etage:0,destination:3,nbPersonnes:1,type:persInput}
+[0:0:3:8:587]{ascId:1,persId:15,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:3:8:587]{ascId:1,persId:16,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:3:8:587]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:3:9:787]{ascId:1,persId:16,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:3:9:787]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:3:9:787]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:9:787]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:3:9:787]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:3:11:787]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 nouveau getProchain haut false,type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 vBas2 [],type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 vHaut2 [],type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 premiereVal null,type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 vHaut [2¤v 3¤v 8],type:ligneConsole}
+[0:0:3:11:787]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 vHaut [2¤v 3¤v 8],type:ligneConsole}
+[0:0:3:11:787]{description:0¤p0¤p3¤p11¤p787 premiereVal 2,type:ligneConsole}
+[0:0:3:11:787]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.8915873E-4,oldInitPos:3.8915873E-4,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:180587,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:14:673]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:3:15:786]{ascId:1,newacceleration:0.0,newInitPos:0.9599093,oldInitPos:3.8915873E-4,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:191787,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:15:952]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:3:15:952]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.0395893,oldInitPos:0.9599093,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:195786,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:3:18:163]{etage:3,destination:7,nbPersonnes:2,type:persInput}
+[0:0:3:19:951]{ascId:1,newacceleration:0.0,newInitPos:1.9995892,oldInitPos:1.0395893,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:195952,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:3:19:951]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:3:19:951]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:3:21:818]{etage:6,destination:0,nbPersonnes:1,type:persInput}
+[0:0:3:21:818]{etage:6,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:21:951]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:3:21:951]{persId:4,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:23:151]{persId:4,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:23:151]{persId:13,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:24:351]{persId:13,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:24:351]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:24:351]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:24:351]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:3:26:351]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:3:26:351]{description:0¤p0¤p3¤p26¤p351 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:26:351]{description:0¤p0¤p3¤p26¤p351 vHaut [3¤v 8],type:ligneConsole}
+[0:0:3:26:351]{description:0¤p0¤p3¤p26¤p351 premiereVal 3,type:ligneConsole}
+[0:0:3:26:351]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9995892,oldInitPos:1.9995892,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:199951,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:29:238]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:3:29:238]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.4996753,oldInitPos:1.9995892,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:206351,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:32:125]{ascId:1,newacceleration:0.0,newInitPos:2.9997616,oldInitPos:2.4996753,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:209238,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:3:32:125]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:3:32:125]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:3:34:125]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:3:34:125]{ascId:1,persId:10,animDuree:1200,etage:3,creationNotice:true,type:persEntree}
+[0:0:3:35:325]{ascId:1,persId:10,animDuree:1200,etage:3,creationNotice:false,type:persEntree}
+[0:0:3:35:325]{ascId:1,persId:11,animDuree:1200,etage:3,creationNotice:true,type:persEntree}
+[0:0:3:35:325]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:3:36:525]{ascId:1,persId:11,animDuree:1200,etage:3,creationNotice:false,type:persEntree}
+[0:0:3:36:525]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:3:36:525]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:36:525]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:3:36:525]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:3:38:525]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 vHaut [4¤v 6¤v 8],type:ligneConsole}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 premiereVal 4,type:ligneConsole}
+[0:0:3:38:525]{etage:3,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 vHaut [4¤v 6¤v 8],type:ligneConsole}
+[0:0:3:38:525]{description:0¤p0¤p3¤p38¤p525 premiereVal 4,type:ligneConsole}
+[0:0:3:38:525]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9997616,oldInitPos:2.9997616,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:212125,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:40:521]{etage:0,destination:8,nbPersonnes:1,type:persInput}
+[0:0:3:41:412]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:3:41:412]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.499848,oldInitPos:2.9997616,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:218525,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:44:299]{ascId:1,newacceleration:0.0,newInitPos:3.9999342,oldInitPos:3.499848,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:221412,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:3:44:299]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:3:44:299]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:3:46:299]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:3:46:299]{persId:11,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:47:499]{persId:11,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:47:499]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:47:499]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:3:47:499]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:3:49:499]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:3:49:499]{description:0¤p0¤p3¤p49¤p499 nouveau getProchain haut true,type:ligneConsole}
+[0:0:3:49:499]{description:0¤p0¤p3¤p49¤p499 vHaut [6¤v 8],type:ligneConsole}
+[0:0:3:49:499]{description:0¤p0¤p3¤p49¤p499 premiereVal 6,type:ligneConsole}
+[0:0:3:49:499]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.9999342,oldInitPos:3.9999342,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:224299,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:50:210]{etage:0,destination:6,nbPersonnes:1,type:persInput}
+[0:0:3:52:385]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:3:53:498]{ascId:1,newacceleration:0.0,newInitPos:4.9594545,oldInitPos:3.9999342,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:229499,type:ascDep,oldInitSpeed:0.0}
+[0:0:3:53:665]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:3:53:665]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.0396147,oldInitPos:4.9594545,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:233498,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:3:57:664]{ascId:1,newacceleration:0.0,newInitPos:5.9996147,oldInitPos:5.0396147,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:233665,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:3:57:664]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:3:57:664]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:3:59:664]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:3:59:664]{persId:10,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:0:864]{persId:10,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:0:864]{ascId:1,persId:22,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:4:2:64]{ascId:1,persId:22,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:4:2:64]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:2:64]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:4:2:64]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:4:2:64]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:4:4:64]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:4:4:64]{description:0¤p0¤p4¤p4¤p64 nouveau getProchain haut true,type:ligneConsole}
+[0:0:4:4:64]{description:0¤p0¤p4¤p4¤p64 vHaut [8],type:ligneConsole}
+[0:0:4:4:64]{description:0¤p0¤p4¤p4¤p64 premiereVal 8,type:ligneConsole}
+[0:0:4:4:64]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.9996147,oldInitPos:5.9996147,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:237664,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:6:951]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:4:8:63]{ascId:1,newacceleration:0.0,newInitPos:6.959135,oldInitPos:5.9996147,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:244064,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:8:231]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:4:8:231]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.039775,oldInitPos:6.959135,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:248063,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:4:12:230]{ascId:1,newacceleration:0.0,newInitPos:7.999775,oldInitPos:7.039775,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:248231,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:4:12:230]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:4:12:230]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:4:14:230]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:4:14:230]{persId:14,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:15:430]{persId:14,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:15:430]{persId:15,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:16:630]{persId:15,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:16:630]{persId:16,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:17:830]{persId:16,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:17:830]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:17:830]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:17:830]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:4:19:830]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 nouveau getProchain haut true,type:ligneConsole}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 vHaut [],type:ligneConsole}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 vBas [],type:ligneConsole}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 premiereVal null,type:ligneConsole}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 nouveau getProchain haut false,type:ligneConsole}
+[0:0:4:19:830]{description:0¤p0¤p4¤p19¤p830 vBas2 [0],type:ligneConsole}
+[0:0:4:19:830]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.999775,oldInitPos:7.999775,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:252230,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:22:716]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:4:23:829]{ascId:1,newacceleration:0.0,newInitPos:7.0402546,oldInitPos:7.999775,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:259830,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:23:996]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:4:26:79]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:4:26:381]{etage:8,destination:0,nbPersonnes:1,type:persInput}
+[0:0:4:26:381]{etage:8,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:26:381]{description:0¤p0¤p4¤p26¤p381 nouveau getProchain haut false,type:ligneConsole}
+[0:0:4:26:381]{description:0¤p0¤p4¤p26¤p381 vBas2 [0],type:ligneConsole}
+[0:0:4:26:381]{description:0¤p0¤p4¤p26¤p381 premiereVal 0,type:ligneConsole}
+[0:0:4:28:162]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:4:28:845]{etage:2,destination:0,nbPersonnes:1,type:persInput}
+[0:0:4:28:845]{etage:2,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:28:845]{description:0¤p0¤p4¤p28¤p845 nouveau getProchain haut false,type:ligneConsole}
+[0:0:4:28:845]{description:0¤p0¤p4¤p28¤p845 vBas2 [0¤v 2],type:ligneConsole}
+[0:0:4:28:845]{description:0¤p0¤p4¤p28¤p845 premiereVal 2,type:ligneConsole}
+[0:0:4:30:246]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:4:32:329]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:4:32:329]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9602547,oldInitPos:7.0402546,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:263829,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:4:36:328]{ascId:1,newacceleration:0.0,newInitPos:2.0002549,oldInitPos:2.9602547,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:272329,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:4:36:328]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:4:36:328]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:4:38:328]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:4:38:328]{ascId:1,persId:26,animDuree:1200,etage:2,creationNotice:true,type:persEntree}
+[0:0:4:39:528]{ascId:1,persId:26,animDuree:1200,etage:2,creationNotice:false,type:persEntree}
+[0:0:4:39:528]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:4:39:528]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:4:39:528]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:4:39:528]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:4:41:528]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:4:41:528]{description:0¤p0¤p4¤p41¤p528 nouveau getProchain haut false,type:ligneConsole}
+[0:0:4:41:528]{description:0¤p0¤p4¤p41¤p528 vBas2 [0],type:ligneConsole}
+[0:0:4:41:528]{description:0¤p0¤p4¤p41¤p528 premiereVal 0,type:ligneConsole}
+[0:0:4:41:528]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.0002549,oldInitPos:2.0002549,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:276328,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:42:766]{etage:0,destination:5,nbPersonnes:1,type:persInput}
+[0:0:4:44:415]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:4:45:527]{ascId:1,newacceleration:0.0,newInitPos:1.0407348,oldInitPos:2.0002549,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:281528,type:ascDep,oldInitSpeed:0.0}
+[0:0:4:45:695]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:4:45:695]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.96009475,oldInitPos:1.0407348,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:285527,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:4:49:694]{ascId:1,newacceleration:0.0,newInitPos:9.4890594E-5,oldInitPos:0.96009475,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:285695,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:4:49:694]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:4:49:694]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:4:51:694]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:4:51:694]{persId:22,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:52:894]{persId:22,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:52:894]{persId:26,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:54:94]{persId:26,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:54:94]{ascId:1,persId:17,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:4:55:294]{ascId:1,persId:17,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:4:55:294]{ascId:1,persId:18,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:4:55:294]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:4:56:494]{ascId:1,persId:18,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:4:56:494]{ascId:1,persId:19,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:4:56:494]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:4:57:694]{ascId:1,persId:19,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:4:57:694]{ascId:1,persId:23,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:4:57:694]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:4:58:894]{ascId:1,persId:23,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:4:58:894]{ascId:1,persId:24,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:4:58:894]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:5:0:94]{ascId:1,persId:24,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:5:0:94]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:5:0:94]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:0:94]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:5:0:94]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:5:2:94]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 nouveau getProchain haut false,type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 vBas2 [],type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 vHaut2 [],type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 premiereVal null,type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 vHaut [3¤v 5¤v 6¤v 8],type:ligneConsole}
+[0:0:5:2:94]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 vHaut [3¤v 5¤v 6¤v 8],type:ligneConsole}
+[0:0:5:2:94]{description:0¤p0¤p5¤p2¤p94 premiereVal 3,type:ligneConsole}
+[0:0:5:2:94]{ascId:1,newacceleration:1.2000001E-7,newInitPos:9.4890594E-5,oldInitPos:9.4890594E-5,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:289694,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:4:980]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:5:6:93]{ascId:1,newacceleration:0.0,newInitPos:0.95961505,oldInitPos:9.4890594E-5,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:302094,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:6:260]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:5:8:343]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:5:8:343]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.0396152,oldInitPos:0.95961505,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:306093,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:5:10:820]{etage:0,destination:3,nbPersonnes:2,type:persInput}
+[0:0:5:12:342]{ascId:1,newacceleration:0.0,newInitPos:2.999615,oldInitPos:2.0396152,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:308343,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:5:12:342]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:5:12:342]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:5:14:342]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:5:14:342]{persId:19,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:15:542]{persId:19,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:15:542]{ascId:1,persId:20,animDuree:1200,etage:3,creationNotice:true,type:persEntree}
+[0:0:5:16:742]{ascId:1,persId:20,animDuree:1200,etage:3,creationNotice:false,type:persEntree}
+[0:0:5:16:742]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:5:16:742]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:16:742]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:5:16:742]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:5:18:742]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 vHaut [5¤v 6¤v 7¤v 8],type:ligneConsole}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 premiereVal 5,type:ligneConsole}
+[0:0:5:18:742]{etage:3,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 vHaut [5¤v 6¤v 7¤v 8],type:ligneConsole}
+[0:0:5:18:742]{description:0¤p0¤p5¤p18¤p742 premiereVal 5,type:ligneConsole}
+[0:0:5:18:742]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.999615,oldInitPos:2.999615,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:312342,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:21:629]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:5:22:741]{ascId:1,newacceleration:0.0,newInitPos:3.959135,oldInitPos:2.999615,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:318742,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:22:909]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:5:22:909]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.039775,oldInitPos:3.959135,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:322741,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:5:26:908]{ascId:1,newacceleration:0.0,newInitPos:4.999775,oldInitPos:4.039775,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:322909,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:5:26:908]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:5:26:908]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:5:27:121]{etage:5,destination:0,nbPersonnes:1,type:persInput}
+[0:0:5:27:121]{etage:5,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:28:908]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:5:28:908]{persId:18,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:30:108]{persId:18,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:30:108]{ascId:1,persId:30,animDuree:1200,etage:5,creationNotice:true,type:persEntree}
+[0:0:5:31:308]{ascId:1,persId:30,animDuree:1200,etage:5,creationNotice:false,type:persEntree}
+[0:0:5:31:308]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:31:308]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:5:31:308]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:5:31:308]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:5:33:308]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:5:33:308]{description:0¤p0¤p5¤p33¤p308 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:33:308]{description:0¤p0¤p5¤p33¤p308 vHaut [6¤v 7¤v 8],type:ligneConsole}
+[0:0:5:33:308]{description:0¤p0¤p5¤p33¤p308 premiereVal 6,type:ligneConsole}
+[0:0:5:33:308]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.999775,oldInitPos:4.999775,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:326908,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:36:195]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:5:36:195]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.4998612,oldInitPos:4.999775,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:333308,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:39:82]{ascId:1,newacceleration:0.0,newInitPos:5.9999475,oldInitPos:5.4998612,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:336195,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:5:39:82]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:5:39:82]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:5:39:850]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:5:41:82]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:5:41:82]{persId:24,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:42:282]{persId:24,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:42:282]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:42:282]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:42:282]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:5:44:282]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:5:44:282]{description:0¤p0¤p5¤p44¤p282 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:44:282]{description:0¤p0¤p5¤p44¤p282 vHaut [7¤v 8],type:ligneConsole}
+[0:0:5:44:282]{description:0¤p0¤p5¤p44¤p282 premiereVal 7,type:ligneConsole}
+[0:0:5:44:282]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.9999475,oldInitPos:5.9999475,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:339082,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:47:168]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:5:47:168]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.499687,oldInitPos:5.9999475,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:344282,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:50:54]{ascId:1,newacceleration:0.0,newInitPos:6.999427,oldInitPos:6.499687,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:347168,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:5:50:54]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:5:50:54]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:5:52:54]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:5:52:54]{persId:20,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:53:254]{persId:20,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:53:254]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:53:254]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:5:53:254]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:5:54:866]{etage:0,destination:3,nbPersonnes:1,type:persInput}
+[0:0:5:55:254]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:5:55:254]{description:0¤p0¤p5¤p55¤p254 nouveau getProchain haut true,type:ligneConsole}
+[0:0:5:55:254]{description:0¤p0¤p5¤p55¤p254 vHaut [8],type:ligneConsole}
+[0:0:5:55:254]{description:0¤p0¤p5¤p55¤p254 premiereVal 8,type:ligneConsole}
+[0:0:5:55:254]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.999427,oldInitPos:6.999427,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:350054,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:58:141]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:5:58:141]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.499513,oldInitPos:6.999427,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:355254,type:ascDep,oldInitSpeed:0.0}
+[0:0:5:58:453]{etage:0,destination:7,nbPersonnes:1,type:persInput}
+[0:0:6:1:28]{ascId:1,newacceleration:0.0,newInitPos:7.9995995,oldInitPos:7.499513,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:358141,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:6:1:28]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:6:1:28]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:6:1:878]{etage:5,destination:3,nbPersonnes:1,type:persInput}
+[0:0:6:1:878]{etage:5,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:3:28]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:6:3:28]{persId:17,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:4:228]{persId:17,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:4:228]{persId:23,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:5:428]{persId:23,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:5:428]{ascId:1,persId:25,animDuree:1200,etage:8,creationNotice:true,type:persEntree}
+[0:0:6:6:628]{ascId:1,persId:25,animDuree:1200,etage:8,creationNotice:false,type:persEntree}
+[0:0:6:6:628]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:6:628]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:6:6:628]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:6:6:628]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:6:8:628]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 nouveau getProchain haut true,type:ligneConsole}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 vHaut [],type:ligneConsole}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 vBas [],type:ligneConsole}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 premiereVal null,type:ligneConsole}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:8:628]{description:0¤p0¤p6¤p8¤p628 vBas2 [0¤v 5],type:ligneConsole}
+[0:0:6:8:628]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.9995995,oldInitPos:7.9995995,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:361028,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:11:514]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:6:12:627]{ascId:1,newacceleration:0.0,newInitPos:7.040079,oldInitPos:7.9995995,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:368628,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:12:793]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:6:14:871]{etage:1,destination:0,nbPersonnes:1,type:persInput}
+[0:0:6:14:871]{etage:1,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:14:871]{description:0¤p0¤p6¤p14¤p871 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:14:871]{description:0¤p0¤p6¤p14¤p871 vBas2 [0¤v 1¤v 5],type:ligneConsole}
+[0:0:6:14:871]{description:0¤p0¤p6¤p14¤p871 premiereVal 5,type:ligneConsole}
+[0:0:6:14:877]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:6:14:877]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.960079,oldInitPos:7.040079,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:372627,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:6:18:876]{ascId:1,newacceleration:0.0,newInitPos:5.000079,oldInitPos:5.960079,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:374877,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:6:18:876]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:6:18:876]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:6:20:876]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:6:20:876]{ascId:1,persId:34,animDuree:1200,etage:5,creationNotice:true,type:persEntree}
+[0:0:6:21:470]{etage:0,destination:4,nbPersonnes:1,type:persInput}
+[0:0:6:22:76]{ascId:1,persId:34,animDuree:1200,etage:5,creationNotice:false,type:persEntree}
+[0:0:6:22:76]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:22:76]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:6:22:76]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:6:22:76]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:6:24:76]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:6:24:76]{description:0¤p0¤p6¤p24¤p76 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:24:76]{description:0¤p0¤p6¤p24¤p76 vBas2 [0¤v 1¤v 3],type:ligneConsole}
+[0:0:6:24:76]{description:0¤p0¤p6¤p24¤p76 premiereVal 3,type:ligneConsole}
+[0:0:6:24:76]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.000079,oldInitPos:5.000079,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:378876,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:26:763]{etage:4,destination:0,nbPersonnes:1,type:persInput}
+[0:0:6:26:763]{etage:4,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:26:763]{description:0¤p0¤p6¤p26¤p763 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:26:763]{description:0¤p0¤p6¤p26¤p763 vBas2 [0¤v 1¤v 3¤v 4],type:ligneConsole}
+[0:0:6:26:763]{description:0¤p0¤p6¤p26¤p763 premiereVal 4,type:ligneConsole}
+[0:0:6:26:962]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:6:26:962]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.5003395,oldInitPos:5.000079,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4632004E-4,oldDepTime:384076,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:29:848]{ascId:1,newacceleration:0.0,newInitPos:4.0006,oldInitPos:4.5003395,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:386962,type:ascDep,oldInitSpeed:-3.4632004E-4}
+[0:0:6:29:848]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:6:29:848]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:6:31:848]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:6:31:848]{ascId:1,persId:37,animDuree:1200,etage:4,creationNotice:true,type:persEntree}
+[0:0:6:33:48]{ascId:1,persId:37,animDuree:1200,etage:4,creationNotice:false,type:persEntree}
+[0:0:6:33:48]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:33:48]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:6:33:48]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:6:33:48]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:6:35:48]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:6:35:48]{description:0¤p0¤p6¤p35¤p48 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:35:48]{description:0¤p0¤p6¤p35¤p48 vBas2 [0¤v 1¤v 3],type:ligneConsole}
+[0:0:6:35:48]{description:0¤p0¤p6¤p35¤p48 premiereVal 3,type:ligneConsole}
+[0:0:6:35:48]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.0006,oldInitPos:4.0006,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:389848,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:37:935]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:6:37:935]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.5005136,oldInitPos:4.0006,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4644004E-4,oldDepTime:395048,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:40:822]{ascId:1,newacceleration:0.0,newInitPos:3.0004272,oldInitPos:3.5005136,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:397935,type:ascDep,oldInitSpeed:-3.4644004E-4}
+[0:0:6:40:822]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:6:40:822]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:6:42:822]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:6:42:822]{persId:34,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:44:22]{persId:34,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:44:22]{ascId:1,persId:21,animDuree:1200,etage:3,creationNotice:true,type:persEntree}
+[0:0:6:45:222]{ascId:1,persId:21,animDuree:1200,etage:3,creationNotice:false,type:persEntree}
+[0:0:6:45:222]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:6:45:222]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:45:222]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:6:45:222]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:6:47:222]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:6:47:222]{description:0¤p0¤p6¤p47¤p222 nouveau getProchain haut false,type:ligneConsole}
+[0:0:6:47:222]{description:0¤p0¤p6¤p47¤p222 vBas2 [0¤v 1],type:ligneConsole}
+[0:0:6:47:222]{description:0¤p0¤p6¤p47¤p222 premiereVal 1,type:ligneConsole}
+[0:0:6:47:222]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.0004272,oldInitPos:3.0004272,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:400822,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:49:471]{etage:0,destination:8,nbPersonnes:1,type:persInput}
+[0:0:6:50:109]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:6:51:221]{ascId:1,newacceleration:0.0,newInitPos:2.0409071,oldInitPos:3.0004272,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:407222,type:ascDep,oldInitSpeed:0.0}
+[0:0:6:51:389]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:6:51:389]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9602672,oldInitPos:2.0409071,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:411221,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:6:55:388]{ascId:1,newacceleration:0.0,newInitPos:1.0002673,oldInitPos:1.9602672,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:411389,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:6:55:388]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:6:55:388]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:6:57:388]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:6:57:388]{ascId:1,persId:35,animDuree:1200,etage:1,creationNotice:true,type:persEntree}
+[0:0:6:58:588]{ascId:1,persId:35,animDuree:1200,etage:1,creationNotice:false,type:persEntree}
+[0:0:6:58:588]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:6:58:588]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:6:58:588]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:6:58:588]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:7:0:588]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:7:0:588]{description:0¤p0¤p7¤p0¤p588 nouveau getProchain haut false,type:ligneConsole}
+[0:0:7:0:588]{description:0¤p0¤p7¤p0¤p588 vBas2 [0],type:ligneConsole}
+[0:0:7:0:588]{description:0¤p0¤p7¤p0¤p588 premiereVal 0,type:ligneConsole}
+[0:0:7:0:588]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.0002673,oldInitPos:1.0002673,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:415388,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:3:475]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:7:3:475]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.5001811,oldInitPos:1.0002673,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4644004E-4,oldDepTime:420588,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:6:362]{ascId:1,newacceleration:0.0,newInitPos:9.4890594E-5,oldInitPos:0.5001811,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:423475,type:ascDep,oldInitSpeed:-3.4644004E-4}
+[0:0:7:6:362]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:7:6:362]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:7:8:362]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:7:8:362]{persId:30,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:9:562]{persId:30,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:9:562]{persId:25,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:10:762]{persId:25,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:10:762]{persId:37,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:11:962]{persId:37,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:11:962]{persId:35,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:13:162]{persId:35,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:13:162]{ascId:1,persId:27,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:7:14:362]{ascId:1,persId:27,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:7:14:362]{ascId:1,persId:28,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:7:14:362]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:7:15:562]{ascId:1,persId:28,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:7:15:562]{ascId:1,persId:29,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:7:15:562]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:7:16:762]{ascId:1,persId:29,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:7:16:762]{ascId:1,persId:31,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:7:16:762]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:7:17:962]{ascId:1,persId:31,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:7:17:962]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:7:17:962]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:17:962]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:7:17:962]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:7:19:962]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 nouveau getProchain haut false,type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 vBas2 [],type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 vHaut2 [],type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 premiereVal null,type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 nouveau getProchain haut true,type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 vHaut [2¤v 3¤v 5¤v 7],type:ligneConsole}
+[0:0:7:19:962]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 nouveau getProchain haut true,type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 vHaut [2¤v 3¤v 5¤v 7],type:ligneConsole}
+[0:0:7:19:962]{description:0¤p0¤p7¤p19¤p962 premiereVal 2,type:ligneConsole}
+[0:0:7:19:962]{ascId:1,newacceleration:1.2000001E-7,newInitPos:9.4890594E-5,oldInitPos:9.4890594E-5,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:426362,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:22:181]{etage:0,destination:1,nbPersonnes:1,type:persInput}
+[0:0:7:22:848]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:7:23:961]{ascId:1,newacceleration:0.0,newInitPos:0.95961505,oldInitPos:9.4890594E-5,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:439962,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:24:128]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:7:24:128]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.039775,oldInitPos:0.95961505,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:443961,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:7:27:130]{etage:0,destination:3,nbPersonnes:1,type:persInput}
+[0:0:7:28:127]{ascId:1,newacceleration:0.0,newInitPos:1.9997749,oldInitPos:1.039775,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:444128,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:7:28:127]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:7:28:127]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:7:30:127]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:7:30:127]{persId:31,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:30:974]{etage:0,destination:6,nbPersonnes:1,type:persInput}
+[0:0:7:31:327]{persId:31,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:31:327]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:31:327]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:31:327]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:7:33:327]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:7:33:327]{description:0¤p0¤p7¤p33¤p327 nouveau getProchain haut true,type:ligneConsole}
+[0:0:7:33:327]{description:0¤p0¤p7¤p33¤p327 vHaut [3¤v 5¤v 7],type:ligneConsole}
+[0:0:7:33:327]{description:0¤p0¤p7¤p33¤p327 premiereVal 3,type:ligneConsole}
+[0:0:7:33:327]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9997749,oldInitPos:1.9997749,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:448127,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:36:214]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:7:36:214]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.4998612,oldInitPos:1.9997749,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:453327,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:37:908]{etage:2,destination:3,nbPersonnes:1,type:persInput}
+[0:0:7:37:908]{etage:2,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:39:101]{ascId:1,newacceleration:0.0,newInitPos:2.9999475,oldInitPos:2.4998612,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:456214,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:7:39:101]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:7:39:101]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:7:41:101]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:7:41:101]{persId:28,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:42:301]{persId:28,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:42:301]{persId:29,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:43:501]{persId:29,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:43:501]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:43:501]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:43:501]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:7:45:501]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:7:45:501]{description:0¤p0¤p7¤p45¤p501 nouveau getProchain haut true,type:ligneConsole}
+[0:0:7:45:501]{description:0¤p0¤p7¤p45¤p501 vHaut [5¤v 7],type:ligneConsole}
+[0:0:7:45:501]{description:0¤p0¤p7¤p45¤p501 premiereVal 5,type:ligneConsole}
+[0:0:7:45:501]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9999475,oldInitPos:2.9999475,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:459101,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:48:387]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:7:49:500]{ascId:1,newacceleration:0.0,newInitPos:3.9594676,oldInitPos:2.9999475,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:465501,type:ascDep,oldInitSpeed:0.0}
+[0:0:7:49:667]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:7:49:667]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.0396276,oldInitPos:3.9594676,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:469500,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:7:53:666]{ascId:1,newacceleration:0.0,newInitPos:4.9996276,oldInitPos:4.0396276,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:469667,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:7:53:666]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:7:53:666]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:7:55:666]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:7:55:666]{persId:27,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:56:866]{persId:27,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:56:866]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:56:866]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:7:56:866]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:7:58:866]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:7:58:866]{description:0¤p0¤p7¤p58¤p866 nouveau getProchain haut true,type:ligneConsole}
+[0:0:7:58:866]{description:0¤p0¤p7¤p58¤p866 vHaut [7],type:ligneConsole}
+[0:0:7:58:866]{description:0¤p0¤p7¤p58¤p866 premiereVal 7,type:ligneConsole}
+[0:0:7:58:866]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.9996276,oldInitPos:4.9996276,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:473666,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:1:753]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:8:2:865]{ascId:1,newacceleration:0.0,newInitPos:5.959148,oldInitPos:4.9996276,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:478866,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:3:33]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:8:3:33]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.039788,oldInitPos:5.959148,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:482865,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:8:7:32]{ascId:1,newacceleration:0.0,newInitPos:6.999788,oldInitPos:6.039788,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:483033,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:8:7:32]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:8:7:32]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:8:9:32]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:8:9:32]{persId:21,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:10:232]{persId:21,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:10:232]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:10:232]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:10:232]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:8:12:232]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 nouveau getProchain haut true,type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 vHaut [],type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 vBas [],type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 premiereVal null,type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 nouveau getProchain haut false,type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 vBas2 [],type:ligneConsole}
+[0:0:8:12:232]{description:0¤p0¤p8¤p12¤p232 vHaut2 [0¤v 2],type:ligneConsole}
+[0:0:8:12:232]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.999788,oldInitPos:6.999788,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:487032,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:15:118]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:8:16:231]{ascId:1,newacceleration:0.0,newInitPos:6.0402675,oldInitPos:6.999788,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:492232,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:16:398]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:8:18:481]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:8:20:564]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:8:21:0]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:8:22:648]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:8:24:731]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:8:26:814]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:8:26:814]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.9604273,oldInitPos:6.0402675,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:496231,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:8:30:813]{ascId:1,newacceleration:0.0,newInitPos:4.274249E-4,oldInitPos:0.9604273,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:506814,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:8:30:813]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:8:30:813]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:8:32:813]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:8:32:813]{ascId:1,persId:32,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:8:34:13]{ascId:1,persId:32,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:8:34:13]{ascId:1,persId:33,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:8:34:13]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:8:35:213]{ascId:1,persId:33,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:8:35:213]{ascId:1,persId:36,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:8:35:213]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:8:36:413]{ascId:1,persId:36,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:8:36:413]{ascId:1,persId:38,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:8:36:413]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:8:37:613]{ascId:1,persId:38,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:8:37:613]{ascId:1,persId:39,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:8:37:613]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:8:38:813]{ascId:1,persId:39,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:8:38:813]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:8:38:813]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:38:813]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:8:38:813]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:8:40:813]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 nouveau getProchain haut false,type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 vBas2 [],type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 vHaut2 [],type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 premiereVal null,type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 nouveau getProchain haut true,type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 vHaut [1¤v 2¤v 3¤v 4¤v 7¤v 8],type:ligneConsole}
+[0:0:8:40:813]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 nouveau getProchain haut true,type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 vHaut [1¤v 2¤v 3¤v 4¤v 7¤v 8],type:ligneConsole}
+[0:0:8:40:813]{description:0¤p0¤p8¤p40¤p813 premiereVal 1,type:ligneConsole}
+[0:0:8:40:813]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.274249E-4,oldInitPos:4.274249E-4,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:510813,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:43:699]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:8:43:699]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:0.50016725,oldInitPos:4.274249E-4,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:520813,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:46:585]{ascId:1,newacceleration:0.0,newInitPos:0.9999071,oldInitPos:0.50016725,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:523699,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:8:46:585]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:8:46:585]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:8:48:585]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:8:48:585]{persId:39,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:49:580]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:8:49:785]{persId:39,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:49:785]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:49:785]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:8:49:785]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:8:51:785]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:8:51:785]{description:0¤p0¤p8¤p51¤p785 nouveau getProchain haut true,type:ligneConsole}
+[0:0:8:51:785]{description:0¤p0¤p8¤p51¤p785 vHaut [2¤v 3¤v 4¤v 7¤v 8],type:ligneConsole}
+[0:0:8:51:785]{description:0¤p0¤p8¤p51¤p785 premiereVal 2,type:ligneConsole}
+[0:0:8:51:785]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.9999071,oldInitPos:0.9999071,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:526585,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:54:671]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:8:54:671]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.4996469,oldInitPos:0.9999071,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:531785,type:ascDep,oldInitSpeed:0.0}
+[0:0:8:57:557]{ascId:1,newacceleration:0.0,newInitPos:1.9993868,oldInitPos:1.4996469,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:534671,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:8:57:557]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:8:57:557]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:8:59:557]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:8:59:557]{ascId:1,persId:42,animDuree:1200,etage:2,creationNotice:true,type:persEntree}
+[0:0:9:0:757]{ascId:1,persId:42,animDuree:1200,etage:2,creationNotice:false,type:persEntree}
+[0:0:9:0:757]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:9:0:757]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:0:757]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:9:0:757]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:9:2:757]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:9:2:757]{description:0¤p0¤p9¤p2¤p757 nouveau getProchain haut true,type:ligneConsole}
+[0:0:9:2:757]{description:0¤p0¤p9¤p2¤p757 vHaut [3¤v 4¤v 7¤v 8],type:ligneConsole}
+[0:0:9:2:757]{description:0¤p0¤p9¤p2¤p757 premiereVal 3,type:ligneConsole}
+[0:0:9:2:757]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9993868,oldInitPos:1.9993868,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:537557,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:5:644]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:9:5:644]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.499473,oldInitPos:1.9993868,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:542757,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:8:531]{ascId:1,newacceleration:0.0,newInitPos:2.9995594,oldInitPos:2.499473,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:545644,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:9:8:531]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:9:8:531]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:9:10:531]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:9:10:531]{persId:32,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:11:731]{persId:32,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:11:731]{persId:42,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:12:931]{persId:42,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:12:931]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:12:931]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:12:931]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:9:14:931]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:9:14:931]{description:0¤p0¤p9¤p14¤p931 nouveau getProchain haut true,type:ligneConsole}
+[0:0:9:14:931]{description:0¤p0¤p9¤p14¤p931 vHaut [4¤v 7¤v 8],type:ligneConsole}
+[0:0:9:14:931]{description:0¤p0¤p9¤p14¤p931 premiereVal 4,type:ligneConsole}
+[0:0:9:14:931]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9995594,oldInitPos:2.9995594,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:548531,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:17:818]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:9:17:818]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.4996457,oldInitPos:2.9995594,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:554931,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:18:50]{etage:0,destination:1,nbPersonnes:1,type:persInput}
+[0:0:9:20:705]{ascId:1,newacceleration:0.0,newInitPos:3.999732,oldInitPos:3.4996457,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:557818,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:9:20:705]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:9:20:705]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:9:22:705]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:9:22:705]{persId:36,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:23:905]{persId:36,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:23:905]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:23:905]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:23:905]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:9:25:905]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:9:25:905]{description:0¤p0¤p9¤p25¤p905 nouveau getProchain haut true,type:ligneConsole}
+[0:0:9:25:905]{description:0¤p0¤p9¤p25¤p905 vHaut [7¤v 8],type:ligneConsole}
+[0:0:9:25:905]{description:0¤p0¤p9¤p25¤p905 premiereVal 7,type:ligneConsole}
+[0:0:9:25:905]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.999732,oldInitPos:3.999732,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:560705,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:28:792]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:9:29:904]{ascId:1,newacceleration:0.0,newInitPos:4.9592524,oldInitPos:3.999732,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:565905,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:30:72]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:9:32:155]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:9:32:155]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.0397325,oldInitPos:4.9592524,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:569904,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:9:36:154]{ascId:1,newacceleration:0.0,newInitPos:6.9997325,oldInitPos:6.0397325,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:572155,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:9:36:154]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:9:36:154]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:9:38:154]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:9:38:154]{persId:33,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:39:354]{persId:33,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:39:354]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:39:354]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:39:354]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:9:41:354]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:9:41:354]{description:0¤p0¤p9¤p41¤p354 nouveau getProchain haut true,type:ligneConsole}
+[0:0:9:41:354]{description:0¤p0¤p9¤p41¤p354 vHaut [8],type:ligneConsole}
+[0:0:9:41:354]{description:0¤p0¤p9¤p41¤p354 premiereVal 8,type:ligneConsole}
+[0:0:9:41:354]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.9997325,oldInitPos:6.9997325,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:576154,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:44:241]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:9:44:241]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.499819,oldInitPos:6.9997325,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:581354,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:47:128]{ascId:1,newacceleration:0.0,newInitPos:7.999905,oldInitPos:7.499819,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:584241,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:9:47:128]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:9:47:128]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:9:49:128]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:9:49:128]{persId:38,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:50:328]{persId:38,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:50:328]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:50:328]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:9:50:328]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:9:52:328]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 nouveau getProchain haut true,type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 vHaut [],type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 vBas [],type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 premiereVal null,type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 nouveau getProchain haut false,type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 vBas2 [],type:ligneConsole}
+[0:0:9:52:328]{description:0¤p0¤p9¤p52¤p328 vHaut2 [0],type:ligneConsole}
+[0:0:9:52:328]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.999905,oldInitPos:7.999905,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:587128,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:55:214]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:9:56:327]{ascId:1,newacceleration:0.0,newInitPos:7.040385,oldInitPos:7.999905,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:592328,type:ascDep,oldInitSpeed:0.0}
+[0:0:9:56:494]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:9:58:577]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:10:0:661]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:10:2:744]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:10:4:827]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:10:6:911]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:10:8:499]{etage:6,destination:5,nbPersonnes:2,type:persInput}
+[0:0:10:8:499]{etage:6,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:8:499]{description:0¤p0¤p10¤p8¤p499 nouveau getProchain haut false,type:ligneConsole}
+[0:0:10:8:499]{description:0¤p0¤p10¤p8¤p499 vBas2 [],type:ligneConsole}
+[0:0:10:8:499]{description:0¤p0¤p10¤p8¤p499 vHaut2 [0],type:ligneConsole}
+[0:0:10:8:499]{description:0¤p0¤p10¤p8¤p499 premiereVal 0,type:ligneConsole}
+[0:0:10:8:994]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:10:8:994]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.9602246,oldInitPos:7.040385,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:596327,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:10:12:993]{ascId:1,newacceleration:0.0,newInitPos:2.2476912E-4,oldInitPos:0.9602246,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:608994,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:10:12:993]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:10:12:993]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:10:14:993]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:10:14:993]{ascId:1,persId:40,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:10:16:193]{ascId:1,persId:40,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:10:16:193]{ascId:1,persId:41,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:10:16:193]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:10:17:393]{ascId:1,persId:41,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:10:17:393]{ascId:1,persId:43,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:10:17:393]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:10:18:593]{ascId:1,persId:43,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:10:18:593]{ascId:1,persId:44,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:10:18:593]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:10:19:793]{ascId:1,persId:44,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:10:19:793]{ascId:1,persId:45,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:10:19:793]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:10:20:993]{ascId:1,persId:45,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:10:20:993]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:10:20:993]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:20:993]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:10:20:993]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:10:22:993]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 nouveau getProchain haut false,type:ligneConsole}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 vBas2 [],type:ligneConsole}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 vHaut2 [],type:ligneConsole}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 premiereVal null,type:ligneConsole}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 nouveau getProchain haut true,type:ligneConsole}
+[0:0:10:22:993]{description:0¤p0¤p10¤p22¤p993 vHaut [1¤v 2¤v 3¤v 6],type:ligneConsole}
+[0:0:10:22:993]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.2476912E-4,oldInitPos:2.2476912E-4,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:612993,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:25:879]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:10:25:879]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:0.49996457,oldInitPos:2.2476912E-4,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:622993,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:27:225]{etage:0,destination:8,nbPersonnes:1,type:persInput}
+[0:0:10:27:225]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:28:765]{ascId:1,newacceleration:0.0,newInitPos:0.99970436,oldInitPos:0.49996457,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:625879,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:10:28:765]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:10:28:765]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:10:29:104]{etage:0,destination:7,nbPersonnes:2,type:persInput}
+[0:0:10:30:765]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:10:30:765]{persId:45,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:31:965]{persId:45,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:31:965]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:31:965]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:31:965]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:10:33:965]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:10:33:965]{description:0¤p0¤p10¤p33¤p965 nouveau getProchain haut true,type:ligneConsole}
+[0:0:10:33:965]{description:0¤p0¤p10¤p33¤p965 vHaut [2¤v 3¤v 6],type:ligneConsole}
+[0:0:10:33:965]{description:0¤p0¤p10¤p33¤p965 premiereVal 2,type:ligneConsole}
+[0:0:10:33:965]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.99970436,oldInitPos:0.99970436,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:628765,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:36:852]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:10:36:852]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.4997905,oldInitPos:0.99970436,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:633965,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:39:739]{ascId:1,newacceleration:0.0,newInitPos:1.9998767,oldInitPos:1.4997905,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:636852,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:10:39:739]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:10:39:739]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:10:41:739]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:10:41:739]{persId:43,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:42:939]{persId:43,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:42:939]{persId:44,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:44:139]{persId:44,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:44:139]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:44:139]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:44:139]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:10:45:162]{etage:0,destination:5,nbPersonnes:1,type:persInput}
+[0:0:10:46:139]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:10:46:139]{description:0¤p0¤p10¤p46¤p139 nouveau getProchain haut true,type:ligneConsole}
+[0:0:10:46:139]{description:0¤p0¤p10¤p46¤p139 vHaut [3¤v 6],type:ligneConsole}
+[0:0:10:46:139]{description:0¤p0¤p10¤p46¤p139 premiereVal 3,type:ligneConsole}
+[0:0:10:46:139]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9998767,oldInitPos:1.9998767,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:639739,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:49:25]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:10:49:25]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.4996166,oldInitPos:1.9998767,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:646139,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:51:911]{ascId:1,newacceleration:0.0,newInitPos:2.9993565,oldInitPos:2.4996166,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:649025,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:10:51:911]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:10:51:911]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:10:53:911]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:10:53:911]{persId:40,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:55:111]{persId:40,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:55:111]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:55:111]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:55:111]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:10:57:111]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:10:57:111]{description:0¤p0¤p10¤p57¤p111 nouveau getProchain haut true,type:ligneConsole}
+[0:0:10:57:111]{description:0¤p0¤p10¤p57¤p111 vHaut [6],type:ligneConsole}
+[0:0:10:57:111]{description:0¤p0¤p10¤p57¤p111 premiereVal 6,type:ligneConsole}
+[0:0:10:57:111]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9993565,oldInitPos:2.9993565,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:651911,type:ascDep,oldInitSpeed:0.0}
+[0:0:10:57:903]{etage:3,destination:6,nbPersonnes:1,type:persInput}
+[0:0:10:57:903]{etage:3,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:10:57:903]{description:0¤p0¤p10¤p57¤p903 nouveau getProchain haut true,type:ligneConsole}
+[0:0:10:57:903]{description:0¤p0¤p10¤p57¤p903 vHaut [6],type:ligneConsole}
+[0:0:10:57:903]{description:0¤p0¤p10¤p57¤p903 premiereVal 6,type:ligneConsole}
+[0:0:10:59:998]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:11:1:110]{ascId:1,newacceleration:0.0,newInitPos:3.9588766,oldInitPos:2.9993565,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:657111,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:1:279]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:11:3:362]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:11:3:362]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.039837,oldInitPos:3.9588766,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:661110,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:11:7:361]{ascId:1,newacceleration:0.0,newInitPos:5.999837,oldInitPos:5.039837,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:663362,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:11:7:361]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:11:7:361]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:11:9:361]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:11:9:361]{persId:41,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:10:561]{persId:41,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:10:561]{ascId:1,persId:46,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:11:11:761]{ascId:1,persId:46,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:11:11:761]{ascId:1,persId:47,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:11:11:761]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:11:12:961]{ascId:1,persId:47,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:11:12:961]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:12:961]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:11:12:961]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:11:12:961]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:11:14:961]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 nouveau getProchain haut true,type:ligneConsole}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 vHaut [],type:ligneConsole}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 vBas [],type:ligneConsole}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 premiereVal null,type:ligneConsole}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 nouveau getProchain haut false,type:ligneConsole}
+[0:0:11:14:961]{description:0¤p0¤p11¤p14¤p961 vBas2 [5],type:ligneConsole}
+[0:0:11:14:961]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.999837,oldInitPos:5.999837,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:667361,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:17:847]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:11:17:847]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.5000973,oldInitPos:5.999837,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4632004E-4,oldDepTime:674961,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:20:733]{ascId:1,newacceleration:0.0,newInitPos:5.0003576,oldInitPos:5.5000973,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:677847,type:ascDep,oldInitSpeed:-3.4632004E-4}
+[0:0:11:20:733]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:11:20:733]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:11:22:733]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:11:22:733]{persId:46,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:23:933]{persId:46,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:23:933]{persId:47,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:24:650]{etage:2,destination:1,nbPersonnes:1,type:persInput}
+[0:0:11:24:650]{etage:2,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:25:133]{persId:47,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:25:133]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:25:133]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:25:133]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:11:27:133]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:11:27:133]{description:0¤p0¤p11¤p27¤p133 nouveau getProchain haut false,type:ligneConsole}
+[0:0:11:27:133]{description:0¤p0¤p11¤p27¤p133 vBas2 [2],type:ligneConsole}
+[0:0:11:27:133]{description:0¤p0¤p11¤p27¤p133 premiereVal 2,type:ligneConsole}
+[0:0:11:27:133]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.0003576,oldInitPos:5.0003576,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:680733,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:30:20]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:11:31:132]{ascId:1,newacceleration:0.0,newInitPos:4.0408373,oldInitPos:5.0003576,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:687133,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:31:300]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:11:33:383]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:11:33:383]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9603572,oldInitPos:4.0408373,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:691132,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:11:37:382]{ascId:1,newacceleration:0.0,newInitPos:2.0003574,oldInitPos:2.9603572,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:693383,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:11:37:382]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:11:37:382]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:11:39:382]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:11:39:382]{ascId:1,persId:53,animDuree:1200,etage:2,creationNotice:true,type:persEntree}
+[0:0:11:40:582]{ascId:1,persId:53,animDuree:1200,etage:2,creationNotice:false,type:persEntree}
+[0:0:11:40:582]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:40:582]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:11:40:582]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:11:40:582]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:11:42:582]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:11:42:582]{description:0¤p0¤p11¤p42¤p582 nouveau getProchain haut false,type:ligneConsole}
+[0:0:11:42:582]{description:0¤p0¤p11¤p42¤p582 vBas2 [1],type:ligneConsole}
+[0:0:11:42:582]{description:0¤p0¤p11¤p42¤p582 premiereVal 1,type:ligneConsole}
+[0:0:11:42:582]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.0003574,oldInitPos:2.0003574,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:697382,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:45:469]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:11:45:469]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.5002712,oldInitPos:2.0003574,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4644004E-4,oldDepTime:702582,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:45:592]{etage:6,destination:0,nbPersonnes:1,type:persInput}
+[0:0:11:45:592]{etage:6,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:48:356]{ascId:1,newacceleration:0.0,newInitPos:1.000185,oldInitPos:1.5002712,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:705469,type:ascDep,oldInitSpeed:-3.4644004E-4}
+[0:0:11:48:356]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:11:48:356]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:11:50:356]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:11:50:356]{persId:53,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:51:374]{etage:4,destination:1,nbPersonnes:4,type:persInput}
+[0:0:11:51:374]{etage:4,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:51:556]{persId:53,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:51:556]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:51:556]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:11:51:556]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:11:53:556]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:11:53:556]{description:0¤p0¤p11¤p53¤p556 nouveau getProchain haut false,type:ligneConsole}
+[0:0:11:53:556]{description:0¤p0¤p11¤p53¤p556 vBas2 [],type:ligneConsole}
+[0:0:11:53:556]{description:0¤p0¤p11¤p53¤p556 vHaut2 [0],type:ligneConsole}
+[0:0:11:53:556]{description:0¤p0¤p11¤p53¤p556 premiereVal 0,type:ligneConsole}
+[0:0:11:53:556]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.000185,oldInitPos:1.000185,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:708356,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:56:443]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:11:56:443]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.5000988,oldInitPos:1.000185,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4644004E-4,oldDepTime:713556,type:ascDep,oldInitSpeed:0.0}
+[0:0:11:59:330]{ascId:1,newacceleration:0.0,newInitPos:1.2636185E-5,oldInitPos:0.5000988,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:716443,type:ascDep,oldInitSpeed:-3.4644004E-4}
+[0:0:11:59:330]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:11:59:330]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:12:1:330]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:12:1:330]{ascId:1,persId:48,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:12:2:530]{ascId:1,persId:48,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:12:2:530]{ascId:1,persId:49,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:12:2:530]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:12:3:730]{ascId:1,persId:49,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:12:3:730]{ascId:1,persId:50,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:12:3:730]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:12:4:930]{ascId:1,persId:50,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:12:4:930]{ascId:1,persId:51,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:12:4:930]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:12:6:130]{ascId:1,persId:51,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:12:6:130]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:12:6:130]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:6:130]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:12:6:130]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:12:8:130]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 nouveau getProchain haut false,type:ligneConsole}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 vBas2 [],type:ligneConsole}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 vHaut2 [],type:ligneConsole}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 premiereVal null,type:ligneConsole}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 nouveau getProchain haut true,type:ligneConsole}
+[0:0:12:8:130]{description:0¤p0¤p12¤p8¤p130 vHaut [3¤v 5¤v 7¤v 8],type:ligneConsole}
+[0:0:12:8:130]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.2636185E-5,oldInitPos:1.2636185E-5,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:719330,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:11:16]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:12:12:129]{ascId:1,newacceleration:0.0,newInitPos:0.9595328,oldInitPos:1.2636185E-5,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:728130,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:12:296]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:12:14:379]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:12:14:379]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.039533,oldInitPos:0.9595328,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:732129,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:12:18:378]{ascId:1,newacceleration:0.0,newInitPos:2.9995327,oldInitPos:2.039533,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:734379,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:12:18:378]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:12:18:378]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:12:20:378]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:12:20:378]{ascId:1,persId:52,animDuree:1200,etage:3,creationNotice:true,type:persEntree}
+[0:0:12:21:578]{ascId:1,persId:52,animDuree:1200,etage:3,creationNotice:false,type:persEntree}
+[0:0:12:21:578]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:12:21:578]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:21:578]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:12:21:578]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:12:23:578]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:12:23:578]{description:0¤p0¤p12¤p23¤p578 nouveau getProchain haut true,type:ligneConsole}
+[0:0:12:23:578]{description:0¤p0¤p12¤p23¤p578 vHaut [5¤v 6¤v 7¤v 8],type:ligneConsole}
+[0:0:12:23:578]{description:0¤p0¤p12¤p23¤p578 premiereVal 5,type:ligneConsole}
+[0:0:12:23:578]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9995327,oldInitPos:2.9995327,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:738378,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:26:465]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:12:27:577]{ascId:1,newacceleration:0.0,newInitPos:3.9590528,oldInitPos:2.9995327,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:743578,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:27:745]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:12:27:745]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.039693,oldInitPos:3.9590528,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:747577,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:12:31:744]{ascId:1,newacceleration:0.0,newInitPos:4.999693,oldInitPos:4.039693,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:747745,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:12:31:744]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:12:31:744]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:12:33:744]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:12:33:744]{persId:51,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:34:944]{persId:51,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:34:944]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:34:944]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:34:944]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:12:36:944]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:12:36:944]{description:0¤p0¤p12¤p36¤p944 nouveau getProchain haut true,type:ligneConsole}
+[0:0:12:36:944]{description:0¤p0¤p12¤p36¤p944 vHaut [6¤v 7¤v 8],type:ligneConsole}
+[0:0:12:36:944]{description:0¤p0¤p12¤p36¤p944 premiereVal 6,type:ligneConsole}
+[0:0:12:36:944]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.999693,oldInitPos:4.999693,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:751744,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:39:831]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:12:39:831]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:5.499779,oldInitPos:4.999693,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:756944,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:41:52]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:12:41:52]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:42:718]{ascId:1,newacceleration:0.0,newInitPos:5.9998655,oldInitPos:5.499779,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:759831,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:12:42:718]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:12:42:718]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:12:44:718]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:12:44:718]{persId:52,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:45:918]{persId:52,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:45:918]{ascId:1,persId:54,animDuree:1200,etage:6,creationNotice:true,type:persEntree}
+[0:0:12:47:118]{ascId:1,persId:54,animDuree:1200,etage:6,creationNotice:false,type:persEntree}
+[0:0:12:47:118]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:47:118]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:12:47:118]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:12:47:118]{ascId:1,etage:0,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:12:49:118]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:12:49:118]{description:0¤p0¤p12¤p49¤p118 nouveau getProchain haut true,type:ligneConsole}
+[0:0:12:49:118]{description:0¤p0¤p12¤p49¤p118 vHaut [7¤v 8],type:ligneConsole}
+[0:0:12:49:118]{description:0¤p0¤p12¤p49¤p118 premiereVal 7,type:ligneConsole}
+[0:0:12:49:118]{ascId:1,newacceleration:1.2000001E-7,newInitPos:5.9998655,oldInitPos:5.9998655,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:762718,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:52:4]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:12:52:4]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.499605,oldInitPos:5.9998655,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:769118,type:ascDep,oldInitSpeed:0.0}
+[0:0:12:54:890]{ascId:1,newacceleration:0.0,newInitPos:6.999345,oldInitPos:6.499605,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:772004,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:12:54:890]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:12:54:890]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:12:56:890]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:12:56:890]{persId:49,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:58:90]{persId:49,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:58:90]{persId:50,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:59:290]{persId:50,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:59:290]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:59:290]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:12:59:290]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:12:59:352]{etage:2,destination:4,nbPersonnes:1,type:persInput}
+[0:0:12:59:352]{etage:2,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:1:290]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:13:1:290]{description:0¤p0¤p13¤p1¤p290 nouveau getProchain haut true,type:ligneConsole}
+[0:0:13:1:290]{description:0¤p0¤p13¤p1¤p290 vHaut [8],type:ligneConsole}
+[0:0:13:1:290]{description:0¤p0¤p13¤p1¤p290 premiereVal 8,type:ligneConsole}
+[0:0:13:1:290]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.999345,oldInitPos:6.999345,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:774890,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:1:454]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:13:4:177]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:13:4:177]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.499431,oldInitPos:6.999345,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:781290,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:7:64]{ascId:1,newacceleration:0.0,newInitPos:7.9995174,oldInitPos:7.499431,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:784177,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:13:7:64]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:13:7:64]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:13:9:64]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:13:9:64]{persId:48,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:10:264]{persId:48,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:10:264]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:10:264]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:10:264]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:13:12:264]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 nouveau getProchain haut true,type:ligneConsole}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 vHaut [],type:ligneConsole}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 vBas [],type:ligneConsole}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 premiereVal null,type:ligneConsole}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 nouveau getProchain haut false,type:ligneConsole}
+[0:0:13:12:264]{description:0¤p0¤p13¤p12¤p264 vBas2 [0¤v 4],type:ligneConsole}
+[0:0:13:12:264]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.9995174,oldInitPos:7.9995174,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:787064,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:14:9]{etage:0,destination:5,nbPersonnes:1,type:persInput}
+[0:0:13:15:150]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:13:16:263]{ascId:1,newacceleration:0.0,newInitPos:7.039997,oldInitPos:7.9995174,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:792264,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:16:429]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:13:18:512]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:13:20:596]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:13:20:596]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.960157,oldInitPos:7.039997,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:796263,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:13:24:595]{ascId:1,newacceleration:0.0,newInitPos:4.000157,oldInitPos:4.960157,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:800596,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:13:24:595]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:13:24:595]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:13:26:595]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:13:26:595]{ascId:1,persId:55,animDuree:1200,etage:4,creationNotice:true,type:persEntree}
+[0:0:13:27:41]{etage:0,destination:7,nbPersonnes:1,type:persInput}
+[0:0:13:27:795]{ascId:1,persId:55,animDuree:1200,etage:4,creationNotice:false,type:persEntree}
+[0:0:13:27:795]{ascId:1,persId:56,animDuree:1200,etage:4,creationNotice:true,type:persEntree}
+[0:0:13:27:795]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:13:28:995]{ascId:1,persId:56,animDuree:1200,etage:4,creationNotice:false,type:persEntree}
+[0:0:13:28:995]{ascId:1,persId:57,animDuree:1200,etage:4,creationNotice:true,type:persEntree}
+[0:0:13:28:995]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:13:30:195]{ascId:1,persId:57,animDuree:1200,etage:4,creationNotice:false,type:persEntree}
+[0:0:13:30:195]{ascId:1,persId:58,animDuree:1200,etage:4,creationNotice:true,type:persEntree}
+[0:0:13:30:195]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:13:31:395]{ascId:1,persId:58,animDuree:1200,etage:4,creationNotice:false,type:persEntree}
+[0:0:13:31:395]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:31:395]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:13:31:395]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:13:31:395]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:13:33:395]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:13:33:395]{description:0¤p0¤p13¤p33¤p395 nouveau getProchain haut false,type:ligneConsole}
+[0:0:13:33:395]{description:0¤p0¤p13¤p33¤p395 vBas2 [0¤v 1],type:ligneConsole}
+[0:0:13:33:395]{description:0¤p0¤p13¤p33¤p395 premiereVal 1,type:ligneConsole}
+[0:0:13:33:395]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.000157,oldInitPos:4.000157,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:804595,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:36:281]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:13:37:394]{ascId:1,newacceleration:0.0,newInitPos:3.0406368,oldInitPos:4.000157,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:813395,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:37:561]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:13:39:645]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:13:39:645]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9601568,oldInitPos:3.0406368,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:817394,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:13:43:644]{ascId:1,newacceleration:0.0,newInitPos:1.0001569,oldInitPos:1.9601568,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:819645,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:13:43:644]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:13:43:644]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:13:45:644]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:13:45:644]{persId:55,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:46:844]{persId:55,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:46:844]{persId:56,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:48:44]{persId:56,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:48:44]{persId:57,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:48:67]{etage:0,destination:1,nbPersonnes:1,type:persInput}
+[0:0:13:49:244]{persId:57,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:49:244]{persId:58,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:50:444]{persId:58,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:50:444]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:50:444]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:50:444]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:13:51:46]{etage:8,destination:6,nbPersonnes:1,type:persInput}
+[0:0:13:51:46]{etage:8,versHaut:false,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:13:52:444]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:13:52:444]{description:0¤p0¤p13¤p52¤p444 nouveau getProchain haut false,type:ligneConsole}
+[0:0:13:52:444]{description:0¤p0¤p13¤p52¤p444 vBas2 [0],type:ligneConsole}
+[0:0:13:52:444]{description:0¤p0¤p13¤p52¤p444 premiereVal 0,type:ligneConsole}
+[0:0:13:52:444]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.0001569,oldInitPos:1.0001569,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:823644,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:54:274]{etage:0,destination:3,nbPersonnes:1,type:persInput}
+[0:0:13:55:330]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:13:55:330]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.5004171,oldInitPos:1.0001569,oldAcceleration:-1.2000001E-7,newInitSpeed:-3.4632004E-4,oldDepTime:832444,type:ascDep,oldInitSpeed:0.0}
+[0:0:13:58:216]{ascId:1,newacceleration:0.0,newInitPos:6.772876E-4,oldInitPos:0.5004171,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:835330,type:ascDep,oldInitSpeed:-3.4632004E-4}
+[0:0:13:58:216]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:13:58:216]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:14:0:216]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:14:0:216]{persId:54,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:1:173]{etage:0,destination:8,nbPersonnes:1,type:persInput}
+[0:0:14:1:416]{persId:54,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:1:416]{ascId:1,persId:59,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:14:2:616]{ascId:1,persId:59,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:14:2:616]{ascId:1,persId:61,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:14:2:616]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:14:3:816]{ascId:1,persId:61,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:14:3:816]{ascId:1,persId:62,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:14:3:816]{ascId:1,etage:2,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:14:5:16]{ascId:1,persId:62,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:14:5:16]{ascId:1,persId:63,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:14:5:16]{ascId:1,etage:5,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:14:6:216]{ascId:1,persId:63,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:14:6:216]{ascId:1,persId:64,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:14:6:216]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:14:7:416]{ascId:1,persId:64,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:14:7:416]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:14:7:416]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:7:416]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:14:7:416]{ascId:1,etage:1,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:14:9:416]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 nouveau getProchain haut false,type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 vBas2 [],type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 vHaut2 [],type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 premiereVal null,type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 vHaut [1¤v 2¤v 5¤v 7],type:ligneConsole}
+[0:0:14:9:416]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 vHaut [1¤v 2¤v 5¤v 7],type:ligneConsole}
+[0:0:14:9:416]{description:0¤p0¤p14¤p9¤p416 premiereVal 1,type:ligneConsole}
+[0:0:14:9:416]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.772876E-4,oldInitPos:6.772876E-4,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:838216,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:12:301]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:14:12:301]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:0.5000708,oldInitPos:6.772876E-4,oldAcceleration:1.2000001E-7,newInitSpeed:3.4620002E-4,oldDepTime:849416,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:15:186]{ascId:1,newacceleration:0.0,newInitPos:0.99946433,oldInitPos:0.5000708,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:852301,type:ascDep,oldInitSpeed:3.4620002E-4}
+[0:0:14:15:186]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:14:15:186]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:14:17:186]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:14:17:186]{persId:64,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:18:386]{persId:64,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:18:386]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:18:386]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:18:386]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:14:20:386]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:14:20:386]{description:0¤p0¤p14¤p20¤p386 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:20:386]{description:0¤p0¤p14¤p20¤p386 vHaut [2¤v 5¤v 7],type:ligneConsole}
+[0:0:14:20:386]{description:0¤p0¤p14¤p20¤p386 premiereVal 2,type:ligneConsole}
+[0:0:14:20:386]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.99946433,oldInitPos:0.99946433,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:855186,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:23:273]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:14:23:273]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:1.4995506,oldInitPos:0.99946433,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:860386,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:26:160]{ascId:1,newacceleration:0.0,newInitPos:1.9996368,oldInitPos:1.4995506,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:863273,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:14:26:160]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:14:26:160]{ascId:1,etage:2,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:14:28:160]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:14:28:160]{persId:59,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:29:360]{persId:59,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:29:360]{persId:61,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:30:560]{persId:61,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:30:560]{ascId:1,persId:60,animDuree:1200,etage:2,creationNotice:true,type:persEntree}
+[0:0:14:31:760]{ascId:1,persId:60,animDuree:1200,etage:2,creationNotice:false,type:persEntree}
+[0:0:14:31:760]{etage:2,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:14:31:760]{etage:2,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:31:760]{ascId:1,animDuree:2000,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:14:31:760]{ascId:1,etage:4,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:14:33:760]{ascId:1,animDuree:2000,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:14:33:760]{description:0¤p0¤p14¤p33¤p760 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:33:760]{description:0¤p0¤p14¤p33¤p760 vHaut [4¤v 5¤v 7],type:ligneConsole}
+[0:0:14:33:760]{description:0¤p0¤p14¤p33¤p760 premiereVal 4,type:ligneConsole}
+[0:0:14:33:760]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.9996368,oldInitPos:1.9996368,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:866160,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:36:647]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:14:36:963]{etage:0,destination:7,nbPersonnes:1,type:persInput}
+[0:0:14:37:759]{ascId:1,newacceleration:0.0,newInitPos:2.959157,oldInitPos:1.9996368,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:873760,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:37:927]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:14:37:927]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:3.039797,oldInitPos:2.959157,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:877759,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:14:40:503]{etage:1,destination:3,nbPersonnes:1,type:persInput}
+[0:0:14:40:503]{etage:1,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:41:926]{ascId:1,newacceleration:0.0,newInitPos:3.9997969,oldInitPos:3.039797,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:877927,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:14:41:926]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:14:41:926]{ascId:1,etage:4,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:14:43:926]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:14:43:926]{persId:60,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:45:126]{persId:60,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:45:126]{etage:4,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:45:126]{etage:4,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:45:126]{ascId:1,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:14:47:126]{ascId:1,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:14:47:126]{description:0¤p0¤p14¤p47¤p126 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:47:126]{description:0¤p0¤p14¤p47¤p126 vHaut [5¤v 7],type:ligneConsole}
+[0:0:14:47:126]{description:0¤p0¤p14¤p47¤p126 premiereVal 5,type:ligneConsole}
+[0:0:14:47:126]{ascId:1,newacceleration:1.2000001E-7,newInitPos:3.9997969,oldInitPos:3.9997969,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:881926,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:50:13]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:14:50:13]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:4.499883,oldInitPos:3.9997969,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:887126,type:ascDep,oldInitSpeed:0.0}
+[0:0:14:50:825]{etage:0,destination:3,nbPersonnes:1,type:persInput}
+[0:0:14:52:900]{ascId:1,newacceleration:0.0,newInitPos:4.9999695,oldInitPos:4.499883,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:890013,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:14:52:900]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:14:52:900]{ascId:1,etage:5,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:14:54:900]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:14:54:900]{persId:62,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:56:100]{persId:62,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:56:100]{etage:5,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:56:100]{etage:5,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:14:56:100]{ascId:1,animDuree:2000,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:14:58:100]{ascId:1,animDuree:2000,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:14:58:100]{description:0¤p0¤p14¤p58¤p100 nouveau getProchain haut true,type:ligneConsole}
+[0:0:14:58:100]{description:0¤p0¤p14¤p58¤p100 vHaut [7],type:ligneConsole}
+[0:0:14:58:100]{description:0¤p0¤p14¤p58¤p100 premiereVal 7,type:ligneConsole}
+[0:0:14:58:100]{ascId:1,newacceleration:1.2000001E-7,newInitPos:4.9999695,oldInitPos:4.9999695,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:892900,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:0:986]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:15:2:99]{ascId:1,newacceleration:0.0,newInitPos:5.95949,oldInitPos:4.9999695,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:898100,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:2:266]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:15:2:266]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.03965,oldInitPos:5.95949,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:902099,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:15:6:265]{ascId:1,newacceleration:0.0,newInitPos:6.99965,oldInitPos:6.03965,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:902266,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:15:6:265]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:15:6:265]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:15:8:265]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:15:8:265]{persId:63,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:15:9:465]{persId:63,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:15:9:465]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:9:465]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:9:465]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:15:11:465]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:15:11:465]{description:0¤p0¤p15¤p11¤p465 nouveau getProchain haut true,type:ligneConsole}
+[0:0:15:11:465]{description:0¤p0¤p15¤p11¤p465 vHaut [],type:ligneConsole}
+[0:0:15:11:465]{description:0¤p0¤p15¤p11¤p465 vBas [8],type:ligneConsole}
+[0:0:15:11:465]{description:0¤p0¤p15¤p11¤p465 premiereVal 8,type:ligneConsole}
+[0:0:15:11:465]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.99965,oldInitPos:6.99965,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:906265,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:14:352]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:15:14:352]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.4997363,oldInitPos:6.99965,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:911465,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:17:239]{ascId:1,newacceleration:0.0,newInitPos:7.9998226,oldInitPos:7.4997363,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:914352,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:15:17:239]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:15:17:239]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:15:19:239]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:15:19:239]{ascId:1,persId:65,animDuree:1200,etage:8,creationNotice:true,type:persEntree}
+[0:0:15:20:439]{ascId:1,persId:65,animDuree:1200,etage:8,creationNotice:false,type:persEntree}
+[0:0:15:20:439]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:20:439]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:15:20:439]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:15:20:439]{ascId:1,etage:6,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:15:22:439]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 nouveau getProchain haut true,type:ligneConsole}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 vHaut [],type:ligneConsole}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 vBas [],type:ligneConsole}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 premiereVal null,type:ligneConsole}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 nouveau getProchain haut false,type:ligneConsole}
+[0:0:15:22:439]{description:0¤p0¤p15¤p22¤p439 vBas2 [6],type:ligneConsole}
+[0:0:15:22:439]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.9998226,oldInitPos:7.9998226,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:917239,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:25:325]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:15:26:438]{ascId:1,newacceleration:0.0,newInitPos:7.0403023,oldInitPos:7.9998226,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:922439,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:26:605]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:15:26:605]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.960142,oldInitPos:7.0403023,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:926438,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:15:30:604]{ascId:1,newacceleration:0.0,newInitPos:6.000142,oldInitPos:6.960142,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:926605,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:15:30:604]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:15:30:604]{ascId:1,etage:6,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:15:32:604]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:15:32:604]{persId:65,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:15:33:804]{persId:65,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:15:33:804]{etage:6,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:33:804]{etage:6,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:33:804]{ascId:1,animDuree:2000,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:15:35:804]{ascId:1,animDuree:2000,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:15:35:804]{description:0¤p0¤p15¤p35¤p804 nouveau getProchain haut false,type:ligneConsole}
+[0:0:15:35:804]{description:0¤p0¤p15¤p35¤p804 vBas2 [],type:ligneConsole}
+[0:0:15:35:804]{description:0¤p0¤p15¤p35¤p804 vHaut2 [0¤v 1],type:ligneConsole}
+[0:0:15:35:804]{description:0¤p0¤p15¤p35¤p804 premiereVal 0,type:ligneConsole}
+[0:0:15:35:804]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.000142,oldInitPos:6.000142,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:930604,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:38:690]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:15:39:803]{ascId:1,newacceleration:0.0,newInitPos:5.0406218,oldInitPos:6.000142,oldAcceleration:-1.2000001E-7,newInitSpeed:-4.8000002E-4,oldDepTime:935804,type:ascDep,oldInitSpeed:0.0}
+[0:0:15:39:970]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:15:42:54]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:15:44:137]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:15:46:220]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:15:48:304]{ascId:1,etage:0,type:ascCapteurNiv}
+[0:0:15:48:304]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.96014166,oldInitPos:5.0406218,oldAcceleration:0.0,newInitSpeed:-4.8000002E-4,oldDepTime:939803,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:15:52:303]{ascId:1,newacceleration:0.0,newInitPos:1.4179945E-4,oldInitPos:0.96014166,oldAcceleration:1.2000001E-7,newInitSpeed:0.0,oldDepTime:948304,type:ascDep,oldInitSpeed:-4.8000002E-4}
+[0:0:15:52:303]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:15:52:303]{ascId:1,etage:0,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:15:54:303]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:15:54:303]{ascId:1,persId:66,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:15:55:503]{ascId:1,persId:66,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:15:55:503]{ascId:1,persId:67,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:15:55:503]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:15:56:703]{ascId:1,persId:67,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:15:56:703]{ascId:1,persId:68,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:15:56:703]{ascId:1,etage:8,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:15:57:903]{ascId:1,persId:68,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:15:57:903]{ascId:1,persId:70,animDuree:1200,etage:0,creationNotice:true,type:persEntree}
+[0:0:15:57:903]{ascId:1,etage:7,newBoutonOn:true,type:ascBouton,oldBoutonOn:false}
+[0:0:15:59:103]{ascId:1,persId:70,animDuree:1200,etage:0,creationNotice:false,type:persEntree}
+[0:0:15:59:103]{etage:0,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:15:59:103]{etage:0,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:15:59:103]{ascId:1,animDuree:2000,etage:0,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:15:59:103]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:16:1:103]{ascId:1,animDuree:2000,etage:0,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 nouveau getProchain haut false,type:ligneConsole}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 vBas2 [],type:ligneConsole}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 vHaut2 [],type:ligneConsole}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 premiereVal null,type:ligneConsole}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 nouveau getProchain haut true,type:ligneConsole}
+[0:0:16:1:103]{description:0¤p0¤p16¤p1¤p103 vHaut [1¤v 3¤v 7¤v 8],type:ligneConsole}
+[0:0:16:1:103]{ascId:1,newacceleration:1.2000001E-7,newInitPos:1.4179945E-4,oldInitPos:1.4179945E-4,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:952303,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:3:989]{ascId:1,etage:1,type:ascCapteurNiv}
+[0:0:16:3:989]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:0.4998816,oldInitPos:1.4179945E-4,oldAcceleration:1.2000001E-7,newInitSpeed:3.4632004E-4,oldDepTime:961103,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:6:875]{ascId:1,newacceleration:0.0,newInitPos:0.9996214,oldInitPos:0.4998816,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:963989,type:ascDep,oldInitSpeed:3.4632004E-4}
+[0:0:16:6:875]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:16:6:875]{ascId:1,etage:1,newBoutonOn:false,type:ascBouton,oldBoutonOn:false}
+[0:0:16:8:875]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:16:8:875]{ascId:1,persId:69,animDuree:1200,etage:1,creationNotice:true,type:persEntree}
+[0:0:16:10:75]{ascId:1,persId:69,animDuree:1200,etage:1,creationNotice:false,type:persEntree}
+[0:0:16:10:75]{etage:1,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:true}
+[0:0:16:10:75]{etage:1,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:10:75]{ascId:1,animDuree:2000,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:16:10:75]{ascId:1,etage:3,newBoutonOn:true,type:ascBouton,oldBoutonOn:true}
+[0:0:16:12:75]{ascId:1,animDuree:2000,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:16:12:75]{description:0¤p0¤p16¤p12¤p75 nouveau getProchain haut true,type:ligneConsole}
+[0:0:16:12:75]{description:0¤p0¤p16¤p12¤p75 vHaut [3¤v 7¤v 8],type:ligneConsole}
+[0:0:16:12:75]{description:0¤p0¤p16¤p12¤p75 premiereVal 3,type:ligneConsole}
+[0:0:16:12:75]{ascId:1,newacceleration:1.2000001E-7,newInitPos:0.9996214,oldInitPos:0.9996214,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:966875,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:14:962]{ascId:1,etage:2,type:ascCapteurNiv}
+[0:0:16:16:74]{ascId:1,newacceleration:0.0,newInitPos:1.9591415,oldInitPos:0.9996214,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:972075,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:16:242]{ascId:1,etage:3,type:ascCapteurNiv}
+[0:0:16:16:242]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:2.0397816,oldInitPos:1.9591415,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:976074,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:16:20:241]{ascId:1,newacceleration:0.0,newInitPos:2.9997814,oldInitPos:2.0397816,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:976242,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:16:20:241]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:16:20:241]{ascId:1,etage:3,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:16:22:241]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:16:22:241]{persId:66,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:16:23:441]{persId:66,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:16:23:441]{persId:70,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:16:24:641]{persId:70,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:16:24:641]{persId:69,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:16:25:841]{persId:69,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:16:25:841]{etage:3,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:25:841]{etage:3,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:25:841]{ascId:1,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:16:27:841]{ascId:1,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:16:27:841]{description:0¤p0¤p16¤p27¤p841 nouveau getProchain haut true,type:ligneConsole}
+[0:0:16:27:841]{description:0¤p0¤p16¤p27¤p841 vHaut [7¤v 8],type:ligneConsole}
+[0:0:16:27:841]{description:0¤p0¤p16¤p27¤p841 premiereVal 7,type:ligneConsole}
+[0:0:16:27:841]{ascId:1,newacceleration:1.2000001E-7,newInitPos:2.9997814,oldInitPos:2.9997814,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:980241,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:30:728]{ascId:1,etage:4,type:ascCapteurNiv}
+[0:0:16:31:840]{ascId:1,newacceleration:0.0,newInitPos:3.9593015,oldInitPos:2.9997814,oldAcceleration:1.2000001E-7,newInitSpeed:4.8000002E-4,oldDepTime:987841,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:32:8]{ascId:1,etage:5,type:ascCapteurNiv}
+[0:0:16:34:91]{ascId:1,etage:6,type:ascCapteurNiv}
+[0:0:16:36:174]{ascId:1,etage:7,type:ascCapteurNiv}
+[0:0:16:36:174]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:6.0396214,oldInitPos:3.9593015,oldAcceleration:0.0,newInitSpeed:4.8000002E-4,oldDepTime:991840,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:16:40:173]{ascId:1,newacceleration:0.0,newInitPos:6.9996214,oldInitPos:6.0396214,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:996174,type:ascDep,oldInitSpeed:4.8000002E-4}
+[0:0:16:40:173]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:16:40:173]{ascId:1,etage:7,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:16:42:173]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:16:42:173]{persId:68,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:16:43:373]{persId:68,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:16:43:373]{etage:7,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:43:373]{etage:7,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:43:373]{ascId:1,animDuree:2000,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:16:45:373]{ascId:1,animDuree:2000,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:16:45:373]{description:0¤p0¤p16¤p45¤p373 nouveau getProchain haut true,type:ligneConsole}
+[0:0:16:45:373]{description:0¤p0¤p16¤p45¤p373 vHaut [8],type:ligneConsole}
+[0:0:16:45:373]{description:0¤p0¤p16¤p45¤p373 premiereVal 8,type:ligneConsole}
+[0:0:16:45:373]{ascId:1,newacceleration:1.2000001E-7,newInitPos:6.9996214,oldInitPos:6.9996214,oldAcceleration:0.0,newInitSpeed:0.0,oldDepTime:1000173,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:48:260]{ascId:1,etage:8,type:ascCapteurNiv}
+[0:0:16:48:260]{ascId:1,newacceleration:-1.2000001E-7,newInitPos:7.4997077,oldInitPos:6.9996214,oldAcceleration:1.2000001E-7,newInitSpeed:3.4644004E-4,oldDepTime:1005373,type:ascDep,oldInitSpeed:0.0}
+[0:0:16:51:147]{ascId:1,newacceleration:0.0,newInitPos:7.999794,oldInitPos:7.4997077,oldAcceleration:-1.2000001E-7,newInitSpeed:0.0,oldDepTime:1008260,type:ascDep,oldInitSpeed:3.4644004E-4}
+[0:0:16:51:147]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes}
+[0:0:16:51:147]{ascId:1,etage:8,newBoutonOn:false,type:ascBouton,oldBoutonOn:true}
+[0:0:16:53:147]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes}
+[0:0:16:53:147]{persId:67,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:16:54:347]{persId:67,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:16:54:347]{etage:8,versHaut:true,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:54:347]{etage:8,versHaut:false,newBoutonOn:false,type:boutonTriangle,oldBoutonOn:false}
+[0:0:16:54:347]{ascId:1,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes}
+[0:0:16:56:347]{ascId:1,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 nouveau getProchain haut true,type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 vHaut [],type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 vBas [],type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 premiereVal null,type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 nouveau getProchain haut false,type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 vBas2 [],type:ligneConsole}
+[0:0:16:56:347]{description:0¤p0¤p16¤p56¤p347 vHaut2 [],type:ligneConsole}

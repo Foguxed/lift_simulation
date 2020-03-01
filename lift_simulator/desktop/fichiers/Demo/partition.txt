@@ -1,0 +1,2 @@
+[0:0:00:01:000]{nbPersonnes:2,etage:1,destination:2,type:persInput}
+[0:0:00:02:000]{nbPersonnes:3,etage:6,destination:7,type:persInput}

@@ -1,0 +1,3 @@
+ascId:1,heureEntreeAscenseur:9972,heureSortieAscenseur:60735,heureArrivee:1000
+ascId:1,heureEntreeAscenseur:20946,heureSortieAscenseur:61935,heureArrivee:1000
+ascId:1,heureEntreeAscenseur:34312,heureSortieAscenseur:49761,heureArrivee:1000

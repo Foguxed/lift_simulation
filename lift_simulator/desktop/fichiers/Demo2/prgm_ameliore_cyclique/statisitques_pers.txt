@@ -1,0 +1,13 @@
+ascId:1,heureEntreeAscenseur:9132,heureSortieAscenseur:20466,heureArrivee:1000
+ascId:1,heureEntreeAscenseur:10632,heureSortieAscenseur:21966,heureArrivee:1000
+ascId:1,heureEntreeAscenseur:120644,heureSortieAscenseur:130476,heureArrivee:1500
+ascId:1,heureEntreeAscenseur:37254,heureSortieAscenseur:50086,heureArrivee:2000
+ascId:1,heureEntreeAscenseur:38754,heureSortieAscenseur:51586,heureArrivee:2000
+ascId:1,heureEntreeAscenseur:40254,heureSortieAscenseur:53086,heureArrivee:2000
+ascId:1,heureEntreeAscenseur:140310,heureSortieAscenseur:155393,heureArrivee:2500
+ascId:1,heureEntreeAscenseur:141810,heureSortieAscenseur:156893,heureArrivee:2500
+ascId:1,heureEntreeAscenseur:67420,heureSortieAscenseur:102153,heureArrivee:2750
+ascId:1,heureEntreeAscenseur:68920,heureSortieAscenseur:103653,heureArrivee:2750
+ascId:1,heureEntreeAscenseur:54586,heureSortieAscenseur:89319,heureArrivee:3000
+ascId:1,heureEntreeAscenseur:56086,heureSortieAscenseur:90819,heureArrivee:3000
+ascId:1,heureEntreeAscenseur:57586,heureSortieAscenseur:92319,heureArrivee:3000

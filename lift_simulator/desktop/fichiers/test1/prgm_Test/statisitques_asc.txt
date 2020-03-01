@@ -1,0 +1,2 @@
+nbPersonnesTransportees:250,deplacementTotal:664.0
+nbPersonnesTransportees:250,deplacementTotal:664.0

@@ -1,0 +1,4 @@
+[0:0:0:0:0]{nbAscenseurs:1,etageMin:0,type:creationImmeuble,etageMax:8}
+[0:0:0:0:1]{etage:0,destination:2,nbPersonnes:3,type:persInput}
+[0:0:0:0:1]{etage:0,versHaut:true,newBoutonOn:true,type:boutonTriangle,oldBoutonOn:false}
+[0:0:0:0:1]{description:l'ascenseur 1 a tente de s'arreter alors qu'il etait deja arrete,type:Erreur}

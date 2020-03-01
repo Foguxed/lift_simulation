@@ -1,0 +1,7 @@
+[0:0:00:05:000]{nbPersonnes:60,etage:14,destination:2,type:persInput}
+[0:0:00:05:000]{nbPersonnes:60,etage:12,destination:10,type:persInput}
+[0:0:00:05:000]{nbPersonnes:60,etage:5,destination:4,type:persInput}
+[0:0:00:05:000]{nbPersonnes:60,etage:8,destination:10,type:persInput}
+[0:0:00:05:000]{nbPersonnes:60,etage:2,destination:13,type:persInput}
+[0:0:00:05:000]{nbPersonnes:60,etage:8,destination:18,type:persInput}
+[0:0:00:05:000]{nbPersonnes:140,etage:13,destination:0,type:persInput}
