@@ -168,7 +168,7 @@ public class ProgrammeCycliqueAmeliore implements Programme
     }
     
     @Override
-    public void finDeTransferDePersonnes(int niveau, int idAscenseur)
+    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
         aDesservirVersBas.remove(niveau);
         aDesservirVersHaut.remove(niveau);

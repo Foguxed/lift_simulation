@@ -45,7 +45,7 @@ public class EtageSimu extends Etage
         else
         {
             transferEnCours = false;
-            ProgrammeEntryListener.finDeTransferDePersonnes(getNiveau(),asc.getId());
+            ProgrammeEntryListener.finDeTransfertDePersonnes(getNiveau(),asc.getId());
         }
     }
     

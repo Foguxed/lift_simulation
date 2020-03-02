@@ -59,7 +59,7 @@ public class ProgrammeTestListener implements Programme
         System.out.println("destinations2: " + destinations.toString());
     }
     
-    public void finDeTransferDePersonnes(int niveau,int idAscenseur)
+    public void finDeTransfertDePersonnes(int niveau,int idAscenseur)
     {
         InterfacePhysique.fermerLesPortes(niveau,idAscenseur);
     }

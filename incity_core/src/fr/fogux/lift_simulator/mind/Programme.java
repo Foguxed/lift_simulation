@@ -19,7 +19,7 @@ public interface Programme
      * @param niveau auquel l'actio a lieue
      * @param idAscenseur de l'ascenseur ouvert
      */
-    public void finDeTransferDePersonnes(int niveau,int idAscenseur);
+    public void finDeTransfertDePersonnes(int niveau,int idAscenseur);
     
     /**
      * appelé lorsque les portes d'un ascenseur se sont fermées

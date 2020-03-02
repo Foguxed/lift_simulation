@@ -26,9 +26,9 @@ public abstract class ProgrammeEntryListener
         prgmActif.appelExterieur(niveau, versLeHaut);
     }
     
-    public static void finDeTransferDePersonnes(int niveau,int idAscenseur)
+    public static void finDeTransfertDePersonnes(int niveau,int idAscenseur)
     {
-        prgmActif.finDeTransferDePersonnes(niveau, idAscenseur);
+        prgmActif.finDeTransfertDePersonnes(niveau, idAscenseur);
     }
     
     public static void ascenseurFerme(int idAscenseur)

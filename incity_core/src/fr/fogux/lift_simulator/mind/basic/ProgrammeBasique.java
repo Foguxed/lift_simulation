@@ -51,7 +51,7 @@ public class ProgrammeBasique implements Programme
     }
     
     @Override
-    public void finDeTransferDePersonnes(int niveau, int idAscenseur)
+    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
         aDesservir.removeIf(i -> i == niveau);
         InterfacePhysique.changerEtatBouton(niveau,false,true);

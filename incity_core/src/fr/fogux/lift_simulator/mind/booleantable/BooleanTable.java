@@ -85,7 +85,7 @@ public class BooleanTable implements Programme
     }
     
     @Override
-    public void finDeTransferDePersonnes(int niveau, int idAscenseur)
+    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
         exterieur[niveau - etageMin] = false;
         interieur[niveau - etageMin] = false;

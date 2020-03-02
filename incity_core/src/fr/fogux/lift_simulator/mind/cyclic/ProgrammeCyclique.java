@@ -137,7 +137,7 @@ public class ProgrammeCyclique implements Programme
     }
     
     @Override
-    public void finDeTransferDePersonnes(int niveau, int idAscenseur)
+    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
         aDesservirVersBas.removeVal(niveau);
         aDesservirVersHaut.removeVal(niveau);
