@@ -9,6 +9,7 @@ public class TimeConfig
 
     public static long getDureeSortieEntreePersonne()
     {
+        System.out.println("abcd");
         return 1200;
     }
 
