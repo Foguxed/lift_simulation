@@ -6,11 +6,11 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 
 public class EvenementCreationImmeuble extends EvenementAnimationOnly
 {
-    
+
     protected final int etageMin;
     protected final int etageMax;
     protected final int nbAscenseurs;
-    
+
     public EvenementCreationImmeuble(int etageMin, int etageMax, int nbAscenseurs)
     {
         super(0);
@@ -18,7 +18,7 @@ public class EvenementCreationImmeuble extends EvenementAnimationOnly
         this.etageMax = etageMax;
         this.nbAscenseurs = nbAscenseurs;
     }
-    
+
     public EvenementCreationImmeuble(long time, DataTagCompound compound)
     {
         super(0);
@@ -26,10 +26,10 @@ public class EvenementCreationImmeuble extends EvenementAnimationOnly
         etageMax = compound.getInt(TagNames.etageMax);
         nbAscenseurs = compound.getInt(TagNames.nbAscenseurs);
     }
-    
+
     public void create()
     {
-        Simulateur.getSimulateur().getGameScreen().loadVisualisation(etageMin,etageMax,nbAscenseurs);
+        Simulateur.getSimulateur().getGameScreen().loadVisualisation(etageMin, etageMax, nbAscenseurs);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class EvenementCreationImmeuble extends EvenementAnimationOnly
     @Override
     public void visuRun()
     {
-        
+
     }
-    
+
 }

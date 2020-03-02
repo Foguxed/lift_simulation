@@ -14,7 +14,7 @@ public class ProgrammeBasique implements Programme
     protected boolean actif = false;
     protected boolean bloque = false;
     protected int niveauActuel;
-    
+
     @Override
     public void appelExterieur(int niveau, boolean versLeHaut)
     {
@@ -25,37 +25,35 @@ public class ProgrammeBasique implements Programme
 
     protected void update()
     {
-        if(!bloque && !actif && !aDesservir.isEmpty())
+        if (!bloque && !actif && !aDesservir.isEmpty())
         {
             objectif = aDesservir.get(0);
             updateDirection();
         }
     }
-    
+
     protected void updateDirection()
     {
-        if(objectif > niveauActuel)
+        if (objectif > niveauActuel)
         {
             actif = true;
             InterfacePhysique.deplacerAscenseur(1, true);
-        }
-        else if(objectif < niveauActuel)
+        } else if (objectif < niveauActuel)
         {
             actif = true;
             InterfacePhysique.deplacerAscenseur(1, false);
-        }
-        else
+        } else
         {
             ouvrir();
         }
     }
-    
+
     @Override
     public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
-        aDesservir.removeIf(i -> i == niveau);//enlève ceux qui descendent
-        InterfacePhysique.changerEtatBouton(niveau,false,true);
-        InterfacePhysique.changerEtatBouton(niveau,false,false);
+        aDesservir.removeIf(i -> i == niveau);// enlï¿½ve ceux qui descendent
+        InterfacePhysique.changerEtatBouton(niveau, false, true);
+        InterfacePhysique.changerEtatBouton(niveau, false, false);
         InterfacePhysique.fermerLesPortes(niveau, idAscenseur);
     }
 
@@ -63,14 +61,14 @@ public class ProgrammeBasique implements Programme
     public void ascenseurFerme(int idAscenseur)
     {
         bloque = false;
-        
+
         update();
     }
 
     @Override
     public void appelInterieur(int niveau, int idAscenseur)
     {
-        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur,niveau,true);
+        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, true);
         aDesservir.add(niveau);
         update();
     }
@@ -79,30 +77,30 @@ public class ProgrammeBasique implements Programme
     public void capteurDeNiveau(int idAscenseur, int niveau)
     {
         this.niveauActuel = niveau;
-        if(niveau == objectif)
+        if (niveau == objectif)
         {
             bloque = true;
             InterfacePhysique.stoperAscenseur(1);
             actif = false;
         }
     }
-    
+
     @Override
     public void ascArrete(int idAscenseur)
     {
         System.out.println("asc arrete " + GestionnaireDeTaches.getInnerTime());
         InterfacePhysique.ouvrirLesPortes(niveauActuel, idAscenseur);
-        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur,niveauActuel,false);
+        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveauActuel, false);
         actif = false;
     }
-    
+
     protected void ouvrir()
     {
         InterfacePhysique.ouvrirLesPortes(niveauActuel, 1);
-        InterfacePhysique.changerEtatBoutonAscenseur(1,niveauActuel,false);
+        InterfacePhysique.changerEtatBoutonAscenseur(1, niveauActuel, false);
         bloque = true;
     }
-    
+
     @Override
     public String getName()
     {
@@ -118,7 +116,7 @@ public class ProgrammeBasique implements Programme
     @Override
     public void init()
     {
-        
+
     }
 
 }

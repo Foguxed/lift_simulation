@@ -10,9 +10,8 @@ public class EvenementBoutonTriangle extends EvenementChangementEtat
     protected final boolean versHaut;
     protected final boolean newBoutonOn;
     protected final boolean oldBoutonOn;
-    
-    
-    public EvenementBoutonTriangle(int niveau,boolean versHaut,boolean newBoutonOn, boolean oldBoutonOn)
+
+    public EvenementBoutonTriangle(int niveau, boolean versHaut, boolean newBoutonOn, boolean oldBoutonOn)
     {
         super();
         this.niveau = niveau;
@@ -20,7 +19,7 @@ public class EvenementBoutonTriangle extends EvenementChangementEtat
         this.newBoutonOn = newBoutonOn;
         this.oldBoutonOn = oldBoutonOn;
     }
-    
+
     public EvenementBoutonTriangle(long time, DataTagCompound data)
     {
         super(time);
@@ -29,7 +28,7 @@ public class EvenementBoutonTriangle extends EvenementChangementEtat
         this.newBoutonOn = data.getBoolean(TagNames.newBoutonOn);
         this.oldBoutonOn = data.getBoolean(TagNames.oldBoutonOn);
     }
-    
+
     @Override
     public void visuRunetatSuivant()
     {

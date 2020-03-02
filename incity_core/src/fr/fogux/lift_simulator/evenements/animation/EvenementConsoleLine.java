@@ -7,17 +7,18 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 public class EvenementConsoleLine extends EvenementChangementEtat
 {
     protected String ligne;
-    
+
     public EvenementConsoleLine(String ligne)
     {
         this.ligne = ligne;
     }
-    
+
     public EvenementConsoleLine(long time, DataTagCompound data)
     {
         super(time);
         ligne = data.getString(TagNames.description);
     }
+
     @Override
     protected void printFieldsIn(DataTagCompound compound)
     {
@@ -34,7 +35,8 @@ public class EvenementConsoleLine extends EvenementChangementEtat
     @Override
     public void visuRunetatPrecedent()
     {
-        Simulateur.getSimulateur().getGameScreen().enleverDernierLigneConsole();;
+        Simulateur.getSimulateur().getGameScreen().enleverDernierLigneConsole();
+        ;
     }
 
 }

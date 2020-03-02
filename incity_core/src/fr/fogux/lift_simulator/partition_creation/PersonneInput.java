@@ -13,36 +13,36 @@ public class PersonneInput implements Comparable<PersonneInput>
     protected final int etageInput;
     protected final int destination;
     DataTagCompound data;
-    
-    public PersonneInput(long heureInput, int nbPersonnes,int etageInput, int destination)
+
+    public PersonneInput(long heureInput, int nbPersonnes, int etageInput, int destination)
     {
         this.heureInput = heureInput;
         this.nbPersonnes = nbPersonnes;
         this.etageInput = etageInput;
         this.destination = destination;
         data = new DataTagCompound();
-        data.setInt(TagNames.nbPersonnes,nbPersonnes);
+        data.setInt(TagNames.nbPersonnes, nbPersonnes);
         data.setInt(TagNames.etage, etageInput);
-        data.setInt(TagNames.destination,destination);
-        data.setString(TagNames.type,Evenements.getType(EvenementPersonnesInput.class));
+        data.setInt(TagNames.destination, destination);
+        data.setString(TagNames.type, Evenements.getType(EvenementPersonnesInput.class));
     }
-    
+
     public String getStringVal()
     {
         return "[" + Utils.getTimeString(heureInput) + "]{" + data.getValueAsString() + "}";
     }
-    
+
     public long heureInput()
     {
         return heureInput;
     }
-    
+
     @Override
     public int compareTo(PersonneInput o)
     {
-        return (int)(heureInput - o.heureInput());
+        return (int) (heureInput - o.heureInput());
     }
-    
+
     public int getNbPersonnes()
     {
         return nbPersonnes;

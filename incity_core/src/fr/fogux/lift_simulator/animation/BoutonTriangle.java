@@ -8,34 +8,34 @@ import fr.fogux.lift_simulator.utils.AssetsManager;
 public class BoutonTriangle extends RelativeSprite
 {
     protected boolean allume;
-    
+
     public BoutonTriangle(boolean versLeHaut)
     {
         super(AssetsManager.boutonHaut);
-        if(!versLeHaut)
+        if (!versLeHaut)
         {
             flip(false, true);
         }
     }
-    
+
     @Override
     public void draw(Batch batch)
     {
-        if(allume)
+        if (allume)
         {
             super.draw(batch);
         }
     }
-    
+
     @Override
-    public void draw(Batch batch,float alphaModulation)
+    public void draw(Batch batch, float alphaModulation)
     {
-        if(allume)
+        if (allume)
         {
             super.draw(batch, alphaModulation);
         }
     }
-    
+
     public void changeState(boolean on)
     {
         allume = on;

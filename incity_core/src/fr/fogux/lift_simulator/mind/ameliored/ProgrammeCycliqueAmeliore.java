@@ -11,34 +11,32 @@ import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.physic.TimeConfig;
 
 public class ProgrammeCycliqueAmeliore implements Programme
-{    
+{
     protected SortedSet<Integer> aDesservirVersHaut = new TreeSet<Integer>();
     protected SortedSet<Integer> aDesservirVersBas = new TreeSet<Integer>();
     protected SortedSet<Integer> appeleDepuisInterieur = new TreeSet<Integer>();
-    
-    
+
     protected int objectif = 0;
-    //protected boolean actif = false;
+    // protected boolean actif = false;
     protected boolean bloque = false;
-    
+
     protected boolean enMouvement;
-    
+
     protected boolean vaVersHaut;
-    
+
     protected int niveau;
-    
+
     @Override
     public void appelExterieur(int niveau, boolean versLeHaut)
     {
-        if(versLeHaut)
+        if (versLeHaut)
         {
-                aDesservirVersHaut.add(niveau);
-        }
-        else
+            aDesservirVersHaut.add(niveau);
+        } else
         {
-                aDesservirVersBas.add(niveau);
+            aDesservirVersBas.add(niveau);
         }
-        
+
         InterfacePhysique.changerEtatBouton(niveau, true, versLeHaut);
         update();
     }
@@ -47,134 +45,126 @@ public class ProgrammeCycliqueAmeliore implements Programme
     {
         boolean plein = InterfacePhysique.getNbPersonnes(1) == TimeConfig.nbPersMaxAscenseur();
         int premierNiveauPossible = niveau;
-        if(enMouvement)
+        if (enMouvement)
         {
-            if(vaVersHaut)
+            if (vaVersHaut)
             {
-                premierNiveauPossible ++;
-            }
-            else
+                premierNiveauPossible++;
+            } else
             {
-                premierNiveauPossible --;
+                premierNiveauPossible--;
             }
         }
         println("nouveau getProchain haut " + haut + " plein " + plein);
-            if(haut)
+        if (haut)
+        {
+            if (!plein)
             {
-                if(!plein)
+                SortedSet<Integer> restantVHaut = aDesservirVersHaut.tailSet(premierNiveauPossible);
+                if (!restantVHaut.isEmpty())
                 {
-                    SortedSet<Integer> restantVHaut = aDesservirVersHaut.tailSet(premierNiveauPossible);
-                    if(!restantVHaut.isEmpty())
+                    return restantVHaut.first();
+                } else
+                {
+                    SortedSet<Integer> restantVersBas = aDesservirVersBas.tailSet(premierNiveauPossible);
+                    if (!restantVersBas.isEmpty())
                     {
-                        return restantVHaut.first();
+                        return restantVersBas.last();
                     }
-                    else
-                    {
-                        SortedSet<Integer> restantVersBas = aDesservirVersBas.tailSet(premierNiveauPossible);
-                        if(!restantVersBas.isEmpty())
-                        {
-                            return restantVersBas.last();
-                        }
-                        
-                    }
+
                 }
-                else
+            } else
+            {
+                SortedSet<Integer> aDesservir = appeleDepuisInterieur.tailSet(premierNiveauPossible);
+                if (!aDesservir.isEmpty())
                 {
-                    SortedSet<Integer> aDesservir = appeleDepuisInterieur.tailSet(premierNiveauPossible);
-                    if(!aDesservir.isEmpty())
-                    {
-                        println("aDesservir part 1 " + aDesservir);
-                        return aDesservir.first();
-                    }
+                    println("aDesservir part 1 " + aDesservir);
+                    return aDesservir.first();
                 }
             }
-            else
+        } else
+        {
+            if (!plein)
             {
-                if(!plein)
+                SortedSet<Integer> restantVBas = aDesservirVersBas.headSet(premierNiveauPossible + 1);
+                if (!restantVBas.isEmpty())
                 {
-                    SortedSet<Integer> restantVBas = aDesservirVersBas.headSet(premierNiveauPossible+1);
-                    if(!restantVBas.isEmpty())
+                    return restantVBas.last();
+                } else
+                {
+                    SortedSet<Integer> restantVersHaut = aDesservirVersHaut.headSet(premierNiveauPossible + 1);
+                    if (!restantVersHaut.isEmpty())
                     {
-                        return restantVBas.last();
-                    }
-                    else
-                    {
-                        SortedSet<Integer> restantVersHaut = aDesservirVersHaut.headSet(premierNiveauPossible+1);
-                        if(!restantVersHaut.isEmpty())
-                        {
-                            return restantVersHaut.first();
-                        }
+                        return restantVersHaut.first();
                     }
                 }
-                else
+            } else
+            {
+                println("appeleDepuisInter " + appeleDepuisInterieur);
+                SortedSet<Integer> aDesservir = appeleDepuisInterieur.headSet(premierNiveauPossible + 1);
+                println("aDesservir part 2 " + aDesservir);
+                if (!aDesservir.isEmpty())
                 {
-                    println("appeleDepuisInter " + appeleDepuisInterieur);
-                    SortedSet<Integer> aDesservir = appeleDepuisInterieur.headSet(premierNiveauPossible+1);
-                    println("aDesservir part 2 " + aDesservir);
-                    if(!aDesservir.isEmpty())
-                    {
-                        return aDesservir.last();
-                    }
+                    return aDesservir.last();
                 }
             }
-            return null;
         }
-    
-    protected List<Integer> getTousNiveau(boolean auDessus,List<Integer> niveaux)
-    {
-        return niveaux.stream().filter(i -> i>niveau).collect(Collectors.toList());
+        return null;
     }
-    
+
+    protected List<Integer> getTousNiveau(boolean auDessus, List<Integer> niveaux)
+    {
+        return niveaux.stream().filter(i -> i > niveau).collect(Collectors.toList());
+    }
+
     protected void update()
     {
-        if(!bloque)
+        if (!bloque)
         {
             Integer val = getProchain(vaVersHaut);
-            println("premiereVal " +val);
-            if(val == null)
+            println("premiereVal " + val);
+            if (val == null)
             {
                 vaVersHaut = !vaVersHaut;
                 val = getProchain(vaVersHaut);
             }
-            println("derniereVal " +val);
-            if(val != null)
+            println("derniereVal " + val);
+            if (val != null)
             {
                 objectif = val;
-                if(!enMouvement)
+                if (!enMouvement)
                 {
                     updateDirection();
                 }
             }
         }
     }
-    
+
     protected void updateDirection()
     {
-        if(objectif > niveau)
+        if (objectif > niveau)
         {
             InterfacePhysique.deplacerAscenseur(1, true);
             enMouvement = true;
-        }
-        else if(objectif < niveau)
+        } else if (objectif < niveau)
         {
             InterfacePhysique.deplacerAscenseur(1, false);
             enMouvement = true;
-        }
-        else
+        } else
         {
             bloque = true;
             ouvrir();
         }
     }
-    
+
     @Override
     public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
         aDesservirVersBas.remove(niveau);
         aDesservirVersHaut.remove(niveau);
         appeleDepuisInterieur.remove(niveau);
-        InterfacePhysique.changerEtatBouton(niveau,false,true);
-        InterfacePhysique.changerEtatBouton(niveau,false,false);
+        InterfacePhysique.changerEtatBouton(niveau, false, true);
+        InterfacePhysique.changerEtatBouton(niveau, false, false);
         InterfacePhysique.fermerLesPortes(niveau, idAscenseur);
     }
 
@@ -185,12 +175,12 @@ public class ProgrammeCycliqueAmeliore implements Programme
         bloque = false;
         update();
     }
-    
+
     @Override
     public void appelInterieur(int niveau, int idAscenseur)
     {
 
-        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur,niveau,true);
+        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, true);
         aDesservirVersBas.add(niveau);
         aDesservirVersHaut.add(niveau);
         appeleDepuisInterieur.add(niveau);
@@ -202,30 +192,28 @@ public class ProgrammeCycliqueAmeliore implements Programme
     {
         this.niveau = niveau;
         System.out.println(" on me dit niveau " + niveau + " mon obj c " + objectif);
-        if(niveau == objectif)
+        if (niveau == objectif)
         {
             bloque = true;
             InterfacePhysique.stoperAscenseur(1);
             enMouvement = false;
         }
     }
-    
+
     @Override
     public void ascArrete(int idAscenseur)
     {
-        System.out.println("asc arrete "+GestionnaireDeTaches.getInnerTime());
+        System.out.println("asc arrete " + GestionnaireDeTaches.getInnerTime());
         ouvrir();
-        //actif = false;
+        // actif = false;
     }
-    
+
     protected void ouvrir()
     {
         InterfacePhysique.ouvrirLesPortes(niveau, 1);
-        InterfacePhysique.changerEtatBoutonAscenseur(1,niveau,false);
+        InterfacePhysique.changerEtatBoutonAscenseur(1, niveau, false);
     }
-    
-    
-    
+
     @Override
     public String getName()
     {
@@ -237,7 +225,7 @@ public class ProgrammeCycliqueAmeliore implements Programme
     {
         return 1;
     }
-    
+
     protected void println(String msg)
     {
         InterfacePhysique.println(msg);
@@ -247,6 +235,6 @@ public class ProgrammeCycliqueAmeliore implements Programme
     public void init()
     {
         // TODO Auto-generated method stub
-        
+
     }
 }

@@ -10,13 +10,15 @@ public class RenderedObjectNumber extends RenderedObject implements ReDrawable
     public RenderedObjectNumber()
     {
         super();
-        
+
     }
+
     @Override
     public void redraw(Batch batch)
     {
-        this.draw(batch,0.5f);
-        //System.out.println(" number " + this.getPosition() + " size renderedobjectnumber " + this.relativeDrawables.size());
+        this.draw(batch, 0.5f);
+        // System.out.println(" number " + this.getPosition() + " size
+        // renderedobjectnumber " + this.relativeDrawables.size());
     }
 
 }

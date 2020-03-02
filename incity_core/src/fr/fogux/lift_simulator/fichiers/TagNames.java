@@ -2,7 +2,7 @@ package fr.fogux.lift_simulator.fichiers;
 
 public class TagNames
 {
-    
+
     public static final String nbPersonnes = "nbPersonnes";
     public static final String etage = "etage";
     public static final String destination = "destination";
@@ -11,17 +11,16 @@ public class TagNames
     public static final String personneId = "persId";
     public static final String isOuverture = "isOuv";
     public static final String isCreationNotice = "creationNotice";
-    
+
     public static final String newInitialSpeed = "newInitSpeed";
     public static final String newInitialPos = "newInitPos";
     public static final String newAcceleration = "newacceleration";
-    
-    
+
     public static final String oldInitialSpeed = "oldInitSpeed";
     public static final String oldInitialPos = "oldInitPos";
     public static final String oldAcceleration = "oldAcceleration";
     public static final String oldDeplacementTime = "oldDepTime";
-    
+
     public static final String animationDuree = "animDuree";
     public static final String newBoutonOn = "newBoutonOn";
     public static final String oldBoutonOn = "oldBoutonOn";
@@ -41,5 +40,5 @@ public class TagNames
     public static final String tempsEntreePersonne = "tempsEntreePersonne";
     public static final String acceleration = "acceleration";
     public static final String deceleration = "deceleration";
-    
+
 }

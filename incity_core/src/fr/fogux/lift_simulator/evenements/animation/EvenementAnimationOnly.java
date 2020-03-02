@@ -7,18 +7,18 @@ public abstract class EvenementAnimationOnly extends PrintableEvenement
 
     public EvenementAnimationOnly()
     {
-        super(0,false);
+        super(0, false);
     }
-    
+
     public EvenementAnimationOnly(long time)
     {
-        super(time,true);
+        super(time, true);
     }
-    
+
     @Override
     public void simuRun()
     {
-        
+
     }
 
 }

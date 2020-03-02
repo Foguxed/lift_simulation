@@ -9,17 +9,17 @@ public abstract class FileInputManager extends InputManager
     {
         super();
     }
-    
+
     @Override
     public boolean keyDown(int keycode)
     {
-        if(keycode == Keys.ESCAPE)
+        if (keycode == Keys.ESCAPE)
         {
             escapePressed();
         }
         return false;
     }
-    
+
     protected abstract void escapePressed();
 
 }

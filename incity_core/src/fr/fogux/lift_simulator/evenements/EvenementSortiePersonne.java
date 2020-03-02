@@ -9,18 +9,17 @@ public class EvenementSortiePersonne extends AnimatedEvent
 {
 
     protected final int personneId;
-    
-    
+
     public EvenementSortiePersonne(long time, DataTagCompound data)
     {
         super(time, data);
-        
-        personneId =  data.getInt(TagNames.personneId);
+
+        personneId = data.getInt(TagNames.personneId);
     }
-    
-    public EvenementSortiePersonne(long timeAbsolu,int personneId)
+
+    public EvenementSortiePersonne(long timeAbsolu, int personneId)
     {
-        super(timeAbsolu,true);
+        super(timeAbsolu, true);
         System.out.println("Event Sortie de la personne " + personneId);
         this.personneId = personneId;
     }
@@ -31,12 +30,12 @@ public class EvenementSortiePersonne extends AnimatedEvent
         super.simuRun();
         PersonneSimu.getPersonne(personneId).sortirDeAscenseur();
     }
-    
+
     @Override
     protected void printFieldsIn(DataTagCompound compound)
     {
         super.printFieldsIn(compound);
-        compound.setInt(TagNames.personneId,personneId);
+        compound.setInt(TagNames.personneId, personneId);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class EvenementSortiePersonne extends AnimatedEvent
     protected void sortieAnimation()
     {
         // TODO Auto-generated method stub
-        
+
     }
 
 }

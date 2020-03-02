@@ -8,16 +8,16 @@ public abstract class AnimatedEvent extends PrintableEvenement
 {
     protected long animationDuree;
     protected boolean isCreationNotice;
-    
+
     public AnimatedEvent(long time, boolean doExecuteInTasks)
     {
         super(time, doExecuteInTasks);
         animationDuree = time - GestionnaireDeTaches.getInnerTime();
     }
-    
+
     public AnimatedEvent(long time, DataTagCompound compound)
     {
-        super(time,true);
+        super(time, true);
         isCreationNotice = compound.getBoolean(TagNames.isCreationNotice);
         animationDuree = compound.getLong(TagNames.animationDuree);
     }
@@ -25,38 +25,35 @@ public abstract class AnimatedEvent extends PrintableEvenement
     @Override
     protected void printFieldsIn(DataTagCompound compound)
     {
-        compound.setBoolean(TagNames.isCreationNotice,GestionnaireDeTaches.getInnerTime()<getTime());
+        compound.setBoolean(TagNames.isCreationNotice, GestionnaireDeTaches.getInnerTime() < getTime());
         compound.setLong(TagNames.animationDuree, animationDuree);
     }
-    
+
     @Override
     public void visuRun()
     {
-        if(isCreationNotice)
+        if (isCreationNotice)
         {
-            if(GestionnaireDeTaches.marcheArriere())
+            if (GestionnaireDeTaches.marcheArriere())
             {
-                sortieAnimation();  
-            }
-            else
+                sortieAnimation();
+            } else
             {
-                runAnimation(time,animationDuree);
+                runAnimation(time, animationDuree);
             }
-        }
-        else
+        } else
         {
-            if(GestionnaireDeTaches.marcheArriere())
+            if (GestionnaireDeTaches.marcheArriere())
             {
-                runAnimation(time - animationDuree,animationDuree);
-            }
-            else
+                runAnimation(time - animationDuree, animationDuree);
+            } else
             {
                 sortieAnimation();
             }
         }
     }
-    
+
     protected abstract void runAnimation(long timeDebut, long duree);
-    
+
     protected abstract void sortieAnimation();
 }

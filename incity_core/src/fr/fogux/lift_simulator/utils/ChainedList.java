@@ -6,88 +6,84 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
 {
     protected Maillon<obj> premier;
     protected Maillon<obj> dernier;
-    
+
     public ChainedList()
     {
         premier = null;
         dernier = null;
     }
-    
+
     public boolean isEmpty()
     {
         return premier == null;
     }
-    
+
     public void addFin(obj value)
     {
         final Maillon<obj> nouveauMaillon = new Maillon<obj>(value);
-        if(isEmpty())
+        if (isEmpty())
         {
             premier = nouveauMaillon;
-        }
-        else
+        } else
         {
             dernier.suivant = nouveauMaillon;
         }
         dernier = nouveauMaillon;
     }
-    
-    
-    
+
     public void addDebut(obj value)
     {
         final Maillon<obj> nouveauMaillon = new Maillon<obj>(value);
-        if(isEmpty())
+        if (isEmpty())
         {
             dernier = nouveauMaillon;
-        }
-        else
+        } else
         {
-            premier.precedent =nouveauMaillon;
+            premier.precedent = nouveauMaillon;
             nouveauMaillon.suivant = premier;
         }
         premier = nouveauMaillon;
     }
-    
+
     public void removeFirst()
     {
         premier = premier.suivant;
     }
-    
+
     public void removeLast()
     {
         dernier = dernier.precedent;
     }
-    
+
     public void subListToEnd(Maillon<obj> newFirstMaillon)
     {
         newFirstMaillon.precedent = null;
         premier = newFirstMaillon;
     }
-    
+
     public void subListToStart(Maillon<obj> newLastMaillon)
     {
         newLastMaillon.suivant = null;
         dernier = newLastMaillon;
     }
-    
+
     public Maillon<obj> getFirst()
     {
         return premier;
     }
-    
+
     public void addAll(Iterable<obj> objs)
     {
-        
-        if(dernier == null)
+
+        if (dernier == null)
         {
             obj ev = objs.iterator().next();
             addFin(ev);
         }
         Maillon<obj> precedent = dernier;
-        for(obj o : objs)
+        for (obj o : objs)
         {
-            Maillon<obj> maillon = new Maillon<obj>(precedent,o);
+            Maillon<obj> maillon = new Maillon<obj>(precedent, o);
             precedent.suivant = maillon;
             precedent = maillon;
         }
@@ -98,10 +94,11 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
     {
         return new ChainedIterator<obj>(premier);
     }
-    
+
     class ChainedIterator<T extends Object> implements Iterator<T>
     {
         protected Maillon<T> maillon;
+
         public ChainedIterator(Maillon<T> premier)
         {
             this.maillon = premier;

@@ -14,18 +14,17 @@ public class ProgrammeTestListener implements Programme
     protected Integer destiB = null;
     protected boolean aBloque = false;
     protected boolean bBloque = false;
-    
-    
+
     protected List<Integer> destinations = new ArrayList<Integer>();
     protected final int IdA = 1;
     protected final int IdB = 2;
-    
+
     @Override
     public String getName()
     {
         return "Test";
     }
-    
+
     public void appelExterieur(int niveau, boolean versLeHaut)
     {
         InterfacePhysique.changerEtatBouton(niveau, true, versLeHaut);
@@ -33,75 +32,71 @@ public class ProgrammeTestListener implements Programme
         System.out.println("asc appeler");
         updateComportement();
     }
-    
-    
-    
+
     protected void updateComportement()
     {
-        if(destiA == null && !destinations.isEmpty())
+        if (destiA == null && !destinations.isEmpty())
         {
             destiA = destinations.get(0);
         }
-        
-        if(destiB == null && destiA != null)
+
+        if (destiB == null && destiA != null)
         {
             destiB = destiA;
         }
-        
-        if(destiA != null && !aBloque)
+
+        if (destiA != null && !aBloque)
         {
-            InterfacePhysique.deplacerAscenseur(IdA,niveauAscenseurA < destiA);
+            InterfacePhysique.deplacerAscenseur(IdA, niveauAscenseurA < destiA);
         }
-        if(destiB != null && !bBloque)
+        if (destiB != null && !bBloque)
         {
-            InterfacePhysique.deplacerAscenseur(IdB,niveauAscenseurB < destiB);
+            InterfacePhysique.deplacerAscenseur(IdB, niveauAscenseurB < destiB);
         }
         System.out.println("destinations2: " + destinations.toString());
     }
-    
-    public void finDeTransfertDePersonnes(int niveau,int idAscenseur)
+
+    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
-        InterfacePhysique.fermerLesPortes(niveau,idAscenseur);
+        InterfacePhysique.fermerLesPortes(niveau, idAscenseur);
     }
-    
+
     public void ascenseurFerme(int idAscenseur)
     {
         System.out.println("asc ferme");
-        if(idAscenseur == IdA)
+        if (idAscenseur == IdA)
         {
             aBloque = false;
-        }
-        else if(idAscenseur == IdB)
+        } else if (idAscenseur == IdB)
         {
             bBloque = false;
         }
         updateComportement();
-        
+
     }
-    
-    public void appelInterieur(int niveau,int idAscenseur)
+
+    public void appelInterieur(int niveau, int idAscenseur)
     {
-        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, true);//TODO pas si deja allume?
-        if(destiA == null)
+        InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, true);// TODO pas si deja allume?
+        if (destiA == null)
         {
             destiA = niveau;
-        }
-        else
+        } else
         {
             destinations.add(niveau);
         }
     }
-    
-    public void capteurDeNiveau(int idAscenseur,int niveau)
+
+    public void capteurDeNiveau(int idAscenseur, int niveau)
     {
-        if(idAscenseur == IdA)
+        if (idAscenseur == IdA)
         {
             niveauAscenseurA = niveau;
-            //System.out.println("niveau " + niveau + " destination " + destiA);
-            
-            if(niveau == (int)destiA)
+            // System.out.println("niveau " + niveau + " destination " + destiA);
+
+            if (niveau == (int) destiA)
             {
-                destinations.removeIf(val-> val == niveau);
+                destinations.removeIf(val -> val == niveau);
                 destiA = null;
                 aBloque = true;
                 InterfacePhysique.stoperAscenseur(IdA);
@@ -110,11 +105,10 @@ public class ProgrammeTestListener implements Programme
                 InterfacePhysique.changerEtatBouton(niveau, false, false);
                 InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, false);
             }
-        }
-        else if(idAscenseur == IdB)
+        } else if (idAscenseur == IdB)
         {
             niveauAscenseurB = niveau;
-            if(destiB != null && niveau == destiB)
+            if (destiB != null && niveau == destiB)
             {
                 destiB = null;
                 bBloque = true;
@@ -126,13 +120,14 @@ public class ProgrammeTestListener implements Programme
             }
         }
     }
+
     @Override
     public void ascArrete(int idAscenseur)
     {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
     @Override
     public int getNbAscenseurs()
     {
@@ -143,8 +138,7 @@ public class ProgrammeTestListener implements Programme
     public void init()
     {
         // TODO Auto-generated method stub
-        
+
     }
 
-    
 }

@@ -7,13 +7,12 @@ import fr.fogux.lift_simulator.evenements.Evenement;
 public class LiseurDeJournal implements Iterator<Evenement>, Iterable<Evenement>
 {
     protected Evenement nextEvent;
-    
-    
+
     public LiseurDeJournal()
     {
         nextEvent = Evenement.genererEvenement(GestionnaireDeFichiers.getNextJournalLine());
     }
-    
+
     @Override
     public Iterator<Evenement> iterator()
     {
@@ -23,13 +22,13 @@ public class LiseurDeJournal implements Iterator<Evenement>, Iterable<Evenement>
     @Override
     public boolean hasNext()
     {
-        return nextEvent!=null;
+        return nextEvent != null;
     }
 
     @Override
     public Evenement next()
     {
-        
+
         Evenement ev = nextEvent;
         nextEvent = Evenement.genererEvenement(GestionnaireDeFichiers.getNextJournalLine());
         System.out.println("next Event " + nextEvent);

@@ -7,17 +7,18 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 public class EvenementErreur extends EvenementChangementEtat
 {
     protected String description;
-    
+
     public EvenementErreur(String description)
     {
         this.description = description;
     }
-    
+
     public EvenementErreur(long time, DataTagCompound data)
     {
         super(time);
         description = data.getString(TagNames.description);
     }
+
     @Override
     protected void printFieldsIn(DataTagCompound compound)
     {

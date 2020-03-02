@@ -23,19 +23,19 @@ public class MenuScreen extends CustomScreen implements FileSearcher
     protected BitmapFont bigMenuFont;
     protected InputManager inputs;
     protected boolean simulation;
-    
+
     public MenuScreen(Simulateur main)
     {
         super(main);
         bigMenuFont = AssetsManager.fontGenerator.getNewBitmapFont(100, Color.WHITE);
         inputs = new InputManager(this);
-        Pixmap map = new Pixmap(10,10,Format.RGB565);
+        Pixmap map = new Pixmap(10, 10, Format.RGB565);
         map.setColor(Color.GRAY);
         map.fill();
         Texture textureBouton = new Texture(map);
-        inputs.register(new Bouton("Simulation",textureBouton,bigMenuFont,800,80,300,800)
+        inputs.register(new Bouton("Simulation", textureBouton, bigMenuFont, 800, 80, 300, 800)
         {
-            
+
             @Override
             public void doAction()
             {
@@ -43,9 +43,9 @@ public class MenuScreen extends CustomScreen implements FileSearcher
                 initFileResearch(true);
             }
         });
-        inputs.register(new Bouton("Animation",textureBouton,bigMenuFont,800,80,300,400)
+        inputs.register(new Bouton("Animation", textureBouton, bigMenuFont, 800, 80, 300, 400)
         {
-            
+
             @Override
             public void doAction()
             {
@@ -53,10 +53,10 @@ public class MenuScreen extends CustomScreen implements FileSearcher
                 initFileResearch(false);
             }
         });
-        
-        inputs.register(new Bouton("newPartition",textureBouton,bigMenuFont,800,80,300,200)
+
+        inputs.register(new Bouton("newPartition", textureBouton, bigMenuFont, 800, 80, 300, 200)
         {
-            
+
             @Override
             public void doAction()
             {
@@ -70,23 +70,23 @@ public class MenuScreen extends CustomScreen implements FileSearcher
     {
         Gdx.input.setInputProcessor(inputs);
     }
-    
+
     protected void initFileResearch(boolean simulation)
     {
         this.simulation = simulation;
-        FileResearchScreen scr = 
-        new FileResearchScreen(main,GestionnaireDeFichiers.getBasePath(),this,simulation? 0 : 1,this);
+        FileResearchScreen scr
+            = new FileResearchScreen(main, GestionnaireDeFichiers.getBasePath(), this, simulation ? 0 : 1, this);
         main.setScreen(scr);
         scr.init();
     }
-    
+
     @Override
     protected void update()
     {
     }
-    
+
     @Override
-    protected void draw() 
+    protected void draw()
     {
         main.getBatch().begin();
         super.draw();
@@ -97,17 +97,17 @@ public class MenuScreen extends CustomScreen implements FileSearcher
     @Override
     public void fichierChoisi(File f)
     {
-        /*main.setScreen(this);
-        init();*/
-        if(simulation)
+        /*
+         * main.setScreen(this); init();
+         */
+        if (simulation)
         {
             Simulateur.getSimulateur().startSimulation(f, Gdx.input.isKeyPressed(Keys.CONTROL_LEFT));
-        }
-        else
+        } else
         {
             Simulateur.getSimulateur().startVisualisation(f);
         }
-        
+
         System.out.println("simulation " + simulation + " file " + f.getAbsolutePath());
     }
 }
