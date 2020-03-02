@@ -9,7 +9,8 @@ public class TimeConfig
 
     public static long getDureeSortieEntreePersonne()
     {
-        return 1200;
+        
+    	return 600; //1200
     }
 
     public static float getAscenseurSpeed()
