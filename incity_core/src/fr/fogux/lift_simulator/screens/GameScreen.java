@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.screens;
 
+import java.util.Iterator;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
@@ -134,12 +136,12 @@ public class GameScreen extends CustomScreen {
         athFont.draw(main.getBatch(), Utils.getTimeString(GestionnaireDeTaches.getInnerTime()),20, 100);
         
         int hauteur = 600;
-        /*Iterator<String> iterator = console.iterator();
+        Iterator<String> iterator = console.iterator();
         while(iterator.hasNext() && hauteur < 1400)
         {
             consoleFont.draw(main.getBatch(),iterator.next() ,20, hauteur);
             hauteur += 45;
-        }*/
+        }
         
         if(displayedError != null)
         {

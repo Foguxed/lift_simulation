@@ -53,7 +53,7 @@ public class ProgrammeBasique implements Programme
     @Override
     public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
     {
-        aDesservir.removeIf(i -> i == niveau);
+        aDesservir.removeIf(i -> i == niveau);//enlève ceux qui descendent
         InterfacePhysique.changerEtatBouton(niveau,false,true);
         InterfacePhysique.changerEtatBouton(niveau,false,false);
         InterfacePhysique.fermerLesPortes(niveau, idAscenseur);
@@ -90,7 +90,7 @@ public class ProgrammeBasique implements Programme
     @Override
     public void ascArrete(int idAscenseur)
     {
-        System.out.println("asc arrete "+GestionnaireDeTaches.getInnerTime());
+        System.out.println("asc arrete " + GestionnaireDeTaches.getInnerTime());
         InterfacePhysique.ouvrirLesPortes(niveauActuel, idAscenseur);
         InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur,niveauActuel,false);
         actif = false;

@@ -18,7 +18,7 @@ public class PartitionCreator
     protected void generate()
     {
         //generatePaquebotNormal();
-        generateImmeubleEntreprise(8,6.2,1.2,2.8,85,15*60*1000);
+        generateImmeubleEntreprise(100,62,12,28,1000,15*60*1000);
     }
     /**
      * tout les etages ont la meme probabilite d'etre utilises
@@ -43,7 +43,9 @@ public class PartitionCreator
      *     retourne un profile de destination constant entre 0 et nbEtage-1
      */
     
-    protected void generateImmeubleEntreprise(final int etageMax,final double probaIncome,final double probaOutCome,final double probaInterEtage,
+    protected void generateImmeubleEntreprise(final int etageMax, 
+    		final double probaIncome, 
+    		final double probaOutCome,final double probaInterEtage,
            int nbPersonnesDeplacees,long duree)
     {
 

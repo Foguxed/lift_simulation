@@ -75,7 +75,7 @@ public class Simulateur extends Game {
 		gestioSimu = new GestionnaireDeTachesSimu();
 
 		GestionnaireDeFichiers.loadSimulationFiles();
-		immeubleSimu = new ImmeubleSimu(0,8,ProgrammeEntryListener.getActivePrgmNbAscenseurs());
+		immeubleSimu = new ImmeubleSimu(0,100,ProgrammeEntryListener.getActivePrgmNbAscenseurs());
 		String erreurMsg = null;
 		try
 		{

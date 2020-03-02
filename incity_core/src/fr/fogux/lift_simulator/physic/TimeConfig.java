@@ -19,7 +19,7 @@ public class TimeConfig
     
     public static float getAscenseurAcceleration()
     {
-        return (0.30f/hauteurNiveau())/(1000f*1000f); // niveau par milis au carre
+        return (0.30f/hauteurNiveau())/(1000f*1000f); // niveau par millis au carre
     }
     
     public static float getAscenseurDecelleration()

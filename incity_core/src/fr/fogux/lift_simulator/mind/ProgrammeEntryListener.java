@@ -1,5 +1,6 @@
 package fr.fogux.lift_simulator.mind;
 
+import fr.fogux.lift_simulator.mind.basic.ProgrammeBasique;
 import fr.fogux.lift_simulator.mind.cyclic.ProgrammeCyclique;
 
 public abstract class ProgrammeEntryListener
@@ -8,7 +9,7 @@ public abstract class ProgrammeEntryListener
     
     public static void init()
     {
-        prgmActif = new ProgrammeCyclique();
+        prgmActif = new ProgrammeBasique();
     }
     
     public static void initPrgm()
