@@ -1,68 +1,63 @@
 package fr.fogux.lift_simulator.evenements;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
-import fr.fogux.lift_simulator.physic.TimeConfig;
-import fr.fogux.lift_simulator.utils.Utils;
+import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.structure.AscId;
 
 public class EvenementMouvementPortes extends AnimatedEvent
 {
-    protected final int ascenseurId;
+    protected final AscId ascenseurId;
     protected final int etageId;
     protected final boolean isOuverture;
 
-    public EvenementMouvementPortes(long time, DataTagCompound data)
+    public EvenementMouvementPortes(final long time, final DataTagCompound data)
     {
         super(time, data);
-        ascenseurId = data.getInt(TagNames.ascenseurId);
+        ascenseurId = AscId.fromCompound(data);
         isOuverture = data.getBoolean(TagNames.isOuverture);
         etageId = data.getInt(TagNames.etage);
     }
 
-    public EvenementMouvementPortes(int ascenseurId, int etageId, boolean isOuverture)
+    public EvenementMouvementPortes(final long debutMouvement, final ConfigSimu c, final AscId ascenseurId, final int etageId, final boolean isOuverture)
     {
-        super(TimeConfig.getDureePortes() + GestionnaireDeTaches.getInnerTime(), true);
+        super(c.getDureePortes() + debutMouvement, debutMouvement);
         this.ascenseurId = ascenseurId;
         this.etageId = etageId;
         this.isOuverture = isOuverture;
     }
 
     @Override
-    public void simuRun()
+    public void simuRun(final Simulation simu)
     {
-        super.simuRun();
         if (isOuverture)
         {
-            System.out.println("ouverture des portes a " + time + " ascid " + ascenseurId);
-            Simulateur.getImmeubleSimu().getAscenseur(ascenseurId).lorsqueOuvert();
+            simu.getImmeubleSimu().getAscenseur(ascenseurId).finOuverturePortes(etageId);
         } else
         {
-            Utils.msg(this, " simuRun lorsque ferme debut");
-            Simulateur.getImmeubleSimu().getAscenseur(ascenseurId).lorsqueFerme();
-            Utils.msg(this, " simuRun lorsque ferme fin" + GestionnaireDeTaches.getInnerTime());
+            simu.getImmeubleSimu().getAscenseur(ascenseurId).finFermeturePortes(etageId);
         }
     }
 
     @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    protected void printFieldsIn(final DataTagCompound compound, final long time)
     {
-        super.printFieldsIn(compound);
-        compound.setInt(TagNames.ascenseurId, ascenseurId);
+        super.printFieldsIn(compound, time);
+        ascenseurId.printIn(compound);
         compound.setInt(TagNames.etage, etageId);
         compound.setBoolean(TagNames.isOuverture, isOuverture);
     }
 
     @Override
-    protected void runAnimation(long timeDebut, long duree)
+    protected void runAnimation(final AnimationProcess p,final long timeDebut, final long duree)
     {
-        System.out.println("run anim " + timeDebut);
-        Simulateur.getImmeubleVisu().getEtage(etageId).getPorte(ascenseurId).animation(timeDebut, duree, isOuverture);
+        p.getImmeubleVisu().getEtage(etageId).getPorte(ascenseurId.monteeId).animation(timeDebut, duree, isOuverture);
     }
 
     @Override
-    protected void sortieAnimation()
+    protected void sortieAnimation(final AnimationProcess p)
     {
 
     }

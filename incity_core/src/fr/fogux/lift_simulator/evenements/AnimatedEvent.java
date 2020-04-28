@@ -1,59 +1,84 @@
 package fr.fogux.lift_simulator.evenements;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
+import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.GestionnaireDeTachesSimu;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 
 public abstract class AnimatedEvent extends PrintableEvenement
 {
-    protected long animationDuree;
+    protected long debutTime;
     protected boolean isCreationNotice;
 
-    public AnimatedEvent(long time, boolean doExecuteInTasks)
+    public AnimatedEvent(final long endTime, final long debutTime)
     {
-        super(time, doExecuteInTasks);
-        animationDuree = time - GestionnaireDeTaches.getInnerTime();
+        super(endTime);
+        this.debutTime = debutTime;
     }
 
-    public AnimatedEvent(long time, DataTagCompound compound)
+    public AnimatedEvent(final long time, final DataTagCompound compound)
     {
-        super(time, true);
+        super(time);
         isCreationNotice = compound.getBoolean(TagNames.isCreationNotice);
-        animationDuree = compound.getLong(TagNames.animationDuree);
+        debutTime = time - compound.getLong(TagNames.animationDuree);
     }
 
-    @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    public boolean doNotSimuRun(final long runTime)
     {
-        compound.setBoolean(TagNames.isCreationNotice, GestionnaireDeTaches.getInnerTime() < getTime());
-        compound.setLong(TagNames.animationDuree, animationDuree);
+        return runTime < getTime();
     }
 
     @Override
-    public void visuRun()
+    public void onPrintRegister(final GestionnaireDeTachesSimu gestio, final long registeredTime)
+    {
+        if(registeredTime != debutTime)
+        {
+            System.out.println("printRegister executer a " + debutTime + " event " + this + " registeredTime " + registeredTime);
+            gestio.executerA(this, debutTime);
+        }
+    }
+
+    @Override
+    public void onPrintCancel(final GestionnaireDeTachesSimu gestio, final long cancelRegisteredTime)
+    {
+        if(cancelRegisteredTime != debutTime)
+        {
+            gestio.CancelEvenement(this, debutTime);
+        }
+    }
+
+    @Override
+    protected void printFieldsIn(final DataTagCompound compound, final long atTime)
+    {
+        compound.setBoolean(TagNames.isCreationNotice, atTime < getTime());
+        compound.setLong(TagNames.animationDuree, time - debutTime);
+    }
+
+    @Override
+    public void visuRun(final AnimationProcess animation)
     {
         if (isCreationNotice)
         {
-            if (GestionnaireDeTaches.marcheArriere())
+            if (animation.gestioTaches().marcheArriereEnCours())
             {
-                sortieAnimation();
+                sortieAnimation(animation);
             } else
             {
-                runAnimation(time, animationDuree);
+                runAnimation(animation, time, time - debutTime);
             }
         } else
         {
-            if (GestionnaireDeTaches.marcheArriere())
+            if (animation.gestioTaches().marcheArriereEnCours())
             {
-                runAnimation(time - animationDuree, animationDuree);
+                runAnimation(animation, debutTime, time - debutTime);
             } else
             {
-                sortieAnimation();
+                sortieAnimation(animation);
             }
         }
     }
 
-    protected abstract void runAnimation(long timeDebut, long duree);
+    protected abstract void runAnimation(AnimationProcess animProcess, long timeDebut, long duree);
 
-    protected abstract void sortieAnimation();
+    protected abstract void sortieAnimation(AnimationProcess animProcess);
 }

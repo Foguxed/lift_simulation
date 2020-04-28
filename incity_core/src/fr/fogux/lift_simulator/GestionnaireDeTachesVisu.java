@@ -7,8 +7,10 @@ import fr.fogux.lift_simulator.utils.Maillon;
 
 public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
 {
+    protected AnimationProcess anim;
+
     protected long vitesse = 16;// en millisecondes par immage
-    protected ChainedList<Evenement> evenements = new ChainedList<Evenement>();
+    protected ChainedList<Evenement> evenements = new ChainedList<>();
     protected Executeur executeur;
     protected Executeur executeurInnactif;
     protected boolean sensPositif = true;
@@ -25,8 +27,9 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
      * buteePrevious = true;
      */
 
-    public GestionnaireDeTachesVisu()
+    public GestionnaireDeTachesVisu(final AnimationProcess anim)
     {
+        this.anim = anim;
     }
 
     @Override
@@ -36,13 +39,13 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
         executeur = new Executeur()
         {
             @Override
-            protected Maillon<Evenement> getProchainEvent(Maillon<Evenement> event)
+            protected Maillon<Evenement> getProchainEvent(final Maillon<Evenement> event)
             {
                 return event.getSuivant();
             }
 
             @Override
-            protected boolean peutEtreExecute(Evenement event, long newTime)
+            protected boolean peutEtreExecute(final Evenement event, final long newTime)
             {
                 return event.getTime() <= newTime;
             }
@@ -54,7 +57,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
             }
 
             @Override
-            protected Maillon<Evenement> getPrecedentEvent(Maillon<Evenement> event)
+            protected Maillon<Evenement> getPrecedentEvent(final Maillon<Evenement> event)
             {
                 return event.getPrecedent();
             }
@@ -64,13 +67,13 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
         {
 
             @Override
-            protected Maillon<Evenement> getProchainEvent(Maillon<Evenement> event)
+            protected Maillon<Evenement> getProchainEvent(final Maillon<Evenement> event)
             {
                 return event.getPrecedent();
             }
 
             @Override
-            protected boolean peutEtreExecute(Evenement event, long newTime)
+            protected boolean peutEtreExecute(final Evenement event, final long newTime)
             {
                 return event.getTime() >= newTime;
             }
@@ -82,7 +85,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
             }
 
             @Override
-            protected Maillon<Evenement> getPrecedentEvent(Maillon<Evenement> event)
+            protected Maillon<Evenement> getPrecedentEvent(final Maillon<Evenement> event)
             {
                 return event.getSuivant();
             }
@@ -93,16 +96,17 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
     }
 
     @Override
-    protected boolean marcheArriereEnCours()
+    public boolean marcheArriereEnCours()
     {
         return vitesse < 0;
     }
 
-    protected void fillBuffer()
+    public void fillBuffer()
     {
         evenements.addAll(new LiseurDeJournal());
     }
 
+    @Override
     public void update()
     {
         if (vitesse != 0l)
@@ -126,7 +130,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
         vitesseNeedsUpdate = true;
     }
 
-    public void modifVitesse(boolean sensPos)
+    public void modifVitesse(final boolean sensPos)
     {
         if (sensPos)
         {
@@ -141,11 +145,8 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
 
     protected void vitesseUpdated()
     {
-        System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-        System.out.println("NEW SPEED " + vitesse);
         if (vitesse != 0)
         {
-            System.out.println("check speed change, sensPos " + sensPositif + " vitesse " + vitesse);
             boolean switchExecuteurs = false;
             if (sensPositif)
             {
@@ -162,7 +163,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
             if (switchExecuteurs)
             {
                 System.out.println("SWITCHING Executeurs");
-                Executeur temp = executeur;
+                final Executeur temp = executeur;
                 executeur = executeurInnactif;
                 executeurInnactif = temp;
                 executeur.updateExecuteur(executeurInnactif.getMaillonRef());
@@ -181,20 +182,14 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
         protected boolean paused = false;
         protected Maillon<Evenement> evenementActuel;
 
-        public void updateExecuteur(Maillon<Evenement> evenementRef)
+        public void updateExecuteur(final Maillon<Evenement> evenementRef)
         {
             paused = false;
             evenementActuel = evenementRef;
-            System.out.println(
-                "Updated executeur" + evenementRef.getValue().getClass().getSimpleName() + " time "
-                    + evenementRef.getValue().getTime() + " innerTime " + innerTime + " sensPositif "
-                    + isSensPositif());
         }
 
-        public void executerJusque(long newTime)
+        public void executerJusque(final long newTime)
         {
-            // System.out.println("evenementActuel " + evenementActuel.getValue() + "
-            // newTime " + newTime + " evTime" + evenementActuel.getValue().getTime());
             while (peutEtreExecute(evenementActuel.getValue(), newTime) && !paused)
             {
 
@@ -230,13 +225,13 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
                 return getPrecedentEvent(evenementActuel);
         }
 
-        protected void runEvent(Evenement event)
+        protected void runEvent(final Evenement event)
         {
             System.out.println(
                 "RUN event" + event.getClass().getSimpleName() + " time " + event.getTime() + " innerTime " + innerTime
-                    + " sensPositif " + isSensPositif() + " sensPosVitesse " + !marcheArriereEnCours());
+                + " sensPositif " + isSensPositif() + " sensPosVitesse " + !marcheArriereEnCours());
             innerTime = event.getTime();
-            event.visuRun();
+            event.visuRun(anim);
         }
     }
 }

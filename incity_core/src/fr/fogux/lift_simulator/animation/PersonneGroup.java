@@ -7,13 +7,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
-import fr.fogux.lift_simulator.GestionnaireDeTachesVisu;
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.animation.objects.RelativeSprite;
 import fr.fogux.lift_simulator.animation.objects.RenderedObject;
 import fr.fogux.lift_simulator.animation.objects.RenderedObjectNumber;
-import fr.fogux.lift_simulator.screens.GameScreen;
 import fr.fogux.lift_simulator.structure.Ascenseur;
 import fr.fogux.lift_simulator.structure.Personne;
 import fr.fogux.lift_simulator.utils.AssetsManager;
@@ -21,7 +18,9 @@ import fr.fogux.lift_simulator.utils.NumberFont;
 
 public class PersonneGroup implements PredictedDrawable
 {
-    protected List<Personne> persList = new ArrayList<Personne>();
+    protected final AnimationProcess animation;
+
+    protected List<Personne> persList = new ArrayList<>();
     protected RenderedObjectNumber txt;
     protected RelativeSprite sprite;
     protected RenderedObject rendered;
@@ -35,33 +34,30 @@ public class PersonneGroup implements PredictedDrawable
     protected float nextAlphaModulation = -1;
     protected long heureCreation;
 
-    public PersonneGroup(PersonneGroupContainer container, PersonneVisu personneDeDepart)
+    public PersonneGroup(final AnimationProcess animation,final PersonneGroupContainer container, final PersonneVisu personneDeDepart)
     {
         this.container = container;
+        this.animation = animation;
         rendered = new RenderedObject();
         sprite = new RelativeSprite(AssetsManager.personne);
         sprite.setSize(sprite.getWidth() * 0.4f, sprite.getHeight() * 0.4f);
         rendered.addRelativeDrawable(sprite, new Vector2(-sprite.getWidth() / 2, -20));
-        // System.out.println("avant relative text zone " +
-        // String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
-        // System.out.println("apres relative text zone " +
-        // String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
         updateText(personneDeDepart.getDestination());
-        heureCreation = GestionnaireDeTaches.getInnerTime();
+        heureCreation = animation.getTime();
     }
 
-    public void repositionnerDansAscenseur(Ascenseur asc, float sizeMultiplicator, float fixedX, float relativeY)
+    public void repositionnerDansAscenseur(final Ascenseur asc, final float sizeMultiplicator, final float fixedX, final float relativeY)
     {
         rendered.resize(sizeMultiplicator);
         rendered.setX(fixedX);
         YrelToAsc = relativeY;
     }
 
-    protected Color getColor(long timeArrivee, long timeActuel)
+    protected Color getColor(final long timeArrivee, final long timeActuel)
     {
-        long duree = timeActuel - timeArrivee;
+        final long duree = timeActuel - timeArrivee;
         float val = duree / (float) (1000 * 60 * 3);
-        ;
+
         if (val > 2)
         {
             val = 2;
@@ -80,37 +76,35 @@ public class PersonneGroup implements PredictedDrawable
         }
     }
 
-    public void repositionner(float sizeMultiplicator, Vector2 pos)
+    public void repositionner(final float sizeMultiplicator, final Vector2 pos)
     {
         rendered.repositionner(sizeMultiplicator, pos);
     }
 
-    public void animationDeplacement(long time, long duree, EtageVisu depart, AscenseurVisu arrivee)
+    public void animationDeplacement(final long time, final long duree, final EtageVisu depart, final AscenseurVisu arrivee)
     {
-        update(GestionnaireDeTachesVisu.getInnerTime());
+        update(animation.getTime());
         container.unregister(this);
         container = null;
         depart.registerPourAnimation(this);
         animationDep = new AnimationDeplacement(time, duree, depart, arrivee);
-        System.out.println("animation dep ");
-        this.departAnimation = depart.getPosRef();
-        this.deplacementAnimation = depart.getPorte(arrivee.getId()).getPosRef().sub(departAnimation);
+        departAnimation = depart.getPosRef();
+        deplacementAnimation = depart.getPorte(arrivee.getId().monteeId).getPosRef().sub(departAnimation);
     }
 
-    public void animationSortie(long time, long duree)
+    public void animationSortie(final long time, final long duree)
     {
-        update(GestionnaireDeTachesVisu.getInnerTime());
+        update(animation.getTime());
         container.unregister(this);
-        Simulateur.getImmeubleVisu().registerSortie(this);
-        Simulateur.getImmeubleVisu().register(txt);
-        System.out.println("animSortie2 ");
+        animation.getImmeubleVisu().registerSortie(this);
+        animation.getImmeubleVisu().register(txt);
         animationSortie = new Animation(time, duree)
         {
             @Override
             public void depassementPositif()
             {
                 unregisterSortie();
-                Simulateur.getImmeubleVisu().unregister(txt);
+                animation.getImmeubleVisu().unregister(txt);
             }
 
             @Override
@@ -120,13 +114,12 @@ public class PersonneGroup implements PredictedDrawable
                 retournerDansContainer();
             }
         };
-        System.out.println("animSortie3 ");
     }
 
     private void unregisterSortie()
     {
         animationSortie = null;
-        Simulateur.getImmeubleVisu().unregisterSortie(this);
+        animation.getImmeubleVisu().unregisterSortie(this);
     }
 
     private void retournerDansContainer()
@@ -134,45 +127,39 @@ public class PersonneGroup implements PredictedDrawable
         container.register(this);
     }
 
-    public void finAnimationDep(EtageVisu etage)
+    public void finAnimationDep(final EtageVisu etage)
     {
         etage.unregisterPourAnimation(this);
         animationDep = null;
     }
 
-    public void entrer(PersonneGroupContainer container)
+    public void entrer(final PersonneGroupContainer container)
     {
         this.container = container;
         container.register(this);
     }
 
-    public void add(Personne pers)
+    public void add(final Personne pers)
     {
 
         if (persList.isEmpty())
         {
-            System.out.println(
-                "avant relText zone setText update "
-                    + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
             updateText(pers.getDestination());
-            System.out.println(
-                "apres relText zone setText update "
-                    + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
         }
         persList.add(pers);
     }
 
-    protected void updateText(int destination)
+    protected void updateText(final int destination)
     {
         rendered.removeRelativeDrawable(txt);
-        Simulateur.getImmeubleVisu().unregister(txt);
+        animation.getImmeubleVisu().unregister(txt);
         txt = NumberFont.getRenderedObject(destination, 450, Color.WHITE);
         txt.strongResize(0.14f);
         rendered.addRelativeDrawable(txt, new Vector2(-20, 110));
-        Simulateur.getImmeubleVisu().register(txt);
+        animation.getImmeubleVisu().register(txt);
     }
 
-    public void remove(Personne pers)
+    public void remove(final Personne pers)
     {
         persList.remove(pers);
         if (persList.isEmpty())
@@ -181,16 +168,15 @@ public class PersonneGroup implements PredictedDrawable
         }
     }
 
-    public void updatePos(float ascY)
+    public void updatePos(final float ascY)
     {
         rendered.setY(ascY + YrelToAsc);
     }
 
     @Override
-    public void update(long time)
+    public void update(final long time)
     {
-        Color c = getColor(heureCreation, time);
-        // System.out.println("color" + c);
+        final Color c = getColor(heureCreation, time);
         sprite.setColor(c);
         if (animationSortie != null)
         {
@@ -205,7 +191,7 @@ public class PersonneGroup implements PredictedDrawable
             nextAlphaModulation = -1;
             if (animationDep != null)
             {
-                float mult = animationDep.avancement(time);
+                final float mult = animationDep.avancement(time);
                 if (animationDep != null)
                 {
                     final Vector2 dep = deplacementAnimation.cpy();
@@ -218,7 +204,7 @@ public class PersonneGroup implements PredictedDrawable
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
         if (nextAlphaModulation != -1)
         {
@@ -232,12 +218,11 @@ public class PersonneGroup implements PredictedDrawable
     @Override
     public void dispose()
     {
-        System.out.println("UNREGISTER pergroup");
         if (container != null)
         {
             container.unregister(this);
         }
-        Simulateur.getImmeubleVisu().unregister(txt);
+        animation.getImmeubleVisu().unregister(txt);
     }
 
     private class AnimationDeplacement extends Animation
@@ -245,18 +230,17 @@ public class PersonneGroup implements PredictedDrawable
         protected final EtageVisu etage;
         protected final AscenseurVisu asc;
 
-        public AnimationDeplacement(long time, long duree, EtageVisu depart, AscenseurVisu arrivee)
+        public AnimationDeplacement(final long time, final long duree, final EtageVisu depart, final AscenseurVisu arrivee)
         {
             super(time, duree);
-            this.etage = depart;
-            this.asc = arrivee;
+            etage = depart;
+            asc = arrivee;
 
         }
 
         @Override
         public void depassementNegatif()
         {
-            System.out.println("depassementNegatif animation Deplacement");
             finAnimationDep(etage);
             entrer(etage);
         }

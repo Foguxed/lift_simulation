@@ -1,7 +1,7 @@
 package fr.fogux.lift_simulator.evenements;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.animation.PersonneVisu;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
@@ -12,41 +12,50 @@ public class EvenementPersonnesInput extends PrintableEvenement
     protected int destination;
     protected int etage;
 
-    public EvenementPersonnesInput(long time, DataTagCompound data)
+    public EvenementPersonnesInput(final long time, final int nbPersonnes, final int destination, final int etage)
     {
-        super(time, true);
-        this.nbPersonnes = data.getInt(TagNames.nbPersonnes);
-        this.destination = data.getInt(TagNames.destination);
-        this.etage = data.getInt(TagNames.etage);
+        super(time);
+        this.nbPersonnes = nbPersonnes;
+        this.destination = destination;
+        this.etage = etage;
     }
 
-    public void simuRun()
+    public EvenementPersonnesInput(final long time, final DataTagCompound data)
     {
-        super.simuRun();
-        Simulateur.getImmeubleSimu().getEtage(etage).arriveeDe(nbPersonnes, destination);
+        super(time);
+        nbPersonnes = data.getInt(TagNames.nbPersonnes);
+        destination = data.getInt(TagNames.destination);
+        etage = data.getInt(TagNames.etage);
     }
 
     @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    public void simuRun(final Simulation simu)
+    {
+        simu.getImmeubleSimu().getEtage(etage).arriveeDe(nbPersonnes, destination);
+    }
+
+    @Override
+    protected void printFieldsIn(final DataTagCompound compound, final long time)
     {
         compound.setInt(TagNames.nbPersonnes, nbPersonnes);
         compound.setInt(TagNames.destination, destination);
         compound.setInt(TagNames.etage, etage);
     }
 
-    @Override
-    public void visuRun()
+    public String getPartitionEventString()
     {
-        if (GestionnaireDeTaches.marcheArriere())
+        return getEventString(time);
+    }
+
+    @Override
+    public void visuRun(final AnimationProcess animation)
+    {
+        if (animation.gestioTaches().marcheArriereEnCours())
         {
-            System.out.println("retirer " + nbPersonnes);
             PersonneVisu.removeLastPersonnes(nbPersonnes);
         } else
         {
-            System.out.println("arrivee " + nbPersonnes + " etage " + etage + " desti " + destination);
-            // System.out.println("update evenement input " +
-            // String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
-            Simulateur.getImmeubleVisu().getEtage(etage).arriveeDe(nbPersonnes, destination);
+            animation.getImmeubleVisu().getEtage(etage).arriveeDe(nbPersonnes, destination);
 
         }
     }

@@ -1,6 +1,6 @@
 package fr.fogux.lift_simulator.evenements.animation;
 
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 
@@ -11,7 +11,7 @@ public class EvenementBoutonTriangle extends EvenementChangementEtat
     protected final boolean newBoutonOn;
     protected final boolean oldBoutonOn;
 
-    public EvenementBoutonTriangle(int niveau, boolean versHaut, boolean newBoutonOn, boolean oldBoutonOn)
+    public EvenementBoutonTriangle(final int niveau, final boolean versHaut, final boolean newBoutonOn, final boolean oldBoutonOn)
     {
         super();
         this.niveau = niveau;
@@ -20,29 +20,29 @@ public class EvenementBoutonTriangle extends EvenementChangementEtat
         this.oldBoutonOn = oldBoutonOn;
     }
 
-    public EvenementBoutonTriangle(long time, DataTagCompound data)
+    public EvenementBoutonTriangle(final long time, final DataTagCompound data)
     {
         super(time);
-        this.niveau = data.getInt(TagNames.etage);
-        this.versHaut = data.getBoolean(TagNames.versHaut);
-        this.newBoutonOn = data.getBoolean(TagNames.newBoutonOn);
-        this.oldBoutonOn = data.getBoolean(TagNames.oldBoutonOn);
+        niveau = data.getInt(TagNames.etage);
+        versHaut = data.getBoolean(TagNames.versHaut);
+        newBoutonOn = data.getBoolean(TagNames.newBoutonOn);
+        oldBoutonOn = data.getBoolean(TagNames.oldBoutonOn);
     }
 
     @Override
-    public void visuRunetatSuivant()
+    public void visuRunetatSuivant(final AnimationProcess animP)
     {
-        Simulateur.getImmeubleVisu().getEtage(niveau).changerEtatBouton(versHaut, newBoutonOn);
+        animP.getImmeubleVisu().getEtage(niveau).changerEtatBouton(versHaut, newBoutonOn);
     }
 
     @Override
-    public void visuRunetatPrecedent()
+    public void visuRunetatPrecedent(final AnimationProcess animP)
     {
-        Simulateur.getImmeubleVisu().getEtage(niveau).changerEtatBouton(versHaut, oldBoutonOn);
+        animP.getImmeubleVisu().getEtage(niveau).changerEtatBouton(versHaut, oldBoutonOn);
     }
 
     @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    protected void printFieldsIn(final DataTagCompound compound, final long printTime)
     {
         compound.setInt(TagNames.etage, niveau);
         compound.setBoolean(TagNames.versHaut, versHaut);

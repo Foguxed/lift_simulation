@@ -8,10 +8,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.animation.objects.RelativeDrawable;
 import fr.fogux.lift_simulator.animation.objects.RelativeSprite;
 import fr.fogux.lift_simulator.animation.objects.RenderedObject;
+import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Ascenseur;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 import fr.fogux.lift_simulator.utils.NumberFont;
@@ -19,22 +20,26 @@ import fr.fogux.lift_simulator.utils.NumberFont;
 public class AscenseurVisu extends Ascenseur implements PredictedDrawable, PersonneGroupContainer
 
 {
+    protected final AnimationProcess animation;
+
     protected RenderedObject drawableObject;
     protected RenderedObject drawableBoutonList;
-    protected TreeMap<Integer, RelativeDrawable> listBoutons = new TreeMap<Integer, RelativeDrawable>();
+    protected TreeMap<Integer, RelativeDrawable> listBoutons = new TreeMap<>();
     protected RelativeSprite fondBoutons;
-    protected List<PersonneGroup> listGroupes = new ArrayList<PersonneGroup>();
+    protected List<PersonneGroup> listGroupes = new ArrayList<>();
     protected final int nbMaxPremiereLigne;
 
     protected final float minX;
     protected final float maxX;
     protected static final float ecartEntrePers = 80;
 
-    public AscenseurVisu(int id, int personnesMax, float x)
+    public AscenseurVisu(final AnimationProcess animation,final AscId id, final int personnesMax, final float x, final float initialY)
     {
-        super(id, personnesMax);
-        RelativeSprite sprite = new RelativeSprite(AssetsManager.ascenseur);
-        drawableObject = new RenderedObject(sprite, new Vector2(-sprite.getWidth() / 2, 22), new Vector2(x, 0));
+        super(id, personnesMax, initialY);
+        this.animation = animation;
+        depFunc = null;
+        final RelativeSprite sprite = new RelativeSprite(AssetsManager.ascenseur);
+        drawableObject = new RenderedObject(sprite, new Vector2(-sprite.getWidth() / 2, 22), new Vector2(x, initialY*ImmeubleVisu.hauteurEtages));
         drawableBoutonList = new RenderedObject();
         drawableObject.addRelativeDrawable(
             drawableBoutonList, new Vector2(sprite.getWidth() / 2 + 40, sprite.getHeight() / 2));
@@ -48,6 +53,7 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
             nb = (int) ((maxX - minX) / ecartEntrePers);
         }
         nbMaxPremiereLigne = nb;
+
         System.out.println("ascVisu minx " + minX + " maxX " + maxX + " nbPers " + nbMaxPremiereLigne);
         updateBoutonList();
     }
@@ -57,9 +63,10 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
         return drawableObject.getX();
     }
 
-    public void register(PersonneGroup pGroup)
+    @Override
+    public void register(final PersonneGroup pGroup)
     {
-        if (GestionnaireDeTaches.marcheArriere())
+        if (animation.gestioTaches().marcheArriereEnCours())
         {
             listGroupes.add(0, pGroup);
         } else
@@ -69,7 +76,8 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
         updateGroupsPos();
     }
 
-    public void unregister(PersonneGroup personne)
+    @Override
+    public void unregister(final PersonneGroup personne)
     {
         listGroupes.remove(personne);
         updateGroupsPos();
@@ -106,31 +114,61 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
     }
 
     @Override
-    public void update(long time)
+    public void update(final long time)
     {
-        drawableObject.setY(getPosition(time).y * ImmeubleVisu.hauteurEtages);
+        drawableObject.setY(getPosition(time) * ImmeubleVisu.hauteurEtages);
         for (int i = 0; i < listGroupes.size(); i++)
         {
-            PersonneGroup pers = listGroupes.get(listGroupes.size() - 1 - i);
+            final PersonneGroup pers = listGroupes.get(listGroupes.size() - 1 - i);
             pers.updatePos(drawableObject.getPosition().y);
             pers.update(time);
         }
     }
 
+    public void changementDuFuturXObjectif(final long timeChmt, final float xObjectif)
+    {
+        System.out.println("changementDuFuturXObjectif " + this + " timeChmt " + timeChmt);
+        changerXObjectif(xObjectif, timeChmt, animation.getConfig());
+        instantiateDepFunc(animation.getConfig());
+        System.out.println("depFunc " + depFunc);
+    }
+
+    public void changementVersAncienXObjectif(final float xObjectif, final long oldTi, final float oldXi, final float oldVi)
+    {
+        xObjectifActuel = xObjectif;
+        ti = oldTi;
+        xi = oldXi;
+        vi = oldVi;
+        updateInstantProchainArret(animation.getConfig());
+        instantiateDepFunc(animation.getConfig());
+    }
+
+    protected float getPosition(final long time)
+    {
+        if(time > instantProchainArret)
+        {
+            return xObjectifActuel;
+        }
+        else
+        {
+            return depFunc.getX(time);
+        }
+    }
+
     @Override
-    public void changerEtatBouton(int bouton, boolean allume)
+    public void changerEtatBouton(final int bouton, final boolean allume)
     {
         super.changerEtatBouton(bouton, allume);
         if (allume)
         {
-            if (!listBoutons.containsKey((Integer) bouton))
+            if (!listBoutons.containsKey(bouton))
             {
 
-                listBoutons.put((Integer) bouton, NumberFont.getRenderedObject(bouton, 500, Color.BLACK));
+                listBoutons.put(bouton, NumberFont.getRenderedObject(bouton, 500, Color.BLACK));
             }
         } else
         {
-            RelativeDrawable relSprite = listBoutons.remove((Integer) bouton);
+            final RelativeDrawable relSprite = listBoutons.remove(bouton);
             drawableBoutonList.removeRelativeDrawable(relSprite);
         }
 
@@ -139,25 +177,25 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
 
     protected void updateBoutonList()
     {
-        float espaceEntreChaque = 500;
+        final float espaceEntreChaque = 500;
         float y = -listBoutons.size() * espaceEntreChaque / 2;
         fondBoutons.setSize(500 + 60, listBoutons.size() * espaceEntreChaque + 60);
         drawableBoutonList.changerRelativePosition(fondBoutons, new Vector2(-30, y - 30));
-        for (RelativeDrawable obj : listBoutons.values())
+        for (final RelativeDrawable obj : listBoutons.values())
         {
             drawableBoutonList.changerRelativePosition(obj, new Vector2(0, y));// ajoute automatiquement si l'objet
-                                                                               // n'est pas dedans
+            // n'est pas dedans
             y += espaceEntreChaque;
         }
 
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
         for (int i = 0; i < listGroupes.size(); i++)
         {
-            PersonneGroup pers = listGroupes.get(listGroupes.size() - 1 - i);
+            final PersonneGroup pers = listGroupes.get(listGroupes.size() - 1 - i);
             pers.draw(batch);
         }
         drawableObject.draw(batch);

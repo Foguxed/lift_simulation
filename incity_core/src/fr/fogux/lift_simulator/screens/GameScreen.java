@@ -12,11 +12,8 @@ import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
-import fr.fogux.lift_simulator.GestionnaireDeTachesVisu;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.Simulateur;
-import fr.fogux.lift_simulator.animation.ImmeubleVisu;
-import fr.fogux.lift_simulator.fichiers.GestionnaireDeFichiers;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 import fr.fogux.lift_simulator.utils.ChainedList;
 import fr.fogux.lift_simulator.utils.Utils;
@@ -27,12 +24,12 @@ import fr.fogux.lift_simulator.utils.Utils;
  */
 public class GameScreen extends CustomScreen
 {
+    protected final AnimationProcess animp;
 
     protected Viewport viewPort;
     protected static final float worldWidth = 1920;
     protected static final float worldHeight = 1080;
     protected OrthographicCamera camera;
-    protected ImmeubleVisu immeuble;
     protected BitmapFont athFont;
     protected BitmapFont consoleFont;
     protected BitmapFont errorFont;
@@ -41,28 +38,28 @@ public class GameScreen extends CustomScreen
     protected boolean firstDraw = true;
     public static long realTimeUpdate;
 
-    protected GestionnaireDeTachesVisu gestioTaches;
     protected String displayedError = null;
     protected ChainedList<String> console;
     protected InputCore inputs;
     // protected Sprite delMe = new Sprite(new
     // NumberFont(AssetsManager.fontGenerator.getBitmapFont()).getTexture(0));
 
-    public GameScreen(final Simulateur main, GestionnaireDeTachesVisu gestioTaches)
+    public GameScreen(final Simulateur main, final AnimationProcess animp)
     {
-
         super(main);
-        this.gestioTaches = gestioTaches;
-        console = new ChainedList<String>();
-        camera = new OrthographicCamera(this.getScreenWidth(), this.getScreenHeight());
+        this.animp = animp;
+        console = new ChainedList<>();
+        camera = new OrthographicCamera(getScreenWidth(), getScreenHeight());
         camera.translate(worldWidth / 2, 0);
         inputs = new InputCore();
         consoleFont = AssetsManager.fontGenerator.getNewBitmapFont(40);
         athFont = AssetsManager.fontGenerator.getNewBitmapFont(90);
         errorFont = AssetsManager.fontGenerator.getNewBitmapFont(120, Color.RED);
+        animp.gestioTaches().runExecuting();
         // delMe.setPosition(40, 40);
     }
 
+    @Override
     public void init()
     {
         Gdx.input.setInputProcessor(inputs);
@@ -73,14 +70,7 @@ public class GameScreen extends CustomScreen
         return camera;
     }
 
-    public void loadVisualisation(int etageMin, int etageMax, int nbAscenseurs)
-    {
-        this.immeuble = new ImmeubleVisu(etageMin, etageMax, nbAscenseurs);
-        Simulateur.setImmeubleVisu(immeuble);
-        gestioTaches.runExecuting();
-    }
-
-    public void ajouterLigneConsole(String str)
+    public void ajouterLigneConsole(final String str)
     {
         console.addDebut(str);
     }
@@ -94,12 +84,9 @@ public class GameScreen extends CustomScreen
     protected void update()
     {
         realTimeUpdate = System.currentTimeMillis();
-        GestionnaireDeTaches.getInstance().update();
+        animp.gestioTaches().update();
+        animp.getImmeubleVisu().update(animp.getTime());
 
-        if (immeuble != null)
-        {
-            immeuble.update(GestionnaireDeTaches.getInnerTime());
-        }
         // System.out.println("elapsed time for update immeuble" +
         // String.valueOf(System.currentTimeMillis() - timeAfterGestioTaches));
         if (Gdx.input.isKeyJustPressed(Input.Keys.D))
@@ -131,14 +118,16 @@ public class GameScreen extends CustomScreen
         // baseMatrix.set(main.getBatch().getProjectionMatrix());
         main.getBatch().setProjectionMatrix(camera.combined);
         main.getBatch().begin();
-        immeuble.draw(main.getBatch());
+
+        animp.draw(main.getBatch());
 
         main.getBatch().setProjectionMatrix(baseMatrix);
 
-        athFont.draw(main.getBatch(), Utils.getTimeString(GestionnaireDeTaches.getInnerTime()), 20, 100);
+        athFont.draw(main.getBatch(), Utils.getTimeString(animp.getTime()), 20, 100);
 
         int hauteur = 600;
-        Iterator<String> iterator = console.iterator();
+        final Iterator<String> iterator = console.iterator();
+
         while (iterator.hasNext() && hauteur < 1400)
         {
             consoleFont.draw(main.getBatch(), iterator.next(), 20, hauteur);
@@ -158,12 +147,11 @@ public class GameScreen extends CustomScreen
     public void dispose()
     {
         super.dispose();
-        immeuble.dispose();
-        GestionnaireDeFichiers.dispose();
-        GestionnaireDeTaches.getInstance().dispose();
+        animp.dispose();
+        animp.gestioTaches().dispose();
     }
 
-    public void setDisplayedError(String text)
+    public void setDisplayedError(final String text)
     {
         displayedError = text;
     }
@@ -175,27 +163,27 @@ public class GameScreen extends CustomScreen
         protected int timer = 20;
 
         @Override
-        public boolean scrolled(int amount)
+        public boolean scrolled(final int amount)
         {
             camera.zoom += 0.2 * amount;
             return true;
         }
 
         @Override
-        public boolean keyDown(int keycode)
+        public boolean keyDown(final int keycode)
         {
             switch (keycode)
             {
                 case Input.Keys.LEFT:
-                    gestioTaches.modifVitesse(false);
+                    animp.gestioTaches().modifVitesse(false);
                     lastInputed = keycode;
                     break;
                 case Input.Keys.RIGHT:
-                    gestioTaches.modifVitesse(true);
+                    animp.gestioTaches().modifVitesse(true);
                     lastInputed = keycode;
                     break;
                 case Input.Keys.DOWN:
-                    gestioTaches.stopper();
+                    animp.gestioTaches().stopper();
                     break;
             }
 
@@ -207,10 +195,10 @@ public class GameScreen extends CustomScreen
             switch (lastInputed)
             {
                 case Input.Keys.LEFT:
-                    gestioTaches.modifVitesse(false);
+                    animp.gestioTaches().modifVitesse(false);
                     break;
                 case Input.Keys.RIGHT:
-                    gestioTaches.modifVitesse(true);
+                    animp.gestioTaches().modifVitesse(true);
                     break;
             }
         }
@@ -232,7 +220,7 @@ public class GameScreen extends CustomScreen
         }
 
         @Override
-        public boolean keyUp(int keycode)
+        public boolean keyUp(final int keycode)
         {
             if (keycode == lastInputed)
             {
@@ -243,26 +231,26 @@ public class GameScreen extends CustomScreen
         }
 
         @Override
-        public boolean keyTyped(char character)
+        public boolean keyTyped(final char character)
         {
             System.out.println(character);
             return false;
         }
 
         @Override
-        public boolean touchDown(int screenX, int screenY, int pointer, int button)
+        public boolean touchDown(final int screenX, final int screenY, final int pointer, final int button)
         {
             return false;
         }
 
         @Override
-        public boolean touchUp(int screenX, int screenY, int pointer, int button)
+        public boolean touchUp(final int screenX, final int screenY, final int pointer, final int button)
         {
             return false;
         }
 
         @Override
-        public boolean touchDragged(int screenX, int screenY, int pointer)
+        public boolean touchDragged(final int screenX, final int screenY, final int pointer)
         {
             float mult;
             if (Gdx.graphics.getWidth() / Gdx.graphics.getHeight() > proportions)
@@ -277,7 +265,7 @@ public class GameScreen extends CustomScreen
         }
 
         @Override
-        public boolean mouseMoved(int screenX, int screenY)
+        public boolean mouseMoved(final int screenX, final int screenY)
         {
             // TODO Auto-generated method stub
             return false;

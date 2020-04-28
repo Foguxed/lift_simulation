@@ -100,14 +100,12 @@ public class PorteAnimee implements PredictedDrawable, ReferencePosUsers
             public void depassementNegatif()
             {
                 animation = null;
-                System.out.println("animation portes dep NEG");
             }
 
             @Override
             public void depassementPositif()
             {
                 animation = null;
-                System.out.println("animation portes dep POS");
             }
         };
         this.ouverture = ouverture;

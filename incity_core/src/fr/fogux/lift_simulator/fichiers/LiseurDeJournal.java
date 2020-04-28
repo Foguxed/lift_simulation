@@ -10,7 +10,7 @@ public class LiseurDeJournal implements Iterator<Evenement>, Iterable<Evenement>
 
     public LiseurDeJournal()
     {
-        nextEvent = Evenement.genererEvenement(GestionnaireDeFichiers.getNextJournalLine());
+        nextEvent = Evenement.genererEvenement(GestFichiers.getNextJournalLine());
     }
 
     @Override
@@ -28,10 +28,8 @@ public class LiseurDeJournal implements Iterator<Evenement>, Iterable<Evenement>
     @Override
     public Evenement next()
     {
-
-        Evenement ev = nextEvent;
-        nextEvent = Evenement.genererEvenement(GestionnaireDeFichiers.getNextJournalLine());
-        System.out.println("next Event " + nextEvent);
+        final Evenement ev = nextEvent;
+        nextEvent = Evenement.genererEvenement(GestFichiers.getNextJournalLine());
         return ev;
     }
 

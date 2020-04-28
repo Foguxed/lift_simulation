@@ -1,62 +1,63 @@
 package fr.fogux.lift_simulator.evenements;
 
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.animation.PersonneVisu;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
-import fr.fogux.lift_simulator.population.PersonneSimu;
+import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.structure.AscId;
 
 public class EvenementEntreePersonne extends AnimatedEvent
 {
+
+
     protected final int personneId;
-    protected final int ascenseurId;
+    protected final AscId ascenseurId;
     protected final int niveau;
 
-    public EvenementEntreePersonne(long time, DataTagCompound data)
+    public EvenementEntreePersonne(final long time, final DataTagCompound data)
     {
         super(time, data);
-        System.out.println("entree pers constructor");
         personneId = data.getInt(TagNames.personneId);
-        ascenseurId = data.getInt(TagNames.ascenseurId);
+        ascenseurId = AscId.fromCompound(data);
         niveau = data.getInt(TagNames.etage);
     }
 
-    public EvenementEntreePersonne(long timeAbsolu, int personneId, int ascenseurId, int niveau)
+    public EvenementEntreePersonne(final long debutEntree, final ConfigSimu c, final int personneId, final AscId ascenseurId, final int niveau)
     {
-        super(timeAbsolu, true);
+        super(debutEntree + c.getDureeSortieEntreePersonne(),debutEntree);
         this.personneId = personneId;
         this.ascenseurId = ascenseurId;
         this.niveau = niveau;
     }
 
     @Override
-    public void simuRun()
+    public void simuRun(final Simulation simu)
     {
-        super.simuRun();
-        PersonneSimu.getPersonne(personneId).entrerDansAscenseur(
-            Simulateur.getImmeubleSimu().getAscenseur(ascenseurId));
+        simu.getPersonne(personneId).entrerDansAscenseur(
+            simu.getImmeubleSimu().getAscenseur(ascenseurId));
     }
 
     @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    protected void printFieldsIn(final DataTagCompound compound, final long time)
     {
-        super.printFieldsIn(compound);
-        compound.setInt(TagNames.ascenseurId, ascenseurId);
+        super.printFieldsIn(compound,time);
+        ascenseurId.printIn(compound);
         compound.setInt(TagNames.personneId, personneId);
         compound.setInt(TagNames.etage, niveau);
     }
 
     @Override
-    protected void runAnimation(long timeDebut, long animationDuree)
+    protected void runAnimation(final AnimationProcess animP,final long timeDebut, final long animationDuree)
     {
-        System.out.println("run animation evenement entree personne");
         PersonneVisu.getPersonne(personneId).getPersonneGroup().animationDeplacement(
-            timeDebut, animationDuree, Simulateur.getImmeubleVisu().getEtage(niveau),
-            Simulateur.getImmeubleVisu().getAscenseur(ascenseurId));
+            timeDebut, animationDuree, animP.getImmeubleVisu().getEtage(niveau),
+            animP.getImmeubleVisu().getAscenseur(ascenseurId));
     }
 
     @Override
-    protected void sortieAnimation()
+    protected void sortieAnimation(final AnimationProcess animP)
     {
 
     }

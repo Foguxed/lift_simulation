@@ -8,30 +8,29 @@ import com.badlogic.gdx.math.Vector2;
 
 public class RenderedObject extends PositionableObject implements RelativeDrawable
 {
-    protected List<Vector2> relativeVectors = new ArrayList<Vector2>();
-    protected List<Vector2> relativeVectorsBase = new ArrayList<Vector2>();
-    protected List<RelativeDrawable> relativeDrawables = new ArrayList<RelativeDrawable>();
+    protected List<Vector2> relativeVectors = new ArrayList<>();
+    protected List<Vector2> relativeVectorsBase = new ArrayList<>();
+    protected List<RelativeDrawable> relativeDrawables = new ArrayList<>();
     protected float sizeMultiplicator = 1;
 
     public RenderedObject()
     {
     }
 
-    public RenderedObject(RelativeDrawable drawable, Vector2 relativeToPositionVec)
+    public RenderedObject(final RelativeDrawable drawable, final Vector2 relativeToPositionVec)
     {
         addRelativeDrawable(drawable, relativeToPositionVec);
     }
 
-    public RenderedObject(RelativeDrawable drawable, Vector2 relativeToPositionVec, Vector2 position)
+    public RenderedObject(final RelativeDrawable drawable, final Vector2 relativeToPositionVec, final Vector2 position)
     {
         this(drawable, relativeToPositionVec);
         setPosition(position);
     }
 
-    public void addRelativeDrawable(RelativeDrawable drawable, Vector2 relativeToPositionVec)
+    public void addRelativeDrawable(final RelativeDrawable drawable, final Vector2 relativeToPositionVec)
     {
         relativeDrawables.add(drawable);
-        // System.out.println("added vector base " + relativeToPositionVec);
         relativeVectorsBase.add(relativeToPositionVec.cpy());
         relativeVectors.add(
             new Vector2(relativeToPositionVec.x * sizeMultiplicator, relativeToPositionVec.y * sizeMultiplicator));
@@ -39,12 +38,11 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
         refreshRelPos(drawable, relativeToPositionVec);
     }
 
-    public void changerRelativePosition(RelativeDrawable drawable, Vector2 relativeToPositionVec)
+    public void changerRelativePosition(final RelativeDrawable drawable, final Vector2 relativeToPositionVec)
     {
         if (relativeDrawables.contains(drawable))
         {
-            int index = relativeDrawables.indexOf(drawable);
-            // System.out.println(" changmenet derel position " + relativeToPositionVec);
+            final int index = relativeDrawables.indexOf(drawable);
             relativeVectorsBase.get(index).set(relativeToPositionVec);
             relativeVectors.get(index).set(
                 relativeToPositionVec.x * sizeMultiplicator, relativeToPositionVec.y * sizeMultiplicator);
@@ -55,11 +53,11 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
         }
     }
 
-    public boolean removeRelativeDrawable(RelativeDrawable drawable)
+    public boolean removeRelativeDrawable(final RelativeDrawable drawable)
     {
         if (relativeDrawables.contains(drawable))
         {
-            int index = relativeDrawables.indexOf(drawable);
+            final int index = relativeDrawables.indexOf(drawable);
             relativeDrawables.remove(index);
             relativeVectorsBase.remove(index);
             relativeVectors.remove(index);
@@ -76,52 +74,53 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
         }
     }
 
-    protected void refreshRelPos(RelativeDrawable relDrawable, Vector2 attachedVector)
+    protected void refreshRelPos(final RelativeDrawable relDrawable, final Vector2 attachedVector)
     {
-        relDrawable.setPosition(this.position.x + attachedVector.x, this.position.y + attachedVector.y);
+        relDrawable.setPosition(position.x + attachedVector.x, position.y + attachedVector.y);
     }
 
     @Override
-    public void addToPosition(Vector2 vec)
+    public void addToPosition(final Vector2 vec)
     {
         super.addToPosition(vec);
         refreshAllRelPos();
     }
 
     @Override
-    public void setPosition(Vector2 vec)
+    public void setPosition(final Vector2 vec)
     {
         super.setPosition(vec);
         refreshAllRelPos();
     }
 
     @Override
-    public void setPosition(float x, float y)
+    public void setPosition(final float x, final float y)
     {
         setPosition(new Vector2(x, y));
     }
 
     @Override
-    public void setX(float x)
+    public void setX(final float x)
     {
         super.setX(x);
         refreshAllRelPos();
     }
 
     @Override
-    public void setY(float y)
+    public void setY(final float y)
     {
         super.setY(y);
         refreshAllRelPos();
     }
 
-    public void resize(float sizeMultiplicator)
+    @Override
+    public void resize(final float sizeMultiplicator)
     {
         innerResize(sizeMultiplicator);
         refreshAllRelPos();
     }
 
-    public void strongResize(float sizeMultiplicator)
+    public void strongResize(final float sizeMultiplicator)
     {
         resize(sizeMultiplicator);
         resetBaseSize();
@@ -135,13 +134,13 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
             relativeVectorsBase.get(i).set(relativeVectors.get(i));
         }
         sizeMultiplicator = 1;
-        for (RelativeDrawable relD : relativeDrawables)
+        for (final RelativeDrawable relD : relativeDrawables)
         {
             relD.resetBaseSize();
         }
     }
 
-    private void innerResize(float sizeMultiplicator)
+    private void innerResize(final float sizeMultiplicator)
     {
         this.sizeMultiplicator = sizeMultiplicator;
         for (int i = 0; i < relativeDrawables.size(); i++)
@@ -151,11 +150,11 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
         resizeRefs(sizeMultiplicator);
     }
 
-    private void resizeRefs(float sizeMultiplicator)
+    private void resizeRefs(final float sizeMultiplicator)
     {
         for (int i = 0; i < relativeVectors.size(); i++)
         {
-            Vector2 baseVector = relativeVectorsBase.get(i);
+            final Vector2 baseVector = relativeVectorsBase.get(i);
 
             relativeVectors.get(i).set(baseVector.x * sizeMultiplicator, baseVector.y * sizeMultiplicator);
         }
@@ -166,33 +165,34 @@ public class RenderedObject extends PositionableObject implements RelativeDrawab
         return sizeMultiplicator;
     }
 
-    public void repositionner(float sizeMultiplicator, Vector2 position)
+    public void repositionner(final float sizeMultiplicator, final Vector2 position)
     {
         innerResize(sizeMultiplicator);
         setPosition(position);
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
-        for (RelativeDrawable rdw : relativeDrawables)
+        for (final RelativeDrawable rdw : relativeDrawables)
         {
             rdw.draw(batch);
         }
     }
 
-    public void draw(Batch batch, float alphaModulation)
+    @Override
+    public void draw(final Batch batch, final float alphaModulation)
     {
-        for (RelativeDrawable rdw : relativeDrawables)
+        for (final RelativeDrawable rdw : relativeDrawables)
         {
             rdw.draw(batch, alphaModulation);
         }
     }
 
     @Override
-    public void setAlpha(float alpha)
+    public void setAlpha(final float alpha)
     {
-        for (RelativeDrawable rdw : relativeDrawables)
+        for (final RelativeDrawable rdw : relativeDrawables)
         {
             rdw.setAlpha(alpha);
         }

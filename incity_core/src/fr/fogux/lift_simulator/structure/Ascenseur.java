@@ -2,58 +2,115 @@ package fr.fogux.lift_simulator.structure;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.math.Vector2;
+import fr.fogux.lift_simulator.physic.ConfigSimu;
 
-import fr.fogux.lift_simulator.MovingObject;
-
-public abstract class Ascenseur implements MovingObject
+public abstract class Ascenseur
 {
-    protected final int id;
+    protected final AscId id;
     public final int persMax;
 
+    protected long instantProchainArret = Long.MIN_VALUE;
     protected float vi;
     protected float xi;
     protected long ti;
 
     protected float acceleration;
 
-    protected ArrayList<Integer> boutonsAllumes = new ArrayList<Integer>();
+    protected ArrayList<Integer> boutonsAllumes = new ArrayList<>();
 
-    public Ascenseur(int id, int persMax)
+    /**
+     * ce sont les updates de xObjectif (l'objectif réel) qui sont enregistrées, car la fonction de déplacement peut en être
+     * déduite
+     */
+    protected float xObjectifActuel;
+
+    protected int etageObjectif;
+    protected DeplacementFunc depFunc;
+
+
+
+    public Ascenseur(final AscId id, final int persMax, final float initialHeight)
     {
         this.id = id;
         this.persMax = persMax;
+        xi = initialHeight;
+        etageObjectif = (int)xi;
+        xObjectifActuel = xi;
+        vi = 0;
+        ti = 0;
     }
 
-    public int getId()
+    protected void changerXObjectif(final float newXObjectif, final long timeChangement, final ConfigSimu c)
+    {
+        System.out.println("changerXObjectif " + timeChangement);
+        if(instantProchainArret <= timeChangement)
+        {
+            vi = 0f;
+            xi = xObjectifActuel;
+        }
+        else
+        {
+            if(depFunc == null)
+            {
+                instantiateDepFunc(c);
+            }
+            xi = depFunc.getX(timeChangement);
+            vi = depFunc.getV(timeChangement);
+        }
+        ti = timeChangement;
+        xObjectifActuel = newXObjectif;
+        updateInstantProchainArret(c);
+    }
+
+    protected void updateInstantProchainArret(final ConfigSimu c)
+    {
+        System.out.println(" update prochain arret " + ti +" " + vi +" " +xi +" " +xObjectifActuel +" " + this );
+        instantProchainArret = AscDeplacementFunc.getTimeStraightToObjective(c, ti, vi, xi, xObjectifActuel);
+        System.out.println(" instantProchainArret " + instantProchainArret);
+    }
+
+    protected void instantiateDepFunc(final ConfigSimu c)
+    {
+        depFunc = AscDeplacementFunc.getDeplacementFunc(c,ti, xi, vi, xObjectifActuel);
+    }
+
+    /**
+     * update le field instantProchainArret en fonction de ti, vi, xi, et xObjectifActuel (le nouvel objectif différent de xi)
+     * @param c
+     */
+
+    public float getXObjectif()
+    {
+        return xObjectifActuel;
+    }
+
+    public AscId getId()
     {
         return id;
     }
 
-    public void changerEtatBouton(int bouton, boolean allume)
+    public void changerEtatBouton(final int bouton, final boolean allume)
     {
         if (allume)
         {
-            boutonsAllumes.add((Integer) bouton);
+            boutonsAllumes.add(bouton);
         } else
         {
             boutonsAllumes.removeIf(i -> i == bouton);
         }
     }
 
-    public void setDeplacement(long debutDeplacement, float xI, float vI, float gamma)
+    public void setDeplacement(final long debutDeplacement, final float xI, final float vI, final float gamma)
     {
-        this.ti = debutDeplacement;
-        this.vi = vI;
-        this.xi = xI;
+        ti = debutDeplacement;
+        vi = vI;
+        xi = xI;
         acceleration = gamma;
-
     }
 
     @Override
-    public Vector2 getPosition(long absoluteVal)
+    public String toString()
     {
-        long relT = (absoluteVal - ti);
-        return new Vector2(0f, (float) acceleration * (relT * relT) / 2 + vi * relT + xi);
+        return " Ascenseur : " + id + " ";
     }
 }

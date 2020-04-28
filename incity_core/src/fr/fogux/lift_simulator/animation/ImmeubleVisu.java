@@ -5,47 +5,59 @@ import java.util.List;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.ReDrawable;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
+import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 
 public class ImmeubleVisu implements PredictedDrawable
 {
 
     protected EtageVisu[] etages;
-    protected AscenseurVisu[] ascenseurs;
+    protected List<AscenseurVisu>[] ascenseurs;
     public final int niveauMin;
     protected float lastLevelScreenY;
     protected static final float ecartAscenseurs = AssetsManager.ascenseur.getWidth() + 300;
     protected float lastAscenScreenX = ecartAscenseurs / 2;
     public static final float hauteurEtages = 380;
-    protected final List<PersonneGroup> sorties = new ArrayList<PersonneGroup>();
-    protected List<ReDrawable> textesList = new ArrayList<ReDrawable>();
+    protected final List<PersonneGroup> sorties = new ArrayList<>();
+    protected List<ReDrawable> textesList = new ArrayList<>();
 
-    public ImmeubleVisu(int niveauMin, int niveauMax, int nbAscenseurs)
+    public ImmeubleVisu(final AnimationProcess animation)
     {
+        niveauMin = animation.getConfig().getNiveauMin();
+        final int niveauMax = animation.getConfig().getNiveauMax();
         if (niveauMin > 0 || niveauMax < 0)
         {
             throw new SimulateurException("niveau 0 obligatoire");
         }
-        int taille = niveauMax - niveauMin + 1;
-        this.niveauMin = niveauMin;
+        final int taille = niveauMax - niveauMin + 1;
+
         etages = new EtageVisu[taille];
         lastLevelScreenY = niveauMin * hauteurEtages;
         for (int i = 0; i < taille; i++)
         {
-            etages[i] = new EtageVisu(i + niveauMin, lastLevelScreenY);
+            etages[i] = new EtageVisu(animation, i + niveauMin, lastLevelScreenY);
             lastLevelScreenY += hauteurEtages;
         }
-        ascenseurs = new AscenseurVisu[nbAscenseurs];
 
-        for (int j = 0; j < nbAscenseurs; j++)
+
+        final int[] repartAsc = animation.getConfig().getRepartAscenseurs();
+        ascenseurs = new ArrayList[repartAsc.length];
+
+        for (int j = 0; j < ascenseurs.length; j++)
         {
-            ascenseurs[j] = new AscenseurVisu(j + 1, 5, lastAscenScreenX);
+            ascenseurs[j] = new ArrayList<>(repartAsc[j]);
+            for(int i = 0; i < repartAsc[j]; i ++)
+            {
+                ascenseurs[j].add(new AscenseurVisu(animation, new AscId(j, i), 5, lastAscenScreenX, i));
+            }
+
             lastAscenScreenX += ecartAscenseurs;
         }
 
-        for (EtageVisu et : this.etages)
+        for (final EtageVisu et : etages)
         {
             et.loadPortes(ascenseurs);
         }
@@ -56,45 +68,51 @@ public class ImmeubleVisu implements PredictedDrawable
      * final AscenseurVisu asc = new AscenseurVisu(id,
      * personnesMax,lastAscenScreenX); lastAscenScreenX += ecartAscenseurs; return
      * asc; }
-     * 
+     *
      * @Override public Etage<?> generateEtage(int num) { final EtageVisu etage =
      * new EtageVisu(num,lastLevelScreenY); lastLevelScreenY += 380; return etage; }
      */
 
     @Override
-    public void update(long time)
+    public void update(final long time)
     {
         // TODO Auto-generated method stub
-        for (PersonneGroup p : new ArrayList<PersonneGroup>(sorties))
+        for (final PersonneGroup p : new ArrayList<>(sorties))
         {
             p.update(time);
         }
-        for (AscenseurVisu asc : this.ascenseurs)
+        for(final List<AscenseurVisu> list : ascenseurs)
         {
-            asc.update(time);
+            for (final AscenseurVisu asc : list)
+            {
+                asc.update(time);
+            }
         }
-        for (EtageVisu et : this.etages)
+        for (final EtageVisu et : etages)
         {
             et.update(time);
         }
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
-        for (PersonneGroup p : sorties)
+        for (final PersonneGroup p : sorties)
         {
             p.draw(batch);
         }
-        for (AscenseurVisu asc : this.ascenseurs)
+        for(final List<AscenseurVisu> list : ascenseurs)
         {
-            asc.draw(batch);
+            for (final AscenseurVisu asc : list)
+            {
+                asc.draw(batch);
+            }
         }
-        for (EtageVisu et : this.etages)
+        for (final EtageVisu et : etages)
         {
             et.draw(batch);
         }
-        for (ReDrawable rd : textesList)
+        for (final ReDrawable rd : textesList)
         {
             rd.redraw(batch);
         }
@@ -103,39 +121,40 @@ public class ImmeubleVisu implements PredictedDrawable
     @Override
     public void dispose()
     {
-        for (AscenseurVisu asc : this.ascenseurs)
+        for(final List<AscenseurVisu> list : ascenseurs)
         {
-            asc.dispose();
+            for (final AscenseurVisu asc : list)
+            {
+                asc.dispose();
+            }
         }
-        for (EtageVisu et : this.etages)
+        for (final EtageVisu et : etages)
         {
             et.dispose();
         }
     }
 
-    public AscenseurVisu getAscenseur(int id)
+    public AscenseurVisu getAscenseur(final AscId id)
     {
-        return ascenseurs[id - 1];
+        return ascenseurs[id.monteeId].get(id.stackId);
     }
 
-    public EtageVisu getEtage(int niveau)
+    public EtageVisu getEtage(final int niveau)
     {
-        // System.out.println(" etages "+ etages.length + " niveau min " + niveauMin + "
-        // niveau " + niveau);
         return etages[niveau - niveauMin];
     }
 
-    public void registerSortie(PersonneGroup group)
+    public void registerSortie(final PersonneGroup group)
     {
         sorties.add(group);
     }
 
-    public void unregisterSortie(PersonneGroup group)
+    public void unregisterSortie(final PersonneGroup group)
     {
         sorties.remove(group);
     }
 
-    public void register(ReDrawable redrawable)
+    public void register(final ReDrawable redrawable)
     {
         if (!textesList.contains(redrawable))
         {
@@ -143,7 +162,7 @@ public class ImmeubleVisu implements PredictedDrawable
         }
     }
 
-    public void unregister(ReDrawable redrawable)
+    public void unregister(final ReDrawable redrawable)
     {
         textesList.remove(redrawable);
     }

@@ -1,17 +1,18 @@
 package fr.fogux.lift_simulator.evenements.animation;
 
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
+import fr.fogux.lift_simulator.structure.AscId;
 
 public class EvenementBoutonAscenseur extends EvenementChangementEtat
 {
     protected final int niveau;
-    protected final int ascenseurId;
+    protected final AscId ascenseurId;
     protected final boolean newBoutonOn;
     protected final boolean oldBoutonOn;
 
-    public EvenementBoutonAscenseur(int niveau, int ascenseurId, boolean newBoutonOn, boolean oldBoutonOn)
+    public EvenementBoutonAscenseur(final int niveau, final AscId ascenseurId, final boolean newBoutonOn, final boolean oldBoutonOn)
     {
         super();
         this.niveau = niveau;
@@ -20,32 +21,32 @@ public class EvenementBoutonAscenseur extends EvenementChangementEtat
         this.oldBoutonOn = oldBoutonOn;
     }
 
-    public EvenementBoutonAscenseur(long time, DataTagCompound data)
+    public EvenementBoutonAscenseur(final long time, final DataTagCompound data)
     {
         super(time);
-        this.niveau = data.getInt(TagNames.etage);
-        this.ascenseurId = data.getInt(TagNames.ascenseurId);
-        this.newBoutonOn = data.getBoolean(TagNames.newBoutonOn);
-        this.oldBoutonOn = data.getBoolean(TagNames.oldBoutonOn);
+        niveau = data.getInt(TagNames.etage);
+        ascenseurId = AscId.fromCompound(data);
+        newBoutonOn = data.getBoolean(TagNames.newBoutonOn);
+        oldBoutonOn = data.getBoolean(TagNames.oldBoutonOn);
     }
 
     @Override
-    public void visuRunetatSuivant()
+    public void visuRunetatSuivant(final AnimationProcess animp)
     {
-        Simulateur.getImmeubleVisu().getAscenseur(ascenseurId).changerEtatBouton(niveau, newBoutonOn);
+        animp.getImmeubleVisu().getAscenseur(ascenseurId).changerEtatBouton(niveau, newBoutonOn);
     }
 
     @Override
-    public void visuRunetatPrecedent()
+    public void visuRunetatPrecedent(final AnimationProcess animp)
     {
-        Simulateur.getImmeubleVisu().getAscenseur(ascenseurId).changerEtatBouton(niveau, oldBoutonOn);
+        animp.getImmeubleVisu().getAscenseur(ascenseurId).changerEtatBouton(niveau, oldBoutonOn);
     }
 
     @Override
-    protected void printFieldsIn(DataTagCompound compound)
+    protected void printFieldsIn(final DataTagCompound compound,final long t)
     {
         compound.setInt(TagNames.etage, niveau);
-        compound.setInt(TagNames.ascenseurId, ascenseurId);
+        ascenseurId.printIn(compound);
         compound.setBoolean(TagNames.newBoutonOn, newBoutonOn);
         compound.setBoolean(TagNames.oldBoutonOn, oldBoutonOn);
     }

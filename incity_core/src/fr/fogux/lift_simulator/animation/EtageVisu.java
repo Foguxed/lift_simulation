@@ -7,80 +7,78 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
+import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.animation.objects.RelativeDrawable;
 import fr.fogux.lift_simulator.animation.objects.RelativeSprite;
 import fr.fogux.lift_simulator.animation.objects.RenderedObject;
-import fr.fogux.lift_simulator.screens.GameScreen;
 import fr.fogux.lift_simulator.structure.Etage;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 import fr.fogux.lift_simulator.utils.NumberFont;
 
 public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosUsers, PersonneGroupContainer
 {
+    protected final AnimationProcess animation;
+
     protected final RenderedObject drawableObject;
     protected PorteAnimee[] portes;
     protected PersonneGroup test;
-    protected List<PersonneGroup> listGroupes = new ArrayList<PersonneGroup>();
+    protected List<PersonneGroup> listGroupes = new ArrayList<>();
     protected static final float ecartEntrePers = 100;
     protected float xMinAttente;
     protected float xMaxAttente;
-    protected List<PersonneGroup> groupesEnAnimation = new ArrayList<PersonneGroup>();
+    protected List<PersonneGroup> groupesEnAnimation = new ArrayList<>();
     protected BoutonTriangle boutonHaut;
     protected BoutonTriangle boutonBas;
 
-    public EtageVisu(int numero, float y)
+    public EtageVisu(final AnimationProcess animation,final int numero, final float y)
     {
         super(numero);
+        this.animation = animation;
         final RelativeSprite sprite = new RelativeSprite(AssetsManager.etage);
 
         drawableObject = new RenderedObject(sprite, new Vector2(0, 0), new Vector2(0, y));
         boutonHaut = new BoutonTriangle(true);
         boutonBas = new BoutonTriangle(false);
-
-        System.out.println("monY " + y + "draw " + drawableObject.getY());
     }
 
-    public void loadPortes(AscenseurVisu[] ascenseurs)
+    public void loadPortes(final List<AscenseurVisu>[] ascenseurs)
     {
         portes = new PorteAnimee[ascenseurs.length];
         for (int i = 0; i < ascenseurs.length; i++)
         {
-            portes[i] = new PorteAnimee(new Vector2(ascenseurs[i].getX(), drawableObject.getY()));
+            portes[i] = new PorteAnimee(new Vector2(ascenseurs[i].get(0).getX(), drawableObject.getY()));
         }
-        xMinAttente = ascenseurs[ascenseurs.length - 1].getX() + 400;
+        xMinAttente = ascenseurs[ascenseurs.length - 1].get(0).getX() + 400;
         xMaxAttente = xMinAttente + 800;
         drawableObject.addRelativeDrawable(boutonHaut, new Vector2(xMinAttente - 80, 180));
         drawableObject.addRelativeDrawable(boutonBas, new Vector2(xMinAttente - 80, 80));
 
-        RelativeDrawable numSprite = NumberFont.getRenderedObject(num, 400, Color.WHITE);
+        final RelativeDrawable numSprite = NumberFont.getRenderedObject(num, 400, Color.WHITE);
         numSprite.resize(0.5f);
         numSprite.resetBaseSize();
         drawableObject.addRelativeDrawable(numSprite, new Vector2(xMaxAttente + 120, 90));
-        System.out.println("DRAWABLE " + drawableObject.getY());
     }
 
-    public void register(PersonneGroup pGroup)
+    @Override
+    public void register(final PersonneGroup pGroup)
     {
-        System.out.println("personne register ");
         add(pGroup);
-        System.out.println("groupe size" + listGroupes.size());
         updateGroupsPos();
     }
 
-    public void registerPourAnimation(PersonneGroup pGroup)
+    public void registerPourAnimation(final PersonneGroup pGroup)
     {
         groupesEnAnimation.add(pGroup);
     }
 
-    public void unregisterPourAnimation(PersonneGroup pGroup)
+    public void unregisterPourAnimation(final PersonneGroup pGroup)
     {
         groupesEnAnimation.remove(pGroup);
     }
 
-    protected void add(PersonneGroup pGroup)
+    protected void add(final PersonneGroup pGroup)
     {
-        if (GestionnaireDeTaches.marcheArriere())
+        if (animation.gestioTaches().marcheArriereEnCours())
         {
             listGroupes.add(0, pGroup);
         } else
@@ -89,26 +87,25 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
         }
     }
 
-    public void unregister(PersonneGroup pGroup)
+    @Override
+    public void unregister(final PersonneGroup pGroup)
     {
-        System.out.println("personne unreg ");
         listGroupes.remove(pGroup);
         updateGroupsPos();
     }
 
     @Override
-    public void update(long time)
+    public void update(final long time)
     {
-
-        for (PersonneGroup pers : new ArrayList<PersonneGroup>(groupesEnAnimation))
+        for (final PersonneGroup pers : new ArrayList<>(groupesEnAnimation))
         {
             pers.update(time);
         }
-        for (PersonneGroup pers : listGroupes)
+        for (final PersonneGroup pers : listGroupes)
         {
             pers.update(time);
         }
-        for (PorteAnimee porte : portes)
+        for (final PorteAnimee porte : portes)
         {
             porte.update(time);
         }
@@ -116,18 +113,18 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
-        for (PersonneGroup pers : groupesEnAnimation)
+        for (final PersonneGroup pers : groupesEnAnimation)
         {
             pers.draw(batch);
         }
-        for (PersonneGroup pers : listGroupes)
+        for (final PersonneGroup pers : listGroupes)
         {
             pers.draw(batch);
         }
         drawableObject.draw(batch);
-        for (PorteAnimee porte : portes)
+        for (final PorteAnimee porte : portes)
         {
             porte.draw(batch);
         }
@@ -137,19 +134,19 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
     public void dispose()
     {
         drawableObject.dispose();
-        for (PorteAnimee porte : portes)
+        for (final PorteAnimee porte : portes)
         {
             porte.dispose();
         }
-        for (PersonneGroup pers : listGroupes)
+        for (final PersonneGroup pers : listGroupes)
         {
             pers.dispose();
         }
     }
 
-    public PorteAnimee getPorte(int ascenseurId)
+    public PorteAnimee getPorte(final int monteeId)
     {
-        return portes[ascenseurId - 1];
+        return portes[monteeId];
     }
 
     protected void updateGroupsPos()
@@ -161,8 +158,8 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
         }
         for (int i = listGroupes.size() - 1; i >= 0; i--)
         {
-            Vector2 vec
-                = new Vector2(xMaxAttente - (listGroupes.size() - 1 - i) * nouvelEcart, drawableObject.getY() + 20);
+            final Vector2 vec
+            = new Vector2(xMaxAttente - (listGroupes.size() - 1 - i) * nouvelEcart, drawableObject.getY() + 20);
             listGroupes.get(i).repositionner(nouvelEcart / ecartEntrePers, vec);
         }
     }
@@ -174,27 +171,19 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
     }
 
     @Override
-    public void arriveeDe(int nbPersonnes, int destination)
+    public void arriveeDe(final int nbPersonnes, final int destination)
     {
-        System.out.println(
-            "update evenement debut arrivee " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
         for (int i = 0; i < nbPersonnes; i++)
         {
-            System.out.println("boucle 1 " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
-            PersonneVisu p = new PersonneVisu(destination);
-            PersonneGroup newGroup = new PersonneGroup(this, p);
-            System.out.println("boucle 2 " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
+            final PersonneVisu p = new PersonneVisu(destination);
+            final PersonneGroup newGroup = new PersonneGroup(animation,this, p);
             p.enterPersonneGroup(newGroup);
-            System.out.println("boucle 3 " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
             add(newGroup);
-            System.out.println("boucle 4 " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
         }
-        System.out.println(
-            "update evenement fin arrivee " + String.valueOf(System.currentTimeMillis() - GameScreen.realTimeUpdate));
         updateGroupsPos();
     }
 
-    public void changerEtatBouton(boolean haut, boolean on)
+    public void changerEtatBouton(final boolean haut, final boolean on)
     {
         if (haut)
         {
@@ -203,5 +192,11 @@ public class EtageVisu extends Etage implements PredictedDrawable, ReferencePosU
         {
             boutonBas.changeState(on);
         }
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Etage " + getNiveau();
     }
 }

@@ -3,7 +3,6 @@ package fr.fogux.lift_simulator.screens;
 import java.io.File;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Pixmap.Format;
@@ -11,73 +10,104 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import fr.fogux.lift_simulator.Simulateur;
-import fr.fogux.lift_simulator.fichiers.GestionnaireDeFichiers;
+import fr.fogux.lift_simulator.fichiers.GestFichiers;
+import fr.fogux.lift_simulator.fichiers.NomsFichiers;
 import fr.fogux.lift_simulator.menu.Bouton;
-import fr.fogux.lift_simulator.menu.FileSearcher;
+import fr.fogux.lift_simulator.menu.FileQuerryAnimation;
+import fr.fogux.lift_simulator.menu.FileQuerryPartitionGen;
+import fr.fogux.lift_simulator.menu.FileQuerryProtocol;
+import fr.fogux.lift_simulator.menu.FileQuerrySimulation;
 import fr.fogux.lift_simulator.menu.InputManager;
-import fr.fogux.lift_simulator.partition_creation.PartitionCreator;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 
-public class MenuScreen extends CustomScreen implements FileSearcher
+public class MenuScreen extends CustomScreen
 {
     protected BitmapFont bigMenuFont;
     protected InputManager inputs;
     protected boolean simulation;
 
-    public MenuScreen(Simulateur main)
+    public MenuScreen(final Simulateur main)
     {
         super(main);
         bigMenuFont = AssetsManager.fontGenerator.getNewBitmapFont(100, Color.WHITE);
         inputs = new InputManager(this);
-        Pixmap map = new Pixmap(10, 10, Format.RGB565);
+        final Pixmap map = new Pixmap(10, 10, Format.RGB565);
         map.setColor(Color.GRAY);
         map.fill();
-        Texture textureBouton = new Texture(map);
+        final Texture textureBouton = new Texture(map);
         inputs.register(new Bouton("Simulation", textureBouton, bigMenuFont, 800, 80, 300, 800)
         {
 
             @Override
             public void doAction()
             {
+                executeSimulation();
                 System.out.println("Simulation");
-                initFileResearch(true);
-            }
-        });
-        inputs.register(new Bouton("Animation", textureBouton, bigMenuFont, 800, 80, 300, 400)
-        {
-
-            @Override
-            public void doAction()
-            {
-                System.out.println("Animation");
-                initFileResearch(false);
             }
         });
 
-        inputs.register(new Bouton("newPartition", textureBouton, bigMenuFont, 800, 80, 300, 200)
+        inputs.register(new Bouton("newPartition", textureBouton, bigMenuFont, 800, 80, 300, 600)
         {
 
             @Override
             public void doAction()
             {
                 System.out.println("newPartition");
-                new PartitionCreator();
+                executeNewPartition();
+            }
+        });
+
+        inputs.register(new Bouton("Animation ", textureBouton, bigMenuFont, 800, 80, 300, 400)
+        {
+
+            @Override
+            public void doAction()
+            {
+                System.out.println("Animation ");
+                executeAnimation();
+            }
+        });
+
+        inputs.register(new Bouton("generateTemplates", textureBouton, bigMenuFont, 800, 80, 300, 200)
+        {
+
+            @Override
+            public void doAction()
+            {
+                System.out.println("generateTemplates");
+                Simulateur.safeGenerateTemplates();
             }
         });
     }
 
+    @Override
     public void init()
     {
         Gdx.input.setInputProcessor(inputs);
     }
 
-    protected void initFileResearch(boolean simulation)
+    protected void executeSimulation()
     {
-        this.simulation = simulation;
-        FileResearchScreen scr
-            = new FileResearchScreen(main, GestionnaireDeFichiers.getBasePath(), this, simulation ? 0 : 1, this);
-        main.setScreen(scr);
-        scr.init();
+        final FileQuerryProtocol protocol = new FileQuerrySimulation();
+        final FileResearchScreen newS = new FileResearchScreen(main, new File(GestFichiers.getRootFichier(), NomsFichiers.simulations), this, 2, protocol);
+        main.setScreen(newS);
+        newS.init();
+    }
+
+    protected void executeNewPartition()
+    {
+        final FileQuerryProtocol protocol = new FileQuerryPartitionGen();
+        final FileResearchScreen newS = new FileResearchScreen(main, new File(GestFichiers.getRootFichier(), NomsFichiers.simulations), this, 2, protocol);
+        main.setScreen(newS);
+        newS.init();
+    }
+
+    protected void executeAnimation()
+    {
+        final FileQuerryProtocol protocol = new FileQuerryAnimation();
+        final FileResearchScreen newS = new FileResearchScreen(main, GestFichiers.getRootFichier(), this, 1, protocol);
+        main.setScreen(newS);
+        newS.init();
     }
 
     @Override
@@ -92,22 +122,5 @@ public class MenuScreen extends CustomScreen implements FileSearcher
         super.draw();
         inputs.drawButtons(main.getBatch());
         main.getBatch().end();
-    }
-
-    @Override
-    public void fichierChoisi(File f)
-    {
-        /*
-         * main.setScreen(this); init();
-         */
-        if (simulation)
-        {
-            Simulateur.getSimulateur().startSimulation(f, Gdx.input.isKeyPressed(Keys.CONTROL_LEFT));
-        } else
-        {
-            Simulateur.getSimulateur().startVisualisation(f);
-        }
-
-        System.out.println("simulation " + simulation + " file " + f.getAbsolutePath());
     }
 }

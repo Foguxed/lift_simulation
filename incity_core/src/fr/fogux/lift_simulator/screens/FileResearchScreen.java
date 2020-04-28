@@ -1,10 +1,8 @@
 package fr.fogux.lift_simulator.screens;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Comparator;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -16,24 +14,26 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.menu.Bouton;
 import fr.fogux.lift_simulator.menu.FileInputManager;
-import fr.fogux.lift_simulator.menu.FileSearcher;
+import fr.fogux.lift_simulator.menu.FileQuerryProtocol;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 
 public class FileResearchScreen extends CustomScreen
 {
+    protected static final Texture textureBouton = textureBouton();
 
     protected FileInputManager inputs;
     protected CustomScreen screenPrecedent;
-    protected final FileSearcher output;
+    protected final FileQuerryProtocol fQuerryProtocol;
     protected final int researchDeep;
+    float y = 1020;
 
-    protected FileResearchScreen(Simulateur main, Path basePath, CustomScreen screenPrecedent, int researchDeep,
-        FileSearcher output)
+    protected FileResearchScreen(final Simulateur main, final File directoryFile, final CustomScreen screenPrecedent, final int researchDeep,
+        final FileQuerryProtocol fQuerryProtocol)
     {
         super(main);
+        this.fQuerryProtocol = fQuerryProtocol;
         this.researchDeep = researchDeep;
         this.screenPrecedent = screenPrecedent;
-        this.output = output;
         inputs = new FileInputManager()
         {
             @Override
@@ -43,30 +43,48 @@ public class FileResearchScreen extends CustomScreen
             }
         };
         inputs.setScreen(this);
-        Pixmap map = new Pixmap(10, 10, Format.RGB565);
-        map.setColor(Color.GRAY);
-        map.fill();
-        Texture textureBouton = new Texture(map);
-        float y = 1020;
-        try
-        {
-            for (Path p : Files.newDirectoryStream(basePath))
-            {
-                File f = p.toFile();
-                if (f.isDirectory())
-                {
-                    inputs.register(new BoutonFichier(f, textureBouton, AssetsManager.fichierFont, 800, 45, 300, y));
-                    y -= 55;
-                }
+        fQuerryProtocol.updateFileScreen(this, directoryFile, researchDeep);
+    }
 
-            }
-        } catch (IOException e)
+
+
+    public void registerFichierAsButton(final File f)
+    {
+        inputs.register(new BoutonFichier(f, textureBouton, AssetsManager.fichierFont, 800, 45, 300, y));
+        y -= 55;
+    }
+
+    public void registerFichiersAsButton(final File[] files)
+    {
+        sortByName(files);
+        for (final File file : files)
         {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            registerFichierAsButton(file);
         }
     }
 
+    private void sortByName(final File[] files)
+    {
+        Arrays.sort(files, 0, files.length, new Comparator<File>()
+        {
+
+            @Override
+            public int compare(final File o1, final File o2)
+            {
+                return o1.getName().compareToIgnoreCase(o2.getName());
+            }
+        });
+    }
+
+    protected static final Texture textureBouton()
+    {
+        final Pixmap map = new Pixmap(10, 10, Format.RGB565);
+        map.setColor(Color.GRAY);
+        map.fill();
+        return new Texture(map);
+    }
+
+    @Override
     public void init()
     {
         Gdx.input.setInputProcessor(inputs);
@@ -87,19 +105,17 @@ public class FileResearchScreen extends CustomScreen
         main.getBatch().end();
     }
 
-    protected void fichierSelectionne(File f)
+    public void subSearch(final File f)
     {
+        final CustomScreen scr = new FileResearchScreen(main, f, this, researchDeep + 1, fQuerryProtocol);
+        main.setScreen(scr);
+        scr.init();
+    }
+
+    protected void fichierSelectionne(final File f)
+    {
+        fQuerryProtocol.onClic(this,f,researchDeep);
         System.out.println("fichier selc " + f.getName() + " depth " + researchDeep);
-        if (researchDeep > 0)
-        {
-            CustomScreen scr
-                = new FileResearchScreen(main, Paths.get(f.getAbsolutePath()), this, researchDeep - 1, output);
-            main.setScreen(scr);
-            scr.init();
-        } else
-        {
-            this.output.fichierChoisi(f);
-        }
     }
 
     protected void backToParent()
@@ -109,11 +125,16 @@ public class FileResearchScreen extends CustomScreen
         screenPrecedent.init();
     }
 
+    public void displayInfo(final String s)
+    {
+        System.out.println(s);
+    }
+
     class BoutonFichier extends Bouton
     {
         protected File f;
 
-        public BoutonFichier(File f, Texture texture, BitmapFont font, float width, float height, float x, float y)
+        public BoutonFichier(final File f, final Texture texture, final BitmapFont font, final float width, final float height, final float x, final float y)
         {
             super(f.getName(), texture, font, width, height, x, y);
             this.f = f;

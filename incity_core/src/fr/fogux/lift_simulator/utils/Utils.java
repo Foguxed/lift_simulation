@@ -5,15 +5,14 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-import fr.fogux.lift_simulator.evenements.PrintableEvenement;
 import fr.fogux.lift_simulator.screens.CustomScreen;
 
 public class Utils
 {
-    public static long timeInMilis(String strFormatJHMinSecMil)// format J:H:Min:Sec:Milis
+    public static long timeInMilis(final String strFormatJHMinSecMil)// format J:H:Min:Sec:Milis
     {
-        Integer[] ints = new Integer[5];
-        String[] strs = strFormatJHMinSecMil.split(":");
+        final Integer[] ints = new Integer[5];
+        final String[] strs = strFormatJHMinSecMil.split(":");
         for (int i = 0; i < strs.length; i++)
         {
             // System.out.println("val " + i +" " + strs[i]);
@@ -22,37 +21,44 @@ public class Utils
         return ((((ints[0] * 24) + ints[1]) * 60 + ints[2]) * 60 + ints[3]) * 1000 + ints[4];
     }
 
-    public static String getTimeString(long timeInMilis)
+    public static String getTimeString(final long timeInMilis)
     {
-        final long nbSecondes = (long) (timeInMilis / 1000);
-        final long nbMinutes = (long) (nbSecondes / 60);
-        final long nbHeures = (long) (nbMinutes / 60);
-        final long nbJours = (long) (nbHeures / 24);
+        final long nbSecondes = timeInMilis / 1000;
+        final long nbMinutes = nbSecondes / 60;
+        final long nbHeures = nbMinutes / 60;
+        final long nbJours = nbHeures / 24;
         return nbJours + ":" + nbHeures % 24 + ":" + nbMinutes % 60 + ":" + nbSecondes % 60 + ":" + timeInMilis % 1000;
     }
 
-    public static Vector2 fromMiddleToSpritePos(Sprite sprite)
+    public static Integer safeParseInt(final String str)
+    {
+        try
+        {
+            return Integer.parseInt(str);
+        }
+        catch (final NumberFormatException e)
+        {
+            return null;
+        }
+    }
+
+    public static Vector2 fromMiddleToSpritePos(final Sprite sprite)
     {
         return new Vector2(-sprite.getWidth() / 2, -sprite.getHeight() / 2);
     }
 
-    public static void printCreationOf(PrintableEvenement event)
-    {
-        event.print();
-    }
-
-    public static void msg(Object o, String msg)
+    public static void msg(final Object o, final String msg)
     {
         System.out.println(o.getClass().getSimpleName() + ": " + msg);
     }
 
-    public static void msg(Class<?> c, String msg)
+    public static void msg(final Class<?> c, final String msg)
     {
         System.out.println(c.getSimpleName() + ": " + msg);
     }
 
-    public static Vector2 getWorldCoordinates(float pointerX, float pointerY, OrthographicCamera camera,
-        CustomScreen screen)
+    public static Vector2 getWorldCoordinates(final float pointerX, final float pointerY, final OrthographicCamera camera,
+        final CustomScreen screen)
     {
         float mult;
         if (Gdx.graphics.getWidth() / Gdx.graphics.getHeight() > screen.getProportions())

@@ -1,11 +1,8 @@
 package fr.fogux.lift_simulator.mind.cyclic;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
-import fr.fogux.lift_simulator.mind.Programme;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
-
-public class ProgrammeCyclique implements Programme
+public class ProgrammeCyclique //implements Algorithme
 {
+    /*
     protected SortedChainedList aDesservirVersHaut = new SortedChainedList();
     protected SortedChainedList aDesservirVersBas = new SortedChainedList();
 
@@ -20,7 +17,7 @@ public class ProgrammeCyclique implements Programme
     protected int niveau;
 
     @Override
-    public void appelExterieur(int niveau, boolean versLeHaut)
+    public void appelExterieur(final int niveau, final boolean versLeHaut)
     {
         if (versLeHaut)
         {
@@ -33,13 +30,13 @@ public class ProgrammeCyclique implements Programme
         update();
     }
 
-    /**
-     * 
-     * 
+
+     *
+     *
      * @param haut
      * @return le prochain niveau objectif ou null si il faut changer de sens
-     */
-    protected Integer getProchain(boolean haut)
+     *
+    protected Integer getProchain(final boolean haut)
     {
         int premierNiveauPossible = niveau;
         if (enMouvement)
@@ -54,7 +51,7 @@ public class ProgrammeCyclique implements Programme
         }
         if (haut)
         {
-            Maillon suivantVersHaut = aDesservirVersHaut.getFirstEqualOrBiggerThan(premierNiveauPossible);
+            final Maillon suivantVersHaut = aDesservirVersHaut.getFirstEqualOrBiggerThan(premierNiveauPossible);
             println("suivantVersHaut " + suivantVersHaut);
             if (suivantVersHaut != null)
             {
@@ -71,7 +68,7 @@ public class ProgrammeCyclique implements Programme
             }
         } else
         {
-            Maillon suivantVersBas = aDesservirVersBas.getFirstEqualOrSmallerThan(premierNiveauPossible);
+            final Maillon suivantVersBas = aDesservirVersBas.getFirstEqualOrSmallerThan(premierNiveauPossible);
             println("suivantVersBas " + suivantVersBas);
             if (suivantVersBas != null)
             {
@@ -129,7 +126,7 @@ public class ProgrammeCyclique implements Programme
     }
 
     @Override
-    public void finDeTransfertDePersonnes(int niveau, int idAscenseur)
+    public void finDeTransfertDePersonnes(final int niveau, final int idAscenseur)
     {
         aDesservirVersBas.removeVal(niveau);
         aDesservirVersHaut.removeVal(niveau);
@@ -139,14 +136,14 @@ public class ProgrammeCyclique implements Programme
     }
 
     @Override
-    public void ascenseurFerme(int idAscenseur)
+    public void ascenseurFerme(final int idAscenseur)
     {
         bloque = false;
         update();
     }
 
     @Override
-    public void appelInterieur(int niveau, int idAscenseur)
+    public void appelInterieur(final int niveau, final int idAscenseur)
     {
 
         InterfacePhysique.changerEtatBoutonAscenseur(idAscenseur, niveau, true);
@@ -156,7 +153,7 @@ public class ProgrammeCyclique implements Programme
     }
 
     @Override
-    public void capteurDeNiveau(int idAscenseur, int niveau)
+    public void capteurDeNiveau(final int idAscenseur, final int niveau)
     {
         this.niveau = niveau;
         System.out.println(" on me dit niveau " + niveau + " mon obj c " + objectif);
@@ -169,7 +166,7 @@ public class ProgrammeCyclique implements Programme
     }
 
     @Override
-    public void ascArrete(int idAscenseur)
+    public void ascArrete(final int idAscenseur)
     {
         System.out.println("asc arrete " + GestionnaireDeTaches.getInnerTime());
         ouvrir();
@@ -194,7 +191,7 @@ public class ProgrammeCyclique implements Programme
         return 1;
     }
 
-    public static void println(String msg)
+    public static void println(final String msg)
     {
         InterfacePhysique.println(msg);
     }
@@ -202,12 +199,12 @@ public class ProgrammeCyclique implements Programme
     class Maillon
     {
 
-        private int val;
+        private final int val;
 
         public Maillon suivant;
         public Maillon precedent;
 
-        Maillon(int valeur)
+        Maillon(final int valeur)
         {
             val = valeur;
         }
@@ -216,14 +213,14 @@ public class ProgrammeCyclique implements Programme
         {
             return val;
         }
-    };
+    }
 
     class SortedChainedList
     {
         private Maillon first;
         private Maillon last;
 
-        public void insert(Maillon paramPrecedent, Maillon newMaillon)
+        public void insert(final Maillon paramPrecedent, final Maillon newMaillon)
         {
             if (paramPrecedent != null)
             {
@@ -251,7 +248,7 @@ public class ProgrammeCyclique implements Programme
             }
         }
 
-        void removeMaillon(Maillon toRemove)
+        void removeMaillon(final Maillon toRemove)
         {
             if (toRemove.precedent != null)
             {
@@ -269,7 +266,7 @@ public class ProgrammeCyclique implements Programme
             }
         }
 
-        public Maillon getFirstEqualOrBiggerThan(int val)
+        public Maillon getFirstEqualOrBiggerThan(final int val)
         {
             Maillon retour = first;
             while (retour != null && val > retour.getValeur())
@@ -279,7 +276,7 @@ public class ProgrammeCyclique implements Programme
             return retour;
         }
 
-        public Maillon getFirstEqualOrSmallerThan(int val)
+        public Maillon getFirstEqualOrSmallerThan(final int val)
         {
             Maillon retour = last;
             while (retour != null && val < retour.getValeur())
@@ -294,29 +291,22 @@ public class ProgrammeCyclique implements Programme
             return first == null;
         }
 
-        public void addMaillon(int val)
+        public void addMaillon(final int val)
         {
-            Maillon mTrouve = getFirstEqualOrSmallerThan(val);
+            final Maillon mTrouve = getFirstEqualOrSmallerThan(val);
             if ((mTrouve == null || mTrouve.getValeur() < val))
             {
                 insert(mTrouve, new Maillon(val));
             }
         }
 
-        void removeVal(int val)
+        void removeVal(final int val)
         {
-            Maillon mTrouve = getFirstEqualOrBiggerThan(val);
+            final Maillon mTrouve = getFirstEqualOrBiggerThan(val);
             if (mTrouve != null && mTrouve.getValeur() == val)
             {
                 removeMaillon(mTrouve);
             }
         }
-    }
-
-    @Override
-    public void init()
-    {
-        // TODO Auto-generated method stub
-
-    };
+    }*/
 }

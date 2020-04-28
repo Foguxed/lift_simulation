@@ -8,22 +8,21 @@ import com.badlogic.gdx.math.Vector2;
 
 public class ObjectChain implements Positionable
 {
-    protected List<ChainableObject> objList = new ArrayList<ChainableObject>();;
+    protected List<ChainableObject> objList = new ArrayList<>();
 
-    public ObjectChain(List<ChainableObject> objList)
+    public ObjectChain(final List<ChainableObject> objList)
     {
         this.objList = objList;
     }
 
-    public ObjectChain(List<ChainableObject> objList, Vector2 position)
+    public ObjectChain(final List<ChainableObject> objList, final Vector2 position)
     {
         this(objList);
-        this.setPosition(position);
+        setPosition(position);
     }
 
     public void tirer(float xValue)
     {
-        // System.out.println("tirer chaine " + xValue);
         int i = objList.size();
         while (xValue != 0 && i > 1)
         {
@@ -33,19 +32,21 @@ public class ObjectChain implements Positionable
         updatePositionsAPartirDuRang(i);
     }
 
-    public void setPosition(Vector2 vec)
+    @Override
+    public void setPosition(final Vector2 vec)
     {
         objList.get(0).getRenderedObject().setPosition(vec);
         updatePositionsAPartirDuRang(1);
     }
 
-    public void addToPosition(Vector2 vec)
+    @Override
+    public void addToPosition(final Vector2 vec)
     {
         objList.get(0).getRenderedObject().addToPosition(vec);
         updatePositionsAPartirDuRang(1);
     }
 
-    protected void updatePositionsAPartirDuRang(int rang)
+    protected void updatePositionsAPartirDuRang(final int rang)
     {
         for (int j = rang; j < objList.size(); j++)
         {
@@ -53,31 +54,31 @@ public class ObjectChain implements Positionable
         }
     }
 
-    public float deplacer(int spriteNb, float deplacement)
+    public float deplacer(final int spriteNb, final float deplacement)
     {
         return objList.get(spriteNb).deplacer(objList.get(spriteNb - 1), deplacement);
     }
 
     @Override
-    public void draw(Batch batch)
+    public void draw(final Batch batch)
     {
-        for (ChainableObject obj : objList)
+        for (final ChainableObject obj : objList)
         {
             obj.getRenderedObject().draw(batch);
         }
     }
 
-    public void draw(Batch batch, float alphaModulation)
+    public void draw(final Batch batch, final float alphaModulation)
     {
-        for (ChainableObject obj : objList)
+        for (final ChainableObject obj : objList)
         {
             obj.getRenderedObject().draw(batch, alphaModulation);
         }
     }
 
-    public void setAlpha(float alpha)
+    public void setAlpha(final float alpha)
     {
-        for (ChainableObject obj : objList)
+        for (final ChainableObject obj : objList)
         {
             obj.getRenderedObject().setAlpha(alpha);
         }

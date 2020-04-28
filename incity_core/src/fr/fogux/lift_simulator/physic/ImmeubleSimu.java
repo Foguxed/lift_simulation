@@ -1,34 +1,56 @@
 package fr.fogux.lift_simulator.physic;
 
-import fr.fogux.lift_simulator.evenements.animation.EvenementCreationImmeuble;
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.fogux.lift_simulator.FileOutput;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
-import fr.fogux.lift_simulator.fichiers.GestionnaireDeFichiers;
+import fr.fogux.lift_simulator.structure.AscId;
 
 public class ImmeubleSimu
 {
     protected EtageSimu[] etages;
-    protected AscenseurSimu[] ascenseurs;
+    protected List<AscenseurSimu>[] ascenseurs;
+
     public final int niveauMin;
 
-    public ImmeubleSimu(int niveauMin, int niveauMax, int nbAsc)
+    public ImmeubleSimu(final Simulation simu)
     {
-        new EvenementCreationImmeuble(niveauMin, niveauMax, nbAsc).print();
+        final int niveauMax = simu.getConfig().getNiveauMax();
+        niveauMin = simu.getConfig().getNiveauMin();
         if (niveauMin > 0 || niveauMax < 0)
         {
             throw new SimulateurException("niveau 0 obligatoire");
         }
-        int taille = niveauMax - niveauMin + 1;
-        this.niveauMin = niveauMin;
+        final int taille = niveauMax - niveauMin + 1;
         etages = new EtageSimu[taille];
         for (int i = 0; i < taille; i++)
         {
-            etages[i] = new EtageSimu(i + niveauMin);
+            etages[i] = new EtageSimu(simu,i + niveauMin);
         }
-        ascenseurs = new AscenseurSimu[nbAsc];
-        for (int j = 0; j < nbAsc; j++)
+        final int[] repartAsc = simu.getConfig().getRepartAscenseurs();
+        ascenseurs = new ArrayList[repartAsc.length];
+
+        for (int j = 0; j < repartAsc.length; j++)
         {
-            ascenseurs[j] = new AscenseurSimu(j + 1, TimeConfig.nbPersMaxAscenseur());
+            AscenseurSimu ascPrecedent = null;
+            ascenseurs[j] = new ArrayList<>(repartAsc[j]);
+            for(int i = 0; i < repartAsc[j] ; i++ )
+            {
+                final AscenseurSimu newAsc = new AscenseurSimu(simu, new AscId(j, i),i);
+                ascenseurs[j].add(newAsc);
+                if(i >= 1)
+                {
+                    newAsc.setAscInferieur(ascenseurs[j].get(i-1));
+                }
+                if(ascPrecedent != null)
+                {
+                    ascPrecedent.setAscSuperieur(newAsc);
+                }
+                ascPrecedent = newAsc;
+            }
         }
     }
 
@@ -42,27 +64,30 @@ public class ImmeubleSimu
         return niveauMin + etages.length;
     }
 
-    public void printAscStats()
+    public void printAscStats(final FileOutput output)
     {
-        for (AscenseurSimu asc : ascenseurs)
+        for(final List<AscenseurSimu> list : ascenseurs)
         {
-            DataTagCompound compound = new DataTagCompound();
-            asc.printStats(compound);
-            GestionnaireDeFichiers.printStatAscenseur(compound.getValueAsString());
+            for (final AscenseurSimu asc : list)
+            {
+                final DataTagCompound compound = new DataTagCompound();
+                asc.printStats(compound);
+                output.printLine(compound);
+            }
         }
     }
 
-    public AscenseurSimu getAscenseur(int id)
+    public AscenseurSimu getAscenseur(final AscId id)
     {
-        return ascenseurs[id - 1];
+        return ascenseurs[id.monteeId].get(id.stackId);
     }
 
-    public EtageSimu getEtage(int niveau)
+    public EtageSimu getEtage(final int niveau)
     {
         return etages[niveau - niveauMin];
     }
 
-    public boolean dansImmeuble(int niveau)
+    public boolean dansImmeuble(final int niveau)
     {
         return niveau >= niveauMin && niveau < niveauMin + etages.length;
     }

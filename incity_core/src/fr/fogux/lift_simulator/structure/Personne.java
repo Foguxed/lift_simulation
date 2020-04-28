@@ -5,7 +5,7 @@ public abstract class Personne
     protected final int destination;
     protected final int id;
 
-    public Personne(int destination, int id)
+    public Personne(final int destination, final int id)
     {
         this.destination = destination;
         this.id = id;
@@ -16,4 +16,14 @@ public abstract class Personne
         return destination;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "presonne " + id + " destination " + destination;
+    }
 }

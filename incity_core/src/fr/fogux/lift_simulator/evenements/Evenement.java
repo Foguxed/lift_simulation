@@ -2,7 +2,9 @@ package fr.fogux.lift_simulator.evenements;
 
 import java.lang.reflect.InvocationTargetException;
 
-import fr.fogux.lift_simulator.Simulateur;
+import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.GestionnaireDeTachesSimu;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.utils.Utils;
@@ -11,36 +13,47 @@ public abstract class Evenement
 {
     protected long time;
 
-    protected Evenement(long time, boolean doRegisterAsTask)
-    {
-        this.time = time;
-        if (doRegisterAsTask && !Simulateur.animationTime)
-        {
-            Simulateur.getGestionnaireDeTachesSimu().executerA(this, time);
-        }
-    }
-
-    public Evenement(long time, DataTagCompound compound)
+    protected Evenement(final long time)
     {
         this.time = time;
     }
 
-    public static Evenement genererEvenement(String data)
+    public void runOn(final Simulation simu)
     {
-        System.out.println(data);
-        if (data == null)
-        {
+        simu.getGestio().executerA(this, time);
+    }
 
+    public void print(final Simulation simu)
+    {
+    }
+
+    public void onPrintRegister(final GestionnaireDeTachesSimu gestio, final long registeredTime)
+    {
+    }
+
+    public void onPrintCancel(final GestionnaireDeTachesSimu gestio, final long cancelRegisteredTime)
+    {
+    }
+
+
+
+    public Evenement(final long time, final DataTagCompound compound)
+    {
+        this.time = time;
+    }
+
+    public static Evenement genererEvenement(final String data)
+    {
+        if (data == null || data.charAt(0) != '[')
+        {
             return null;
         }
-        System.out.println("substring " + data.substring(data.indexOf("[") + 1, data.lastIndexOf("]")));
-        long time = Utils.timeInMilis(data.substring(data.indexOf("[") + 1, data.indexOf("]")));
-        System.out.println(time);
-        DataTagCompound tag = new DataTagCompound(data.substring(data.indexOf("{") + 1, data.lastIndexOf("}")));
+
+        final long time = Utils.timeInMilis(data.substring(data.indexOf("[") + 1, data.indexOf("]")));
+
+        final DataTagCompound tag = new DataTagCompound(data);
         try
         {
-            // System.out.println("event "
-            // +Evenements.getEvenement(tag.getString(TagNames.type)));
             return Evenements.getEvenement(tag.getString(TagNames.type)).getDeclaredConstructor(
                 long.class, DataTagCompound.class).newInstance(time, tag);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
@@ -56,12 +69,12 @@ public abstract class Evenement
         return time;
     }
 
-    public void cancel()
+    public void cancel(final Simulation simulation)
     {
-        Simulateur.getGestionnaireDeTachesSimu().CancelEvenement(this);
+        simulation.getGestio().CancelEvenement(this, getTime());
     }
 
-    public abstract void simuRun();
+    public abstract void simuRun(Simulation simulation);
 
-    public abstract void visuRun();
+    public abstract void visuRun(AnimationProcess animation);
 }

@@ -1,68 +1,57 @@
 package fr.fogux.lift_simulator.population;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.EvenementEntreePersonne;
 import fr.fogux.lift_simulator.evenements.EvenementSortiePersonne;
+import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
-import fr.fogux.lift_simulator.fichiers.GestionnaireDeFichiers;
 import fr.fogux.lift_simulator.fichiers.TagNames;
-import fr.fogux.lift_simulator.mind.ProgrammeEntryListener;
 import fr.fogux.lift_simulator.physic.AscenseurSimu;
 import fr.fogux.lift_simulator.physic.EtageSimu;
-import fr.fogux.lift_simulator.physic.TimeConfig;
 import fr.fogux.lift_simulator.stats.StatsCarrier;
-import fr.fogux.lift_simulator.structure.Etage;
+import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Personne;
 
 public class PersonneSimu extends Personne implements StatsCarrier
 {
+    protected final Simulation simu;
+
     protected EtageSimu etageActuel;
-    protected static List<PersonneSimu> personnesList;
-    protected boolean deleteMe = false;
-    protected boolean deleteMeRe = false;
+    protected boolean enAttentePalier;
     protected AscenseurSimu ascenseur;
 
     protected final long timeInput;
     protected long heureEntreeAscenseur;
     protected long heureSortieAscenseur;
-    protected int ascenseurUtilise;
+    protected AscId ascenseurUtilise;
 
-    public PersonneSimu(int destination, EtageSimu etageActuel)
+    public PersonneSimu(final Simulation simu,final int id, final int destination, final EtageSimu etageActuel)
     {
-        super(destination, personnesList.size());
-        timeInput = GestionnaireDeTaches.getInnerTime();
-        personnesList.add(this);
+        super(destination, id);
+        this.simu = simu;
+        enAttentePalier = true;
+        timeInput = simu.getTime();
         this.etageActuel = etageActuel;
-        choisirDestination();
     }
 
-    public static void initClass()
+    public boolean livree()
     {
-        personnesList = new ArrayList<PersonneSimu>();
+        return heureSortieAscenseur > 0;
     }
 
-    public static PersonneSimu getPersonne(int id)
+    public long getTransportTime()
     {
-        return personnesList.get(id);
+        return heureSortieAscenseur - timeInput;
     }
 
-    public static void printPersStats()
-    {
-        for (PersonneSimu pers : personnesList)
-        {
-            DataTagCompound compound = new DataTagCompound();
-            pers.printStats(compound);
-            GestionnaireDeFichiers.printStatPersonne(compound.getValueAsString());
-        }
-    }
 
     @Override
-    public void printStats(DataTagCompound compound)
+    public void printStats(final DataTagCompound compound)
     {
-        compound.setInt(TagNames.ascenseurId, ascenseurUtilise);
+        if(ascenseurUtilise != null)
+        {
+            ascenseurUtilise.printIn(compound);
+        }
         compound.setLong(TagNames.heureEntreeAsc, heureEntreeAscenseur);
         compound.setLong(TagNames.heureSortieAsc, heureSortieAscenseur);
         compound.setLong(TagNames.heureInput, timeInput);
@@ -70,56 +59,52 @@ public class PersonneSimu extends Personne implements StatsCarrier
 
     public void choisirDestination()
     {
-        if (etageActuel.getNiveau() == destination)
-        {
-            // TODO faire un truc
-        } else if (etageActuel.getNiveau() > destination && !etageActuel.boutonBasAllume())
-        {
-            ProgrammeEntryListener.appeler(etageActuel.getNiveau(), false);
-        } else if (etageActuel.getNiveau() < destination && !etageActuel.boutonHautAllume())
-        {
-            ProgrammeEntryListener.appeler(etageActuel.getNiveau(), true);
-        }
+        simu.getPrgm().appelExterieur(id, etageActuel.getNiveau(), destination);
     }
 
-    public boolean jeSortDeAscenseur(Etage etage)
+    public boolean jeSortDeAscenseur(final int etage)
     {
-        if (etage.getNiveau() == destination)
+        if (etage == destination)
         {
-            new EvenementSortiePersonne(
-                TimeConfig.getDureeSortieEntreePersonne() + GestionnaireDeTaches.getInnerTime(), id).print();
+            new EvenementSortiePersonne(simu.getTime(),
+                simu.getConfig(), id).runOn(simu);
             return true;
         } else
             return false;
     }
 
-    public void jentreDansAscenseur(AscenseurSimu ascenseur)
+    public void tenterEntrerAscenseur(final AscenseurSimu ascenseur, final int niveau) throws SimulateurAcceptableException
     {
-        // Utils.msg(this, "ascenseur choisir entree deja entre? " + deleteMeRe);
+        if(!enAttentePalier)
+        {
+            throw new SimulateurAcceptableException(this + " est déja dans " + ascenseur + " impossible de la faire entrer dans " + ascenseur);
+        }
+        else if(etageActuel.getNiveau() != niveau)
+        {
+            throw new SimulateurAcceptableException(this + " est au niveau " + etageActuel.getNiveau() + " impossible de la faire entrer dans " + ascenseur + " au niveau " + niveau);
+        }
         new EvenementEntreePersonne(
-            TimeConfig.getDureeSortieEntreePersonne() + GestionnaireDeTaches.getInnerTime(), id, ascenseur.getId(),
-            etageActuel.getNiveau()).print();
-        deleteMeRe = true;
+            simu.getTime(),simu.getConfig(), id, ascenseur.getId(),
+            etageActuel.getNiveau()).runOn(simu);
+        enAttentePalier = false;
     }
 
-    public void entrerDansAscenseur(AscenseurSimu ascenseur)
+    public void entrerDansAscenseur(final AscenseurSimu ascenseur)
     {
-        heureEntreeAscenseur = GestionnaireDeTaches.getInnerTime();
+        heureEntreeAscenseur = simu.getTime();
         ascenseurUtilise = ascenseur.getId();
-        ascenseur.entreeDe(this);
         this.ascenseur = ascenseur;
+        ascenseur.estEntre(this);
         // Utils.msg(this, "ascenseur " + ascenseur);
-        etageActuel.nouvelleEntreePossible(ascenseur);
-        ProgrammeEntryListener.onAppuiSurNiveau(destination, ascenseur.getId());
+        simu.getPrgm().appelInterieur(destination, ascenseur.getId());
     }
 
     public void sortirDeAscenseur()
     {
-        heureSortieAscenseur = GestionnaireDeTaches.getInnerTime();
+        heureSortieAscenseur = simu.getTime();
         // Utils.msg(this, "ascenseurSortir " + ascenseur +" deja sorti " + deleteMe);
         ascenseur.sortieDe(this);
         ascenseur = null;
-        deleteMe = true;
     }
 
 }

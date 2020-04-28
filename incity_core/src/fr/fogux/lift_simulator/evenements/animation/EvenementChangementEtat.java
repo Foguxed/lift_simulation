@@ -1,6 +1,6 @@
 package fr.fogux.lift_simulator.evenements.animation;
 
-import fr.fogux.lift_simulator.GestionnaireDeTaches;
+import fr.fogux.lift_simulator.AnimationProcess;
 
 public abstract class EvenementChangementEtat extends EvenementAnimationOnly
 {
@@ -10,24 +10,24 @@ public abstract class EvenementChangementEtat extends EvenementAnimationOnly
         super();
     }
 
-    public EvenementChangementEtat(long time)
+    public EvenementChangementEtat(final long time)
     {
         super(time);
     }
 
     @Override
-    public void visuRun()
+    public void visuRun(final AnimationProcess animP)
     {
-        if (GestionnaireDeTaches.marcheArriere())
+        if (animP.gestioTaches().marcheArriereEnCours())
         {
-            visuRunetatPrecedent();
+            visuRunetatPrecedent(animP);
         } else
         {
-            visuRunetatSuivant();
+            visuRunetatSuivant(animP);
         }
     }
 
-    public abstract void visuRunetatSuivant();
+    public abstract void visuRunetatSuivant(AnimationProcess animP);
 
-    public abstract void visuRunetatPrecedent();
+    public abstract void visuRunetatPrecedent(AnimationProcess animP);
 }

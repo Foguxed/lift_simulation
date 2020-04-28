@@ -10,22 +10,20 @@ import fr.fogux.lift_simulator.animation.objects.RenderedObjectNumber;
 
 public class NumberFont
 {
-    public static Texture getTexture(byte b)
+    public static Texture getTexture(final byte b)
     {
         return AssetsManager.chiffres[b];
     }
 
-    public static RenderedObjectNumber getRenderedObject(int value, float maxWidth, Color color)
+    public static RenderedObjectNumber getRenderedObject(final int value, final float maxWidth, final Color color)
     {
-        RenderedObjectNumber rdo = new RenderedObjectNumber();
+        final RenderedObjectNumber rdo = new RenderedObjectNumber();
         float decalageX = 0;
 
-        ByteArray byteArray = getByteArray(value);
-        System.out.println("nb chiffres " + byteArray.size);
+        final ByteArray byteArray = getByteArray(value);
         for (int i = byteArray.size - 1; i >= 0; i--)
         {
-            System.out.println("nouveau chiffre " + byteArray.get(i));
-            RelativeSprite sprite = new RelativeSprite(getTexture(byteArray.get(i)));
+            final RelativeSprite sprite = new RelativeSprite(getTexture(byteArray.get(i)));
             sprite.setColor(color);
             rdo.addRelativeDrawable(sprite, new Vector2(decalageX, 0));
             decalageX += sprite.getWidth() + 30;
@@ -40,20 +38,17 @@ public class NumberFont
 
     protected static ByteArray getByteArray(int value)
     {
-        ByteArray b = new ByteArray();
-        Boolean doAddMinus = value < 0;
+        final ByteArray b = new ByteArray();
+        final Boolean doAddMinus = value < 0;
         if (doAddMinus)
         {
             value = -value;
         }
-        System.out.println("NumberFont value " + value + " length " + b.size);
         do
         {
             b.add((byte) (value % 10));
             value = value / 10;
-            System.out.println("NumberFont int " + value);
         } while (value > 0);
-        System.out.println("NumberFont int " + b);
         if (doAddMinus)
         {
             b.add((byte) 10);

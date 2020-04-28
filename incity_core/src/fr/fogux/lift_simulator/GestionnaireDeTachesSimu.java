@@ -9,24 +9,97 @@ import java.util.TreeMap;
 
 import com.badlogic.gdx.Gdx;
 
+import fr.fogux.lift_simulator.evenements.AnimatedEvent;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
-import fr.fogux.lift_simulator.fichiers.GestionnaireDeFichiers;
 
 public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 {
-    protected final TreeMap<Long, List<Evenement>> taches = new TreeMap<Long, List<Evenement>>();
-    protected Set<EnregistreurDeDuree> enregs = new HashSet<EnregistreurDeDuree>();
-    protected List<Evenement> bufferPartition = new ArrayList<Evenement>();
+    protected final Simulation simu;
+
+    protected final TreeMap<Long, List<Evenement>> taches = new TreeMap<>();
+    protected Set<EnregistreurDeDuree> enregs = new HashSet<>();
+    protected List<Evenement> bufferPartition = new ArrayList<>();
     protected long realtTimeAtStart;
     protected long lastInputTime;
 
-    public void executerDans(Evenement tache, long timeRelatif)
+    protected PrintPolicy policy;
+
+    public GestionnaireDeTachesSimu(final Simulation simu, final boolean doPrintEvents, final PartitionSimu partition)
     {
-        executerA(tache, innerTime + timeRelatif);
+        this.simu = simu;
+        if(doPrintEvents)
+        {
+            policy = new PrintPolicy()
+            {
+
+                @Override
+                public void onSimuRun(final Evenement e)
+                {
+                    if(e instanceof AnimatedEvent && ((AnimatedEvent)e).doNotSimuRun(simu.getTime()))
+                    {
+                    }
+                    else
+                    {
+                        e.simuRun(simu);
+                    }
+                    e.print(simu);
+                }
+
+                @Override
+                public void onRegister(final Evenement e, final GestionnaireDeTachesSimu gestio, final long registeredTime)
+                {
+                    e.onPrintRegister(gestio, registeredTime);
+                }
+
+                @Override
+                public void onCancel(final Evenement e, final GestionnaireDeTachesSimu gestio, final long registeredTime)
+                {
+                    e.onPrintCancel(gestio, registeredTime);
+                }
+
+                @Override
+                public boolean doPrint()
+                {
+                    return true;
+                }
+            };
+        }
+        else
+        {
+            policy = new PrintPolicy()
+            {
+
+                @Override
+                public void onSimuRun(final Evenement e)
+                {
+                    e.simuRun(simu);
+                }
+
+                @Override
+                public void onRegister(final Evenement e, final GestionnaireDeTachesSimu gestio, final long registeredTime)
+                {
+                }
+
+                @Override
+                public void onCancel(final Evenement e, final GestionnaireDeTachesSimu gestio, final long time)
+                {
+                }
+
+                @Override
+                public boolean doPrint()
+                {
+                    return false;
+                }
+            };
+        }
+        for(final Evenement e : partition.getInputs())
+        {
+            executerA(e,e.getTime());
+        }
     }
 
-    public void executerA(Evenement tache, long timeAbsolu)
+    public void executerA(final Evenement tache, final long timeAbsolu)
     {
         // System.out.println("evenement registered " + tache.getClass() + " " +
         // timeAbsolu);
@@ -35,47 +108,47 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
             Gdx.app.log("GestonnaireDeTaches", "executerA erreur, timeAbsolu inferieur au temps actuel");
         } else
         {
-            List<Evenement> tempList = taches.get(timeAbsolu);
+            final List<Evenement> tempList = taches.get(timeAbsolu);
             if (tempList != null)
             {
                 tempList.add(tache);
             } else
             {
-                List<Evenement> list = new ArrayList<Evenement>();
+                final List<Evenement> list = new ArrayList<>();
                 list.add(tache);
-                System.out.println("nouveau time events");
                 taches.put(timeAbsolu, list);
             }
-
         }
+        policy.onRegister(tache, this, timeAbsolu);
     }
 
-    public void CancelEvenement(Evenement ev)
+    public void CancelEvenement(final Evenement ev, final long registeredTime)
     {
-        List<Evenement> temp = taches.get(ev.getTime());
+        final List<Evenement> temp = taches.get(registeredTime);
         if (temp != null)
         {
             temp.remove(ev);
         }
-
+        policy.onCancel(ev, this, registeredTime);
     }
 
+    @Override
     public void runExecuting()
     {
+        System.out.println("run executing on " + taches.size() + " events ");
         realtTimeAtStart = System.currentTimeMillis();
-        // refillBuffer();
-        inputAllEvents();
         lastInputTime = taches.lastKey();
 
         System.out.println("fin des imputs");
+        simu.getPrgm().init();
         while (!taches.isEmpty())
         {
-            Entry<Long, List<Evenement>> entry = taches.firstEntry();
+            final Entry<Long, List<Evenement>> entry = taches.firstEntry();
             final Long tempsEcoule = entry.getKey() - innerTime;
             innerTime = entry.getKey();
             if (tempsEcoule != 0)
             {
-                for (EnregistreurDeDuree obj : enregs)
+                for (final EnregistreurDeDuree obj : enregs)
                 {
                     obj.tempsEcoulee(tempsEcoule);
                 }
@@ -90,46 +163,28 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         }
     }
 
-    public void executerChaqueEvenement(List<Evenement> list)
+    public void executerChaqueEvenement(final List<Evenement> list)
     {
         while (!list.isEmpty())
         {
-            /*
-             * if(System.currentTimeMillis() - realtTimeAtStart > 15*1000) { throw new
-             * SimulateurException("Timeout");//TODO faire quelquechose? }
-             */
-            list.get(0).simuRun();
-            /* if( */list.remove(0);/*
-                                     * == bufferPartition.get(0)) { bufferPartition.remove(0);
-                                     * addOnePartitionLine(); }
-                                     */
+
+            policy.onSimuRun(list.get(0));// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
+            list.remove(0);
         }
     }
 
     /*
      * protected static void refillBuffer() { while(bufferPartition.size() < 10) {
      * addOnePartitionLine(); } }
-     * 
+     *
      * protected static void addOnePartitionLine() {
      * bufferPartition.add(Evenement.genererEvenement(GestionnaireDeFichiers.
      * getNextPartitionLine())); }
      */
 
-    protected void inputAllEvents()
-    {
-        String str = GestionnaireDeFichiers.getNextPartitionLine();
-        while (str != null)
-        {
-            System.out.println("newEvent " + str);
-            Evenement.genererEvenement(str);
-            str = GestionnaireDeFichiers.getNextPartitionLine();
-        }
-    }
-
     @Override
-    protected boolean marcheArriereEnCours()
+    public boolean marcheArriereEnCours()
     {
-        // TODO Auto-generated method stub
         return false;
     }
 
