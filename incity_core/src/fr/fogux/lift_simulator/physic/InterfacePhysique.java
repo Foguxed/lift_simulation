@@ -32,10 +32,24 @@ public class InterfacePhysique
         return simu.getImmeubleSimu().getAscenseur(id).getNbPersonnesIn();
     }
 
-    public void deplacerAscenseur(final AscId ascenseurId, final int destination, final boolean ouvrirPortes)
+    /**
+     *
+     * @param ascenseurId
+     * @param destination la nouvelle destination
+     * @param ouvrirPortes true si l'ascenseur doit ouvrir ses portes à cet etage, la fonction finTransfertPersonne sera alors
+     * appellée, sinon, la fonction arretSansOuverture sera appellée
+     *
+     */
+    public void changerDestination(final AscId ascenseurId, final int destination, final boolean ouvrirPortes)
     {
         simu.getImmeubleSimu().getAscenseur(ascenseurId).setObjectif(destination, ouvrirPortes);
     }
+
+    /**
+     *
+     * @param id
+     * @return EtatAsc permet de connaitre le sens (montée descente arrêt) et le premier etage atteignable
+     */
 
     public EtatAsc getEtat(final AscId id)
     {
@@ -62,6 +76,7 @@ public class InterfacePhysique
      * allume/éteint un bouton parmis les boutons présents dans les ascenseurs, un
      * bouton allumé aura pour effet de dissuader les personnes d'appuyer a nouveau
      * dessus
+     * n'a aucun effet si l'algorithme est utilisé sans générer de journal
      *
      * @param ascenseurid ascenseur conserné
      * @param niveau      correspondant au bouton concerné
@@ -72,9 +87,18 @@ public class InterfacePhysique
         simu.getImmeubleSimu().getAscenseur(ascenseurid).changerEtatBouton(niveau, allume);
     }
 
+    /**
+     * Fera apparaitre une ligne à l'instant d'execution de cette méthode dans une console qui s'affichera lors de l'animation,
+     * n'a aucun effet si l'algorithme est utilisé sans générer de journal
+     * @param val
+     */
+
     public void println(final String val)
     {
-        new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
+        if(simu.doPrint())
+        {
+            new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
+        }
     }
 
 }

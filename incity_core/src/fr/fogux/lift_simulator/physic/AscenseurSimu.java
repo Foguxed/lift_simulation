@@ -81,8 +81,8 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         if(simu.doPrint())
         {
             new EvenementBoutonAscenseur(bouton, id, allume, boutonsAllumes.contains(bouton)).print(simu);
+            super.changerEtatBouton(bouton, allume);
         }
-        super.changerEtatBouton(bouton, allume);
     }
 
     public void registerListener(final AscenseurSimu asc)

@@ -29,7 +29,7 @@ public class AscenseurDevin
     {
         if(index < destinations.size())
         {
-            interfacePhysique.deplacerAscenseur(id, destinations.get(index).niveau, true);
+            interfacePhysique.changerDestination(id, destinations.get(index).niveau, true);
             index ++;
         }
     }
