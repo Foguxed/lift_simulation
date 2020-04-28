@@ -3,10 +3,8 @@ package fr.fogux.lift_simulator.physic;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.fogux.lift_simulator.FileOutput;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
-import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.structure.AscId;
 
 public class ImmeubleSimu
@@ -64,7 +62,7 @@ public class ImmeubleSimu
         return niveauMin + etages.length;
     }
 
-    public void printAscStats(final FileOutput output)
+    /*public void printAscStats(final FileOutput output)
     {
         for(final List<AscenseurSimu> list : ascenseurs)
         {
@@ -75,7 +73,7 @@ public class ImmeubleSimu
                 output.printLine(compound);
             }
         }
-    }
+    }*/
 
     public AscenseurSimu getAscenseur(final AscId id)
     {
