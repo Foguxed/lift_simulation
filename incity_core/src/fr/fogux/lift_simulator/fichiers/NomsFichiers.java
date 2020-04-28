@@ -5,7 +5,7 @@ public class NomsFichiers
     //.txt
     public static final String extension = ".txt";
     public static final String config_gen_partition = "config_gen_partition";
-    public static final String config_simulationn = "config_simulationn";
+    public static final String config_simulationn = "config_simulation";
     public static final String algo_set = "algo_set";
 
     public static final String journal = "journal";
