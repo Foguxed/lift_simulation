@@ -12,7 +12,7 @@ import fr.fogux.lift_simulator.evenements.EvenementArriveAscSansOuverture;
 import fr.fogux.lift_simulator.evenements.EvenementMouvementPortes;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonAscenseur;
 import fr.fogux.lift_simulator.evenements.animation.EvenementChangementMouvement;
-import fr.fogux.lift_simulator.exceptions.SimulateurException;
+import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.population.PersonneSimu;
@@ -289,11 +289,11 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
             final Integer id = iteratorInvites.next();
             if(id == null || id >= simu.getPersonneListSize())
             {
-                throw new SimulateurException("l'id de personne " + id + " ne designe aucune personne connue " + toString());
+                throw new SimulateurAcceptableException("l'id de personne " + id + " ne designe aucune personne connue " + toString());
             }
             else if(getNbPersonnesIn() == simu.getConfig().nbPersMaxAscenseur())
             {
-                throw new SimulateurException(this + " est déjà plein et ne peut pas acceuillir " + simu.getPersonne(id));
+                throw new SimulateurAcceptableException(this + " est déjà plein et ne peut pas acceuillir " + simu.getPersonne(id));
             }
             else
             {
