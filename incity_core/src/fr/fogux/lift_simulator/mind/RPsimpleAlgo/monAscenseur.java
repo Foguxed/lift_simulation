@@ -24,19 +24,34 @@ public class monAscenseur {
     {
         return null;
     }
-//  CECI NE SERT A RIEN :
-//	public boolean enMontee() {
-//		// TODO Auto-generated method stub
-//		return this.enMontee;
-//	}
-    
-// JE NE SAIS PAS CE QUE CA VEUT DIRE :
-//		public boolean isEnMontee() {
-//			return enMontee;
-//		}
-//
-//		public void setEnMontee(boolean enMontee) {
-//			this.enMontee = enMontee;
-//		}
-
+    /**
+     * Vrai si une personne dans l'ascenseur veut descendre
+     * @param niveau
+     * @return
+     */
+    public boolean arretDemande(int niveau) {
+    	boolean b = false;
+		for (int i = 0; i < this.destinations.size(); i++) {
+			if (this.destinations.get(i) == niveau) {
+				b = true;
+			}
+		}
+    	return b;
 	}
+
+	public boolean arretDemandePlusLoin(int niveau) {
+		boolean b = false;
+		int destination = this.destinations.size();
+		for (int i = 0; i < destination; i++) {
+			if ( (destination > niveau && this.enMontee) 
+					|| (destination < niveau && !this.enMontee) ) {
+				b = true;
+			}
+		}
+    	return b;
+		
+	}
+
+
+
+}
