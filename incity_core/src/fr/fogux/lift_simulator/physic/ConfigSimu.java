@@ -20,11 +20,10 @@ public class ConfigSimu extends ConfigImmeuble
     protected final float margeInterAsc;
 
     protected final float marge_sup_inter_ascenseur;
-    protected final long pingTime;
 
 
     public ConfigSimu(final int niveauMin, final int niveauMax, final int[] repartAsc, final float ascenseurSpeed, final float acceleration,
-        final long dureeEntreeSortiePers, final long dureePortes, final int capaciteAsc, final float margeInterAsc, final long pingTime)
+        final long dureeEntreeSortiePers, final long dureePortes, final int capaciteAsc, final float margeInterAsc)
     {
         super(niveauMin, niveauMax, repartAsc);
         this.ascenseurSpeed = ascenseurSpeed;
@@ -33,7 +32,6 @@ public class ConfigSimu extends ConfigImmeuble
         this.dureePortes = dureePortes;
         this.capaciteAsc = capaciteAsc;
         this.margeInterAsc = margeInterAsc;
-        this.pingTime = pingTime;
         marge_sup_inter_ascenseur = margeSup(margeInterAsc);
     }
 
@@ -51,14 +49,6 @@ public class ConfigSimu extends ConfigImmeuble
         dureePortes = c.getLong(TagNames.dureePortes);
         capaciteAsc = c.getInt(TagNames.capaciteAsc);
         margeInterAsc = c.getFloat(TagNames.margeInterAsc);
-        if(c.hasKey(TagNames.pingTime))
-        {
-            pingTime = c.getLong(TagNames.pingTime);
-        }
-        else
-        {
-            pingTime = -1;
-        }
         marge_sup_inter_ascenseur = margeSup(margeInterAsc);
     }
 
@@ -77,10 +67,6 @@ public class ConfigSimu extends ConfigImmeuble
         c.setLong(TagNames.dureePortes, dureePortes);
         c.setInt(TagNames.capaciteAsc, capaciteAsc);
         c.setFloat(TagNames.margeInterAsc, margeInterAsc);
-        if(pingTime > 0)
-        {
-            c.setLong(TagNames.pingTime, pingTime);
-        }
     }
 
     public long getDureeSortieEntreePersonne()
@@ -116,11 +102,6 @@ public class ConfigSimu extends ConfigImmeuble
     public int nbPersMaxAscenseur()
     {
         return capaciteAsc;
-    }
-
-    public long getPingTime()
-    {
-        return pingTime;
     }
 
 

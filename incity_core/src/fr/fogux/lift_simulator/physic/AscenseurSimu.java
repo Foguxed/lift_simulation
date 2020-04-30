@@ -111,12 +111,6 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     public void setObjectif(final int newEtageObjectif, final boolean ouvrirPortes)
     {
-
-        if(etageObjectif == newEtageObjectif && ouvrirPortesProchaineDest == ouvrirPortes)
-        {
-            return;
-        }
-
         if(newEtageObjectif < simu.getConfig().getNiveauMin() || newEtageObjectif > simu.getConfig().getNiveauMax())
         {
             throw new SimulateurAcceptableException(this + " a tentete de se deplacer vers " + newEtageObjectif + " qui n'est pas un etage de l'immeuble ");
@@ -324,7 +318,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     public void finEvacuation()
     {
-        iteratorInvites = simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn()).iterator();
+        iteratorInvites = simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau()).iterator();
         enterNext();
     }
 

@@ -39,9 +39,10 @@ public abstract class Algorithme
     public abstract void ping();
 
     /**
-     * appellé à t = 0
+     *
+     * @return ping delay time value , <0 if no ping required
      */
-    public abstract void init();
+    public abstract long init();
 
     /**
      * appelé lorsque quelqu'un arrive dans l'immeuble
@@ -55,10 +56,11 @@ public abstract class Algorithme
      * iterable entreront dans l'ascenseur (iterables c'est une liste par exemple)
      * @param idASc
      * @param places_disponibles
+     * @param niveau
      * @return un Iterable dont l'iterator ne compte pas plus de places_disponibles éléments, attention, l'iterable n'est pas
      * immédiatement itéré (il faut donc le copier si nécessaire)
      */
-    public abstract Iterable<Integer> listeInvites(AscId idASc, int places_disponibles);
+    public abstract Iterable<Integer> listeInvites(AscId idASc, int places_disponibles, int niveau);
 
     /**
      * Appellé lorsque l'ascenseur s' arrête à un étage pour lequel l'algorithme n'avais pas demandé
