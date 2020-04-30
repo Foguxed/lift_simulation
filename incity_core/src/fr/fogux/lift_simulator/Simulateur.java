@@ -26,6 +26,7 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
+import fr.fogux.lift_simulator.mind.RPsimpleAlgo.RPsimpleAlgo;
 import fr.fogux.lift_simulator.mind.basic.ProgrammeBasique;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
@@ -60,7 +61,8 @@ public class Simulateur extends Game
     private static Map<String,AlgoInstantiator> initAlgorithmes()
     {
         final Map<String,AlgoInstantiator> map = new HashMap<>();
-        addAlg(ProgrammeBasique.class,"prgmBasique",map);
+        //addAlg(ProgrammeBasique.class,"prgmBasique",map);
+        addAlg(RPsimpleAlgo.class,"RPsimpleAlgo",map);
 
         return map;
     }
