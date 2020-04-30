@@ -359,7 +359,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     public void finFermeturePortes(final int niveau)
     {
-        simu.getPrgm().finDeTransfertDePersonnes(id);
+        simu.getPrgm().finDeTransfertDePersonnes(id, niveau);
         final EtageSimu etageSimutemp = etageTransfert;
         System.out.println("fin fermeture portes etage transfert " + etageTransfert + " asc " + id + " niveau " + niveau + " " + simu.getImmeubleSimu().getEtage(niveau));
         etageTransfert = null;

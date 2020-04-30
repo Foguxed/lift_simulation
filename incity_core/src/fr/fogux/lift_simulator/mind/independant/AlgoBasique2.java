@@ -42,6 +42,7 @@ public class AlgoBasique2 extends Algorithme
         if(repartIndex == montees.length)
         {
             repartIndex = 0;
+
         }
     }
 
@@ -58,7 +59,7 @@ public class AlgoBasique2 extends Algorithme
     }
 
     @Override
-    public void finDeTransfertDePersonnes(final AscId idAscenseur)
+    public void finDeTransfertDePersonnes(final AscId idAscenseur, final int niveau)
     {
         montees[idAscenseur.monteeId].escaleTerminee(idAscenseur.stackId);
     }

@@ -69,7 +69,7 @@ public class ProgrammeBasique extends Algorithme
     }
 
     @Override
-    public void finDeTransfertDePersonnes(final AscId idAscenseur)
+    public void finDeTransfertDePersonnes(final AscId idAscenseur, final int n)
     {
         if(idAscenseur.stackId == 0)
         {

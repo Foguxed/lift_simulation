@@ -75,7 +75,7 @@ public abstract class Algorithme
      * @param niveau      auquel l'actio a lieue
      * @param idAscenseur de l'ascenseur ouvert
      */
-    public abstract void finDeTransfertDePersonnes(AscId idAscenseur);
+    public abstract void finDeTransfertDePersonnes(AscId idAscenseur, int niveau);
 
     @Deprecated
     /**
