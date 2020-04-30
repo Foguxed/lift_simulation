@@ -159,11 +159,13 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
                     obj.tempsEcoulee(tempsEcoule);
                 }
             }
-            executerChaqueEvenement(entry.getValue());
             taches.pollFirstEntry();
-
+            executerChaqueEvenement(entry.getValue());
+            //System.out.println(taches.size());
             if (innerTime > lastInputTime + 1000 * 60 * 60 * 3)
             {
+                System.out.println("plus de 3 heurs " + taches.pollFirstEntry().getClass());
+                System.out.println("plus de 3 heurs " + taches.pollFirstEntry().getKey());
                 throw new SimulateurAcceptableException(" plus de 3 heures ecoulees depuis la derniere arriveee ");
             }
         }

@@ -6,10 +6,12 @@ public class EtatAsc
 {
     public final EtatAscenseur etat;
     public final int premierEtageAtteignable;
+    public final float positionActuelle;
 
     public EtatAsc(final EtatAscenseur etat, final float positionActuelle, final int premierEtageAtteignable)
     {
         this.etat = etat;
         this.premierEtageAtteignable = premierEtageAtteignable;
+        this.positionActuelle = positionActuelle;
     }
 }
