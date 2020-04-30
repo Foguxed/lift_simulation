@@ -42,7 +42,6 @@ public abstract class Ascenseur
 
     protected void changerXObjectif(final float newXObjectif, final long timeChangement, final ConfigSimu c)
     {
-        System.out.println("changerXObjectif " + timeChangement);
         if(instantProchainArret <= timeChangement)
         {
             vi = 0f;
@@ -56,6 +55,7 @@ public abstract class Ascenseur
             }
             xi = depFunc.getX(timeChangement);
             vi = depFunc.getV(timeChangement);
+            depFunc = null;
         }
         ti = timeChangement;
         xObjectifActuel = newXObjectif;
@@ -85,9 +85,7 @@ public abstract class Ascenseur
 
     protected void updateInstantProchainArret(final ConfigSimu c)
     {
-        System.out.println(" update prochain arret " + ti +" " + vi +" " +xi +" " +xObjectifActuel +" " + this );
         instantProchainArret = AscDeplacementFunc.getTimeStraightToObjective(c, ti, vi, xi, xObjectifActuel);
-        System.out.println(" instantProchainArret " + instantProchainArret);
     }
 
 

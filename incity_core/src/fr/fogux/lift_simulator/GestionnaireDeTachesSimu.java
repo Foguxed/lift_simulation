@@ -13,6 +13,8 @@ import fr.fogux.lift_simulator.evenements.AnimatedEvent;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementPingAlgorithme;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
+import fr.fogux.lift_simulator.exceptions.SimulateurException;
+import fr.fogux.lift_simulator.utils.Utils;
 
 public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 {
@@ -104,6 +106,10 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     {
         // System.out.println("evenement registered " + tache.getClass() + " " +
         // timeAbsolu);
+        if(beyondEndOFTime(timeAbsolu))
+        {
+            throw new SimulateurException("evenement register très tard " + timeAbsolu + " ev " + tache + " il est " + Utils.getTimeString(innerTime));
+        }
         if (timeAbsolu < innerTime)
         {
             Gdx.app.log("GestonnaireDeTaches", "executerA erreur, timeAbsolu inferieur au temps actuel");
@@ -161,14 +167,16 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
             }
             taches.pollFirstEntry();
             executerChaqueEvenement(entry.getValue());
-            //System.out.println(taches.size());
-            if (innerTime > lastInputTime + 1000 * 60 * 60 * 3)
+            if (beyondEndOFTime(innerTime))
             {
-                System.out.println("plus de 3 heurs " + taches.pollFirstEntry().getClass());
-                System.out.println("plus de 3 heurs " + taches.pollFirstEntry().getKey());
                 throw new SimulateurAcceptableException(" plus de 3 heures ecoulees depuis la derniere arriveee ");
             }
         }
+    }
+
+    private boolean beyondEndOFTime(final long time)
+    {
+        return time > lastInputTime + 1000 * 60 * 60 * 3;
     }
 
     public void executerChaqueEvenement(final List<Evenement> list)

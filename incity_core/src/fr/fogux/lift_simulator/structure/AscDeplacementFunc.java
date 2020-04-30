@@ -44,7 +44,7 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
         }
         else
         {
-            final float a = choixAcceleration(xi,xf,vi,c);// enlever le -
+            final float a = choixAcceleration(xi,xf,vi,c);
             System.out.println("choix a " + a);
             return new AscDoubleDeplacementFunc(t0, xi, vi, xf, a);
         }
@@ -52,7 +52,7 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
 
     public static long getTimeStraightToObjective(final ConfigSimu c, final long t0, final float vi, final float xi, final float xf)
     {
-        System.out.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
+        //System.out.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
 
         if(c.faitTroisPhases(xi, vi, xf))
         {

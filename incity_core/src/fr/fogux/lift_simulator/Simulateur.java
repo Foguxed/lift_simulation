@@ -17,6 +17,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import fr.fogux.lift_simulator.animation.PersonneVisu;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.Evenements;
+import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.FichierPartition;
 import fr.fogux.lift_simulator.fichiers.FichierPartitionConfig;
@@ -27,7 +28,6 @@ import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
 import fr.fogux.lift_simulator.mind.RPsimpleAlgo.RPsimpleAlgo;
-import fr.fogux.lift_simulator.mind.basic.ProgrammeBasique;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
@@ -259,13 +259,20 @@ public class Simulateur extends Game
             final File dossierPrgm = GestFichiers.createSimuPRGMdirectory(executionFile, alg);
 
             dernierJournal = GestFichiers.createJournalFile(dossierPrgm);
-            
+
             final BufferedWriter journalOutput = GestFichiers.getJournalWriter(dernierJournal, config);
             final Simulation simu = new Simulation(alg, c, new PartitionSimu(fPartition.evenements), journalOutput);
 
             final SimuPersStatAccumulator statAcc = new SimuPersStatAccumulator();
             System.out.println("debut run simulation");
-            simu.run(statAcc);
+            try
+            {
+                simu.run(statAcc);
+            }
+            catch(final SimulateurException simuExep)
+            {
+                simuExep.printStackTrace();
+            }
             System.out.println("fin run simulation");
             journalOutput.close();
             final SimuResult result = statAcc.getResult();

@@ -3,6 +3,7 @@ package fr.fogux.lift_simulator.utils;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.structure.AscDeplacementFunc;
+import fr.fogux.lift_simulator.structure.DeplacementFunc;
 
 public class Tests
 {
@@ -27,19 +28,25 @@ public class Tests
         final AscDeplacementFunc fc = AscDeplacementFunc.getDeplacementFunc(c,t0,xi, vi, xf);
 
         System.out.println("arrivee " + AscDeplacementFunc.getTimeStraightToObjective(c,t0,  vi, xi, xf));
+
+        System.out.println(fc);
+
+
+        tester(fc, 0,60*1000,100);
+
+    }
+    public static void tester(final DeplacementFunc fct,final double xMin,final double xMax,final long nbPoints)
+    {
         final Fct fctTest = new Fct() {
 
             @Override
             public double getY(final double x)
             {
-                return fc.getX((long) x);
+                return fct.getX((long) x);
             }
 
         };
-        System.out.println(fc);
-        tester(fctTest, 0,60*1000,100);
-
-
+        tester(fctTest, xMin,xMax,nbPoints);
     }
 
     public static void tester(final Fct fct,final double xMin,final double xMax,final long nbPoints)
