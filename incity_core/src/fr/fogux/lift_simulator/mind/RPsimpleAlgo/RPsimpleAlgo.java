@@ -113,4 +113,10 @@ public class RPsimpleAlgo extends Algorithme
 
     }
 
+	@Override
+	public void ping() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

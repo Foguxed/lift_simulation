@@ -61,13 +61,8 @@ public class Simulateur extends Game
     private static Map<String,AlgoInstantiator> initAlgorithmes()
     {
         final Map<String,AlgoInstantiator> map = new HashMap<>();
-<<<<<<< HEAD
         //addAlg(ProgrammeBasique.class,"prgmBasique",map);
         addAlg(RPsimpleAlgo.class,"RPsimpleAlgo",map);
-
-=======
-        addAlg(ProgrammeBasique.class,"prgmBasique",map);
->>>>>>> branch 'master' of https://github.com/romain-poyet/Incity_lift_project.git
         return map;
     }
 
@@ -257,12 +252,14 @@ public class Simulateur extends Game
         final ConfigSimu c = new ConfigSimu(config);
 
         System.out.println("nb algos simu "  + algorithmes.size());
+        File dernierJournal = null;
         for(final AlgoInstantiator alg : algorithmes)
         {
             System.out.println("simu sur algo " + alg.getName());
             final File dossierPrgm = GestFichiers.createSimuPRGMdirectory(executionFile, alg);
 
             dernierJournal = GestFichiers.createJournalFile(dossierPrgm);
+            
             final BufferedWriter journalOutput = GestFichiers.getJournalWriter(dernierJournal, config);
             final Simulation simu = new Simulation(alg, c, new PartitionSimu(fPartition.evenements), journalOutput);
 
