@@ -7,14 +7,11 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-import com.badlogic.gdx.Gdx;
-
 import fr.fogux.lift_simulator.evenements.AnimatedEvent;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementPingAlgorithme;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
-import fr.fogux.lift_simulator.utils.Utils;
 
 public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 {
@@ -106,14 +103,11 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     {
         // System.out.println("evenement registered " + tache.getClass() + " " +
         // timeAbsolu);
-        if(beyondEndOFTime(timeAbsolu))
-        {
-            throw new SimulateurException("evenement register très tard " + timeAbsolu + " ev " + tache + " il est " + Utils.getTimeString(innerTime));
-        }
         if (timeAbsolu < innerTime)
         {
-            Gdx.app.log("GestonnaireDeTaches", "executerA erreur, timeAbsolu inferieur au temps actuel");
-        } else
+            throw new SimulateurException("Evenement " + tache + " enregistre pour execution a " + timeAbsolu + " qui est inferieur à innertime " + innerTime);
+        }
+        else
         {
             final List<Evenement> tempList = taches.get(timeAbsolu);
             if (tempList != null)
@@ -132,9 +126,9 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     public void CancelEvenement(final Evenement ev, final long registeredTime)
     {
         final List<Evenement> temp = taches.get(registeredTime);
-        if (temp != null)
+        if (temp == null || !temp.remove(ev))
         {
-            temp.remove(ev);
+            throw new SimulateurException("unable to cancel " + ev + " at registeredTime " + registeredTime);
         }
         policy.onCancel(ev, this, registeredTime);
     }

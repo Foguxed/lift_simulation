@@ -33,7 +33,7 @@ public abstract class AnimatedEvent extends PrintableEvenement
     {
         if(registeredTime != debutTime)
         {
-            System.out.println("printRegister executer a " + debutTime + " event " + this + " registeredTime " + registeredTime);
+            //System.out.println("printRegister executer a " + debutTime + " event " + this + " registeredTime " + registeredTime);
             gestio.executerA(this, debutTime);
         }
     }

@@ -350,4 +350,14 @@ public class Simulateur extends Game
         GestFichiers.writePartitionConfig(fichierPartitionConfig, filePartitionConfig);
         GestFichiers.printFirstLine(fileSimuConfig, simuC.getValueAsString());
     }
+
+    public static void println(final String str)
+    {
+        System.out.println(str);
+    }
+
+    public static void println(final Object o)
+    {
+        System.out.println(o);
+    }
 }

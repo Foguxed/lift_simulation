@@ -127,10 +127,8 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
 
     public void changementDuFuturXObjectif(final long timeChmt, final float xObjectif)
     {
-        System.out.println("changementDuFuturXObjectif " + this + " timeChmt " + timeChmt);
         changerXObjectif(xObjectif, timeChmt, animation.getConfig());
         instantiateDepFunc(animation.getConfig());
-        System.out.println("depFunc " + depFunc);
     }
 
     public void changementVersAncienXObjectif(final float xObjectif, final long oldTi, final float oldXi, final float oldVi)

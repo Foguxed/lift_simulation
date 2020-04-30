@@ -45,7 +45,6 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
         else
         {
             final float a = choixAcceleration(xi,xf,vi,c);
-            System.out.println("choix a " + a);
             return new AscDoubleDeplacementFunc(t0, xi, vi, xf, a);
         }
     }

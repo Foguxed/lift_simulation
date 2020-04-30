@@ -49,8 +49,6 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     protected Iterator<Integer> iteratorInvites = null;
 
-    protected boolean transfertEnCours;
-
     public AscenseurSimu(final Simulation simu, final AscId id, final float initialY)
     {
         super(id, simu.getConfig().nbPersMaxAscenseur(), initialY);
@@ -108,11 +106,17 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     protected boolean bloque()
     {
-        return transfertEnCours || (prochainEventArrivee != null && simu.getTime() >  instantProchainArret);
+        return etageTransfert != null || (prochainEventArrivee != null && simu.getTime() >  instantProchainArret);
     }
 
     public void setObjectif(final int newEtageObjectif, final boolean ouvrirPortes)
     {
+
+        if(etageObjectif == newEtageObjectif && ouvrirPortesProchaineDest == ouvrirPortes)
+        {
+            return;
+        }
+
         if(newEtageObjectif < simu.getConfig().getNiveauMin() || newEtageObjectif > simu.getConfig().getNiveauMax())
         {
             throw new SimulateurAcceptableException(this + " a tentete de se deplacer vers " + newEtageObjectif + " qui n'est pas un etage de l'immeuble ");
@@ -136,6 +140,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
      */
     private void goToObjectif(final int newEtageObjectif)
     {
+
         if(ascAttendu != null)
         {
             ascAttendu.unregisterListener(this);
@@ -164,34 +169,43 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
                 ascInferieur.registerListener(this);
             }
         }
-        if(Math.abs(xObjectifActuel - xObjectifCorrige) >= ConfigSimu.EQUALITY_MARGIN)
+        if(Math.abs(xObjectifCorrige - xObjectifActuel) > ConfigSimu.EQUALITY_MARGIN)
         {
-            if(simu.doPrint())
-            {
-                new EvenementChangementMouvement(id, xObjectifCorrige, xObjectifActuel, ti, xi, vi).print(simu);
-            }
+            bruteDeplacer(xObjectifCorrige);
+        }
 
-            final float oldXi = xi;
-            changerXObjectif(xObjectifCorrige, simu.getTime(), simu.getConfig());
+        if(canReachEtage)
+        {
+            lancerProchainsEvents();
+        }
+    }
 
-            deplacementTotal += Math.abs(xi - oldXi);
-            for(final AscenseurSimu a : listeners)
-            {
-                a.neighboorMoved();
-            }
-            if(canReachEtage)
-            {
-                if(ouvrirPortesProchaineDest)
-                {
-                    System.out.println(" prohcain arret " +instantProchainArret );
-                    prochainEventArrivee = new EvenementMouvementPortes(instantProchainArret,simu.getConfig(), id, etageObjectif, true);
-                }
-                else
-                {
-                    prochainEventArrivee = new EvenementArriveAscSansOuverture(simu.getTime(),id);
-                }
-                prochainEventArrivee.runOn(simu);
-            }
+    protected void lancerProchainsEvents()
+    {
+        if(ouvrirPortesProchaineDest)
+        {
+            System.out.println(" prohcain arret " +instantProchainArret );
+            prochainEventArrivee = new EvenementMouvementPortes(Math.max(instantProchainArret, simu.getTime()),simu.getConfig(), id, etageObjectif, true);
+        }
+        else
+        {
+            prochainEventArrivee = new EvenementArriveAscSansOuverture(Math.max(instantProchainArret, simu.getTime()),id);
+        }
+        prochainEventArrivee.runOn(simu);
+    }
+
+    protected void bruteDeplacer(final float newXObjectif)
+    {
+        if(simu.doPrint())
+        {
+            new EvenementChangementMouvement(id, newXObjectif, xObjectifActuel, ti, xi, vi).print(simu);
+        }
+        final float oldXi = xi;
+        changerXObjectif(newXObjectif, simu.getTime(), simu.getConfig());
+        deplacementTotal += Math.abs(xi - oldXi);
+        for(final AscenseurSimu a : listeners)
+        {
+            a.neighboorMoved();
         }
     }
 
@@ -278,7 +292,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         prochainEventArrivee = null;
         etageTransfert = simu.getImmeubleSimu().getEtage(niveau);
-        System.out.println(" fin ouverture portes " + etageTransfert);
+        System.out.println(" fin ouverture portes " + etageTransfert + " id " + id);
         evacuateNext();
     }
 
@@ -353,14 +367,13 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         simu.getPrgm().finDeTransfertDePersonnes(id);
         final EtageSimu etageSimutemp = etageTransfert;
-        System.out.println("fin fermeture portes etage transfert " + etageTransfert + " asc " + id);
+        System.out.println("fin fermeture portes etage transfert " + etageTransfert + " asc " + id + " niveau " + niveau + " " + simu.getImmeubleSimu().getEtage(niveau));
         etageTransfert = null;
         etageSimutemp.rappuyerBoutonsSiNecessaire();
         if(etageObjectif != niveau)
         {
             tentativeAtteinteObjectif();
         }
-
     }
 
     @Override

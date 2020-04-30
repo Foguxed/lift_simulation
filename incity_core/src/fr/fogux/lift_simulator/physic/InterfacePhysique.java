@@ -105,7 +105,7 @@ public class InterfacePhysique
      * @param val
      */
 
-    public void println(final String val)
+    public void println(final Object val)
     {
         if(simu.doPrint())
         {
@@ -113,4 +113,8 @@ public class InterfacePhysique
         }
     }
 
+    public void systemPrintLn(final Object o)
+    {
+        System.out.println(o);
+    }
 }

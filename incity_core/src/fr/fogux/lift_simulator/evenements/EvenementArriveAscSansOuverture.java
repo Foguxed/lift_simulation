@@ -17,7 +17,8 @@ public class EvenementArriveAscSansOuverture extends Evenement
     @Override
     public void simuRun(final Simulation simulation)
     {
-        //simulation.getImmeubleSimu().getAscenseur(id).
+        System.out.println("arrivee sans ouverture");
+        simulation.getImmeubleSimu().getAscenseur(id).arriveSansOuverture();
     }
 
     @Override
