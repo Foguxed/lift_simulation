@@ -178,6 +178,11 @@ public class DataTagCompound
         return str;
     }
 
+    public boolean hasKey(final String key)
+    {
+        return map.containsKey(key);
+    }
+
     public boolean getBoolean(final String key)
     {
         return Boolean.parseBoolean(map.get(key));

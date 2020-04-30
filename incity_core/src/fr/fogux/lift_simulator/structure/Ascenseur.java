@@ -62,12 +62,35 @@ public abstract class Ascenseur
         updateInstantProchainArret(c);
     }
 
+    public long getHeureArrivee(final float newXObjectif, final long timeChangement, final ConfigSimu c)
+    {
+        final float tempXi;
+        final float tempVi;
+        if(instantProchainArret <= timeChangement)
+        {
+            tempVi = 0f;
+            tempXi = xObjectifActuel;
+        }
+        else
+        {
+            if(depFunc == null)
+            {
+                instantiateDepFunc(c);
+            }
+            tempVi = depFunc.getX(timeChangement);
+            tempXi = depFunc.getV(timeChangement);
+        }
+        return AscDeplacementFunc.getTimeStraightToObjective(c,timeChangement,tempVi,tempXi,newXObjectif);
+    }
+
     protected void updateInstantProchainArret(final ConfigSimu c)
     {
         System.out.println(" update prochain arret " + ti +" " + vi +" " +xi +" " +xObjectifActuel +" " + this );
         instantProchainArret = AscDeplacementFunc.getTimeStraightToObjective(c, ti, vi, xi, xObjectifActuel);
         System.out.println(" instantProchainArret " + instantProchainArret);
     }
+
+
 
     protected void instantiateDepFunc(final ConfigSimu c)
     {

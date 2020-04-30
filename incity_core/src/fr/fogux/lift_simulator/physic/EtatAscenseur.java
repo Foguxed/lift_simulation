@@ -2,7 +2,8 @@ package fr.fogux.lift_simulator.physic;
 
 public enum EtatAscenseur
 {
-    ARRET(),
-    MONTEE(),
+    ARRET,
+    BLOQUE,
+    MONTEE,
     DESCENTE;
 }

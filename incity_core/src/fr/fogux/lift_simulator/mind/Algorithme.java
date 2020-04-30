@@ -21,10 +21,22 @@ public abstract class Algorithme
         return output;
     }
 
+
+
+    /**
+     *
+     * @return la config
+     */
     public ConfigSimu config()
     {
         return config;
     }
+
+    /**
+     * Ne pas utiliser pour un algorithme efficace en temps de calcul
+     * appellé tout les SimuConfig.pingTime, voir TagNames.pingTime
+     */
+    public abstract void ping();
 
     /**
      * appellé à t = 0

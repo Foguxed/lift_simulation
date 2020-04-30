@@ -11,6 +11,7 @@ import com.badlogic.gdx.Gdx;
 
 import fr.fogux.lift_simulator.evenements.AnimatedEvent;
 import fr.fogux.lift_simulator.evenements.Evenement;
+import fr.fogux.lift_simulator.evenements.EvenementPingAlgorithme;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 
 public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
@@ -141,6 +142,11 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 
         System.out.println("fin des imputs");
         simu.getPrgm().init();
+        if(simu.getConfig().getPingTime() > 0)
+        {
+            final EvenementPingAlgorithme premierPing = new EvenementPingAlgorithme(innerTime + simu.getConfig().getPingTime());
+            executerA(premierPing, premierPing.getTime());
+        }
         while (!taches.isEmpty())
         {
             final Entry<Long, List<Evenement>> entry = taches.firstEntry();
@@ -200,4 +206,9 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 
     }
 
+
+    public int nbRemainingEventsTimes()
+    {
+        return taches.size();
+    }
 }

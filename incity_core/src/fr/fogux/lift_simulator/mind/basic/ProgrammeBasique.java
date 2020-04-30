@@ -86,4 +86,10 @@ public class ProgrammeBasique extends Algorithme
 
     }
 
+    @Override
+    public void ping()
+    {
+        output().println("ping");
+    }
+
 }

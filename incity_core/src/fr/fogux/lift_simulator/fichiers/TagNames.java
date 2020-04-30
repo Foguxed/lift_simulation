@@ -36,6 +36,7 @@ public class TagNames
 
 
     public static final String partitionGenType = "partitionGenType";
+    public static final String pingTime = "pingTime";
     //SimuResult
     public static final String failed = "failed"; //a la fin tout le monde n'a pas été transporté
     public static final String totalTransportTime = "totalTransportTime";

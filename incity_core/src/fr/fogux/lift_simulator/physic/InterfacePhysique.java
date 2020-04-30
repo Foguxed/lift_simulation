@@ -57,6 +57,18 @@ public class InterfacePhysique
     }
 
     /**
+     *
+     * @param id
+     * @param objectif
+     * @return -1 si l'ascenseur est bloque, ou est géné par un ascenseur voisin sinon
+     * la durée du demplacement de l'ascenseur vers cet objectif depuis sa position actuelle
+     */
+    public long getDistanceTemporelle(final AscId id, final float objectif)
+    {
+        return simu.getImmeubleSimu().getAscenseur(id).getDurreePourAtteindre(objectif);
+    }
+
+    /**
      * allume/éteint un bouton parmis les boutons présents dans les etages, un
      * bouton allumé aura pour effet de dissuader les personnes d'appuyer a nouveau
      * dessus
