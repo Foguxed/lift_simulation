@@ -55,8 +55,8 @@ public abstract class Ascenseur
             }
             xi = depFunc.getX(timeChangement);
             vi = depFunc.getV(timeChangement);
-            depFunc = null;
         }
+        depFunc = null;
         ti = timeChangement;
         xObjectifActuel = newXObjectif;
         updateInstantProchainArret(c);
