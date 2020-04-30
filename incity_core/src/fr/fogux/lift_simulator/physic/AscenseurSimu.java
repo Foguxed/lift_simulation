@@ -142,28 +142,22 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         boolean canReachEtage = true;
         if(newEtageObjectif > xObjectifActuel)
         {
-            if(ascSuperieur != null)
+            if(collisionSuperieure(newEtageObjectif))
             {
-                if(newEtageObjectif > ascSuperieur.getXObjectif() - simu.getConfig().getMargeSupInterAscenseur())
-                {
-                    xObjectifCorrige = ascSuperieur.getXObjectif() - simu.getConfig().getMargeInterAscenseur();
-                    canReachEtage = false;
-                    ascAttendu = ascSuperieur;
-                    ascSuperieur.registerListener(this);
-                }
+                xObjectifCorrige = ascSuperieur.getXObjectif() - simu.getConfig().getMargeInterAscenseur();
+                canReachEtage = false;
+                ascAttendu = ascSuperieur;
+                ascSuperieur.registerListener(this);
             }
         }
         else
         {
-            if(ascInferieur != null)
+            if(collisionInferieure(newEtageObjectif))
             {
-                if(newEtageObjectif < ascInferieur.getXObjectif() + simu.getConfig().getMargeSupInterAscenseur())
-                {
-                    xObjectifCorrige = ascInferieur.getXObjectif() + simu.getConfig().getMargeInterAscenseur();
-                    canReachEtage = false;
-                    ascAttendu = ascInferieur;
-                    ascInferieur.registerListener(this);
-                }
+                xObjectifCorrige = ascInferieur.getXObjectif() + simu.getConfig().getMargeInterAscenseur();
+                canReachEtage = false;
+                ascAttendu = ascInferieur;
+                ascInferieur.registerListener(this);
             }
         }
         if(Math.abs(xObjectifActuel - xObjectifCorrige) >= ConfigSimu.EQUALITY_MARGIN)
@@ -197,6 +191,33 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         }
     }
 
+    private boolean collisionInferieure(final float objectif)
+    {
+        return ascInferieur != null && objectif < ascInferieur.getXObjectif() + simu.getConfig().getMargeSupInterAscenseur();
+    }
+
+    private boolean collisionSuperieure(final float objectif)
+    {
+        return ascSuperieur != null && objectif > ascSuperieur.getXObjectif() - simu.getConfig().getMargeSupInterAscenseur();
+    }
+
+    /**
+     *
+     * @param objectif
+     * @return -1 si il y a une collission avec un autre ascenseur ou que l'ascenseur est bloque
+     */
+    public long getDurreePourAtteindre(final float objectif)
+    {
+        if(bloque() || collisionInferieure(objectif) ||collisionSuperieure(objectif))
+        {
+            return -1;
+        }
+        else
+        {
+            return simu.getTime() - getHeureArrivee(objectif, simu.getTime(), simu.getConfig());
+        }
+    }
+
     /**
      *
      * @param time > time actuel (très important), sinon le résultat sera incohérent
@@ -206,7 +227,14 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         if(time > instantProchainArret)
         {
-            return new EtatAsc(EtatAscenseur.ARRET, xObjectifActuel, Integer.MIN_VALUE);
+            if(bloque())
+            {
+                return new EtatAsc(EtatAscenseur.BLOQUE, xObjectifActuel, Integer.MIN_VALUE);
+            }
+            else
+            {
+                return new EtatAsc(EtatAscenseur.ARRET, xObjectifActuel, Integer.MIN_VALUE);
+            }
         }
         else
         {

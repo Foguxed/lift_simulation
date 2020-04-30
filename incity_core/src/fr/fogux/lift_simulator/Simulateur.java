@@ -61,9 +61,13 @@ public class Simulateur extends Game
     private static Map<String,AlgoInstantiator> initAlgorithmes()
     {
         final Map<String,AlgoInstantiator> map = new HashMap<>();
+<<<<<<< HEAD
         //addAlg(ProgrammeBasique.class,"prgmBasique",map);
         addAlg(RPsimpleAlgo.class,"RPsimpleAlgo",map);
 
+=======
+        addAlg(ProgrammeBasique.class,"prgmBasique",map);
+>>>>>>> branch 'master' of https://github.com/romain-poyet/Incity_lift_project.git
         return map;
     }
 
@@ -228,7 +232,18 @@ public class Simulateur extends Game
         System.out.println("fichier enregistre " + partitionFile.getAbsolutePath());
     }
 
-    public static void executerSimulation(final File dossierPartition, final List<AlgoInstantiator> algorithmes, final File configSimu) throws IOException
+    public static void launchSimulation(final File dossierPartition, final List<AlgoInstantiator> algorithmes, final File configSimu, final boolean animationApres)
+    {
+        try
+        {
+            executerSimulation(dossierPartition, algorithmes, configSimu,animationApres);
+        } catch (final IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public static void executerSimulation(final File dossierPartition, final List<AlgoInstantiator> algorithmes, final File configSimu, final boolean animationApres) throws IOException
     {
         System.out.println("debut Simulation");
         final File partition = GestFichiers.getUniqueFile(dossierPartition, NomsFichiers.partition);
@@ -247,7 +262,8 @@ public class Simulateur extends Game
             System.out.println("simu sur algo " + alg.getName());
             final File dossierPrgm = GestFichiers.createSimuPRGMdirectory(executionFile, alg);
 
-            final BufferedWriter journalOutput = GestFichiers.getJournalWriter(GestFichiers.createJournalFile(dossierPrgm), config);
+            dernierJournal = GestFichiers.createJournalFile(dossierPrgm);
+            final BufferedWriter journalOutput = GestFichiers.getJournalWriter(dernierJournal, config);
             final Simulation simu = new Simulation(alg, c, new PartitionSimu(fPartition.evenements), journalOutput);
 
             final SimuPersStatAccumulator statAcc = new SimuPersStatAccumulator();
@@ -262,6 +278,11 @@ public class Simulateur extends Game
             final BufferedWriter personneStatsWriter = GestFichiers.gePersonnetStatWriter(GestFichiers.createStatsPersonnesFile(dossierPrgm), config,resultComPound);
             simu.printPersStats(personneStatsWriter);
             personneStatsWriter.close();
+        }
+        if(animationApres && dernierJournal != null)
+        {
+            System.out.println(dernierJournal.getName());
+            instance.doVisualisation(dernierJournal);
         }
     }
 
@@ -301,7 +322,7 @@ public class Simulateur extends Game
         final int[] ASCENSEURS = {2,2,2,2};
 
         final ConfigSimu templateConfig =
-            new ConfigSimu(NIVEAU_MIN, NIVEAU_MAX, ASCENSEURS, ASCENSEUR_SPEED, ACCELERATION, DUREE_SORTIE_ENTREE_PERSONNES, DUREE_PORTES, NB_PERS_MAX_ASC, MARGE_INTER_ASCENSEUR);
+            new ConfigSimu(NIVEAU_MIN, NIVEAU_MAX, ASCENSEURS, ASCENSEUR_SPEED, ACCELERATION, DUREE_SORTIE_ENTREE_PERSONNES, DUREE_PORTES, NB_PERS_MAX_ASC, MARGE_INTER_ASCENSEUR,1000);
 
         final DataTagCompound immeubleC = new DataTagCompound();
         templateConfig.printOnlyImmeubleFieldsIn(immeubleC);

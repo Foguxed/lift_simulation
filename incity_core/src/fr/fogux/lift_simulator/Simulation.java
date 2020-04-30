@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
+import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
@@ -56,7 +58,14 @@ public class Simulation
 
     public void run(final StatAccumulator<PersonneSimu> statPersAccumulator)
     {
-        gestioTaches.runExecuting();
+        try
+        {
+            gestioTaches.runExecuting();
+        }
+        catch (final SimulateurAcceptableException e)
+        {
+            new EvenementErreur(e.getMessage()).print(this);
+        }
         accumulateStatsPers(statPersAccumulator);
     }
 
@@ -109,4 +118,5 @@ public class Simulation
             statAcc.accumulateStat(pers);
         }
     }
+
 }

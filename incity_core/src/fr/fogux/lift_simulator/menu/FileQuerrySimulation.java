@@ -1,7 +1,9 @@
 package fr.fogux.lift_simulator.menu;
 
 import java.io.File;
-import java.io.IOException;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 
 import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
@@ -33,13 +35,7 @@ public class FileQuerrySimulation implements FileQuerryProtocol
     {
         if(researchDeep == 4)// le dossier contenant la partition et les differents dossier par execution
         {
-            try
-            {
-                Simulateur.executerSimulation(f, Simulateur.getAllAlgos(), config_simulation);
-            } catch (final IOException e)
-            {
-                e.printStackTrace();
-            }
+            Simulateur.launchSimulation(f, Simulateur.getAllAlgos(), config_simulation, Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT));
         }
         else
         {
