@@ -22,6 +22,7 @@ public class RPsimpleAlgo extends Algorithme
     public List<TripletPnd> demandesEnCours = new ArrayList<TripletPnd>();
     //public Map<AscId, monAscenseur> mesAscenseurs = new HashMap<AscId, monAscenseur>();
     public monAscenseur[] [] ascenseursArray = new monAscenseur[4] [2];
+    public Integer nTest = 0; // to remove
 
     public RPsimpleAlgo(final InterfacePhysique output, final ConfigSimu config)
     {
@@ -37,7 +38,7 @@ public class RPsimpleAlgo extends Algorithme
 	@Override
     public void init()
     {
-		for (int j = 0; j < 2; j++) {
+		for (int j = 0; j < 2; j++) {	// 1 à changer en 0 ! ! !
 			
 			for (int i = 0; i < 4; i++) { // CHANGER LE 4 EN n 
 				AscId id = new AscId(i, j);
@@ -46,9 +47,9 @@ public class RPsimpleAlgo extends Algorithme
 				//destinations.add(d);
 				ascenseursArray[i] [j] = new monAscenseur(id, destinations, true);
 				//output.changerDestination(id, d, true);
-				//System.out.println(" SALUT ! ");
-				//System.out.println("   ------    " + ascenseursArray);
-				//System.out.println("  ");
+				//System.out.systemPrintLn(" SALUT ! ");
+				//System.out.systemPrintLn("   ------    " + ascenseursArray);
+				//System.out.systemPrintLn("  ");
 			}
 		}
     }
@@ -74,24 +75,20 @@ public class RPsimpleAlgo extends Algorithme
     	List<Integer> listInvites = new ArrayList<Integer>();
 		int i = 0;
 		int n = 0;
-//		System.out.println("      ---------------       ");
-		System.out.println("invitation" + demandesEnCours.size() + places_disponibles);
-//		System.out.println("      ---------------       ");
-
 		
 
 		while (i < demandesEnCours.size() && n < places_disponibles) {
 			
 			TripletPnd myPerson = demandesEnCours.get(i);
 			boolean veutMonter = myPerson.destination - myPerson.niveau > 0;
-			output().println(" " + niveau + " vs. " + myPerson.niveau + "  " + " ");
+			output().systemPrintLn(" " + niveau + " vs. " + myPerson.niveau + "  " + " ");
 
 			if (niveau == myPerson.niveau && ( (veutMonter && cetAscenseur.enMontee)
 					|| (!veutMonter && !(cetAscenseur.enMontee)) )) {
 				demandesEnCours.remove(i);
 				n++;
 				listInvites.add(myPerson.id);
-				output().println(" " + demandesEnCours.size() + " " + places_disponibles + "  " + "IF");
+				output().systemPrintLn(" " + demandesEnCours.size() + " " + places_disponibles + "  " + "IF");
 			}
 			i++;
 		}
@@ -102,7 +99,7 @@ public class RPsimpleAlgo extends Algorithme
 	@Override
     public void arretSansOuverture(final AscId idAscenseur)
     {
-		output().println(" azsdftgyhjklmkjihuygtfdrse ");
+		output().systemPrintLn(" arretSansOuverture ! ! ! ");
 
     }
 
@@ -120,18 +117,18 @@ public class RPsimpleAlgo extends Algorithme
 
 	@Override
 	public void ping() {
-		//if 
-		for (int j = 0; j < 2; j++) {
+//		int kTest = 3;
+//		if (nTest % kTest == 0) {
+//			output.changerDestination(new AscId((nTest / kTest) % 4, (nTest / kTest) % 2), (nTest / kTest) % 20, true);
+//		}
+//		nTest++;
+		for (int j = 1; j < 2; j++) {	// 1 à changer en 0 ! ! !
 			
 			for (int i = 0; i < 4; i++) { // CHANGER LE 4 EN n
 				monAscenseur cetAscenseur = ascenseursArray[i] [j];
 				AscId id = new AscId(i, j);
-				int niveau;
-				if (output.getEtat(id).premierEtageAtteignable == Integer.MIN_VALUE) {
-					niveau = Math.round(output.getEtat(id).positionActuelle);
-				} else {
-					niveau = output.getEtat(id).premierEtageAtteignable;
-				}
+				
+				int niveau = cetAscenseur.niveau(output);
 				
 				boolean someoneWaitsFurther = false;
 				boolean someoneWaitsHere = false;
@@ -140,30 +137,31 @@ public class RPsimpleAlgo extends Algorithme
 					
 					TripletPnd myPerson = demandesEnCours.get(k);
 					boolean veutMonter = myPerson.destination - myPerson.niveau > 0;
-					//output().println(" " + niveau + " vs. " + myPerson.niveau + "  " + " ");
+					//output().systemPrintLn(" " + niveau + " vs. " + myPerson.niveau + "  " + " ");
 
+					int maxLevel = cetAscenseur.maxLevel(ascenseursArray, output);
+					int minLevel = cetAscenseur.minLevel(ascenseursArray, output);
 					if (niveau == myPerson.niveau && ( (veutMonter && cetAscenseur.enMontee) || (!veutMonter && !(cetAscenseur.enMontee)) )) {
 						someoneWaitsHere = true;
 						
-					} else if ( (myPerson.niveau > niveau  && cetAscenseur.enMontee) || (myPerson.niveau < niveau  && !cetAscenseur.enMontee) ) {
+					} else if ( (maxLevel > myPerson.niveau && myPerson.niveau > niveau  && cetAscenseur.enMontee)
+							|| (minLevel < myPerson.niveau && myPerson.niveau < niveau  && !cetAscenseur.enMontee) ) {
 						someoneWaitsFurther = true;
 					}
 				}
-				
-				if (cetAscenseur.arretDemande(niveau) || someoneWaitsHere) {
+				output().systemPrintLn("  " + output().getNbPersonnes(id) + "   ------    " + config.nbPersMaxAscenseur());
+				if (cetAscenseur.arretDemande(niveau) || (someoneWaitsHere && output().getNbPersonnes(id) < config.nbPersMaxAscenseur())) {
 					output.changerDestination(id, niveau, true);	// STOP
-					output().println("  " + niveau + " STOP  ");
-				} else if (cetAscenseur.arretDemandePlusLoin(niveau) || someoneWaitsFurther) {
+					//output().systemPrintLn("  " + niveau + " STOP  ");
+				} else if (cetAscenseur.arretDemandePlusLoin(niveau, ascenseursArray, output) || someoneWaitsFurther) {
 					output.changerDestination(id, (cetAscenseur.enMontee ? niveau + 1 : niveau - 1), true);	// CONTINUE
-					output().println("  " + niveau + " CONTINUE  ");
+					//output().systemPrintLn("  " + niveau + " CONTINUE  ");
 				} else {
 					cetAscenseur.enMontee = !cetAscenseur.enMontee;
 					output.changerDestination(id, (cetAscenseur.enMontee ? niveau + 1 : niveau - 1), true); // CHANGE DE DIRECTION
-					output().println("  " + niveau + " CHANGE DE DIRECTION  ");
+					//output().systemPrintLn("  " + niveau + " CHANGE DE DIRECTION  ");
 				} 				
 			}
 		}
-		
 	}
-
 }
