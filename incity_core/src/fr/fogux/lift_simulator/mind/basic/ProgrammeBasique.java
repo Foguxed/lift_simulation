@@ -36,10 +36,11 @@ public class ProgrammeBasique extends Algorithme
     }
 
     @Override
-    public void init()
+    public long init()
     {
         ascSup.objectifSuivant();
         ascInf.objectifSuivant();
+        return -1;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class ProgrammeBasique extends Algorithme
     }
 
     @Override
-    public Collection<Integer> listeInvites(final AscId idASc, final int places_disponibles)
+    public Collection<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int n)
     {
         if(idASc.stackId == 0)
         {
@@ -68,7 +69,7 @@ public class ProgrammeBasique extends Algorithme
     }
 
     @Override
-    public void finDeTransfertDePersonnes(final AscId idAscenseur)
+    public void finDeTransfertDePersonnes(final AscId idAscenseur, final int n)
     {
         if(idAscenseur.stackId == 0)
         {

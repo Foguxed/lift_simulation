@@ -27,7 +27,7 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
-import fr.fogux.lift_simulator.mind.RPsimpleAlgo.RPsimpleAlgo;
+import fr.fogux.lift_simulator.mind.independant.AlgoBasique2;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
@@ -62,7 +62,8 @@ public class Simulateur extends Game
     {
         final Map<String,AlgoInstantiator> map = new HashMap<>();
         //addAlg(ProgrammeBasique.class,"prgmBasique",map);
-        addAlg(RPsimpleAlgo.class,"RPsimpleAlgo",map);
+        //addAlg(RPsimpleAlgo.class,"RPsimpleAlgo",map);
+        addAlg(AlgoBasique2.class,"AlgoBasique2",map);
         return map;
     }
 
@@ -326,7 +327,7 @@ public class Simulateur extends Game
         final int[] ASCENSEURS = {2,2,2,2};
 
         final ConfigSimu templateConfig =
-            new ConfigSimu(NIVEAU_MIN, NIVEAU_MAX, ASCENSEURS, ASCENSEUR_SPEED, ACCELERATION, DUREE_SORTIE_ENTREE_PERSONNES, DUREE_PORTES, NB_PERS_MAX_ASC, MARGE_INTER_ASCENSEUR,1000);
+            new ConfigSimu(NIVEAU_MIN, NIVEAU_MAX, ASCENSEURS, ASCENSEUR_SPEED, ACCELERATION, DUREE_SORTIE_ENTREE_PERSONNES, DUREE_PORTES, NB_PERS_MAX_ASC, MARGE_INTER_ASCENSEUR);
 
         final DataTagCompound immeubleC = new DataTagCompound();
         templateConfig.printOnlyImmeubleFieldsIn(immeubleC);

@@ -17,7 +17,7 @@ public class EvenementPingAlgorithme extends Evenement
         simulation.getPrgm().ping();
         if(simulation.getGestio().nbRemainingEventsTimes() > 1)
         {
-            simulation.getGestio().executerA(this, simulation.getTime() + simulation.getConfig().getPingTime());
+            simulation.getGestio().executerA(this, simulation.getTime() + simulation.getGestio().pingTime);
         }
     }
 

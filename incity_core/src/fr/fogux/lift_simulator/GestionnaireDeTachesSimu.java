@@ -25,6 +25,8 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 
     protected PrintPolicy policy;
 
+    public long pingTime;
+
     public GestionnaireDeTachesSimu(final Simulation simu, final boolean doPrintEvents, final PartitionSimu partition)
     {
         this.simu = simu;
@@ -141,10 +143,10 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         lastInputTime = taches.lastKey();
 
         System.out.println("fin des imputs");
-        simu.getPrgm().init();
-        if(simu.getConfig().getPingTime() > 0)
+        pingTime = simu.getPrgm().init();
+        if(pingTime > 0)
         {
-            final EvenementPingAlgorithme premierPing = new EvenementPingAlgorithme(innerTime + simu.getConfig().getPingTime());
+            final EvenementPingAlgorithme premierPing = new EvenementPingAlgorithme(innerTime + pingTime);
             executerA(premierPing, premierPing.getTime());
         }
         while (!taches.isEmpty())
