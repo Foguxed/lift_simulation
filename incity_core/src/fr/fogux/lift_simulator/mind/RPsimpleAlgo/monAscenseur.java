@@ -2,6 +2,9 @@ package fr.fogux.lift_simulator.mind.RPsimpleAlgo;
 
 import java.util.List;
 
+import com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.Config;
+
+import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.EtatAsc;
@@ -41,11 +44,11 @@ public class monAscenseur {
     	return b;
 	}
 
-	public boolean arretDemandePlusLoin(int niveau, monAscenseur[] [] ascenseursArray, InterfacePhysique output) {
+	public boolean arretDemandePlusLoin(int niveau, monAscenseur[] [] ascenseursArray, InterfacePhysique output, final ConfigSimu config) {
 		boolean b = false;
 		int destination = this.destinations.size();
-		int maxLevel = this.maxLevel(ascenseursArray,  output);
-		int minLevel = this.minLevel(ascenseursArray,  output);
+		int maxLevel = this.maxLevel(ascenseursArray,  output, config);
+		int minLevel = this.minLevel(ascenseursArray,  output, config);
 		for (int i = 0; i < destination; i++) {
 			if ( (maxLevel > destination && destination > niveau && this.enMontee) 
 					|| (minLevel < destination && destination < niveau && !this.enMontee) ) {
@@ -56,16 +59,16 @@ public class monAscenseur {
 		
 	}
 
-	public int maxLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output) {	// COMMENT AVOIR DES VARIABLES GLOBALES PLTÔT ?
-		int maxLevel = 20;	// A MODIFIER
+	public int maxLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output, final ConfigSimu config) {	// COMMENT AVOIR DES VARIABLES GLOBALES PLTÔT ?
+		int maxLevel = config.getNiveauMax();	// A MODIFIER
 		if (this.id.stackId < 1) {	// A MODIFIER AUSSI
 			maxLevel = ascenseursArray[this.id.monteeId] [this.id.stackId + 1].niveau(output);
 		}
 		return maxLevel;
 	}
 
-	public int minLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output) {
-		int minLevel = -3;	// A MODIFIER
+	public int minLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output, final ConfigSimu config) {
+		int minLevel = config.getNiveauMin();	// A MODIFIER
 		if (this.id.stackId > 0) {	// A MODIFIER AUSSI
 			minLevel = ascenseursArray[this.id.monteeId] [this.id.stackId - 1].niveau(output);
 		}
