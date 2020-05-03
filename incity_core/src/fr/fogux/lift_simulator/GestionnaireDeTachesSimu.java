@@ -130,7 +130,7 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         final List<Evenement> temp = taches.get(registeredTime);
         if (temp == null || !temp.remove(ev))
         {
-            throw new SimulateurException("unable to cancel " + ev + " at registeredTime " + registeredTime);
+            throw new SimulateurException("unable to cancel " + ev + " at registeredTime " + registeredTime + " innerTime " + innerTime + " evenements a registeredTimetime " + temp);
         }
         policy.onCancel(ev, this, registeredTime);
     }
@@ -161,12 +161,16 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
                     obj.tempsEcoulee(tempsEcoule);
                 }
             }
-            taches.pollFirstEntry();
             executerChaqueEvenement(entry.getValue());
+            taches.pollFirstEntry();
             if (beyondEndOFTime(innerTime))
             {
                 throw new SimulateurAcceptableException(" plus de 3 heures ecoulees depuis la derniere arriveee ");
             }
+            /*if(innerTime > 60000)
+            {
+                throw new SimulateurAcceptableException(" debug mode actif ");
+            }*/
         }
     }
 
@@ -179,7 +183,6 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     {
         while (!list.isEmpty())
         {
-
             policy.onSimuRun(list.get(0));// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
             list.remove(0);
         }

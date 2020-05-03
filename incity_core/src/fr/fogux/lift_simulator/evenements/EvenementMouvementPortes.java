@@ -62,4 +62,9 @@ public class EvenementMouvementPortes extends AnimatedEvent
 
     }
 
+    @Override
+    public String toString()
+    {
+        return "EvenementMouvementPorte ouverture " + isOuverture +" AscId " + ascenseurId + " etage " + etageId;
+    }
 }

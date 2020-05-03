@@ -20,11 +20,12 @@ public class Tests
          */
 
         final ConfigSimu c = new ConfigSimu(new DataTagCompound("{acceleration:1.2000001E-7,dureePortes:2000,ascenseurSpeed:0.0023,capaciteAsc:5,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:-3,niveauMax:20}"));
-        final long t0 = 700;
-        final float xi = 5.0f;
+        final long t0 = 0;
+        final float xi = 4f; //3.6993155f
         System.out.println("maxspeed " + c.getAscenseurSpeed());
-        final float vi = 0.0f;
-        final float xf = 5.0f;
+        final float vi = 0.0020f; // 0.0005587167f
+        //final float vi = 0f;
+        final float xf = 3.0f;
         final AscDeplacementFunc fc = AscDeplacementFunc.getDeplacementFunc(c,t0,xi, vi, xf);
 
         System.out.println("arrivee " + AscDeplacementFunc.getTimeStraightToObjective(c,t0,  vi, xi, xf));
@@ -32,7 +33,7 @@ public class Tests
         System.out.println(fc);
 
 
-        tester(fc, 0,60*1000,100);
+        tester(fc, -60*1000,60*1000,100);
 
     }
     public static void tester(final DeplacementFunc fct,final double xMin,final double xMax,final long nbPoints)

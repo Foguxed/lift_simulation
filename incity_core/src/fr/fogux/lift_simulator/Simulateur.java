@@ -17,7 +17,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import fr.fogux.lift_simulator.animation.PersonneVisu;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.Evenements;
-import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.FichierPartition;
 import fr.fogux.lift_simulator.fichiers.FichierPartitionConfig;
@@ -27,9 +26,7 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
-import fr.fogux.lift_simulator.mind.RPsimpleAlgo.RPsimpleAlgo;
 import fr.fogux.lift_simulator.mind.RPsimpleAlgo2.RPsimpleAlgo2;
-import fr.fogux.lift_simulator.mind.independant.AlgoBasique2;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
@@ -268,14 +265,15 @@ public class Simulateur extends Game
 
             final SimuPersStatAccumulator statAcc = new SimuPersStatAccumulator();
             System.out.println("debut run simulation");
-            try
+            simu.run(statAcc);
+            /*try
             {
-                simu.run(statAcc);
+
             }
             catch(final SimulateurException simuExep)
             {
                 simuExep.printStackTrace();
-            }
+            }*/
             System.out.println("fin run simulation");
             journalOutput.close();
             final SimuResult result = statAcc.getResult();
@@ -354,13 +352,8 @@ public class Simulateur extends Game
         GestFichiers.printFirstLine(fileSimuConfig, simuC.getValueAsString());
     }
 
-    public static void println(final String str)
-    {
-        System.out.println(str);
-    }
-
     public static void println(final Object o)
     {
-        System.out.println(o);
+        //System.out.println(o);
     }
 }

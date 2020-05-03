@@ -38,7 +38,7 @@ public class AscTripleDeplacementFunc extends AscDeplacementFunc
     @Override
     public String toString()
     {
-        return "t2:" + t2 + ",vLim:" + vLim + ",xOriginePartie2:" +c2+ " super:" + super.toString();
+        return "AscTripleDepFunc " + "t2:" + t2 + ",vLim:" + vLim + ",xOriginePartie2:" +c2+ " super:" + super.toString();
     }
 
     @Override

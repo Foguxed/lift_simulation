@@ -6,7 +6,7 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 public class ConfigSimu extends ConfigImmeuble
 {
 
-    public static final float EQUALITY_MARGIN = 0.000001f; // en niveau
+    public static final float EQUALITY_MARGIN = 0.000004f; // en niveau
 
 
 

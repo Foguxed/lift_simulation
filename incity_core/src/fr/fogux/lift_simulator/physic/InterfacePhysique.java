@@ -1,10 +1,8 @@
 package fr.fogux.lift_simulator.physic;
 
 import fr.fogux.lift_simulator.Simulation;
-import fr.fogux.lift_simulator.evenements.animation.EvenementConsoleLine;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.EtatAsc;
-import fr.fogux.lift_simulator.utils.Utils;
 
 /**
  *
@@ -109,7 +107,7 @@ public class InterfacePhysique
     {
         if(simu.doPrint())
         {
-            new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
+            //new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
         }
     }
 

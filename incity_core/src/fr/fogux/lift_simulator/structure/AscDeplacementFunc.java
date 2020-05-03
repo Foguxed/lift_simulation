@@ -1,5 +1,6 @@
 package fr.fogux.lift_simulator.structure;
 
+import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 
 public abstract class AscDeplacementFunc implements DeplacementFunc
@@ -45,13 +46,14 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
         else
         {
             final float a = choixAcceleration(xi,xf,vi,c);
+            Simulateur.println("choix a " + a);
             return new AscDoubleDeplacementFunc(t0, xi, vi, xf, a);
         }
     }
 
     public static long getTimeStraightToObjective(final ConfigSimu c, final long t0, final float vi, final float xi, final float xf)
     {
-        //System.out.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
+        Simulateur.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
 
         if(c.faitTroisPhases(xi, vi, xf))
         {
@@ -81,14 +83,36 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
 
     private static float choixAcceleration(final float xi, final float xf, final float vi, final ConfigSimu c)
     {
-        if((vi*vi/2f + c.getAscenseurAcceleration() * (xf-xi)) > 0)
+        if(vi >= 0)
+        {
+            if(xf >= getXArretMinimalMontee(c,xi,vi))
+            {
+                return c.getAscenseurAcceleration();
+            }
+            else
+            {
+                return -c.getAscenseurAcceleration();
+            }
+        }
+        else
+        {
+            if(xf <= getXArretMaximalDescente(c, xi, vi))
+            {
+                return -c.getAscenseurAcceleration();
+            }
+            else
+            {
+                return c.getAscenseurAcceleration();
+            }
+        }
+        /*if((vi*vi/2f + c.getAscenseurAcceleration() * (xf-xi)) > 0)
         {
             return c.getAscenseurAcceleration();
         }
         else
         {
             return -c.getAscenseurAcceleration();
-        }
+        }*/
     }
 
     private static boolean necessiteDemiTour(final float xi, final float xf, final float vi, final ConfigSimu c)

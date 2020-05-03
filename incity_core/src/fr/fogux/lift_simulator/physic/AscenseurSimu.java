@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementArriveAscSansOuverture;
@@ -178,7 +179,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         if(ouvrirPortesProchaineDest)
         {
-            System.out.println(" prohcain arret " +instantProchainArret );
+            Simulateur.println(" prochain arret " +instantProchainArret + " ascId " + id);
             prochainEventArrivee = new EvenementMouvementPortes(Math.max(instantProchainArret, simu.getTime()),simu.getConfig(), id, etageObjectif, true);
         }
         else
@@ -259,18 +260,20 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
             if(v >= 0)
             {
+                //Simulateur.println("x arretMinimalMontee " + AscDeplacementFunc.getXArretMinimalMontee(simu.getConfig(), x, v));
                 return new EtatAsc(
                     EtatAscenseur.MONTEE,
                     x,
-                    ((int) Math.floor((AscDeplacementFunc.getXArretMinimalMontee(simu.getConfig(), x, v)))) + 1
+                    ((int) Math.floor((AscDeplacementFunc.getXArretMinimalMontee(simu.getConfig(), x, v) - ConfigSimu.EQUALITY_MARGIN))) + 1
                     );
             }
             else
             {
+                //Simulateur.println("x arretMaximalDescente " + AscDeplacementFunc.getXArretMaximalDescente(simu.getConfig(), x, v));
                 return new EtatAsc(
                     EtatAscenseur.DESCENTE,
                     x,
-                    ((int) Math.floor((AscDeplacementFunc.getXArretMaximalDescente(simu.getConfig(), x, v))))
+                    ((int) Math.floor((AscDeplacementFunc.getXArretMaximalDescente(simu.getConfig(), x, v)+ ConfigSimu.EQUALITY_MARGIN)))
                     );
             }
         }

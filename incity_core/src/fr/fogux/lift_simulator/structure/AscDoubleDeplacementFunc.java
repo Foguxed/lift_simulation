@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.structure;
 
+import fr.fogux.lift_simulator.Simulateur;
+
 public class AscDoubleDeplacementFunc extends AscDeplacementFunc
 {
 
@@ -13,7 +15,7 @@ public class AscDoubleDeplacementFunc extends AscDeplacementFunc
 
     public static float bonne_sqrt_value(final float a, final float xi, final float xf, final float vi)
     {
-        //System.out.println("valeur dans sqrt " + (vi*vi/2f + a * (xf-xi)));
+        Simulateur.println("valeur dans sqrt " + (vi*vi/2f + a * (xf-xi)));
         if(a >= 0)
         {
             return (float)Math.sqrt(vi*vi/2f + a * (xf-xi));
@@ -56,4 +58,9 @@ public class AscDoubleDeplacementFunc extends AscDeplacementFunc
         }
     }
 
+    @Override
+    public String toString()
+    {
+        return "double dep func " + super.toString();
+    }
 }

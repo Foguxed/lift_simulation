@@ -1,5 +1,6 @@
 package fr.fogux.lift_simulator.evenements;
 
+import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
@@ -21,7 +22,11 @@ public abstract class PrintableEvenement extends Evenement
     @Override
     public void print(final Simulation simu)
     {
-        GestFichiers.printIn(simu.getJournalOutput(), getEventString(simu.getTime()));
+        final String str = getEventString(simu.getTime());
+
+        GestFichiers.printIn(simu.getJournalOutput(),str );
+
+        Simulateur.println(str);
     }
 
 

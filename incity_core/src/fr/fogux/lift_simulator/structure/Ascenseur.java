@@ -2,6 +2,7 @@ package fr.fogux.lift_simulator.structure;
 
 import java.util.ArrayList;
 
+import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 
 public abstract class Ascenseur
@@ -86,6 +87,7 @@ public abstract class Ascenseur
     protected void updateInstantProchainArret(final ConfigSimu c)
     {
         instantProchainArret = AscDeplacementFunc.getTimeStraightToObjective(c, ti, vi, xi, xObjectifActuel);
+        Simulateur.println("resultat " + instantProchainArret);
     }
 
 
