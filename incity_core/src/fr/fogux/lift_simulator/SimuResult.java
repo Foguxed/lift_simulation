@@ -5,7 +5,7 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 
 public class SimuResult
 {
-    public final boolean failed; //a la fin tout le monde n'a pas été transporté
+    public final boolean failed; //à la fin tout le monde n'a pas été transporté
     public final long totalTransportTime;
     public final long maxTransportTime;
     public final int nbPersonneTransportees;
