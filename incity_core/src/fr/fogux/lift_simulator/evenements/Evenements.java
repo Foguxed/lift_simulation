@@ -5,7 +5,7 @@ import java.util.Map;
 
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonAscenseur;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonTriangle;
-import fr.fogux.lift_simulator.evenements.animation.EvenementChangementMouvement;
+import fr.fogux.lift_simulator.evenements.animation.EvenementChangementPlannifier;
 import fr.fogux.lift_simulator.evenements.animation.EvenementConsoleLine;
 import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
 
@@ -32,7 +32,7 @@ public class Evenements
         put("persEntree", EvenementEntreePersonne.class);
         put("persSortie", EvenementSortiePersonne.class);
         put("mvmtPortes", EvenementMouvementPortes.class);
-        put("ascMvmt", EvenementChangementMouvement.class);
+        put("ascChgmtPlannifier", EvenementChangementPlannifier.class);
         put("boutonTriangle", EvenementBoutonTriangle.class);
         put("ascBouton", EvenementBoutonAscenseur.class);
         put("Erreur", EvenementErreur.class);

@@ -14,4 +14,5 @@ public class EtatAsc
         this.premierEtageAtteignable = premierEtageAtteignable;
         this.positionActuelle = positionActuelle;
     }
+    
 }

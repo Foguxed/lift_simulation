@@ -12,6 +12,7 @@ import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.animation.objects.RelativeDrawable;
 import fr.fogux.lift_simulator.animation.objects.RelativeSprite;
 import fr.fogux.lift_simulator.animation.objects.RenderedObject;
+import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Ascenseur;
 import fr.fogux.lift_simulator.utils.AssetsManager;
@@ -35,9 +36,8 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
 
     public AscenseurVisu(final AnimationProcess animation,final AscId id, final int personnesMax, final float x, final float initialY)
     {
-        super(id, personnesMax, initialY);
+        super(animation.getConfig(),id, personnesMax, initialY);
         this.animation = animation;
-        depFunc = null;
         final RelativeSprite sprite = new RelativeSprite(AssetsManager.ascenseur);
         drawableObject = new RenderedObject(sprite, new Vector2(-sprite.getWidth() / 2, 22), new Vector2(x, initialY*ImmeubleVisu.hauteurEtages));
         drawableBoutonList = new RenderedObject();
@@ -125,34 +125,18 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
         }
     }
 
-    public void changementDuFuturXObjectif(final long timeChmt, final float xObjectif)
-    {
-        changerXObjectif(xObjectif, timeChmt, animation.getConfig());
-        instantiateDepFunc(animation.getConfig());
-    }
-
-    public void changementVersAncienXObjectif(final float xObjectif, final long oldTi, final float oldXi, final float oldVi)
-    {
-        xObjectifActuel = xObjectif;
-        ti = oldTi;
-        xi = oldXi;
-        vi = oldVi;
-        updateInstantProchainArret(animation.getConfig());
-        instantiateDepFunc(animation.getConfig());
-    }
+    
 
     protected float getPosition(final long time)
     {
-        if(time > instantProchainArret)
-        {
-            return xObjectifActuel;
-        }
-        else
-        {
-            return depFunc.getX(time);
-        }
+        return plannifier.safeGetX(time);
     }
 
+    public void changerPlannifierVers(DataTagCompound newP)
+    {
+    	plannifier.acceptCompound(newP);
+    }
+    
     @Override
     public void changerEtatBouton(final int bouton, final boolean allume)
     {

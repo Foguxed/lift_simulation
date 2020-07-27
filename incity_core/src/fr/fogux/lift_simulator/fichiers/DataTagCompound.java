@@ -113,7 +113,7 @@ public class DataTagCompound
     {
         return new DataTagCompound(map.get(key));
     }
-
+    
     /*
      * format {{valeur_compound1},{valeur_compound2}}
      */
@@ -164,7 +164,12 @@ public class DataTagCompound
     {
         return Long.parseLong(map.get(key));
     }
-
+    
+    public byte getByte(final String key)
+    {
+    	return Byte.parseByte(map.get(key));
+    }
+    
     public int getInt(final String key)
     {
         return Integer.parseInt(map.get(key));
@@ -218,7 +223,17 @@ public class DataTagCompound
     {
         map.put(key, String.valueOf(val));
     }
-
+    
+    public void setByte(final String key, final byte val)
+    {
+    	map.put(key, String.valueOf(val));
+    }
+    
+    public void setCompound(final String key, final DataTagCompound compound)
+    {
+    	map.put(key, compound.getValueAsString());
+    }
+    
     public void setString(final String key, String val)
     {
 

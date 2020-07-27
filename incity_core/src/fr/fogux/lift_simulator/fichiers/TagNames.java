@@ -5,6 +5,11 @@ public class TagNames
 
     public static final String val = "val";
 
+    public static final String x = "x";
+    public static final String v = "v";
+    public static final String t = "t";
+    public static final String softDepType = "softDepType";
+    
     public static final String nbPersonnes = "nbPersonnes";
     public static final String etage = "etage";
     public static final String destination = "destination";
@@ -37,6 +42,13 @@ public class TagNames
 
     public static final String partitionGenType = "partitionGenType";
     public static final String pingTime = "pingTime";
+    //EvenementChangementPlannigier
+    public static final String oldPlannifier = "oldPlannifier";
+    public static final String newPlannifier = "newPlannifier";
+    
+    //DepPlannifier
+    public static final String listeEtapes = "listeEtapes";
+    
     //SimuResult
     public static final String failed = "failed"; //a la fin tout le monde n'a pas été transporté
     public static final String totalTransportTime = "totalTransportTime";

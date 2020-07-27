@@ -51,7 +51,7 @@ public class InterfacePhysique
 
     public EtatAsc getEtat(final AscId id)
     {
-        return simu.getImmeubleSimu().getAscenseur(id).getEtat(simu.getTime());
+        return simu.getImmeubleSimu().getAscenseur(id).getEtat();
     }
 
     /**
@@ -60,10 +60,12 @@ public class InterfacePhysique
      * @param objectif
      * @return -1 si l'ascenseur est bloque, ou est géné par un ascenseur voisin sinon
      * la durée du demplacement de l'ascenseur vers cet objectif depuis sa position actuelle
+     * 
      */
+    @Deprecated
     public long getDistanceTemporelle(final AscId id, final float objectif)
     {
-        return simu.getImmeubleSimu().getAscenseur(id).getDurreePourAtteindre(objectif);
+        return -1;
     }
 
     /**

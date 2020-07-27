@@ -12,8 +12,9 @@ import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementArriveAscSansOuverture;
 import fr.fogux.lift_simulator.evenements.EvenementMouvementPortes;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonAscenseur;
-import fr.fogux.lift_simulator.evenements.animation.EvenementChangementMouvement;
+import fr.fogux.lift_simulator.evenements.animation.EvenementChangementPlannifier;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
+import fr.fogux.lift_simulator.fichiers.Compoundable;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.population.PersonneSimu;
@@ -49,11 +50,17 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     protected Set<AscenseurSimu> listeners = new HashSet<>();
 
     protected Iterator<Integer> iteratorInvites = null;
-
+    
+    protected float xObjectifActuel;
+    
+    protected int etageObjectif;
+    
     public AscenseurSimu(final Simulation simu, final AscId id, final float initialY)
     {
-        super(id, simu.getConfig().nbPersMaxAscenseur(), initialY);
+        super(simu.getConfig() ,id, simu.getConfig().nbPersMaxAscenseur(), initialY);
         this.simu = simu;
+        this.xObjectifActuel = initialY;
+        this.etageObjectif = (int) initialY;
     }
 
     public void setAscSuperieur(final AscenseurSimu asc)
@@ -107,7 +114,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     protected boolean bloque()
     {
-        return etageTransfert != null || (prochainEventArrivee != null && simu.getTime() >  instantProchainArret);
+        return etageTransfert != null || (prochainEventArrivee != null && plannifier.notMoving(simu.getTime()));
     }
 
     public void setObjectif(final int newEtageObjectif, final boolean ouvrirPortes)
@@ -148,7 +155,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         {
             if(collisionSuperieure(newEtageObjectif))
             {
-                xObjectifCorrige = ascSuperieur.getXObjectif() - simu.getConfig().getMargeInterAscenseur();
+                xObjectifCorrige = ascSuperieur.xObjectifActuel - simu.getConfig().getMargeInterAscenseur();
                 canReachEtage = false;
                 ascAttendu = ascSuperieur;
                 ascSuperieur.registerListener(this);
@@ -158,13 +165,13 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         {
             if(collisionInferieure(newEtageObjectif))
             {
-                xObjectifCorrige = ascInferieur.getXObjectif() + simu.getConfig().getMargeInterAscenseur();
+                xObjectifCorrige = ascInferieur.xObjectifActuel + simu.getConfig().getMargeInterAscenseur();
                 canReachEtage = false;
                 ascAttendu = ascInferieur;
                 ascInferieur.registerListener(this);
             }
         }
-        if(Math.abs(xObjectifCorrige - xObjectifActuel) > ConfigSimu.EQUALITY_MARGIN)
+        if(Math.abs(xObjectifCorrige - xObjectifActuel) > ConfigSimu.XEQUALITY_MARGIN)
         {
             bruteDeplacer(xObjectifCorrige);
         }
@@ -179,66 +186,81 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         if(ouvrirPortesProchaineDest)
         {
-            Simulateur.println(" prochain arret " +instantProchainArret + " ascId " + id);
-            prochainEventArrivee = new EvenementMouvementPortes(Math.max(instantProchainArret, simu.getTime()),simu.getConfig(), id, etageObjectif, true);
+            prochainEventArrivee = new EvenementMouvementPortes(Math.max(getInstantProchainArret(), simu.getTime()),simu.getConfig(), id, etageObjectif, true);
         }
         else
         {
-            prochainEventArrivee = new EvenementArriveAscSansOuverture(Math.max(instantProchainArret, simu.getTime()),id);
+            prochainEventArrivee = new EvenementArriveAscSansOuverture(Math.max(getInstantProchainArret(), simu.getTime()),id);
         }
         prochainEventArrivee.runOn(simu);
     }
-
+    
+    private long getInstantProchainArret()
+    {
+    	return plannifier.EF.t;
+    }
+    
     protected void bruteDeplacer(final float newXObjectif)
     {
+    	DataTagCompound oldPlannifier = null;
+    	if(simu.doPrint())
+    	{
+        	oldPlannifier = Compoundable.compound(plannifier);
+    	}
+        
+        final long timeChangement = simu.getTime();
+        
+        final float oldXi = plannifier.EI.x;
+        plannifier.initiateMovement(timeChangement, newXObjectif, ascSuperieur, ascInferieur);
+        
         if(simu.doPrint())
-        {
-            new EvenementChangementMouvement(id, newXObjectif, xObjectifActuel, ti, xi, vi).print(simu);
-        }
-        final float oldXi = xi;
-        changerXObjectif(newXObjectif, simu.getTime(), simu.getConfig());
-        deplacementTotal += Math.abs(xi - oldXi);
+    	{
+        	DataTagCompound newPlannifier = Compoundable.compound(plannifier);
+        	new EvenementChangementPlannifier(id, oldPlannifier, newPlannifier).print(simu);
+    	}
+        
+        deplacementTotal += Math.abs(oldXi - plannifier.EI.x);
+        xObjectifActuel = newXObjectif;
+        
         for(final AscenseurSimu a : listeners)
         {
             a.neighboorMoved();
         }
     }
-
+    
+    /**
+     * 
+     * @param newXObjectif
+     * @param timeChangement
+     * @param c
+     */
+    protected void changerXObjectif(final float newXObjectif, final long timeChangement, final ConfigSimu c)
+    {
+        
+    }
+    
     private boolean collisionInferieure(final float objectif)
     {
-        return ascInferieur != null && objectif < ascInferieur.getXObjectif() + simu.getConfig().getMargeSupInterAscenseur();
+        return ascInferieur != null && objectif < ascInferieur.xObjectifActuel + simu.getConfig().getMargeSupInterAscenseur();
     }
 
     private boolean collisionSuperieure(final float objectif)
     {
-        return ascSuperieur != null && objectif > ascSuperieur.getXObjectif() - simu.getConfig().getMargeSupInterAscenseur();
+        return ascSuperieur != null && objectif > ascSuperieur.xObjectifActuel - simu.getConfig().getMargeSupInterAscenseur();
     }
+    
 
-    /**
-     *
-     * @param objectif
-     * @return -1 si il y a une collission avec un autre ascenseur ou que l'ascenseur est bloque
-     */
-    public long getDurreePourAtteindre(final float objectif)
-    {
-        if(bloque() || collisionInferieure(objectif) ||collisionSuperieure(objectif))
-        {
-            return -1;
-        }
-        else
-        {
-            return simu.getTime() - getHeureArrivee(objectif, simu.getTime(), simu.getConfig());
-        }
-    }
-
+    
+    
     /**
      *
      * @param time > time actuel (très important), sinon le résultat sera incohérent
      * @return l'etat dans l'ascenseur à cet instant si aucun ordre ne luit est donne
      */
-    public EtatAsc getEtat(final long time)
+    public EtatAsc getEtat()
     {
-        if(time > instantProchainArret)
+    	final long time = simu.getTime();
+        if(plannifier.notMoving(time))
         {
             if(bloque())
             {
@@ -251,31 +273,7 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         }
         else
         {
-            if(depFunc == null)
-            {
-                instantiateDepFunc(simu.getConfig());
-            }
-            final float v = depFunc.getV(time);
-            final float x = depFunc.getX(time);
-
-            if(v >= 0)
-            {
-                //Simulateur.println("x arretMinimalMontee " + AscDeplacementFunc.getXArretMinimalMontee(simu.getConfig(), x, v));
-                return new EtatAsc(
-                    EtatAscenseur.MONTEE,
-                    x,
-                    ((int) Math.floor((AscDeplacementFunc.getXArretMinimalMontee(simu.getConfig(), x, v) - ConfigSimu.EQUALITY_MARGIN))) + 1
-                    );
-            }
-            else
-            {
-                //Simulateur.println("x arretMaximalDescente " + AscDeplacementFunc.getXArretMaximalDescente(simu.getConfig(), x, v));
-                return new EtatAsc(
-                    EtatAscenseur.DESCENTE,
-                    x,
-                    ((int) Math.floor((AscDeplacementFunc.getXArretMaximalDescente(simu.getConfig(), x, v)+ ConfigSimu.EQUALITY_MARGIN)))
-                    );
-            }
+            return plannifier.getFullMovingEtat(time);
         }
     }
 
