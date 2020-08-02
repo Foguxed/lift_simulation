@@ -3,7 +3,6 @@ package fr.fogux.lift_simulator.physic;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.fogux.lift_simulator.Shadowable;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.structure.AscId;
@@ -18,9 +17,10 @@ public class ImmeubleSimu
     public ImmeubleSimu(final ImmeubleSimu shadowed, Simulation newSimu)
     {
     	etages = new EtageSimu[shadowed.etages.length];
+    	this.niveauMin = shadowed.niveauMin;
     	for(int i = 0; i < etages.length; i ++)
     	{
-    		etages[i] = new EtageSimu(newSimu, shadowed.etages[i].getNiveau());
+    		etages[i] = new EtageSimu(shadowed.etages[i],newSimu);
     	}
     	ascenseurs = new ArrayList[shadowed.ascenseurs.length];
     	for(int i = 0; i < ascenseurs.length; i ++)
@@ -30,7 +30,13 @@ public class ImmeubleSimu
         		ascenseurs[i].add(new AscenseurSimu(newSimu, asc));
     		}
     	}
-    	this.niveauMin = shadowed.niveauMin;
+    	for(int i = 0; i < ascenseurs.length; i ++)
+    	{
+    		for(int j = 0; j < ascenseurs[i].size(); j ++)
+    		{
+    			ascenseurs[i].get(j).finalizeShadow(newSimu, shadowed.ascenseurs[i].get(j));
+    		}
+    	}
     }
     
     public ImmeubleSimu(final Simulation simu)

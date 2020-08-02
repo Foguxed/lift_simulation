@@ -2,21 +2,13 @@ package fr.fogux.lift_simulator.mind.RPsimpleAlgo2;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.RPsimpleAlgo.TripletPnd;
-import fr.fogux.lift_simulator.mind.basic.AscenseurDevin;
-import fr.fogux.lift_simulator.mind.basic.DestinationSimple;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.EtatAscenseur;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
-import fr.fogux.lift_simulator.structure.EtatAsc;
 
 public class RPsimpleAlgo2 extends Algorithme
 {
@@ -45,7 +37,7 @@ public class RPsimpleAlgo2 extends Algorithme
 			}
 		}
 		output().systemPrintLn(" INIT --------------------------------------    ");
-		return -1;	// Durée entre deux Ping()
+		return -1;	// Durï¿½e entre deux Ping()
     }
 
     @Override
@@ -61,7 +53,7 @@ public class RPsimpleAlgo2 extends Algorithme
     }
 
     @Override
-    public Collection<Integer> listeInvites(final AscId idAsc, final int places_disponibles, final int niveau)
+    public List<Integer> listeInvites(final AscId idAsc, final int places_disponibles, final int niveau)
     {    	 	
 		monAscenseur2 cetAscenseur = ascenseursArray[idAsc.monteeId] [idAsc.stackId];
     	List<Integer> listInvites = new ArrayList<Integer>();
@@ -115,7 +107,7 @@ public class RPsimpleAlgo2 extends Algorithme
 	public void ping() {
 		
 		output.println(" Ping ------------------");
-		for (int j = 0; j < 2; j++) {	// 2 à changer en m
+		for (int j = 0; j < 2; j++) {	// 2 ï¿½ changer en m
 			
 			for (int i = 0; i < 4; i++) { // CHANGER LE 4 EN n
 				monAscenseur2 cetAscenseur = ascenseursArray[i] [j];
@@ -233,7 +225,8 @@ public class RPsimpleAlgo2 extends Algorithme
 		output.println(p);
 	}
 	
-	private void boolArrayPrinter(boolean[] stops) {
+	private void boolArrayPrinter(boolean[] stops) 
+	{
 		int p = 0;
 		int a = 1;
 		for (int i = 0; i < stops.length - 3; i++) {

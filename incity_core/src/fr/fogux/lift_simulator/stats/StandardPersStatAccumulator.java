@@ -1,8 +1,5 @@
 package fr.fogux.lift_simulator.stats;
 
-import fr.fogux.lift_simulator.SimuResult;
-import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
-import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.population.PersonneSimu;
 
 public class StandardPersStatAccumulator implements StatAccumulator<PersonneSimu>

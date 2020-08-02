@@ -2,7 +2,6 @@ package fr.fogux.lift_simulator.structure;
 
 import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import sun.security.krb5.internal.APOptions;
 
 public abstract class AscDeplacementFunc implements DeplacementFunc
 {

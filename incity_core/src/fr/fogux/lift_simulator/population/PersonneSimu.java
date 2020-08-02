@@ -7,7 +7,6 @@ import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.physic.AscenseurSimu;
-import fr.fogux.lift_simulator.physic.EtageSimu;
 import fr.fogux.lift_simulator.stats.StatCarrier;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Personne;
@@ -16,16 +15,15 @@ public class PersonneSimu extends Personne implements StatCarrier
 {
     protected final Simulation simu;
 
-    protected EtageSimu etageActuel;
+    protected int etageActuel;
     protected boolean enAttentePalier;
-    protected AscenseurSimu ascenseur;
 
     protected final long timeInput;
     protected long heureEntreeAscenseur;
     protected long heureSortieAscenseur;
     protected AscId ascenseurUtilise;
 
-    public PersonneSimu(final Simulation simu,final int id, final int destination, final EtageSimu etageActuel)
+    public PersonneSimu(final Simulation simu,final int id, final int destination, final int etageActuel)
     {
         super(destination, id);
         this.simu = simu;
@@ -33,7 +31,19 @@ public class PersonneSimu extends Personne implements StatCarrier
         timeInput = simu.getTime();
         this.etageActuel = etageActuel;
     }
-
+    
+    public PersonneSimu(final PersonneSimu shadowed, Simulation newSimu)
+    {
+    	super(shadowed.destination,shadowed.id);
+    	this.simu = newSimu;
+    	this.etageActuel = shadowed.etageActuel;
+    	this.enAttentePalier = shadowed.enAttentePalier;
+    	this.timeInput = shadowed.timeInput;
+    	this.heureEntreeAscenseur = shadowed.heureEntreeAscenseur;
+    	this.heureSortieAscenseur = shadowed.heureSortieAscenseur;
+    	this.ascenseurUtilise = shadowed.ascenseurUtilise;
+    }
+    
     public boolean livree()
     {
         return heureSortieAscenseur > 0;
@@ -59,7 +69,7 @@ public class PersonneSimu extends Personne implements StatCarrier
 
     public void choisirDestination()
     {
-        simu.getPrgm().appelExterieur(id, etageActuel.getNiveau(), destination);
+        simu.getPrgm().appelExterieur(id, etageActuel, destination);
     }
 
     public boolean jeSortDeAscenseur(final int etage)
@@ -79,13 +89,13 @@ public class PersonneSimu extends Personne implements StatCarrier
         {
             throw new SimulateurAcceptableException(this + " est déja dans " + ascenseur + " impossible de la faire entrer dans " + ascenseur);
         }
-        else if(etageActuel.getNiveau() != niveau)
+        else if(etageActuel != niveau)
         {
-            throw new SimulateurAcceptableException(this + " est au niveau " + etageActuel.getNiveau() + " impossible de la faire entrer dans " + ascenseur + " au niveau " + niveau);
+            throw new SimulateurAcceptableException(this + " est au niveau " + etageActuel + " impossible de la faire entrer dans " + ascenseur + " au niveau " + niveau);
         }
         new EvenementEntreePersonne(
             simu.getTime(),simu.getConfig(), id, ascenseur.getId(),
-            etageActuel.getNiveau()).runOn(simu);
+            etageActuel).runOn(simu);
         enAttentePalier = false;
     }
 
@@ -93,7 +103,6 @@ public class PersonneSimu extends Personne implements StatCarrier
     {
         heureEntreeAscenseur = simu.getTime();
         ascenseurUtilise = ascenseur.getId();
-        this.ascenseur = ascenseur;
         ascenseur.estEntre(this);
         // Utils.msg(this, "ascenseur " + ascenseur);
         simu.getPrgm().appelInterieur(destination, ascenseur.getId());
@@ -103,8 +112,7 @@ public class PersonneSimu extends Personne implements StatCarrier
     {
         heureSortieAscenseur = simu.getTime();
         // Utils.msg(this, "ascenseurSortir " + ascenseur +" deja sorti " + deleteMe);
-        ascenseur.sortieDe(this);
-        ascenseur = null;
+        simu.getImmeubleSimu().getAscenseur(ascenseurUtilise).sortieDe(this);
     }
 
 }

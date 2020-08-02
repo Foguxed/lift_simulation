@@ -5,19 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import fr.fogux.lift_simulator.batchs.core.SimulationStatCreator;
-import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.EtageSimu;
 import fr.fogux.lift_simulator.physic.ImmeubleSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.population.PersonneSimu;
-import fr.fogux.lift_simulator.stats.StatAccumulator;
 
 public class Simulation
 {
@@ -37,16 +33,22 @@ public class Simulation
     	this(prgminstantiator,config,partition,null);
     }
     
-    /*private Simulation(Simulation shadowed, AlgoInstantiator prgminstantiator)
+    private Simulation(Simulation shadowed, AlgoInstantiator prgminstantiator)
     {
+    	this.completed = shadowed.completed;
     	this.journalOutput = null;
     	this.c = shadowed.c;
     	this.phys = new InterfacePhysique(this);
     	this.p = prgminstantiator.getPrgm(phys, c);
-    	this.personnesList = shadowed.personnesList;
+    	this.personnesList = new ArrayList<>();
+    	for(PersonneSimu pSimu : shadowed.getPersonnesNonLivrees())
+    	{
+    		personnesList.add(new PersonneSimu(pSimu, this));
+    	}
+    	this.potentiellementNonLivree = new ArrayList<>(personnesList);
+    	this.immeuble = new ImmeubleSimu(shadowed.immeuble, this);
     	this.gestioTaches = new GestionnaireDeTachesSimu(this, shadowed.gestioTaches);
-    	
-    }*/
+    }
     
     public List<PersonneSimu> getPersonnesNonLivrees()
     {
@@ -125,7 +127,7 @@ public class Simulation
         return p;
     }
 
-    public void inputPersonne(final EtageSimu etageDepart, final int destination)
+    public void inputPersonne(final int etageDepart, final int destination)
     {
         final PersonneSimu newP = new PersonneSimu(this, personnesList.size(), destination, etageDepart);
         personnesList.add(newP);

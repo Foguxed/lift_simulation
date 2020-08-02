@@ -2,8 +2,6 @@ package fr.fogux.lift_simulator.mind.RPsimpleAlgo;
 
 import java.util.List;
 
-import com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.Config;
-
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
@@ -59,7 +57,7 @@ public class monAscenseur {
 		
 	}
 
-	public int maxLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output, final ConfigSimu config) {	// COMMENT AVOIR DES VARIABLES GLOBALES PLTÔT ?
+	public int maxLevel(monAscenseur[] [] ascenseursArray, InterfacePhysique output, final ConfigSimu config) {	// COMMENT AVOIR DES VARIABLES GLOBALES PLTï¿½T ?
 		int maxLevel = config.getNiveauMax();	// A MODIFIER
 		if (this.id.stackId < 1) {	// A MODIFIER AUSSI
 			maxLevel = ascenseursArray[this.id.monteeId] [this.id.stackId + 1].niveau(output);
@@ -80,7 +78,7 @@ public class monAscenseur {
 		EtatAsc etatAsc= output.getEtat(id);
 		
 		if (etatAsc.premierEtageAtteignable == Integer.MIN_VALUE) {
-			niveau = Math.round(etatAsc.positionActuelle);	// SI ARRÊTE
+			niveau = Math.round(etatAsc.positionActuelle);	// SI ARRï¿½TE
 		} else {
 			niveau = etatAsc.premierEtageAtteignable;	// SI EN MOUVEMENT
 		}

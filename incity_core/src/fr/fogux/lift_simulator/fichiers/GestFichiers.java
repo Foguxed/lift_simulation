@@ -19,8 +19,6 @@ import java.util.stream.Collectors;
 
 import com.badlogic.gdx.Gdx;
 
-import fr.fogux.lift_simulator.PartitionSimu;
-import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementPersonnesInput;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.batchs.core.SimuBatch;

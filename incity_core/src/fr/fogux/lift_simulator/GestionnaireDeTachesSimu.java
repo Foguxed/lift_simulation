@@ -32,8 +32,20 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     	this.simu = newSimulation;
     	this.policy = choosePolyci(false);
     	this.lastInputTime = shadowed.lastInputTime;
-    	this.pingTime = shadowed.pingTime;
     	this.partition = Collections.emptyIterator();
+    	long time;
+    	for(Entry<Long,List<Evenement>> entry : shadowed.taches.entrySet())
+    	{
+    		time = entry.getKey();
+    		for(Evenement e : entry.getValue())
+    		{
+    			if(!(e instanceof EvenementPersonnesInput))
+    			{
+        			putEventInTaches(e,time);
+    			}
+    		}
+    	}
+    	//pingtime depend de l'algo
     }
     
     
@@ -55,20 +67,25 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         }
         else
         {
-            final List<Evenement> tempList = taches.get(timeAbsolu);
-            if (tempList != null)
-            {
-                tempList.add(tache);
-            } else
-            {
-                final List<Evenement> list = new ArrayList<>();
-                list.add(tache);
-                taches.put(timeAbsolu, list);
-            }
+        	putEventInTaches(tache,timeAbsolu);
         }
         policy.onRegister(tache, this, timeAbsolu);
     }
-
+    
+    private void putEventInTaches(Evenement tache, long timeAbsolu)
+    {
+    	final List<Evenement> tempList = taches.get(timeAbsolu);
+        if (tempList != null)
+        {
+            tempList.add(tache);
+        } else
+        {
+            final List<Evenement> list = new ArrayList<>();
+            list.add(tache);
+            taches.put(timeAbsolu, list);
+        }
+    }
+    
     public void CancelEvenement(final Evenement ev, final long registeredTime)
     {
         final List<Evenement> temp = taches.get(registeredTime);

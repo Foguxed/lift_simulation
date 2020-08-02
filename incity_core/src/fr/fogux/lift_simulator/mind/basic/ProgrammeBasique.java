@@ -50,7 +50,7 @@ public class ProgrammeBasique extends Algorithme
     }
 
     @Override
-    public Collection<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int n)
+    public List<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int n)
     {
         if(idASc.stackId == 0)
         {

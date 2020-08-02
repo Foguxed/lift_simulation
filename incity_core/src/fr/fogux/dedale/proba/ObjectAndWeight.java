@@ -1,8 +1,5 @@
 package fr.fogux.dedale.proba;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ObjectAndWeight<T extends Object>
 {
 	public final double weight;

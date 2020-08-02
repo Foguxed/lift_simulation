@@ -1,6 +1,5 @@
 package fr.fogux.lift_simulator.physic;
 
-import fr.fogux.lift_simulator.Shadowable;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonTriangle;
 import fr.fogux.lift_simulator.structure.Etage;
@@ -14,6 +13,12 @@ public class EtageSimu extends Etage
         super(numero);
         this.simu = simu;
     }
+    
+    public EtageSimu(EtageSimu shadowed, Simulation newSimu)
+    {
+    	super(shadowed);
+    	this.simu = newSimu;
+    }
 
     /*
      * public void choisirDirection(Personne personne) { }
@@ -23,7 +28,19 @@ public class EtageSimu extends Etage
     {
 
     }
-
+    
+    public static EtageSimu shadow(EtageSimu etage, Simulation newSimu)
+    {
+    	if(etage == null)
+    	{
+    		return null;
+    	}
+    	else
+    	{
+    		return newSimu.getImmeubleSimu().getEtage(etage.num);
+    	}
+    }
+    
     @Override
     public int getNiveau()
     {
@@ -61,7 +78,7 @@ public class EtageSimu extends Etage
     {
         for(int i = 0; i < nbPersonnes; i ++)
         {
-            simu.inputPersonne(this, destination);
+            simu.inputPersonne(this.getNiveau(), destination);
         }
     }
 }

@@ -3,7 +3,6 @@ package fr.fogux.lift_simulator.structure;
 import fr.fogux.lift_simulator.fichiers.Compoundable;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
-import javafx.scene.chart.PieChart.Data;
 
 public class AscState implements Compoundable
 {

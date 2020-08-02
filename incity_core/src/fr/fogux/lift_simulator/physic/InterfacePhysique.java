@@ -1,7 +1,9 @@
 package fr.fogux.lift_simulator.physic;
 
 import fr.fogux.lift_simulator.Simulation;
+import fr.fogux.lift_simulator.batchs.core.SimulationStatCreator;
 import fr.fogux.lift_simulator.evenements.animation.EvenementConsoleLine;
+import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.EtatAsc;
 import fr.fogux.lift_simulator.utils.Utils;
@@ -114,7 +116,13 @@ public class InterfacePhysique
             new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
         }
     }
-
+    
+    public <T> T tryScenario(AlgoInstantiator newAlgoInstantiator, SimulationStatCreator<T> statCreator)
+    {
+    	//TODO
+    	return null;
+    }
+    
     public void systemPrintLn(final Object o)
     {
         System.out.println(o);

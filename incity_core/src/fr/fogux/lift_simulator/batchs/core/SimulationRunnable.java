@@ -1,24 +1,19 @@
 package fr.fogux.lift_simulator.batchs.core;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.sun.org.glassfish.external.statistics.impl.StatsImpl;
-
 import fr.fogux.lift_simulator.PartitionSimu;
 import fr.fogux.lift_simulator.Simulation;
-import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.FichierPartition;
 import fr.fogux.lift_simulator.fichiers.FichierPartitionConfig;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
 import fr.fogux.lift_simulator.fichiers.NomsFichiers;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
-import fr.fogux.lift_simulator.partition_creation.PartitionCreator;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.stats.SimulationStat;

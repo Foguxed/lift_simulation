@@ -2,7 +2,6 @@ package fr.fogux.lift_simulator.structure;
 
 import java.util.ArrayList;
 
-import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 
 public abstract class Ascenseur

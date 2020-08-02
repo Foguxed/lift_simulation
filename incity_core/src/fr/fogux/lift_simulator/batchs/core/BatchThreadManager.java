@@ -9,7 +9,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import fr.fogux.lift_simulator.PartitionSimu;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
 import fr.fogux.lift_simulator.fichiers.NomsFichiers;

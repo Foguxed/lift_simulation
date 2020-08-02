@@ -2,13 +2,22 @@ package fr.fogux.lift_simulator.structure;
 
 public abstract class Etage
 {
-    protected boolean hautAllume = false;
-    protected boolean basAllume = false;
+    protected boolean hautAllume;
+    protected boolean basAllume;
     protected final int num;
 
     public Etage(int niveau)
     {
         this.num = niveau;
+        hautAllume = false;
+        basAllume = false;
+    }
+    
+    public Etage(Etage shadowed)
+    {
+    	this.num = shadowed.num;
+    	this.hautAllume = shadowed.hautAllume;
+    	this.basAllume = shadowed.basAllume;
     }
 
     public int getNiveau()

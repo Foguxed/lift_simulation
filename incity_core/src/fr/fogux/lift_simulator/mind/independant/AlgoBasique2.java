@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.mind.independant;
 
+import java.util.List;
+
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
@@ -46,7 +48,7 @@ public class AlgoBasique2 extends Algorithme
     }
 
     @Override
-    public Iterable<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int niveau)
+    public List<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int niveau)
     {
         return montees[idASc.monteeId].invites(niveau,idASc.stackId, places_disponibles);
     }

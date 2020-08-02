@@ -1,7 +1,6 @@
 package fr.fogux.lift_simulator.stats;
 
 import java.util.Collection;
-import java.util.List;
 
 public class AveragedStat implements SimulationStat
 {

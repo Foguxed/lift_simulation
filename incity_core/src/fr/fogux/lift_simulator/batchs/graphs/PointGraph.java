@@ -1,7 +1,6 @@
 package fr.fogux.lift_simulator.batchs.graphs;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import fr.fogux.lift_simulator.batchs.core.SimuTaskReceiver;

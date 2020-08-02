@@ -1,7 +1,5 @@
 package fr.fogux.dedale.repartiteur;
 
-import java.security.InvalidParameterException;
-
 public class Intervalle
 {
     public final double min;

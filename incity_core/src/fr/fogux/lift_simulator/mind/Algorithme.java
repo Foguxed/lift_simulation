@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.mind;
 
+import java.util.List;
+
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
@@ -52,16 +54,16 @@ public abstract class Algorithme
     public abstract void appelExterieur(int idPersonne, int niveau, int destination);
 
     /**
-     * Appellé lorsque les portes de l'ascenseur s'ouvrent à un étage, seules les personnes dont l'id figure dans cet
-     * iterable entreront dans l'ascenseur (iterables c'est une liste par exemple)
+     * Appellé lorsque les portes de l'ascenseur s'ouvrent à un étage ou lorsque le transfert
+     * est terminé pour demander à l'algorithme si il y a de nouvelles personnes à inviter
+     * liste entreront dans l'ascenseur 
      * @param idASc
      * @param places_disponibles
      * @param niveau
-     * @return un Iterable dont l'iterator ne compte pas plus de places_disponibles éléments, attention, l'iterable n'est pas
-     * immédiatement itéré (il faut donc le copier si nécessaire)
+     * @return une liste qui ne compte pas plus de places que de places disponibles, sera copiée
      */
-    public abstract Iterable<Integer> listeInvites(AscId idASc, int places_disponibles, int niveau);
-
+    public abstract List<Integer> listeInvites(AscId idASc, int places_disponibles, int niveau);
+    
     /**
      * Appellé lorsque l'ascenseur s' arrête à un étage pour lequel l'algorithme n'avais pas demandé
      *  d'ouverture (paramètre booléen dans InterfacePhysique.deplacerAscenseur)

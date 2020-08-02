@@ -3,15 +3,12 @@ package fr.fogux.lift_simulator.structure;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.gdx.utils.Predicate;
-
 import fr.fogux.lift_simulator.evenements.AscVirgule;
 import fr.fogux.lift_simulator.fichiers.Compoundable;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.EtatAscenseur;
-import sun.security.krb5.internal.APOptions;
 
 /**
  * Instantié seulement si necessaire

@@ -2,12 +2,9 @@ package fr.fogux.lift_simulator.physic;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Set;
 
-import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementArriveAscSansOuverture;
@@ -20,7 +17,6 @@ import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.population.PersonneSimu;
 import fr.fogux.lift_simulator.stats.StatCarrier;
-import fr.fogux.lift_simulator.structure.AscDeplacementFunc;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Ascenseur;
 import fr.fogux.lift_simulator.structure.EtatAsc;
@@ -50,8 +46,8 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     protected Set<AscenseurSimu> listeners = new HashSet<>();
 
     protected List<Integer> invites;
+    protected int inviteIndex = 0;
     
-    protected Iterator<Integer> iteratorInvites = null;
     
     protected float xObjectifActuel;
     
@@ -72,32 +68,45 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     {
     	super(shadowed);
     	this.simu = newSimu;
-    	this.xObjectifActuel = shadowed.xObjectifActuel;
-    	this.etageObjectif = shadowed.etageObjectif;
-    	this.evacuationIndex = shadowed.evacuationIndex;
     	for(PersonneSimu p : shadowed.listeDePersonne)
     	{
     		listeDePersonne.add(newSimu.getPersonne(p.getId()));
     	}
-    	this.etageTransfert = newSimu.getImmeubleSimu().getEtage(shadowed.etageTransfert.getNiveau());
+    	this.evacuationIndex = shadowed.evacuationIndex;
+    	this.etageTransfert = EtageSimu.shadow(shadowed.etageTransfert, newSimu);
     	this.personnesTransportes = shadowed.personnesTransportes;
-    	this.ouvrirPortesProchaineDest = shadowed.ouvrirPortesProchaineDest;
     	this.deplacementTotal = shadowed.deplacementTotal;
+    	this.ouvrirPortesProchaineDest = shadowed.ouvrirPortesProchaineDest;
+    	this.prochainEventArrivee = shadowed.prochainEventArrivee;
+    	this.invites = new ArrayList<>(shadowed.invites);
+    	this.inviteIndex = shadowed.inviteIndex;
+    	this.xObjectifActuel = shadowed.xObjectifActuel;
+    	this.etageObjectif = shadowed.etageObjectif;
+    	this.commandeAExecuter = shadowed.commandeAExecuter;
+    }
+    
+    public void finalizeShadow(final Simulation newSimu, AscenseurSimu shadowed)
+    {
+
     	this.ascSuperieur = shadow(shadowed.ascSuperieur,newSimu);
     	this.ascInferieur = shadow(shadowed.ascInferieur,newSimu);
     	this.ascAttendu = shadow(shadowed.ascAttendu,newSimu);
-    	this.prochainEventArrivee = shadowed.prochainEventArrivee;
     	for(AscenseurSimu asc : shadowed.listeners)
     	{
     		listeners.add(shadow(asc,newSimu));
     	}
-    	ListIterator<Integer> iter;
-    	//TODO
     }
     
-    private AscenseurSimu shadow(AscenseurSimu oldAsc, Simulation newSimu)
+    public static AscenseurSimu shadow(AscenseurSimu toBeShadowed, Simulation newSimu)
     {
-    	return newSimu.getImmeubleSimu().getAscenseur(oldAsc.getId());
+    	if(toBeShadowed == null)
+    	{
+    		return null;
+    	}
+    	else
+    	{
+    		return newSimu.getImmeubleSimu().getAscenseur(toBeShadowed.getId());
+    	}
     }
     
     public void setAscSuperieur(final AscenseurSimu asc)
@@ -363,19 +372,34 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
 
     public void finEvacuation()
     {
-    	if(etageObjectif == etageTransfert.getNiveau())
-    	{
-            commandeAExecuter = false;
-    	}
-        iteratorInvites = simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau()).iterator();
-        enterNext();
+    	essayerDeLancerEntrees();
+    }
+    
+    private void essayerDeLancerEntrees()
+    {
+    	invites.clear();
+    	invites.addAll(simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau()));
+    	inviteIndex = 0;
+    	if(!invites.isEmpty())
+        {
+        	enterNext();
+        }
+        else
+        {
+        	if(etageObjectif == etageTransfert.getNiveau())
+        	{
+                commandeAExecuter = false;
+        	}
+        	finirLeTransfert();
+        }
     }
 
-    public void enterNext()
+    private void enterNext()
     {
-        if(iteratorInvites.hasNext())
+        if(inviteIndex < invites.size())
         {
-            final Integer id = iteratorInvites.next();
+            final Integer id = invites.get(inviteIndex);
+            inviteIndex++;
             if(id == null || id >= simu.getPersonneListSize())
             {
                 throw new SimulateurAcceptableException("l'id de personne " + id + " ne designe aucune personne connue " + toString());
@@ -391,7 +415,7 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
         }
         else
         {
-            finirLeTransfert();
+        	essayerDeLancerEntrees();
         }
     }
 

@@ -2,20 +2,12 @@ package fr.fogux.lift_simulator.mind.RPsimpleAlgo;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.basic.AscenseurDevin;
-import fr.fogux.lift_simulator.mind.basic.DestinationSimple;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.EtatAscenseur;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
-import fr.fogux.lift_simulator.structure.EtatAsc;
 
 public class RPsimpleAlgo extends Algorithme
 {
@@ -30,7 +22,7 @@ public class RPsimpleAlgo extends Algorithme
 	@Override
     public long init()
     {
-		for (int j = 0; j < 2; j++) {	// 1 à changer en 0 ! ! !
+		for (int j = 0; j < 2; j++) {	// 1 ï¿½ changer en 0 ! ! !
 			
 			for (int i = 0; i < 4; i++) { // CHANGER LE 4 EN n 
 				AscId id = new AscId(i, j);
@@ -47,7 +39,7 @@ public class RPsimpleAlgo extends Algorithme
 		}
 		output().systemPrintLn(" INIT --------------------------------------    ");
 		
-		return 1000;	// Durée entre deux Ping()
+		return 1000;	// Durï¿½e entre deux Ping()
     }
 
     @Override
@@ -70,7 +62,7 @@ public class RPsimpleAlgo extends Algorithme
     }
 
     @Override
-    public Collection<Integer> listeInvites(final AscId idAsc, final int places_disponibles, final int niveau)
+    public List<Integer> listeInvites(final AscId idAsc, final int places_disponibles, final int niveau)
     {    	
     	//int niveau = Math.round(output.getEtat(idAsc).positionActuelle);
     	output().systemPrintLn(" New Invites --------------------------------------    ");
@@ -135,7 +127,7 @@ public class RPsimpleAlgo extends Algorithme
 //		}
 //		nTest++;
 		output.println(" PING --------------------------------------    ");
-		for (int j = 0; j < 2; j++) {	// 1 à changer en 0 ! ! !
+		for (int j = 0; j < 2; j++) {	// 1 ï¿½ changer en 0 ! ! !
 			
 			for (int i = 0; i < 4; i++) { // CHANGER LE 4 EN n
 				monAscenseur cetAscenseur = ascenseursArray[i] [j];
