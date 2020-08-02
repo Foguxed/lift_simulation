@@ -54,19 +54,27 @@ public class Montee
 
     public void attribuer(final AlgoPersonne p)
     {
-        ascenseurs[indexAttribution].attribuer(p);
-        indexAttribution ++;
+    	if(p.depart == 0)
+    	{
+    		ascenseurs[0].attribuer(p);
+    	}
+    	else
+    	{
+    		ascenseurs[indexAttribution].attribuer(p);
+            indexAttribution ++;
+    	}
+        
         if(indexAttribution == ascenseurs.length)
         {
             indexAttribution = 0;
         }
     }
-
+    
     public List<Integer> invites(final int niveau,final int stackId, final int placesDispo)
     {
         return ascenseurs[stackId].getInvites(niveau,placesDispo);
     }
-
+    
     public void escaleTerminee(final int stackId)
     {
         ascenseurs[stackId].escaleTerminee();

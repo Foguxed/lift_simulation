@@ -69,12 +69,39 @@ public class TagNames
 
     public static final String capaciteAsc = "capaciteAsc";
     public static final String margeInterAsc = "margeInterAsc";
-
+    
+    
     //ConfigPartition
     public static final String nbPersonnesDeplacees = "nbPersonnesDeplacees";
     public static final String dureePartition = "duree";
+    
+    public static final String min = "min";
+    public static final String max = "max";
+    
+    public static final String weight = "weight";
+    public static final String listeIntervalleEtages = "listeIntervalleEtages";
+    
+    public static final String inputEventProvider = "inputEventProvider";
 
-
-
+    public static final String valuesAndWeights = "valuesAndWeights";
+    
+    public static final String dateProvider = "dateProvider";
+    public static final String dateProviderType = "dateProviderType";
+    
+    public static final String providerEtageDepart = "departEtageProvider";
+    public static final String providerEtageDestination = "destinationEtageProvider";
+    public static final String providerGroupeSize = "providerGroupeSize";
+    
+    public static final String listePassengerProfile = "passengerProfileList";
+    
     public static final String deplacementTotal = "deplacementTotal";
+    
+    //batch
+    public static final String batchType = "batchType";
+    public static final String variatorType = "variatorType";
+    public static final String nbSteps = "nbSteps";
+    public static final String echantillonage = "echantillonage";
+    
+    public static final String seed = "seed";
+    
 }

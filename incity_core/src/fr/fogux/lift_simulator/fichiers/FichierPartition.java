@@ -23,6 +23,6 @@ public class FichierPartition
     {
         partitionConfig = configFichier.partitionConfig;
         immeubleConfig = configFichier.immeubleConfig;
-        evenements = partitionSimu.getInputs();
+        evenements = partitionSimu.getEvents();
     }
 }

@@ -3,7 +3,9 @@ package fr.fogux.lift_simulator;
 import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
+import fr.fogux.lift_simulator.batchs.core.SimulationStatCreator;
 import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
@@ -24,18 +26,53 @@ public class Simulation
     protected final ConfigSimu c;
     protected final GestionnaireDeTachesSimu gestioTaches;
     protected final List<PersonneSimu> personnesList;
+    protected final List<PersonneSimu> potentiellementNonLivree;
     protected final BufferedWriter journalOutput;
-
+    protected boolean completed;
+    private InterfacePhysique phys;
+    
+    
+    public Simulation(final AlgoInstantiator prgminstantiator, final ConfigSimu config, final PartitionSimu partition)
+    {
+    	this(prgminstantiator,config,partition,null);
+    }
+    
+    /*private Simulation(Simulation shadowed, AlgoInstantiator prgminstantiator)
+    {
+    	this.journalOutput = null;
+    	this.c = shadowed.c;
+    	this.phys = new InterfacePhysique(this);
+    	this.p = prgminstantiator.getPrgm(phys, c);
+    	this.personnesList = shadowed.personnesList;
+    	this.gestioTaches = new GestionnaireDeTachesSimu(this, shadowed.gestioTaches);
+    	
+    }*/
+    
+    public List<PersonneSimu> getPersonnesNonLivrees()
+    {
+    	potentiellementNonLivree.removeIf(new Predicate<PersonneSimu>() 
+    	{
+			@Override
+			public boolean test(PersonneSimu t) 
+			{
+				return t.livree();
+			}
+		});
+    	return potentiellementNonLivree;
+    }
+    
     public Simulation(final AlgoInstantiator prgminstantiator, final ConfigSimu config, final PartitionSimu partition, final BufferedWriter journalOutput)
     {
         this.journalOutput = journalOutput;
-        p = prgminstantiator.getPrgm(new InterfacePhysique(this),config);
         c = config;
+        phys = new InterfacePhysique(this);
+        p = prgminstantiator.getPrgm(phys,config);
         personnesList = new ArrayList<>();
+        potentiellementNonLivree = new ArrayList<>();
         gestioTaches = new GestionnaireDeTachesSimu(this,journalOutput != null,partition);
         immeuble = new ImmeubleSimu(this);
     }
-
+    
     public BufferedWriter getJournalOutput()
     {
         return journalOutput;
@@ -56,19 +93,23 @@ public class Simulation
         return c;
     }
 
-    public void run(final StatAccumulator<PersonneSimu> statPersAccumulator)
+    public void run()
     {
-        try
+        gestioTaches.runExecuting();
+        for(PersonneSimu p : personnesList)
         {
-            gestioTaches.runExecuting();
+        	if(!p.livree())
+        	{
+        		throw new SimulateurAcceptableException("Toutes les personnes n'ont pas etees livrees exemple:" + p);
+        	}
         }
-        catch (final SimulateurAcceptableException e)
-        {
-            new EvenementErreur(e.getMessage()).print(this);
-        }
-        accumulateStatsPers(statPersAccumulator);
     }
-
+    /*
+    public Simulation shadow(final AlgoInstantiator newInstantiator)
+    {
+    	return new Simulation(this,newInstantiator);
+    }*/
+    
     public GestionnaireDeTachesSimu getGestio()
     {
         return gestioTaches;
@@ -88,6 +129,7 @@ public class Simulation
     {
         final PersonneSimu newP = new PersonneSimu(this, personnesList.size(), destination, etageDepart);
         personnesList.add(newP);
+        potentiellementNonLivree.add(newP);
         newP.choisirDestination();
     }
 
@@ -100,7 +142,12 @@ public class Simulation
     {
         return personnesList.size();
     }
-
+    
+    public List<PersonneSimu> getPersonneList()
+    {
+    	return personnesList;
+    }
+    
     public void printPersStats(final BufferedWriter fOutput)
     {
         for (final PersonneSimu pers : personnesList)
@@ -110,13 +157,10 @@ public class Simulation
             GestFichiers.printIn(fOutput, compound.getValueAsString());
         }
     }
-
-    private void accumulateStatsPers(final StatAccumulator<PersonneSimu> statAcc)
+    
+    public void printConsoleLine(String str)
     {
-        for (final PersonneSimu pers : personnesList)
-        {
-            statAcc.accumulateStat(pers);
-        }
+    	phys.println(str);
     }
 
 }

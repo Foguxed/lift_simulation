@@ -1,6 +1,9 @@
 package fr.fogux.lift_simulator.screens;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -125,13 +128,17 @@ public class GameScreen extends CustomScreen
 
         athFont.draw(main.getBatch(), Utils.getTimeString(animp.getTime()), 20, 100);
 
-        int hauteur = 600;
+        int hauteur = 400;
         final Iterator<String> iterator = console.iterator();
 
         while (iterator.hasNext() && hauteur < 1400)
         {
-            consoleFont.draw(main.getBatch(), iterator.next(), 20, hauteur);
-            hauteur += 45;
+        	List<String> strs = divideIfToLong(iterator.next(),85);
+        	for(String str : strs)
+        	{
+        		consoleFont.draw(main.getBatch(), str, 20, hauteur);
+                hauteur += 45;
+        	}
         }
 
         if (displayedError != null)
@@ -142,7 +149,20 @@ public class GameScreen extends CustomScreen
         main.getBatch().end();
 
     }
-
+    
+    public List<String> divideIfToLong(String str, int caractLimit)
+    {
+    	List<String> result = new ArrayList<String>();
+    	int currentVal = 0;
+    	while(currentVal < str.length())
+    	{
+    		result.add(str.substring(currentVal, Math.min(currentVal + caractLimit,str.length())));
+    		Collections.reverse(result);
+    		currentVal += caractLimit;
+    	}
+    	return result;
+    }
+    
     @Override
     public void dispose()
     {

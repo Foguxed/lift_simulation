@@ -20,7 +20,7 @@ import sun.security.krb5.internal.APOptions;
  */
 public class DepPlannifier implements Compoundable
 {
-	protected final List<AscVirgule> virgules = new ArrayList<>();
+	protected final List<AscVirgule> virgules;
 	protected final ConfigSimu c;
 	public AscState EF;
 	protected boolean accelerationPositive;
@@ -31,6 +31,16 @@ public class DepPlannifier implements Compoundable
 		this.c = c;
 		this.EI = EI;
 		this.EF = EI;
+		this.virgules = new ArrayList<>();
+	}
+	
+	public DepPlannifier(DepPlannifier shadowed)
+	{
+		this.c = shadowed.c;
+		this.EI = shadowed.EI;
+		this.EF = shadowed.EF;
+		this.accelerationPositive = shadowed.accelerationPositive;
+		this.virgules = new ArrayList<>(shadowed.virgules);//on ne peut pas modifier une virgule
 	}
 	
 	public void acceptCompound(DataTagCompound compound)
@@ -193,7 +203,7 @@ public class DepPlannifier implements Compoundable
 	
 	public boolean notMoving(long t)
 	{
-		return t >= EF.t;
+		return t >= EF.t; // anti collision marche pour t >= EF.t
 	}
 	
 	/**

@@ -1,13 +1,20 @@
 package fr.fogux.lift_simulator.utils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.TreeMap;
+
+import fr.fogux.dedale.function.FunctionDouble;
+import fr.fogux.dedale.proba.ProbaReparter;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
-import fr.fogux.lift_simulator.physic.AscenseurSimu;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.structure.AscDeplacementFunc;
-import fr.fogux.lift_simulator.structure.AscDoubleDeplacementFunc;
 import fr.fogux.lift_simulator.structure.AscSoftDep;
 import fr.fogux.lift_simulator.structure.AscState;
-import fr.fogux.lift_simulator.structure.AscTripleDeplacementFunc;
 import fr.fogux.lift_simulator.structure.DepPlannifier;
 import fr.fogux.lift_simulator.structure.DeplacementFunc;
 import fr.fogux.lift_simulator.structure.Polynome;
@@ -60,7 +67,38 @@ public class Tests
 
        //tests();
     	//testDesAscDepplannifiers();
-    	debugRpSimpleAlgo();
+    	//testDesAscDepplannifiers();
+    	testTreeMapSpeed();
+    }
+    
+    private static long fromMinutes(long minutes)
+    {
+    	return 60*1000*minutes;
+    }
+    
+    private static void testProbas()
+    {
+    	double[][] repart = { {0d,0d}, {fromMinutes(5),0.2}, {fromMinutes(10),0.3}, {fromMinutes(12),1d}, {fromMinutes(13),0.5d}, {fromMinutes(17),0.4},{fromMinutes(25),0}};
+    	
+    	Random r = new Random();
+    	ProbaReparter reparter = new ProbaReparter(r,repart);
+    	//tester(FctMultiPartIntegrable.fromPoints(repart),0,fromMinutes(25),200);
+    	FunctionDouble f = reparter.getFct();
+    	//tester(f, 0, 1, 200);
+    	double y = f.getY(0.30);
+    	//System.out.println(y);
+    	//System.out.println(reparter.getFct());
+    	
+    	//&étesterReparter(reparter,10000);
+    	
+    }
+    
+    public static void testerReparter(ProbaReparter reparter, long nbEssais)
+    {
+    	for(int i = 0; i < nbEssais; i ++)
+    	{
+    		System.out.println((long)reparter.getRandomValue());
+    	}
     }
     
     private static void debugRpSimpleAlgo()
@@ -86,7 +124,7 @@ public class Tests
     	tester(ascDown,xMin,xMax,nbPoints);
     }
     
-    /*private static void testDesAscDepplannifiers()
+    private static void testDesAscDepplannifiers()
     {
     	final ConfigSimu c = new ConfigSimu(new DataTagCompound("{acceleration:5.0000001E-7,dureePortes:2000,ascenseurSpeed:0.02,capaciteAsc:5,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},"
     			+ "margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:-3,niveauMax:20}"));
@@ -127,7 +165,7 @@ public class Tests
     	
     	tester(asc0, t2, xMax, nbPoints);
     	System.out.println(asc0);
-    }*/
+    }
     
     public static void tester(final DeplacementFunc fct,final double xMin,final double xMax,final long nbPoints)
     {
@@ -137,6 +175,49 @@ public class Tests
             public double getY(final double x)
             {
                 return fct.getX((long) x);
+            }
+
+        };
+        tester(fctTest, xMin,xMax,nbPoints);
+    }
+    
+    public static void testTreeMapSpeed()
+    {
+    	Random r = new Random();
+    	
+
+		Map<Long,Integer> map = new HashMap<Long,Integer>();
+		List<Long> longList = new ArrayList<>();
+		List<Integer> intList = new ArrayList<>();
+    	for(int i = 0; i < 1000000; i ++)
+    	{
+    		long l = r.nextLong();
+    		int inte = r.nextInt();
+    		map.put(l, inte);
+    		longList.add(l);
+    		intList.add(inte);
+    	}
+    	TreeMap<Long, Integer> tree1 = new TreeMap<>();
+    	TreeMap<Long, Integer> tree2 = new TreeMap<>();
+    	long ti = System.currentTimeMillis();
+    	tree2.putAll(map);
+    	System.out.println(System.currentTimeMillis() - ti);
+    	ti = System.currentTimeMillis();
+    	for(int j = 0 ; j < longList.size(); j ++)
+    	{
+    		tree1.put(longList.get(j), intList.get(j));
+    	}
+    	System.out.println(System.currentTimeMillis() - ti);
+    }
+    
+    public static void tester(final FunctionDouble fct,final double xMin,final double xMax,final long nbPoints)
+    {
+        final Fct fctTest = new Fct() {
+
+            @Override
+            public double getY(final double x)
+            {
+                return fct.getY(x);
             }
 
         };

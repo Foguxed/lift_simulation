@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 
 import fr.fogux.lift_simulator.Simulateur;
@@ -18,21 +19,20 @@ import fr.fogux.lift_simulator.fichiers.Compoundable;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.population.PersonneSimu;
-import fr.fogux.lift_simulator.stats.StatsCarrier;
+import fr.fogux.lift_simulator.stats.StatCarrier;
 import fr.fogux.lift_simulator.structure.AscDeplacementFunc;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Ascenseur;
 import fr.fogux.lift_simulator.structure.EtatAsc;
 import fr.fogux.lift_simulator.utils.Utils;
 
-public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends Ascenseur<PersonneSimu>
+public class AscenseurSimu extends Ascenseur implements StatCarrier// extends Ascenseur<PersonneSimu>
 {
     protected final Simulation simu;
     // protected int niveauActuel;
     // en niveau par seconde
     protected List<PersonneSimu> listeDePersonne = new ArrayList<>();
     protected int evacuationIndex = 0;
-    protected Evenement ascConstantSpeed;
 
     protected EtageSimu etageTransfert = null;
     protected int personnesTransportes = 0;
@@ -49,11 +49,15 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     protected Set<AscenseurSimu> listeners = new HashSet<>();
 
+    protected List<Integer> invites;
+    
     protected Iterator<Integer> iteratorInvites = null;
     
     protected float xObjectifActuel;
     
     protected int etageObjectif;
+    
+    protected boolean commandeAExecuter;
     
     public AscenseurSimu(final Simulation simu, final AscId id, final float initialY)
     {
@@ -61,8 +65,41 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         this.simu = simu;
         this.xObjectifActuel = initialY;
         this.etageObjectif = (int) initialY;
+        commandeAExecuter = false;
     }
-
+    
+    public AscenseurSimu(final Simulation newSimu, AscenseurSimu shadowed)
+    {
+    	super(shadowed);
+    	this.simu = newSimu;
+    	this.xObjectifActuel = shadowed.xObjectifActuel;
+    	this.etageObjectif = shadowed.etageObjectif;
+    	this.evacuationIndex = shadowed.evacuationIndex;
+    	for(PersonneSimu p : shadowed.listeDePersonne)
+    	{
+    		listeDePersonne.add(newSimu.getPersonne(p.getId()));
+    	}
+    	this.etageTransfert = newSimu.getImmeubleSimu().getEtage(shadowed.etageTransfert.getNiveau());
+    	this.personnesTransportes = shadowed.personnesTransportes;
+    	this.ouvrirPortesProchaineDest = shadowed.ouvrirPortesProchaineDest;
+    	this.deplacementTotal = shadowed.deplacementTotal;
+    	this.ascSuperieur = shadow(shadowed.ascSuperieur,newSimu);
+    	this.ascInferieur = shadow(shadowed.ascInferieur,newSimu);
+    	this.ascAttendu = shadow(shadowed.ascAttendu,newSimu);
+    	this.prochainEventArrivee = shadowed.prochainEventArrivee;
+    	for(AscenseurSimu asc : shadowed.listeners)
+    	{
+    		listeners.add(shadow(asc,newSimu));
+    	}
+    	ListIterator<Integer> iter;
+    	//TODO
+    }
+    
+    private AscenseurSimu shadow(AscenseurSimu oldAsc, Simulation newSimu)
+    {
+    	return newSimu.getImmeubleSimu().getAscenseur(oldAsc.getId());
+    }
+    
     public void setAscSuperieur(final AscenseurSimu asc)
     {
         ascSuperieur = asc;
@@ -109,12 +146,13 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     private void tentativeAtteinteObjectif()
     {
+    	commandeAExecuter = false;
         goToObjectif(etageObjectif);
     }
 
     protected boolean bloque()
     {
-        return etageTransfert != null || (prochainEventArrivee != null && plannifier.notMoving(simu.getTime()));
+        return etageTransfert != null || (prochainEventArrivee instanceof EvenementMouvementPortes && plannifier.notMoving(simu.getTime()));
     }
 
     public void setObjectif(final int newEtageObjectif, final boolean ouvrirPortes)
@@ -123,9 +161,16 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
         {
             throw new SimulateurAcceptableException(this + " a tentete de se deplacer vers " + newEtageObjectif + " qui n'est pas un etage de l'immeuble ");
         }
+        /*
+        if(this.id.monteeId == 1 & this.id.stackId == 0)
+        {
+        	simu.printConsoleLine("setObjectif bloque " + bloque() + " newEtageObjectif " + newEtageObjectif + " etageTransfert " + etageTransfert + " prochainEventArrivee " + prochainEventArrivee + " previousOuvPortes " + ouvrirPortesProchaineDest + " nextOuvPortes " + ouvrirPortes);
+        }*/
         etageObjectif = newEtageObjectif;
         ouvrirPortesProchaineDest = ouvrirPortes;
-        if(!bloque())
+        commandeAExecuter = true;
+        
+        if(!bloque())// pb avec <=: bloque lorsq de l'exec de ouvertureporte avec < collision de ouverture/fermeture portes
         {
             if(prochainEventArrivee != null)
             {
@@ -287,7 +332,6 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
     {
         prochainEventArrivee = null;
         etageTransfert = simu.getImmeubleSimu().getEtage(niveau);
-        System.out.println(" fin ouverture portes " + etageTransfert + " id " + id);
         evacuateNext();
     }
 
@@ -319,6 +363,10 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     public void finEvacuation()
     {
+    	if(etageObjectif == etageTransfert.getNiveau())
+    	{
+            commandeAExecuter = false;
+    	}
         iteratorInvites = simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau()).iterator();
         enterNext();
     }
@@ -360,12 +408,11 @@ public class AscenseurSimu extends Ascenseur implements StatsCarrier// extends A
 
     public void finFermeturePortes(final int niveau)
     {
-        simu.getPrgm().finDeTransfertDePersonnes(id, niveau);
         final EtageSimu etageSimutemp = etageTransfert;
-        System.out.println("fin fermeture portes etage transfert " + etageTransfert + " asc " + id + " niveau " + niveau + " " + simu.getImmeubleSimu().getEtage(niveau));
         etageTransfert = null;
+        simu.getPrgm().finDeTransfertDePersonnes(id, niveau);// l'asc n'est plus bloque ici
         etageSimutemp.rappuyerBoutonsSiNecessaire();
-        if(etageObjectif != niveau)
+        if(commandeAExecuter)
         {
             tentativeAtteinteObjectif();
         }

@@ -1,7 +1,9 @@
 package fr.fogux.lift_simulator;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,8 +17,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import fr.fogux.lift_simulator.animation.PersonneVisu;
+import fr.fogux.lift_simulator.batchs.core.SimuBatch;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.Evenements;
+import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
+import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.FichierPartition;
 import fr.fogux.lift_simulator.fichiers.FichierPartitionConfig;
@@ -27,13 +32,16 @@ import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
 import fr.fogux.lift_simulator.mind.RPsimpleAlgo2.RPsimpleAlgo2;
+import fr.fogux.lift_simulator.mind.independant.AlgoBasique2;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.screens.GameScreen;
 import fr.fogux.lift_simulator.screens.MenuScreen;
-import fr.fogux.lift_simulator.stats.SimuPersStatAccumulator;
+import fr.fogux.lift_simulator.stats.StandardPersStatAccumulator;
+import fr.fogux.lift_simulator.stats.StandardSimulationStat;
+import fr.fogux.lift_simulator.stats.StandardStatCreator;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 
 public class Simulateur extends Game
@@ -61,8 +69,8 @@ public class Simulateur extends Game
     {
         final Map<String,AlgoInstantiator> map = new HashMap<>();
         //addAlg(ProgrammeBasique.class,"prgmBasique",map);
-        addAlg(RPsimpleAlgo2.class,"RPsimpleAlgo",map);
-        //addAlg(AlgoBasique2.class,"AlgoBasique2",map);
+        //addAlg(RPsimpleAlgo2.class,"RPsimpleAlgo",map);
+        addAlg(AlgoBasique2.class,"AlgoBasique2",map);
         return map;
     }
 
@@ -74,20 +82,6 @@ public class Simulateur extends Game
     private static void addAlg(final Class<? extends Algorithme> simpleAlgoClass, final String name, final Map<String,AlgoInstantiator> map)
     {
         addAlg(new BasicAlgoInstantiator(simpleAlgoClass, name),map);
-    }
-
-    private static PartitionGenerator getPartitionGenerator(final DataTagCompound configPartition)
-    {
-
-        final String str = configPartition.getString(TagNames.partitionGenType);
-        System.out.println("partitionType " + str);
-        switch(str)
-        {
-            case HomogenePartitionGen.NAME:
-                return new HomogenePartitionGen(configPartition);
-            default:
-                return null;
-        }
     }
 
     private static void printPartitionGeneratorType(final PartitionGenerator pGen, final DataTagCompound compound)
@@ -204,9 +198,46 @@ public class Simulateur extends Game
         GestFichiers.unloadVisualisationFiles();
         System.out.println("fin init animation");
     }
-
-
-
+    
+    public static void getArrayCopy(final File fichier) throws IOException
+    {
+    	toArrayTxt(fichier,GestFichiers.copyFileWithPrefixe(fichier, "as_array_"));
+    }
+    
+    private static void toArrayTxt(final File input, final File output) throws IOException
+    {
+    	BufferedReader reader = GestFichiers.getNewReader(input);
+    	BufferedWriter writer = GestFichiers.getNewWriter(output);
+    	String str = reader.readLine();
+    	String separator = "	";
+    	DataTagCompound d = null;
+    	while(str != null)
+    	{
+    		String lineToWrite = "";
+    		if(str.contains("["))
+    		{
+    			long time = Evenement.time(str);
+    			lineToWrite += time + separator;
+    		}
+    		d = new DataTagCompound(str);
+    		writer.write(lineToWrite + d.toValues(separator,d.keysByAlphabeticalOrder()) + "\n");
+    		str = reader.readLine();
+    	}
+    	writer.write(toString(d.keysByAlphabeticalOrder(),separator)+"\n");
+    	reader.close();
+    	writer.close();
+    }
+    
+    private static String toString(List<String> strs,String separator)
+    {
+    	String result = "";
+    	for(String str : strs)
+    	{
+    		result += str + separator;
+    	}
+    	return result;
+    }
+    
     public static void executePartitionCreation(final File dossierSituation) throws IOException
     {
         System.out.println("Debut partition creation");
@@ -218,10 +249,12 @@ public class Simulateur extends Game
         final DataTagCompound totalData = fichierPConfig.partitionConfig.copy();
         totalData.mergeWith(fichierPConfig.immeubleConfig);
 
-
-        final PartitionSimu simuParti = getPartitionGenerator(totalData).generer(new Random());
+        System.out.println("partition compound " + totalData.getString(TagNames.inputEventProvider));
+        final PartitionSimu simuParti = PartitionGenerator.fromCompound(totalData).generer(new Random());
 
         final FichierPartition fichierPartition = new FichierPartition(fichierPConfig, simuParti);
+        
+        
         System.out.println("fin partition creation");
         GestFichiers.writePartition(fichierPartition, partitionFile);
         System.out.println("fichier enregistre " + partitionFile.getAbsolutePath());
@@ -237,7 +270,14 @@ public class Simulateur extends Game
             e.printStackTrace();
         }
     }
-
+    
+    public static void executerBatch(final File dossierDuBatch) throws IOException
+    {
+    	File configBatchFile = GestFichiers.getUniqueFile(dossierDuBatch, NomsFichiers.config_batch);
+    	SimuBatch batch = SimuBatch.fromCompound(dossierDuBatch,GestFichiers.getFirstCompound(configBatchFile));
+    	batch.run();
+    }
+    
     public static void executerSimulation(final File dossierPartition, final List<AlgoInstantiator> algorithmes, final File configSimu, final boolean animationApres) throws IOException
     {
         System.out.println("debut Simulation");
@@ -262,10 +302,18 @@ public class Simulateur extends Game
 
             final BufferedWriter journalOutput = GestFichiers.getJournalWriter(dernierJournal, config);
             final Simulation simu = new Simulation(alg, c, new PartitionSimu(fPartition.evenements), journalOutput);
-
-            final SimuPersStatAccumulator statAcc = new SimuPersStatAccumulator();
+            
+            StandardSimulationStat stat = null;
             System.out.println("debut run simulation");
-            simu.run(statAcc);
+            try
+            {
+            	simu.run();
+            	stat = new StandardStatCreator().produceStat(simu);
+            }
+		    catch (final SimulateurAcceptableException e)
+		    {
+		        new EvenementErreur(e.getMessage()).print(simu);
+		    }
             /*try
             {
 
@@ -276,7 +324,16 @@ public class Simulateur extends Game
             }*/
             System.out.println("fin run simulation");
             journalOutput.close();
-            final SimuResult result = statAcc.getResult();
+            final SimuResult result;
+            if(stat == null)
+            {
+            	result = new SimuResult(true, 0, 0, 0);
+            }
+            else
+            {
+            	result = new SimuResult(stat);
+            }
+             
             final DataTagCompound resultComPound = new DataTagCompound();
             result.printFieldsIn(resultComPound);
 
@@ -344,8 +401,6 @@ public class Simulateur extends Game
 
         System.out.println(partiC);
         System.out.println(immeubleC);
-
-        partiC.setString(TagNames.partitionGenType, HomogenePartitionGen.NAME);
 
         final FichierPartitionConfig fichierPartitionConfig = new FichierPartitionConfig(partiC, immeubleC);
         GestFichiers.writePartitionConfig(fichierPartitionConfig, filePartitionConfig);

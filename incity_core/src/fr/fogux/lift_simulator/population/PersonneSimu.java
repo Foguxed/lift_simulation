@@ -8,11 +8,11 @@ import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.physic.AscenseurSimu;
 import fr.fogux.lift_simulator.physic.EtageSimu;
-import fr.fogux.lift_simulator.stats.StatsCarrier;
+import fr.fogux.lift_simulator.stats.StatCarrier;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.Personne;
 
-public class PersonneSimu extends Personne implements StatsCarrier
+public class PersonneSimu extends Personne implements StatCarrier
 {
     protected final Simulation simu;
 

@@ -13,18 +13,18 @@ public class ConfigPartitionHomogene extends ConfigPartitionGen
         super(niveauMin, niveauMax, repartAsc, nbPersonnesDeplacees);
         this.duree = duree;
     }
-
-
+    
     public ConfigPartitionHomogene(final DataTagCompound compound)
     {
         super(compound);
         duree = compound.getLong(TagNames.dureePartition);
     }
-
+    
     @Override
     public void printFieldsIn(final DataTagCompound compound)
     {
         super.printFieldsIn(compound);
         compound.setLong(TagNames.dureePartition, duree);
+        compound.setString(TagNames.partitionGenType, HomogenePartitionGen.NAME);
     }
 }

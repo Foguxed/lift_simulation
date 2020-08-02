@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,10 +19,13 @@ import java.util.stream.Collectors;
 
 import com.badlogic.gdx.Gdx;
 
+import fr.fogux.lift_simulator.PartitionSimu;
+import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementPersonnesInput;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
+import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.utils.Utils;
 
 public class GestFichiers
@@ -153,7 +157,18 @@ public class GestFichiers
         r.close();
         return new FichierPartition(partitionConfig, immeubleConfig, events);
     }
-
+    
+    public static FichierGraphBatchConfig getGraphBatchConfig(final File graphBatchConfig) throws IOException
+    {
+    	final BufferedReader r = getNewReader(graphBatchConfig);
+    	FichierGraphBatchConfig retour = new FichierGraphBatchConfig(
+    			r.readLine(),
+    			r.readLine(),
+    			r.readLine());
+    	r.close();
+    	return retour;
+    }
+    
     public static void writePartition(final FichierPartition fichierPartition, final File f) throws IOException
     {
         final BufferedWriter w = getNewWriter(f);
@@ -166,12 +181,19 @@ public class GestFichiers
         w.close();
     }
 
-    private static BufferedReader getNewReader(final File f) throws FileNotFoundException
+    public static void writeConfigSimu(ConfigSimu csimu, final File dossierParent) throws IOException
+    {
+    	final DataTagCompound simuC = new DataTagCompound();
+    	csimu.printOnlySimuFieldsIn(simuC);
+    	printFirstLine(getConfigSimuFile(dossierParent), simuC.getValueAsString());
+    }
+    
+    public static BufferedReader getNewReader(final File f) throws FileNotFoundException
     {
         return new BufferedReader(new InputStreamReader(new FileInputStream(f)));
     }
 
-    private static BufferedWriter getNewWriter(final File f) throws FileNotFoundException
+    public static BufferedWriter getNewWriter(final File f) throws FileNotFoundException
     {
         return new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
     }
@@ -184,6 +206,18 @@ public class GestFichiers
         creerDossier(f);
         return f;
     }
+    
+    public static synchronized File getNewErrorDirectory(File dossierErreurs, AlgoInstantiator algoInstantiator)
+    {
+    	final File dossier = new File(dossierErreurs, algoInstantiator.getName());
+    	if(!dossier.exists())
+    	{
+        	creerDossier(dossier);
+    	}
+    	final File f = getNewIndetedFile(dossier, NomsFichiers.erreur, "");
+    	creerDossier(f);
+        return f;
+    }
 
     public static File createPartitionTxt(final File parentFile)
     {
@@ -193,16 +227,16 @@ public class GestFichiers
     private static File getNewIndetedFile(final File dossier, final String prefixe, final String suffixe)
     {
         final File[] fs = dossier.listFiles();
+        
         int maxIndex = 0;
+        System.out.println("dossier " + dossier);
         for (final File element : fs)
         {
             final String str = element.getName();
             if(str.startsWith(prefixe) && str.endsWith(suffixe))
             {
                 final String val = str.substring(str.lastIndexOf('_')+1, str.length() - suffixe.length());
-                System.out.println("striped val " + val);
                 final Integer v = Utils.safeParseInt(val);
-                System.out.println("parsed int " + v);
                 if(v!= null &&v > maxIndex)
                 {
                     maxIndex = v;
@@ -218,6 +252,28 @@ public class GestFichiers
         creerDossier(f);
         return f;
     }
+    
+    public static File createBatchErrorLogDirectory(final File dossierExecBatch)
+    {
+        final File f = new File(dossierExecBatch,NomsFichiers.errors);
+        deleteIfExists(f);
+        creerDossier(f);
+        return f;
+    }
+    
+    public static File createGraphBatchResultFile(final File dossierExecBatch)
+    {
+    	final File f = new File(dossierExecBatch, NomsFichiers.graph + NomsFichiers.extension);
+    	deleteIfExists(f);
+    	return f;
+    }
+    
+    public static File createBatchResultFile(final File dossierExecBatch)
+    {
+    	final File f = new File(dossierExecBatch, NomsFichiers.resultats + NomsFichiers.extension);
+    	deleteIfExists(f);
+    	return f;
+    }
 
     public static File createSimuPRGMdirectory(final File dossierExecution, final AlgoInstantiator algorithme)
     {
@@ -226,11 +282,35 @@ public class GestFichiers
         return f;
     }
 
+    public static File getErrorInfosFile(final File dossier)
+    {
+    	return new File(dossier, NomsFichiers.err_infos + NomsFichiers.extension);
+    }
+    
+    public static void writeErrorLogs(Exception e, File fileErrorLogger) throws FileNotFoundException
+    {
+    	PrintStream p = new PrintStream(fileErrorLogger);
+    	e.printStackTrace(p);
+    	p.close();
+    }
+    
     public static File createJournalFile(final File dossierPrgmExecution)
     {
         final File f = new File(dossierPrgmExecution,NomsFichiers.journal + "_" + dossierPrgmExecution.getName());
 
         return f;
+    }
+    
+    public static File copyFileWithPrefixe(final File toBeCopied, String prefix)
+    {
+    	if(prefix == "")
+    	{
+    		throw new IllegalArgumentException("prefix should not be null");
+    	}
+    	else
+    	{
+    		return new File(toBeCopied.getParentFile(),prefix + toBeCopied.getName());
+    	}
     }
 
     public static File createStatsPersonnesFile(final File dossierPrgmExecution)
@@ -239,7 +319,13 @@ public class GestFichiers
 
         return f;
     }
-
+    
+    public static File getConfigSimuFile(final File directory)
+    {
+    	final File f = new File(directory,NomsFichiers.config_simulationn + NomsFichiers.extension);
+    	return f;
+    }
+    
     private static void creerDossier(final File f)
     {
         if(!f.mkdir())
@@ -247,13 +333,26 @@ public class GestFichiers
             throw new SimulateurException("Le dossier suivant ne devrait pas exister " + f.getAbsolutePath());
         }
     }
-
+    
+    private static void deleteIfExists(final File f)
+    {
+    	if(f.exists())
+    	{
+    		f.delete();
+    	}
+    }
+    
     public static String getFirstLine(final File f) throws IOException
     {
         final BufferedReader r = getNewReader(f);
         final String str = r.readLine();
         r.close();
         return str;
+    }
+    
+    public static DataTagCompound getFirstCompound(final File f) throws IOException
+    {
+    	return new DataTagCompound(getFirstLine(f));
     }
 
     public static void printFirstLine(final File f, final String str) throws IOException
@@ -267,6 +366,7 @@ public class GestFichiers
         return directory.listFiles(new PrefixeFilter(prefixe));
     }
 
+    
     public static File getUniqueFile(final File directory, final String prefixe)
     {
         final File[] farray = getFiles(directory,prefixe);

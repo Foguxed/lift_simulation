@@ -2,6 +2,7 @@ package fr.fogux.lift_simulator;
 
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
+import fr.fogux.lift_simulator.stats.StandardSimulationStat;
 
 public class SimuResult
 {
@@ -10,6 +11,11 @@ public class SimuResult
     public final long maxTransportTime;
     public final int nbPersonneTransportees;
 
+    public SimuResult(StandardSimulationStat stat)
+    {
+    	this(false,stat.totalTravelTime,stat.maxTravelTime,stat.nbPersTransportees);
+    }
+    
     public SimuResult(final boolean failed, final long totalTransportTime, final long maxTransportTime, final int nbPersonneTransportees)
     {
         this.failed = failed;

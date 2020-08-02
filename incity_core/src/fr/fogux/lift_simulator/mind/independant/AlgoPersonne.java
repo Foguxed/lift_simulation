@@ -21,5 +21,8 @@ public class AlgoPersonne implements Comparable<AlgoPersonne>
         return id + destination - o.id - o.destination;
     }
 
-
+    public String toString()
+    {
+    	return "personne: dest = " + destination + " depart = " + depart;
+    }
 }

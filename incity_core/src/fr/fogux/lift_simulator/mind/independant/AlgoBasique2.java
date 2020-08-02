@@ -42,7 +42,6 @@ public class AlgoBasique2 extends Algorithme
         if(repartIndex == montees.length)
         {
             repartIndex = 0;
-
         }
     }
 

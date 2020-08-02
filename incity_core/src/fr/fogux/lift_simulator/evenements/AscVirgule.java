@@ -53,25 +53,6 @@ public class AscVirgule
 		return new AscVirgule(c,newSoftDep,newPrecedent);
 		//optimisable, on utilise pas la fun ici.
 	}
-	/**
-	 * 
-	 * @param etatPrecedent
-	 * @param deplacementActuel
-	 * @param approcheur
-	 * @return null si aucune connection n'est possible, la virgule se connectant à cette virgule sinon
-	 */
-	private AscVirgule getVirguleConnection(ConfigSimu c,AscState approcheur)
-	{
-		if(c.getAscenseurSpeed()*((float)(precedent.t+c.getDeltaT() - approcheur.t)) > Math.abs(precedent.x - approcheur.x))
-		{
-			instantiator.run();
-			if(approcheur.t < fun.getEndOfConnectablePolynome())
-			{
-				
-			}
-		}
-		return null;
-	}
 	
 	public AscDeplacementFunc getDepFunc()
 	{

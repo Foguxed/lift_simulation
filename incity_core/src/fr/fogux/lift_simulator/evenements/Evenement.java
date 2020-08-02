@@ -42,6 +42,11 @@ public abstract class Evenement
         this.time = time;
     }
 
+    public static long time(final String fullLine)
+    {
+    	return Utils.timeInMilis(fullLine.substring(fullLine.indexOf("[") + 1, fullLine.indexOf("]")));
+    }
+    
     public static Evenement genererEvenement(final String data)
     {
         if (data == null || data.charAt(0) != '[')
@@ -49,7 +54,7 @@ public abstract class Evenement
             return null;
         }
 
-        final long time = Utils.timeInMilis(data.substring(data.indexOf("[") + 1, data.indexOf("]")));
+        final long time = time(data);
 
         final DataTagCompound tag = new DataTagCompound(data);
         try

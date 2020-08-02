@@ -1,5 +1,6 @@
 package fr.fogux.lift_simulator.physic;
 
+import fr.fogux.lift_simulator.Shadowable;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonTriangle;
 import fr.fogux.lift_simulator.structure.Etage;

@@ -10,8 +10,6 @@ public abstract class Ascenseur
     protected final AscId id;
     public final int persMax;
 
-    protected float acceleration;
-
     protected final DepPlannifier plannifier;
     protected ArrayList<Integer> boutonsAllumes = new ArrayList<>();
 
@@ -30,6 +28,14 @@ public abstract class Ascenseur
         this.plannifier = new DepPlannifier(c, new AscState(0, initialHeight, 0f));
     }
 
+    public Ascenseur(Ascenseur shadowed)
+    {
+    	this.id = shadowed.id;
+    	this.persMax = shadowed.persMax;
+    	this.boutonsAllumes = new ArrayList<>(shadowed.boutonsAllumes);
+    	this.plannifier = new DepPlannifier(shadowed.plannifier);
+    }
+    
     public AscId getId()
     {
         return id;

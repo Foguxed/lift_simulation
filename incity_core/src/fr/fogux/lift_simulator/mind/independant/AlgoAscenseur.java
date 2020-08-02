@@ -25,6 +25,8 @@ public class AlgoAscenseur implements VoisinAsc
     protected boolean busy;
 
     protected int objectifActuel;
+    
+    protected int monteeSurvey;
 
     public AlgoAscenseur(final AscId id,final ConfigSimu config, final InterfacePhysique phys, final VoisinAsc ascPrecedent)
     {
@@ -36,6 +38,7 @@ public class AlgoAscenseur implements VoisinAsc
         this.phys = phys;
         this.id = id;
         busy = false;
+        monteeSurvey = 1;
     }
 
     @Override
@@ -46,6 +49,10 @@ public class AlgoAscenseur implements VoisinAsc
 
     public void attribuer(final AlgoPersonne personne)
     {
+    	if(id.monteeId == monteeSurvey)
+    	{
+    		phys.println("se voit attribue " + this + " ceci " + personne);
+    	}
         chargementsEtDechargements.add(personne.depart);
         personnesACharger.add(personne);
         Collections.sort(chargementsEtDechargements);
@@ -69,9 +76,9 @@ public class AlgoAscenseur implements VoisinAsc
     {
         final List<AlgoPersonne> invitesP = listInvites(niv, placesDispo);
         final List<Integer> invitesId = toIds(invitesP);
-        if(id.stackId == 0 && id.monteeId == 0)
+        if(id.monteeId == monteeSurvey)
         {
-            phys.println("travail " + dechargements + " " +chargementsEtDechargements );
+            phys.println("choisiInvites " + this + " invites " + invitesP);
         }
         for(final AlgoPersonne p : invitesP)
         {
@@ -89,6 +96,10 @@ public class AlgoAscenseur implements VoisinAsc
         });
         dechargements.removeIf(niveau -> niveau == niv);
         Collections.sort(dechargements);
+        if(id.monteeId == monteeSurvey)
+        {
+            phys.println("resultat de la reflexion " + this);
+        }
 
         return invitesId;
     }
@@ -142,27 +153,27 @@ public class AlgoAscenseur implements VoisinAsc
         {
             if(busy)
             {
-                if(id.stackId == 0 && id.monteeId == 0)
+                if(id.monteeId == monteeSurvey)
                 {
-                    phys.println("devient afk " + id  + " " + dechargements + " " + chargementsEtDechargements);
+                    phys.println("devient afk " + toString());
                 }
                 busy = false;
                 updateVoisins();
             }
             else
             {
-                if(id.stackId == 0 && id.monteeId == 0)
+                if(id.monteeId == monteeSurvey)
                 {
-                    phys.println("reste afk " + id + " " + dechargements + " " + chargementsEtDechargements);
+                    phys.println("reste afk " + toString());
                 }
                 phys.changerDestination(id, ascenseurInferieur.getLimitSup() + 1, false);
             }
         }
         else
         {
-            if(id.stackId == 0 && id.monteeId == 0)
+            if(id.monteeId == monteeSurvey)
             {
-                phys.println("trouve escale " + id + " " + dechargements + " " + chargementsEtDechargements + " dest " + prochainArret);
+                phys.println("trouve escale " + this + " dest " + prochainArret);
             }
             busy = true;
             objectifActuel = prochainArret;
@@ -234,5 +245,9 @@ public class AlgoAscenseur implements VoisinAsc
             }
         }
     }
-
+    
+    public String toString()
+    {
+    	return id + " d:" + dechargements + " cd:" + chargementsEtDechargements;
+    }
 }

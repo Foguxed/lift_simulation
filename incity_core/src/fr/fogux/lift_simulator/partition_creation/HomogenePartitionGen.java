@@ -45,10 +45,10 @@ public class HomogenePartitionGen implements PartitionGenerator
         return val;
     }
 
-    @Override
-    public PartitionGenerator getNewInstanceWithConfig(final DataTagCompound newConfig, final String updatedKey)
-    {
-        return new HomogenePartitionGen(newConfig);
-    }
-
+	@Override
+	public ConfigPartitionGen getConfig() 
+	{
+		return config;
+	}
+	
 }

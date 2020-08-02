@@ -6,11 +6,11 @@ import fr.fogux.lift_simulator.animation.PersonneVisu;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 
-public class EvenementPersonnesInput extends PrintableEvenement
+public class EvenementPersonnesInput extends PrintableEvenement implements Comparable<EvenementPersonnesInput>
 {
-    protected int nbPersonnes;
-    protected int destination;
-    protected int etage;
+    public final int nbPersonnes;
+    protected final int destination;
+    protected final int etage;
 
     public EvenementPersonnesInput(final long time, final int nbPersonnes, final int destination, final int etage)
     {
@@ -32,6 +32,7 @@ public class EvenementPersonnesInput extends PrintableEvenement
     public void simuRun(final Simulation simu)
     {
         simu.getImmeubleSimu().getEtage(etage).arriveeDe(nbPersonnes, destination);
+        simu.getGestio().forecastNextPersInput();
     }
 
     @Override
@@ -56,8 +57,13 @@ public class EvenementPersonnesInput extends PrintableEvenement
         } else
         {
             animation.getImmeubleVisu().getEtage(etage).arriveeDe(nbPersonnes, destination);
-
         }
     }
+
+	@Override
+	public int compareTo(EvenementPersonnesInput o) 
+	{
+		return (int)(this.time - o.time);
+	}
 
 }

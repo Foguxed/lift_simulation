@@ -1,6 +1,7 @@
 package fr.fogux.lift_simulator.fichiers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -61,7 +62,24 @@ public class DataTagCompound
             map.put(lastKey,data.substring(debutSegment, data.length()));
         }
     }
-
+    
+    public List<String> keysByAlphabeticalOrder()
+    {
+    	List<String> keys = new ArrayList<>(map.keySet());
+    	Collections.sort(keys);
+    	return keys;
+    }
+    
+    public String toValues(String separator, List<String> keys)
+    {
+    	String result = "";
+    	for(String str : keys)
+    	{
+    		result += map.get(str) + separator;
+    	}
+    	return result;
+    }
+    
     public DataTagCompound copy()
     {
         final DataTagCompound d = new DataTagCompound();
@@ -198,6 +216,11 @@ public class DataTagCompound
         return Float.valueOf(map.get(key));
     }
 
+    public double getDouble(final String key)
+    {
+    	return Double.valueOf(map.get(key));
+    }
+    
     public void setCompoundList(final String key, final List<DataTagCompound> list)
     {
         String val = "";
@@ -208,7 +231,12 @@ public class DataTagCompound
         val = val.substring(0, val.length()-1);
         map.put(key, "{" + val + "}");
     }
-
+    
+    public void setDouble(final String key, final double val)
+    {
+    	map.put(key, String.valueOf(val));
+    }
+    
     public void setFloat(final String key, final float val)
     {
         map.put(key, String.valueOf(val));
@@ -236,8 +264,8 @@ public class DataTagCompound
     
     public void setString(final String key, String val)
     {
-
         val = val.replace("¤", "");
+        val = val.replace("|", "");
         val = val.replace(",", "¤v");
         val = val.replace(":", "¤p");
         map.put(key, val);
