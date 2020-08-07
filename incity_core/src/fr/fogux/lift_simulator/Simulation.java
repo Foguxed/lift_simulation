@@ -33,7 +33,7 @@ public class Simulation
     	this(prgminstantiator,config,partition,null);
     }
     
-    private Simulation(Simulation shadowed, AlgoInstantiator prgminstantiator)
+    public Simulation(Simulation shadowed, AlgoInstantiator prgminstantiator)
     {
     	this.completed = shadowed.completed;
     	this.journalOutput = null;

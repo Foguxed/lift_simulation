@@ -57,6 +57,21 @@ public class WeightRandomPicker<T extends Object>
 		return objects.get(Utils.rechercheDichotomiqueClassique(probaResearchTable, r.nextDouble()));
 	}
 	
+	public List<ObjectAndCount<T>> getRandomObjectsAndCount(int toDispatch, final Random r)
+	{
+		int[] repart = new int[probaResearchTable.length];
+		for(int i = 0; i < toDispatch; i ++)
+		{
+			repart[Utils.rechercheDichotomiqueClassique(probaResearchTable, r.nextDouble())] ++;
+		}
+		List<ObjectAndCount<T>> retour = new ArrayList<>();
+		for(int i = 0; i < repart.length; i ++)
+		{
+			retour.add(new ObjectAndCount<T>(objects.get(i), repart[i]));
+		}
+		return retour;
+	}
+	
 	public double[] getProbas()
 	{
 		double[] retour = new double[probaResearchTable.length];

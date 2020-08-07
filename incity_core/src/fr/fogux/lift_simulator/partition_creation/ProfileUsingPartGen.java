@@ -31,15 +31,7 @@ public class ProfileUsingPartGen implements PartitionGenerator
 	@Override
 	public PartitionSimu generer(Random r) 
 	{
-		List<EvenementPersonnesInput> persInputEvents = new ArrayList<>();
-		int toMove = nbPersToMove;
-		while(toMove > 0)
-		{
-			EvenementPersonnesInput e = inputEventProvider.getRandomEvent(r);
-			toMove -= e.nbPersonnes;
-			persInputEvents.add(e);
-		}
-		return new PartitionSimu(persInputEvents);
+		return new PartitionSimu(inputEventProvider.getRandomEvents(nbPersToMove, r));
 	}
 
 	@Override

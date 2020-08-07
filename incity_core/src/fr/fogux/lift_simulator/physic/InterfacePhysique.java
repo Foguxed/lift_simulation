@@ -3,6 +3,7 @@ package fr.fogux.lift_simulator.physic;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.batchs.core.SimulationStatCreator;
 import fr.fogux.lift_simulator.evenements.animation.EvenementConsoleLine;
+import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.EtatAsc;
@@ -119,8 +120,17 @@ public class InterfacePhysique
     
     public <T> T tryScenario(AlgoInstantiator newAlgoInstantiator, SimulationStatCreator<T> statCreator)
     {
-    	//TODO
-    	return null;
+    	Simulation newSimu = new Simulation(simu, newAlgoInstantiator);
+    	try
+    	{
+        	newSimu.run();
+    	}
+    	catch(SimulateurAcceptableException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	//TODO pas parfait
+    	return statCreator.produceStat(newSimu);
     }
     
     public void systemPrintLn(final Object o)
