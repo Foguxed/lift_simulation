@@ -30,7 +30,10 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.BasicAlgoInstantiator;
-import fr.fogux.lift_simulator.mind.independant.AlgoBasique2;
+import fr.fogux.lift_simulator.mind.independant.AlgoIndep;
+import fr.fogux.lift_simulator.mind.independant.IndepAscInstantiator;
+import fr.fogux.lift_simulator.mind.independant.OutputProvider;
+import fr.fogux.lift_simulator.mind.plannifiers.BestInstert;
 import fr.fogux.lift_simulator.partition_creation.ConfigPartitionHomogene;
 import fr.fogux.lift_simulator.partition_creation.HomogenePartitionGen;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
@@ -39,6 +42,7 @@ import fr.fogux.lift_simulator.screens.GameScreen;
 import fr.fogux.lift_simulator.screens.MenuScreen;
 import fr.fogux.lift_simulator.stats.StandardSimulationStat;
 import fr.fogux.lift_simulator.stats.StandardStatCreator;
+import fr.fogux.lift_simulator.stats.TotalTransportTimeStatCreator;
 import fr.fogux.lift_simulator.utils.AssetsManager;
 
 public class Simulateur extends Game
@@ -67,7 +71,42 @@ public class Simulateur extends Game
         final Map<String,AlgoInstantiator> map = new HashMap<>();
         //addAlg(ProgrammeBasique.class,"prgmBasique",map);
         //addAlg(RPsimpleAlgo2.class,"RPsimpleAlgo",map);
-        addAlg(AlgoBasique2.class,"AlgoBasique2",map);
+        //addAlg(getIndepInstantiator(IndepAscInstantiator.CYCLIQUE,"IndepCyclique0"),map);
+        //addAlg(new AlgoInstantiatorStatComparator(TestAlgoIteratif.class, "TestAlgoIteratifTraansportTime", new TotalTransportTimeStatCreator()),map);
+        //addAlg(new AlgoInstantiatorStatComparator(TestAlgoIteratif.class, "TestAlgoIteratifCompletion", new CompletionTimeStatCreator()),map);
+        //addAlg(new AlgoInstantiatorStatComparator(OnlineAlgoIteratif.class, "OnlineAlgoIteratifTransportTime", new TotalTransportTimeStatCreator()),map);
+
+        addAlg(new AlgoInstantiator()
+        {
+            @Override
+            public Algorithme getPrgm(final OutputProvider output, final ConfigSimu c)
+            {
+                return new BestInstert(output, c, new TotalTransportTimeStatCreator());
+            }
+
+            @Override
+            public String getName()
+            {
+                return "BestInsert";
+            }
+        }, map);
+        /*
+        addAlg(new AlgoInstantiator()
+        {
+            @Override
+            public Algorithme getPrgm(final OutputProvider output, final ConfigSimu c)
+            {
+                return new TwoOpt<>(output, c, new TotalTransportTimeStatCreator());
+            }
+
+            @Override
+            public String getName()
+            {
+                return "TwoOpt";
+            }
+        }, map);*/
+
+        //addAlg(new AlgoInstantiatorStatComparator(OnlineAlgoIteratif.class, "OnlineAlgoIteratifCompletion", new CompletionTimeStatCreator()),map);
         return map;
     }
 
@@ -76,10 +115,32 @@ public class Simulateur extends Game
         map.put(algoInstantiator.getName(), algoInstantiator);
     }
 
+
+
     private static void addAlg(final Class<? extends Algorithme> simpleAlgoClass, final String name, final Map<String,AlgoInstantiator> map)
     {
         addAlg(new BasicAlgoInstantiator(simpleAlgoClass, name),map);
     }
+
+    public static AlgoInstantiator getIndepInstantiator(final IndepAscInstantiator ascInstatiator, final String name)
+    {
+        return new AlgoInstantiator()
+        {
+
+            @Override
+            public Algorithme getPrgm(final OutputProvider output, final ConfigSimu c)
+            {
+                return new AlgoIndep(output, c, ascInstatiator);
+            }
+
+            @Override
+            public String getName()
+            {
+                return name;
+            }
+        };
+    }
+
 
     private static void printPartitionGeneratorType(final PartitionGenerator pGen, final DataTagCompound compound)
     {
@@ -195,46 +256,46 @@ public class Simulateur extends Game
         GestFichiers.unloadVisualisationFiles();
         System.out.println("fin init animation");
     }
-    
+
     public static void getArrayCopy(final File fichier) throws IOException
     {
-    	toArrayTxt(fichier,GestFichiers.copyFileWithPrefixe(fichier, "as_array_"));
+        toArrayTxt(fichier,GestFichiers.copyFileWithPrefixe(fichier, "as_array_"));
     }
-    
+
     private static void toArrayTxt(final File input, final File output) throws IOException
     {
-    	BufferedReader reader = GestFichiers.getNewReader(input);
-    	BufferedWriter writer = GestFichiers.getNewWriter(output);
-    	String str = reader.readLine();
-    	String separator = "	";
-    	DataTagCompound d = null;
-    	while(str != null)
-    	{
-    		String lineToWrite = "";
-    		if(str.contains("["))
-    		{
-    			long time = Evenement.time(str);
-    			lineToWrite += time + separator;
-    		}
-    		d = new DataTagCompound(str);
-    		writer.write(lineToWrite + d.toValues(separator,d.keysByAlphabeticalOrder()) + "\n");
-    		str = reader.readLine();
-    	}
-    	writer.write(toString(d.keysByAlphabeticalOrder(),separator)+"\n");
-    	reader.close();
-    	writer.close();
+        final BufferedReader reader = GestFichiers.getNewReader(input);
+        final BufferedWriter writer = GestFichiers.getNewWriter(output);
+        String str = reader.readLine();
+        final String separator = "	";
+        DataTagCompound d = null;
+        while(str != null)
+        {
+            String lineToWrite = "";
+            if(str.contains("["))
+            {
+                final long time = Evenement.time(str);
+                lineToWrite += time + separator;
+            }
+            d = new DataTagCompound(str);
+            writer.write(lineToWrite + d.toValues(separator,d.keysByAlphabeticalOrder()) + "\n");
+            str = reader.readLine();
+        }
+        writer.write(toString(d.keysByAlphabeticalOrder(),separator)+"\n");
+        reader.close();
+        writer.close();
     }
-    
-    private static String toString(List<String> strs,String separator)
+
+    private static String toString(final List<String> strs,final String separator)
     {
-    	String result = "";
-    	for(String str : strs)
-    	{
-    		result += str + separator;
-    	}
-    	return result;
+        String result = "";
+        for(final String str : strs)
+        {
+            result += str + separator;
+        }
+        return result;
     }
-    
+
     public static void executePartitionCreation(final File dossierSituation) throws IOException
     {
         System.out.println("Debut partition creation");
@@ -250,8 +311,8 @@ public class Simulateur extends Game
         final PartitionSimu simuParti = PartitionGenerator.fromCompound(totalData).generer(new Random());
 
         final FichierPartition fichierPartition = new FichierPartition(fichierPConfig, simuParti);
-        
-        
+
+
         System.out.println("fin partition creation");
         GestFichiers.writePartition(fichierPartition, partitionFile);
         System.out.println("fichier enregistre " + partitionFile.getAbsolutePath());
@@ -267,14 +328,14 @@ public class Simulateur extends Game
             e.printStackTrace();
         }
     }
-    
+
     public static void executerBatch(final File dossierDuBatch) throws IOException
     {
-    	File configBatchFile = GestFichiers.getUniqueFile(dossierDuBatch, NomsFichiers.config_batch);
-    	SimuBatch batch = SimuBatch.fromCompound(dossierDuBatch,GestFichiers.getFirstCompound(configBatchFile));
-    	batch.run();
+        final File configBatchFile = GestFichiers.getUniqueFile(dossierDuBatch, NomsFichiers.config_batch);
+        final SimuBatch batch = SimuBatch.fromCompound(dossierDuBatch,GestFichiers.getFirstCompound(configBatchFile));
+        batch.run();
     }
-    
+
     public static void executerSimulation(final File dossierPartition, final List<AlgoInstantiator> algorithmes, final File configSimu, final boolean animationApres) throws IOException
     {
         System.out.println("debut Simulation");
@@ -299,18 +360,19 @@ public class Simulateur extends Game
 
             final BufferedWriter journalOutput = GestFichiers.getJournalWriter(dernierJournal, config);
             final Simulation simu = new Simulation(alg, c, new PartitionSimu(fPartition.evenements), journalOutput);
-            
+
             StandardSimulationStat stat = null;
             System.out.println("debut run simulation");
             try
             {
-            	simu.run();
-            	stat = new StandardStatCreator().produceStat(simu);
+                simu.start();
+                stat = new StandardStatCreator().produceStat(simu);
             }
-		    catch (final SimulateurAcceptableException e)
-		    {
-		        new EvenementErreur(e.getMessage()).print(simu);
-		    }
+            catch (final SimulateurAcceptableException e)
+            {
+                e.printStackTrace();
+                new EvenementErreur(e.getMessage()).print(simu);
+            }
             /*try
             {
 
@@ -324,13 +386,13 @@ public class Simulateur extends Game
             final SimuResult result;
             if(stat == null)
             {
-            	result = new SimuResult(true, 0, 0, 0);
+                result = new SimuResult(true, 0, 0, 0,0);
             }
             else
             {
-            	result = new SimuResult(stat);
+                result = new SimuResult(stat);
             }
-             
+
             final DataTagCompound resultComPound = new DataTagCompound();
             result.printFieldsIn(resultComPound);
 

@@ -33,7 +33,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
     }
 
     @Override
-    public void runExecuting()
+    public void init()
     {
         fillBuffer();
         executeur = new Executeur()

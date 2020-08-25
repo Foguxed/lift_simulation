@@ -3,8 +3,8 @@ package fr.fogux.lift_simulator.mind;
 import java.lang.reflect.InvocationTargetException;
 
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
+import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
 
 public class BasicAlgoInstantiator implements AlgoInstantiator
 {
@@ -18,11 +18,11 @@ public class BasicAlgoInstantiator implements AlgoInstantiator
     }
 
     @Override
-    public Algorithme getPrgm(final InterfacePhysique output, final ConfigSimu c)
+    public Algorithme getPrgm(final OutputProvider output, final ConfigSimu c)
     {
         try
         {
-            return algo.getDeclaredConstructor(InterfacePhysique.class, ConfigSimu.class).newInstance(output,c);
+            return algo.getDeclaredConstructor(OutputProvider.class, ConfigSimu.class).newInstance(output,c);
         }
         catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
             | NoSuchMethodException | SecurityException e)

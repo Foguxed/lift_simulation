@@ -31,27 +31,22 @@ public class PersonneSimu extends Personne implements StatCarrier
         timeInput = simu.getTime();
         this.etageActuel = etageActuel;
     }
-    
-    public PersonneSimu(final PersonneSimu shadowed, Simulation newSimu)
+
+    public PersonneSimu(final PersonneSimu shadowed, final Simulation newSimu)
     {
-    	super(shadowed.destination,shadowed.id);
-    	this.simu = newSimu;
-    	this.etageActuel = shadowed.etageActuel;
-    	this.enAttentePalier = shadowed.enAttentePalier;
-    	this.timeInput = shadowed.timeInput;
-    	this.heureEntreeAscenseur = shadowed.heureEntreeAscenseur;
-    	this.heureSortieAscenseur = shadowed.heureSortieAscenseur;
-    	this.ascenseurUtilise = shadowed.ascenseurUtilise;
+        super(shadowed.destination,shadowed.id);
+        simu = newSimu;
+        etageActuel = shadowed.etageActuel;
+        enAttentePalier = shadowed.enAttentePalier;
+        timeInput = shadowed.timeInput;
+        heureEntreeAscenseur = shadowed.heureEntreeAscenseur;
+        heureSortieAscenseur = shadowed.heureSortieAscenseur;
+        ascenseurUtilise = shadowed.ascenseurUtilise;
     }
-    
+
     public boolean livree()
     {
         return heureSortieAscenseur > 0;
-    }
-
-    public long getTransportTime()
-    {
-        return heureSortieAscenseur - timeInput;
     }
 
 
@@ -104,8 +99,6 @@ public class PersonneSimu extends Personne implements StatCarrier
         heureEntreeAscenseur = simu.getTime();
         ascenseurUtilise = ascenseur.getId();
         ascenseur.estEntre(this);
-        // Utils.msg(this, "ascenseur " + ascenseur);
-        simu.getPrgm().appelInterieur(destination, ascenseur.getId());
     }
 
     public void sortirDeAscenseur()
@@ -115,4 +108,26 @@ public class PersonneSimu extends Personne implements StatCarrier
         simu.getImmeubleSimu().getAscenseur(ascenseurUtilise).sortieDe(this);
     }
 
+    public void rerunSortieDeAscenseur()
+    {
+        simu.getImmeubleSimu().getAscenseur(ascenseurUtilise).reRunDemandeDeListe();
+    }
+
+    public long getTempsTrajet()
+    {
+        if(livree())
+        {
+            return heureSortieAscenseur - timeInput;
+        }
+        else
+        {
+            return simu.getTime() - timeInput;
+        }
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + " waiting " + enAttentePalier;
+    }
 }

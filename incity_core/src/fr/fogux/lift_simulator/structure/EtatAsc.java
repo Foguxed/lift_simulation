@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.structure;
 
+import java.util.function.Predicate;
+
 import fr.fogux.lift_simulator.physic.EtatAscenseur;
 
 public class EtatAsc
@@ -14,5 +16,29 @@ public class EtatAsc
         this.premierEtageAtteignable = premierEtageAtteignable;
         this.positionActuelle = positionActuelle;
     }
-    
+
+    public Predicate<Integer> filtreAntiDemiTour()
+    {
+        if(etat == EtatAscenseur.ARRET | etat == EtatAscenseur.BLOQUE)
+        {
+            return (i -> true);
+        }
+        else
+        {
+            if(etat == EtatAscenseur.MONTEE)
+            {
+                return (i -> i >= premierEtageAtteignable);
+            }
+            else
+            {
+                return (i -> i <= premierEtageAtteignable);
+            }
+        }
+    }
+
+    @Override
+    public String toString()
+    {
+        return etat + " premierEtageAtteignable " + premierEtageAtteignable + " posActuelle " + positionActuelle;
+    }
 }

@@ -2,6 +2,7 @@ package fr.fogux.lift_simulator.mind;
 
 import java.util.List;
 
+import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
@@ -9,21 +10,19 @@ import fr.fogux.lift_simulator.structure.AscId;
 public abstract class Algorithme
 {
 
-    protected InterfacePhysique output;
+    protected OutputProvider output;
     protected ConfigSimu config;
 
-    public Algorithme(final InterfacePhysique output, final ConfigSimu config)
+    public Algorithme(final OutputProvider output, final ConfigSimu config)
     {
         this.output = output;
         this.config = config;
     }
 
-    public InterfacePhysique output()
+    public InterfacePhysique out()
     {
-        return output;
+        return output.out();
     }
-
-
 
     /**
      *
@@ -56,14 +55,14 @@ public abstract class Algorithme
     /**
      * Appellé lorsque les portes de l'ascenseur s'ouvrent à un étage ou lorsque le transfert
      * est terminé pour demander à l'algorithme si il y a de nouvelles personnes à inviter
-     * liste entreront dans l'ascenseur 
+     * liste entreront dans l'ascenseur
      * @param idASc
      * @param places_disponibles
      * @param niveau
      * @return une liste qui ne compte pas plus de places que de places disponibles, sera copiée
      */
     public abstract List<Integer> listeInvites(AscId idASc, int places_disponibles, int niveau);
-    
+
     /**
      * Appellé lorsque l'ascenseur s' arrête à un étage pour lequel l'algorithme n'avais pas demandé
      *  d'ouverture (paramètre booléen dans InterfacePhysique.deplacerAscenseur)

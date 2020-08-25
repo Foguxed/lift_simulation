@@ -42,6 +42,20 @@ public class EvenementMouvementPortes extends AnimatedEvent
     }
 
     @Override
+    public void reRun(final Simulation simu)
+    {
+        if (isOuverture)
+        {
+            simu.getImmeubleSimu().getAscenseur(ascenseurId).reRunDemandeDeListe();
+        }
+        else
+        {
+            simu.getImmeubleSimu().getAscenseur(ascenseurId).reRunFermeturePortes(etageId);
+        }
+
+    }
+
+    @Override
     protected void printFieldsIn(final DataTagCompound compound, final long time)
     {
         super.printFieldsIn(compound, time);
@@ -65,6 +79,8 @@ public class EvenementMouvementPortes extends AnimatedEvent
     @Override
     public String toString()
     {
-        return "EvenementMouvementPorte ouverture " + isOuverture +" AscId " + ascenseurId + " etage " + etageId;
+        return "EvenementMouvementPorte ouverture " + isOuverture +" AscId " + ascenseurId + " etage " + etageId + " runTime " + getTime();
     }
+
+
 }

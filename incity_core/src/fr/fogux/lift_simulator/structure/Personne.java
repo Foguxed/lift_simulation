@@ -24,6 +24,6 @@ public abstract class Personne
     @Override
     public String toString()
     {
-        return "presonne " + id + " destination " + destination;
+        return "id " + id + " destination " + destination;
     }
 }

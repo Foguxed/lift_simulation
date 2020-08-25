@@ -44,9 +44,9 @@ public abstract class Evenement
 
     public static long time(final String fullLine)
     {
-    	return Utils.timeInMilis(fullLine.substring(fullLine.indexOf("[") + 1, fullLine.indexOf("]")));
+        return Utils.timeInMilis(fullLine.substring(fullLine.indexOf("[") + 1, fullLine.indexOf("]")));
     }
-    
+
     public static Evenement genererEvenement(final String data)
     {
         if (data == null || data.charAt(0) != '[')
@@ -81,5 +81,9 @@ public abstract class Evenement
 
     public abstract void simuRun(Simulation simulation);
 
+    public abstract void reRun(Simulation simulation);
+
     public abstract void visuRun(AnimationProcess animation);
+
+    public abstract boolean shadowable(long registeredTime);
 }

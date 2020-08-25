@@ -11,18 +11,20 @@ public interface PartitionGenerator
 {
     PartitionSimu generer(Random r);
     ConfigPartitionGen getConfig();
-    
-    public static PartitionGenerator fromCompound(DataTagCompound c)
+
+    static PartitionGenerator fromCompound(final DataTagCompound c)
     {
-    	String type = c.getString(TagNames.partitionGenType);
-    	switch(type)
-    	{
-    		case HomogenePartitionGen.NAME:
-    			return new HomogenePartitionGen(c);
-    		case ProfileUsingPartGen.Name:
-    			return new ProfileUsingPartGen(c);
-    		default:
-    			throw new SimulateurException("partition generator type " + type + " is unknown");
-    	}
+        final String type = c.getString(TagNames.partitionGenType);
+        switch(type)
+        {
+            case HomogenePartitionGen.NAME:
+                return new HomogenePartitionGen(c);
+            case ProfileUsingPartGen.NAME:
+                return new ProfileUsingPartGen(c);
+            case OfflinePartGen.NAME:
+                return new OfflinePartGen(c);
+            default:
+                throw new SimulateurException("partition generator type " + type + " is unknown");
+        }
     }
 }

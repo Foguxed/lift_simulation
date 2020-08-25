@@ -8,6 +8,8 @@ public interface VoisinAsc
      */
     int getLimitSup();
     int getLimitInf();
+    int getAtteignableSup();
+    int getAtteignableInf();
     void updateLimitVoisin(boolean isSup);
     void setAscenseurSuperieur(VoisinAsc asc);
 }

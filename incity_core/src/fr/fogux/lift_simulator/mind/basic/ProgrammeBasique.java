@@ -1,12 +1,11 @@
 package fr.fogux.lift_simulator.mind.basic;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import fr.fogux.lift_simulator.mind.Algorithme;
+import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
 
 public class ProgrammeBasique extends Algorithme
@@ -14,7 +13,7 @@ public class ProgrammeBasique extends Algorithme
     protected final AscenseurDevin ascSup;
     protected final AscenseurDevin ascInf;
 
-    public ProgrammeBasique(final InterfacePhysique output, final ConfigSimu config)
+    public ProgrammeBasique(final OutputProvider output, final ConfigSimu config)
     {
         super(output, config);
         final List<DestinationSimple> destinationsSup = new ArrayList<>();
@@ -31,8 +30,8 @@ public class ProgrammeBasique extends Algorithme
         destinationsInf.add(new DestinationSimple(8));
         destinationsInf.add(new DestinationSimple(7));
         destinationsInf.add(new DestinationSimple(-1));
-        ascInf = new AscenseurDevin(destinationsInf, new AscId(0, 0), output);
-        ascSup = new AscenseurDevin(destinationsSup, new AscId(0, 1), output);
+        ascInf = new AscenseurDevin(destinationsInf, new AscId(0, 0), output.out());
+        ascSup = new AscenseurDevin(destinationsSup, new AscId(0, 1), output.out());
     }
 
     @Override
@@ -90,7 +89,7 @@ public class ProgrammeBasique extends Algorithme
     @Override
     public void ping()
     {
-        output().println("ping");
+        out().println("ping");
     }
 
 }

@@ -20,61 +20,75 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     protected final Iterator<EvenementPersonnesInput> partition;
 
     protected final TreeMap<Long, List<Evenement>> taches = new TreeMap<>();
-    
+
     protected long lastInputTime;
 
     protected PrintPolicy policy;
 
+    protected boolean paused = true;
+
+    protected Evenement toRerun;
+
     public long pingTime;
-    
-    public GestionnaireDeTachesSimu(final Simulation newSimulation, GestionnaireDeTachesSimu shadowed)
+
+    public GestionnaireDeTachesSimu(final Simulation newSimulation, final GestionnaireDeTachesSimu shadowed)
     {
-    	this.simu = newSimulation;
-    	this.policy = choosePolyci(false);
-    	this.lastInputTime = shadowed.lastInputTime;
-    	this.partition = Collections.emptyIterator();
-    	long time;
-    	for(Entry<Long,List<Evenement>> entry : shadowed.taches.entrySet())
-    	{
-    		time = entry.getKey();
-    		for(Evenement e : entry.getValue())
-    		{
-    			if(!(e instanceof EvenementPersonnesInput))
-    			{
-        			putEventInTaches(e,time);
-    			}
-    		}
-    	}
-    	//pingtime depend de l'algo
+        super(shadowed);
+        simu = newSimulation;
+        toRerun = shadowed.toRerun;
+        policy = choosePolyci(false);
+        lastInputTime = shadowed.lastInputTime;
+        partition = Collections.emptyIterator();
+        long time;
+        for(final Entry<Long,List<Evenement>> entry : shadowed.taches.entrySet())
+        {
+            time = entry.getKey();
+            for(final Evenement e : entry.getValue())
+            {
+                if(e.shadowable(entry.getKey()))
+                {
+                    putEventInTaches(e,time);
+                }
+            }
+        }
+        //System.out.println("shadowing taches, shadowed " + shadowed.taches + " mestaches " + taches);
+        //pingtime depend de l'algo
     }
-    
-    
-    
+
+
+
     public GestionnaireDeTachesSimu(final Simulation simu, final boolean doPrintEvents, final PartitionSimu partition)
     {
         this.simu = simu;
-        this.policy = choosePolyci(doPrintEvents);
+        toRerun = null;
+        policy = choosePolyci(doPrintEvents);
         this.partition = partition.getInputIterator();
     }
-    
+
+    public void pause()
+    {
+        paused = true;
+    }
+
     public void executerA(final Evenement tache, final long timeAbsolu)
     {
-        // System.out.println("evenement registered " + tache.getClass() + " " +
-        // timeAbsolu);
+        //System.out.println("evenement registered " + tache + " " + timeAbsolu + " ceci " + hashCode());
+        //new Throwable().printStackTrace();
         if (timeAbsolu < innerTime)
         {
             throw new SimulateurException("Evenement " + tache + " enregistre pour execution a " + timeAbsolu + " qui est inferieur à innertime " + innerTime);
         }
         else
         {
-        	putEventInTaches(tache,timeAbsolu);
+            putEventInTaches(tache,timeAbsolu);
         }
         policy.onRegister(tache, this, timeAbsolu);
+        //System.out.println("tachesDesormais " + taches);
     }
-    
-    private void putEventInTaches(Evenement tache, long timeAbsolu)
+
+    private void putEventInTaches(final Evenement tache, final long timeAbsolu)
     {
-    	final List<Evenement> tempList = taches.get(timeAbsolu);
+        final List<Evenement> tempList = taches.get(timeAbsolu);
         if (tempList != null)
         {
             tempList.add(tache);
@@ -85,9 +99,10 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
             taches.put(timeAbsolu, list);
         }
     }
-    
+
     public void CancelEvenement(final Evenement ev, final long registeredTime)
     {
+        //System.out.println("cancelEvent " + ev);
         final List<Evenement> temp = taches.get(registeredTime);
         if (temp == null || !temp.remove(ev))
         {
@@ -97,7 +112,7 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     }
 
     @Override
-    public void runExecuting()
+    public void init()
     {
         pingTime = simu.getPrgm().init();
         if(pingTime > 0)
@@ -106,33 +121,53 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
             executerA(premierPing, premierPing.getTime());
         }
         forecastNextPersInput();
+    }
+
+    public void resume()
+    {
+        //System.out.println("taches initiales " + taches + " ceci " + hashCode());
+        if(!paused)
+        {
+            throw new SimulateurException("GestioTaches should be paused before any resume");
+        }
+        paused = false;
+        if(toRerun != null)
+        {
+            System.out.println("un truc a rerun " + toRerun);
+            toRerun.reRun(simu);
+        }
         while (!taches.isEmpty())
         {
+            //System.out.println("taches " + taches);
             final Entry<Long, List<Evenement>> entry = taches.firstEntry();
             executeEntry(entry);
+            if(paused)
+            {
+                break;
+            }
             taches.pollFirstEntry();
         }
     }
-    
+
     public void forecastNextPersInput()
     {
-    	if(partition.hasNext())
+        if(partition.hasNext())
         {
-        	EvenementPersonnesInput input = partition.next();
-        	executerA(input,input.getTime());
+            final EvenementPersonnesInput input = partition.next();
+            executerA(input,input.getTime());
         }
-    	else
-    	{
-    		lastInputTime = innerTime;
-    	}
+        else
+        {
+            lastInputTime = innerTime;
+        }
     }
-    
-    private void executeEntry(Entry<Long,List<Evenement>> entry)
+
+    private void executeEntry(final Entry<Long,List<Evenement>> entry)
     {
-    	executeEvents(entry.getKey(),entry.getValue());
+        executeEvents(entry.getKey(),entry.getValue());
     }
-    
-    private void executeEvents(long key, List<Evenement> value)
+
+    private void executeEvents(final long key, final List<Evenement> value)
     {
         innerTime = key;
         if (beyondEndOFTime(innerTime))
@@ -141,7 +176,7 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         }
         executerChaqueEvenement(value);
     }
-    
+
     private boolean beyondEndOFTime(final long time)
     {
         return time > lastInputTime + 1000 * 60 * 60 * 3;
@@ -149,10 +184,16 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 
     public void executerChaqueEvenement(final List<Evenement> list)
     {
+        //System.out.println("ev execs " + list + " time " + innerTime);
         while (!list.isEmpty())
         {
-        	policy.onSimuRun(list.get(0));// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
-            list.remove(0);
+            final Evenement e = list.remove(0);
+            policy.onSimuRun(e);// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
+            if(paused)
+            {
+                toRerun = e;
+                break;
+            }
         }
     }
 
@@ -188,10 +229,10 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     {
         return taches.size();
     }
-    
-    private PrintPolicy choosePolyci(boolean doPrintEvents)
+
+    private PrintPolicy choosePolyci(final boolean doPrintEvents)
     {
-    	if(doPrintEvents)
+        if(doPrintEvents)
         {
             return new PrintPolicy()
             {
@@ -199,6 +240,7 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
                 @Override
                 public void onSimuRun(final Evenement e)
                 {
+                    e.print(simu);
                     if(e instanceof AnimatedEvent && ((AnimatedEvent)e).doNotSimuRun(simu.getTime()))
                     {
                     }
@@ -206,7 +248,6 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
                     {
                         e.simuRun(simu);
                     }
-                    e.print(simu);
                 }
 
                 @Override

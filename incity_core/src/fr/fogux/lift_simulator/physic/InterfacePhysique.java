@@ -18,7 +18,7 @@ import fr.fogux.lift_simulator.utils.Utils;
  */
 public class InterfacePhysique
 {
-    protected final Simulation simu;
+    public final Simulation simu;
 
     public InterfacePhysique(final Simulation simu)
     {
@@ -65,7 +65,7 @@ public class InterfacePhysique
      * @param objectif
      * @return -1 si l'ascenseur est bloque, ou est géné par un ascenseur voisin sinon
      * la durée du demplacement de l'ascenseur vers cet objectif depuis sa position actuelle
-     * 
+     *
      */
     @Deprecated
     public long getDistanceTemporelle(final AscId id, final float objectif)
@@ -116,23 +116,32 @@ public class InterfacePhysique
         {
             new EvenementConsoleLine(Utils.getTimeString(simu.getTime()) + " " + val).print(simu);
         }
+        //System.out.println("physprint " + val);
     }
-    
-    public <T> T tryScenario(AlgoInstantiator newAlgoInstantiator, SimulationStatCreator<T> statCreator)
+
+    public <T> T tryScenario(final AlgoInstantiator newAlgoInstantiator, final SimulationStatCreator<T> statCreator)
     {
-    	Simulation newSimu = new Simulation(simu, newAlgoInstantiator);
-    	try
-    	{
-        	newSimu.run();
-    	}
-    	catch(SimulateurAcceptableException e)
-    	{
-    		e.printStackTrace();
-    	}
-    	//TODO pas parfait
-    	return statCreator.produceStat(newSimu);
+        final Simulation newSimu = new Simulation(simu, newAlgoInstantiator);
+        try
+        {
+            newSimu.start();
+        }
+        catch(final SimulateurAcceptableException e)
+        {
+            e.printStackTrace();
+        }
+        //TODO pas parfait
+        return statCreator.produceStat(newSimu);
     }
-    
+
+    /**
+     * arrete la simulation dans son etat actuel, le dernier évènement sera appelé de nouveau
+     */
+    public void pause()
+    {
+        simu.getGestio().pause();
+    }
+
     public void systemPrintLn(final Object o)
     {
         System.out.println(o);

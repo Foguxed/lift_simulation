@@ -13,11 +13,11 @@ public class EtageSimu extends Etage
         super(numero);
         this.simu = simu;
     }
-    
-    public EtageSimu(EtageSimu shadowed, Simulation newSimu)
+
+    public EtageSimu(final EtageSimu shadowed, final Simulation newSimu)
     {
-    	super(shadowed);
-    	this.simu = newSimu;
+        super(shadowed);
+        simu = newSimu;
     }
 
     /*
@@ -28,19 +28,23 @@ public class EtageSimu extends Etage
     {
 
     }
-    
-    public static EtageSimu shadow(EtageSimu etage, Simulation newSimu)
+
+    public static EtageSimu shadow(final EtageSimu etage, final Simulation newSimu)
     {
-    	if(etage == null)
-    	{
-    		return null;
-    	}
-    	else
-    	{
-    		return newSimu.getImmeubleSimu().getEtage(etage.num);
-    	}
+        if(etage == null)
+        {
+            return null;
+        }
+        else
+        {
+            return newSimu
+                .getImmeubleSimu()
+                .getEtage(
+                    etage
+                    .num);
+        }
     }
-    
+
     @Override
     public int getNiveau()
     {
@@ -78,7 +82,7 @@ public class EtageSimu extends Etage
     {
         for(int i = 0; i < nbPersonnes; i ++)
         {
-            simu.inputPersonne(this.getNiveau(), destination);
+            simu.inputPersonne(getNiveau(), destination);
         }
     }
 }

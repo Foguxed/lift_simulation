@@ -20,6 +20,14 @@ public class EvenementPersonnesInput extends PrintableEvenement implements Compa
         this.etage = etage;
     }
 
+    public EvenementPersonnesInput(final EvenementPersonnesInput aCloner, final int nouveauNbPersonnes, final long nouveauTime)
+    {
+        super(nouveauTime);
+        nbPersonnes = nouveauNbPersonnes;
+        destination = aCloner.destination;
+        etage = aCloner.etage;
+    }
+
     public EvenementPersonnesInput(final long time, final DataTagCompound data)
     {
         super(time);
@@ -60,10 +68,22 @@ public class EvenementPersonnesInput extends PrintableEvenement implements Compa
         }
     }
 
-	@Override
-	public int compareTo(EvenementPersonnesInput o) 
-	{
-		return (int)(this.time - o.time);
-	}
+    @Override
+    public int compareTo(final EvenementPersonnesInput o)
+    {
+        return (int)(time - o.time);
+    }
+
+    @Override
+    public void reRun(final Simulation simulation)
+    {
+        simulation.reRunLastInputPersonne();
+    }
+
+    @Override
+    public boolean shadowable(final long registeredTime)
+    {
+        return false;
+    }
 
 }

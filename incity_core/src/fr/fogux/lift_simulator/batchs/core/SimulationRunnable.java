@@ -64,7 +64,7 @@ public class SimulationRunnable implements Runnable
 			try
 			{
 				Simulation s = new Simulation(a, csimu, ps);
-				s.run();
+				s.start();
 				stats.add(collecter.produceStat(s));
 			}
 			catch(Exception e)

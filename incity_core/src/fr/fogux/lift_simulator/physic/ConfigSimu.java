@@ -6,8 +6,8 @@ import fr.fogux.lift_simulator.fichiers.TagNames;
 public class ConfigSimu extends ConfigImmeuble
 {
 
-	public static final long TEQUALITY_MARGIN = 3L;
-    public static final float XEQUALITY_MARGIN = 0.000004f; // en niveau
+    public static final long TEQUALITY_MARGIN = 3L;
+    public static final float XEQUALITY_MARGIN = 0.00004f; // en niveau
     public static final float SPEED_ERROR_MARGIN = 0.000001f; //en niveau par miliseconde
 
 
@@ -19,7 +19,7 @@ public class ConfigSimu extends ConfigImmeuble
 
     protected final int capaciteAsc;
     protected final float margeInterAsc;
-    
+
     protected final float deltaTMaxPolynome;
     protected final float marge_sup_inter_ascenseur;
 
@@ -34,7 +34,7 @@ public class ConfigSimu extends ConfigImmeuble
         this.dureePortes = dureePortes;
         this.capaciteAsc = capaciteAsc;
         this.margeInterAsc = margeInterAsc;
-        this.deltaTMaxPolynome = 2*ascenseurSpeed/acceleration;
+        deltaTMaxPolynome = 2*ascenseurSpeed/acceleration;
         marge_sup_inter_ascenseur = margeSup(margeInterAsc);
     }
 
@@ -53,7 +53,7 @@ public class ConfigSimu extends ConfigImmeuble
         capaciteAsc = c.getInt(TagNames.capaciteAsc);
         margeInterAsc = c.getFloat(TagNames.margeInterAsc);
         marge_sup_inter_ascenseur = margeSup(margeInterAsc);
-        this.deltaTMaxPolynome = 2*ascenseurSpeed/acceleration + margeInterAsc;
+        deltaTMaxPolynome = 2*ascenseurSpeed/acceleration + margeInterAsc;
     }
 
     @Override
@@ -114,7 +114,7 @@ public class ConfigSimu extends ConfigImmeuble
      */
     public float getDeltaT()
     {
-    	return deltaTMaxPolynome;
+        return deltaTMaxPolynome;
     }
 
     public boolean faitTroisPhases(final float xi, final float vi, final float xf)

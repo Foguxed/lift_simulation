@@ -23,4 +23,16 @@ public abstract class EvenementAnimationOnly extends PrintableEvenement
         throw new SimulateurException("EvenementAnimationOnly " + this + " was simuRun ");
     }
 
+
+    @Override
+    public void reRun(final Simulation simu)
+    {
+        simuRun(simu);
+    }
+
+    @Override
+    public boolean shadowable(final long registeredT)
+    {
+        return false;
+    }
 }

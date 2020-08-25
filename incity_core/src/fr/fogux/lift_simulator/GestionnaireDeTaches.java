@@ -4,6 +4,11 @@ public abstract class GestionnaireDeTaches
 {
     protected Long innerTime;
 
+    public GestionnaireDeTaches(final GestionnaireDeTaches shadowed)
+    {
+        innerTime = shadowed.innerTime;
+    }
+
     public GestionnaireDeTaches()
     {
         innerTime = 0l;
@@ -15,7 +20,7 @@ public abstract class GestionnaireDeTaches
         return innerTime;
     }
 
-    public abstract void runExecuting();
+    public abstract void init();
 
     public abstract boolean marcheArriereEnCours();
 

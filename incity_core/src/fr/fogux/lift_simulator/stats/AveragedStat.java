@@ -4,26 +4,25 @@ import java.util.Collection;
 
 public class AveragedStat implements SimulationStat
 {
-	public final long totalTravelTime;
-	public final int nbPersDeplacees;
-	public final long maxTravelTime;
-	
-	public AveragedStat(Collection<StandardSimulationStat> stats)
-	{
-		long tTravelTime = 0;
-		int nbPersDeplacees = 0;
-		long maxWaitingTime = 0;
-		for(StandardSimulationStat stat : stats)
-		{
-			tTravelTime += stat.totalTravelTime;
-			nbPersDeplacees += stat.nbPersTransportees;
-			if(stat.maxTravelTime > maxWaitingTime)
-			{
-				maxWaitingTime = stat.maxTravelTime;
-			}
-		}
-		this.totalTravelTime = tTravelTime;
-		this.nbPersDeplacees = nbPersDeplacees;
-		this.maxTravelTime = maxWaitingTime;
-	}
+    public final LongStats resultat;
+    public final long averageCompletionTime;
+
+    public AveragedStat(final Collection<StandardSimulationStat> stats)
+    {
+        final LongStatMaker accumulateur = new LongStatMaker();
+        long totalCompletionTime = 0;
+        for(final StandardSimulationStat s : stats)
+        {
+            accumulateur.addAllStats(s.persTempsTrajet);
+            totalCompletionTime += s.completionTime;
+        }
+        averageCompletionTime = totalCompletionTime/stats.size();
+        resultat = accumulateur.produceLongStats();
+    }
+
+
+    public String toString(final String separator)
+    {
+        return averageCompletionTime + separator + resultat.toString(separator);
+    }
 }

@@ -9,7 +9,7 @@ public class TagNames
     public static final String v = "v";
     public static final String t = "t";
     public static final String softDepType = "softDepType";
-    
+
     public static final String nbPersonnes = "nbPersonnes";
     public static final String etage = "etage";
     public static final String destination = "destination";
@@ -45,10 +45,10 @@ public class TagNames
     //EvenementChangementPlannigier
     public static final String oldPlannifier = "oldPlannifier";
     public static final String newPlannifier = "newPlannifier";
-    
+
     //DepPlannifier
     public static final String listeEtapes = "listeEtapes";
-    
+
     //SimuResult
     public static final String failed = "failed"; //a la fin tout le monde n'a pas été transporté
     public static final String totalTransportTime = "totalTransportTime";
@@ -69,39 +69,42 @@ public class TagNames
 
     public static final String capaciteAsc = "capaciteAsc";
     public static final String margeInterAsc = "margeInterAsc";
-    
-    
+
+
     //ConfigPartition
     public static final String nbPersonnesDeplacees = "nbPersonnesDeplacees";
     public static final String dureePartition = "duree";
-    
+
     public static final String min = "min";
     public static final String max = "max";
-    
+
     public static final String weight = "weight";
     public static final String listeIntervalleEtages = "listeIntervalleEtages";
-    
+
     public static final String inputEventProvider = "inputEventProvider";
 
     public static final String valuesAndWeights = "valuesAndWeights";
-    
+
     public static final String dateProvider = "dateProvider";
     public static final String dateProviderType = "dateProviderType";
-    
+
     public static final String providerEtageDepart = "departEtageProvider";
     public static final String providerEtageDestination = "destinationEtageProvider";
     public static final String providerGroupeSize = "providerGroupeSize";
-    
+
     public static final String listePassengerProfile = "passengerProfileList";
-    
+
     public static final String deplacementTotal = "deplacementTotal";
-    
+
     //batch
     public static final String batchType = "batchType";
     public static final String variatorType = "variatorType";
     public static final String nbSteps = "nbSteps";
     public static final String echantillonage = "echantillonage";
-    
+
     public static final String seed = "seed";
-    
+
+    public static final String nbThreads = "nbThreads";
+
+
 }

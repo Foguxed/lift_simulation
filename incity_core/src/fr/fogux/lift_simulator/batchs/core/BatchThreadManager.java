@@ -16,106 +16,108 @@ import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.partition_creation.PartitionGenerator;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 
-public class BatchThreadManager 
+public class BatchThreadManager
 {
-	private ExecutorService service;
-	private int nbExceptions = 0;
-	private final File dossierErreurs;
-	private final Random masterRandom;
-	private AtomicInteger nbThreadsAwaiting;
-	private int nbThreadDone = 0;
-	private boolean mainThreadWaiting;
-	
-	
-	public BatchThreadManager(File dossierErreurs, long randomSeed)
-	{
-		service = Executors.newFixedThreadPool(50);
-		this.dossierErreurs = dossierErreurs;
-		masterRandom = new Random(randomSeed);
-		nbThreadsAwaiting = new AtomicInteger(0);
-		mainThreadWaiting = false;
-	}
-	
-	public synchronized void registerException()
-	{
-		nbExceptions ++;
-		if(nbExceptions > 20)
-		{
-			throw new SimulateurException("Exception batch counter exceeds " + 20);
-		}
-	}
-	
-	public synchronized File getNewErrorDirectory(AlgoInstantiator algoInstantiator)
-	{
-		return GestFichiers.getNewErrorDirectory(dossierErreurs,algoInstantiator);
-	}
-	
-	public synchronized void registerFatalException(Exception e)
-	{
-		File fatalErrorFile = new File(dossierErreurs,NomsFichiers.fatalError + NomsFichiers.extension);
-		try {
-			GestFichiers.writeErrorLogs(e,fatalErrorFile);
-		} 
-		catch (FileNotFoundException e1) 
-		{
-			e1.printStackTrace();
-		}
-		System.out.println("fatal error " + e + " registered, shutdown");
-		if(!service.isShutdown())
-		{
-			e.printStackTrace();
-			shutdown();
-		}
-	}
-	
-	public synchronized void plannifySimulation(SimulationStatCreator<?> creator,List<AlgoInstantiator> algos, PartitionGenerator partitionGen, ConfigSimu configSimu,SimuTaskReceiver<?> taskReceiver)
-	{
-		if(service.isShutdown())
-		{
-			throw new SimulateurException("Service is shutdowned, see fatalError file");
-		}
-		if(mainThreadWaiting)
-		{
-			throw new IllegalStateException("plannifySimulation should be always called by main thread");
-		}
-		service.execute(new SimulationRunnable(this, creator, algos, configSimu, partitionGen,taskReceiver, masterRandom.nextLong()));
-		int v = nbThreadsAwaiting.incrementAndGet();
-		if(v > 120)
-		{
-			try 
-			{
-				mainThreadWaiting = true;
-				wait();
-				mainThreadWaiting = false;
-			} catch (InterruptedException e) 
-			{
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	public synchronized void decrementThreadsAwaiting()
-	{
-		int v = nbThreadsAwaiting.decrementAndGet();
-		nbThreadDone ++;
-		if(nbThreadDone % 50 == 0)
-		{
-			System.out.println("taskDone " + nbThreadDone);
-		}
-		if(v < 60 & mainThreadWaiting)
-		{
-			notify();
-		}
-	}
-	
-	public boolean closeAndWait(long timeoutInSeconds) throws InterruptedException
-	{
-		service.shutdown();
-		return service.awaitTermination(timeoutInSeconds, TimeUnit.SECONDS);
-	}
-	
-	public void shutdown()
-	{
-		service.shutdownNow();
-	}
+    private final ExecutorService service;
+    private int nbExceptions = 0;
+    private final File dossierErreurs;
+    private final Random masterRandom;
+    private final AtomicInteger nbThreadsAwaiting;
+    private int nbThreadDone = 0;
+    private boolean mainThreadWaiting;
+    private final int nbThreads;
+
+    public BatchThreadManager(final File dossierErreurs, final long randomSeed, final int nbThreads)
+    {
+        service = Executors.newFixedThreadPool(nbThreads);
+        this.nbThreads = nbThreads;
+        this.dossierErreurs = dossierErreurs;
+        masterRandom = new Random(randomSeed);
+        nbThreadsAwaiting = new AtomicInteger(0);
+        mainThreadWaiting = false;
+    }
+
+    public synchronized void registerException()
+    {
+        nbExceptions ++;
+        if(nbExceptions > 20)
+        {
+            throw new SimulateurException("Exception batch counter exceeds " + 20);
+        }
+    }
+
+    public synchronized File getNewErrorDirectory(final AlgoInstantiator algoInstantiator)
+    {
+        return GestFichiers.getNewErrorDirectory(dossierErreurs,algoInstantiator);
+    }
+
+    public synchronized void registerFatalException(final Exception e)
+    {
+        final File fatalErrorFile = new File(dossierErreurs,NomsFichiers.fatalError + NomsFichiers.extension);
+        try {
+            GestFichiers.writeErrorLogs(e,fatalErrorFile);
+        }
+        catch (final FileNotFoundException e1)
+        {
+            e1.printStackTrace();
+        }
+        System.out.println("fatal error " + e + " registered, shutdown");
+        if(!service.isShutdown())
+        {
+            e.printStackTrace();
+            shutdown();
+            notify();
+        }
+    }
+
+    public synchronized void plannifySimulation(final SimulationStatCreator<?> creator,final List<AlgoInstantiator> algos, final PartitionGenerator partitionGen, final ConfigSimu configSimu,final SimuTaskReceiver<?> taskReceiver)
+    {
+        if(service.isShutdown())
+        {
+            throw new SimulateurException("Service is shutdowned, see fatalError file");
+        }
+        if(mainThreadWaiting)
+        {
+            throw new IllegalStateException("plannifySimulation should be always called by main thread");
+        }
+        service.execute(new SimulationRunnable(this, creator, algos, configSimu, partitionGen,taskReceiver, masterRandom.nextLong()));
+        final int v = nbThreadsAwaiting.incrementAndGet();
+        if(v > 3*nbThreads)
+        {
+            try
+            {
+                mainThreadWaiting = true;
+                wait();
+                mainThreadWaiting = false;
+            } catch (final InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public synchronized void decrementThreadsAwaiting()
+    {
+        final int v = nbThreadsAwaiting.decrementAndGet();
+        nbThreadDone ++;
+        if(nbThreadDone % 1 == 0)
+        {
+            System.out.println("taskDone " + nbThreadDone);
+        }
+        if(v < 2*nbThreads & mainThreadWaiting)
+        {
+            notify();
+        }
+    }
+
+    public boolean closeAndWait(final long timeoutInSeconds) throws InterruptedException
+    {
+        service.shutdown();
+        return service.awaitTermination(timeoutInSeconds, TimeUnit.SECONDS);
+    }
+
+    public void shutdown()
+    {
+        service.shutdownNow();
+    }
 }

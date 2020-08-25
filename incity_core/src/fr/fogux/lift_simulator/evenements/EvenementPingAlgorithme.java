@@ -26,4 +26,16 @@ public class EvenementPingAlgorithme extends Evenement
     {
     }
 
+    @Override
+    public void reRun(final Simulation simulation)
+    {
+        simulation.getPrgm().ping();
+    }
+
+    @Override
+    public boolean shadowable(final long registeredTime)
+    {
+        return true;
+    }
+
 }

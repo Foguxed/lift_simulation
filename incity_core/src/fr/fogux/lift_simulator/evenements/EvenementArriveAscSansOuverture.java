@@ -18,11 +18,24 @@ public class EvenementArriveAscSansOuverture extends Evenement
     public void simuRun(final Simulation simulation)
     {
         simulation.getImmeubleSimu().getAscenseur(id).arriveSansOuverture();
+        simulation.getPrgm().arretSansOuverture(id);
     }
 
     @Override
     public void visuRun(final AnimationProcess animation)
     {
+    }
+
+    @Override
+    public void reRun(final Simulation simulation)
+    {
+        simulation.getPrgm().arretSansOuverture(id);
+    }
+
+    @Override
+    public boolean shadowable(final long t)
+    {
+        return true;
     }
 
 }

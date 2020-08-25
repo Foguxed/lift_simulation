@@ -7,15 +7,15 @@ import fr.fogux.lift_simulator.population.PersonneSimu;
 public class StandardStatCreator implements SimulationStatCreator<StandardSimulationStat>
 {
 
-	@Override
-	public StandardSimulationStat produceStat(Simulation terminatedSimulation) 
-	{
-		StandardPersStatAccumulator acc = new StandardPersStatAccumulator();
-		for(PersonneSimu p : terminatedSimulation.getPersonneList())
-		{
-			acc.accumulateStat(p);
-		}
-		return acc.getResult();
-	}
+    @Override
+    public StandardSimulationStat produceStat(final Simulation terminatedSimulation)
+    {
+        final StandardPersStatAccumulator acc = new StandardPersStatAccumulator();
+        for(final PersonneSimu p : terminatedSimulation.getPersonneList())
+        {
+            acc.accumulateStat(p);
+        }
+        return new StandardSimulationStat(acc.transportTime, terminatedSimulation.getTime());
+    }
 
 }

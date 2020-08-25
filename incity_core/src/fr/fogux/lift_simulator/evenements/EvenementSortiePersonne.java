@@ -49,4 +49,10 @@ public class EvenementSortiePersonne extends AnimatedEvent
     {
     }
 
+    @Override
+    public void reRun(final Simulation s)
+    {
+        s.getPersonne(personneId).rerunSortieDeAscenseur();
+    }
+
 }

@@ -14,31 +14,35 @@ public class ImmeubleSimu
 
     public final int niveauMin;
 
-    public ImmeubleSimu(final ImmeubleSimu shadowed, Simulation newSimu)
+    public ImmeubleSimu(final ImmeubleSimu shadowed, final Simulation newSimu)
     {
-    	etages = new EtageSimu[shadowed.etages.length];
-    	this.niveauMin = shadowed.niveauMin;
-    	for(int i = 0; i < etages.length; i ++)
-    	{
-    		etages[i] = new EtageSimu(shadowed.etages[i],newSimu);
-    	}
-    	ascenseurs = new ArrayList[shadowed.ascenseurs.length];
-    	for(int i = 0; i < ascenseurs.length; i ++)
-    	{
-    		for(AscenseurSimu asc : shadowed.ascenseurs[i])
-    		{
-        		ascenseurs[i].add(new AscenseurSimu(newSimu, asc));
-    		}
-    	}
-    	for(int i = 0; i < ascenseurs.length; i ++)
-    	{
-    		for(int j = 0; j < ascenseurs[i].size(); j ++)
-    		{
-    			ascenseurs[i].get(j).finalizeShadow(newSimu, shadowed.ascenseurs[i].get(j));
-    		}
-    	}
+        newSimu.setImmeubleSimu(this);
+        etages = new EtageSimu[shadowed.etages.length];
+        niveauMin = shadowed.niveauMin;
+        for(int i = 0; i < etages.length; i ++)
+        {
+            etages[i] = new EtageSimu(shadowed.etages[i],newSimu);
+        }
+        ascenseurs = new ArrayList[shadowed.ascenseurs.length];
+        for(int i = 0; i < ascenseurs.length; i ++)
+        {
+            ascenseurs[i] = new ArrayList<>(shadowed.ascenseurs[i].size());
+            for(final AscenseurSimu asc : shadowed.ascenseurs[i])
+            {
+                ascenseurs[i]
+                    .add
+                    (new AscenseurSimu(newSimu, asc));
+            }
+        }
+        for(int i = 0; i < ascenseurs.length; i ++)
+        {
+            for(int j = 0; j < ascenseurs[i].size(); j ++)
+            {
+                ascenseurs[i].get(j).finalizeShadow(newSimu, shadowed.ascenseurs[i].get(j));
+            }
+        }
     }
-    
+
     public ImmeubleSimu(final Simulation simu)
     {
         final int niveauMax = simu.getConfig().getNiveauMax();

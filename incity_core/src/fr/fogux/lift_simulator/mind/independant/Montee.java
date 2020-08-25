@@ -1,18 +1,21 @@
 package fr.fogux.lift_simulator.mind.independant;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import fr.fogux.lift_simulator.mind.trajets.AlgoMontee;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
 
-public class Montee
+public class Montee<T extends AlgoIndependentAsc> extends AlgoMontee<T>
 {
-    protected final AlgoAscenseur[] ascenseurs;
 
-    protected int indexAttribution = 0;
+    public Montee(final OutputProvider phys, final ConfigSimu config,final int monteeId,final int nbAscenseurs,final IndepAscInstantiator instantiator)
+    {
+        super((List<T>)getAscenseurs(phys,config,monteeId,nbAscenseurs ,instantiator));
+    }
 
-    public Montee(final InterfacePhysique phys, final ConfigSimu config,final int monteeId,final int nbAscenseurs)
+    protected static List<AlgoIndependentAsc> getAscenseurs(final OutputProvider phys, final ConfigSimu config, final int monteeId, final int nbAscenseurs, final IndepAscInstantiator instantiator)
     {
         final VoisinAsc ascBorne = new VoisinAsc()
         {
@@ -37,46 +40,30 @@ public class Montee
             public void setAscenseurSuperieur(final VoisinAsc asc)
             {
             }
-        };
 
-        ascenseurs = new AlgoAscenseur[nbAscenseurs];
+            @Override
+            public int getAtteignableSup()
+            {
+                return config.getNiveauMax()+1;
+            }
+
+            @Override
+            public int getAtteignableInf()
+            {
+                return config.getNiveauMin()-11;
+            }
+        };
+        final List<AlgoIndependentAsc> ascs = new ArrayList<>(nbAscenseurs);
         VoisinAsc ascPrecedent = ascBorne;
         for(int i = 0; i < nbAscenseurs; i ++)
         {
             final AscId id = new AscId(monteeId, i);
-            final AlgoAscenseur asc = new AlgoAscenseur(id, config, phys, ascPrecedent);
+            final AlgoIndependentAsc asc = instantiator.getNewInstance(id, config, phys, ascPrecedent);
             ascPrecedent.setAscenseurSuperieur(asc);
             ascPrecedent = asc;
-            ascenseurs[i] = asc;
+            ascs.add(asc);
         }
         ascPrecedent.setAscenseurSuperieur(ascBorne);
-    }
-
-    public void attribuer(final AlgoPersonne p)
-    {
-    	if(p.depart == 0)
-    	{
-    		ascenseurs[0].attribuer(p);
-    	}
-    	else
-    	{
-    		ascenseurs[indexAttribution].attribuer(p);
-            indexAttribution ++;
-    	}
-        
-        if(indexAttribution == ascenseurs.length)
-        {
-            indexAttribution = 0;
-        }
-    }
-    
-    public List<Integer> invites(final int niveau,final int stackId, final int placesDispo)
-    {
-        return ascenseurs[stackId].getInvites(niveau,placesDispo);
-    }
-    
-    public void escaleTerminee(final int stackId)
-    {
-        ascenseurs[stackId].escaleTerminee();
+        return ascs;
     }
 }

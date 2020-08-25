@@ -1,12 +1,12 @@
 package fr.fogux.lift_simulator.mind;
 
 
+import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
 
 public interface AlgoInstantiator
 {
-    Algorithme getPrgm(InterfacePhysique output, ConfigSimu c);
+    Algorithme getPrgm(OutputProvider output, ConfigSimu c);
 
     String getName();
 }

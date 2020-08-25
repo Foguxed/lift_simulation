@@ -58,7 +58,7 @@ public class GameScreen extends CustomScreen
         consoleFont = AssetsManager.fontGenerator.getNewBitmapFont(40);
         athFont = AssetsManager.fontGenerator.getNewBitmapFont(90);
         errorFont = AssetsManager.fontGenerator.getNewBitmapFont(120, Color.RED);
-        animp.gestioTaches().runExecuting();
+        animp.gestioTaches().init();
         // delMe.setPosition(40, 40);
     }
 
@@ -133,15 +133,15 @@ public class GameScreen extends CustomScreen
 
         while (iterator.hasNext() && hauteur < 1400)
         {
-        	List<String> strs = divideIfToLong(iterator.next(),85);
-        	for(String str : strs)
-        	{
-        		consoleFont.draw(main.getBatch(), str, 20, hauteur);
+            final List<String> strs = divideIfToLong(iterator.next(),85);
+            for(final String str : strs)
+            {
+                consoleFont.draw(main.getBatch(), str, 20, hauteur);
                 hauteur += 45;
-        	}
+            }
         }
 
-        if (displayedError != null)
+        if (displayedError != null && !Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT))
         {
             errorFont.draw(main.getBatch(), displayedError, 100, 800, 1800, Align.left, true);
         }
@@ -149,20 +149,20 @@ public class GameScreen extends CustomScreen
         main.getBatch().end();
 
     }
-    
-    public List<String> divideIfToLong(String str, int caractLimit)
+
+    public List<String> divideIfToLong(final String str, final int caractLimit)
     {
-    	List<String> result = new ArrayList<String>();
-    	int currentVal = 0;
-    	while(currentVal < str.length())
-    	{
-    		result.add(str.substring(currentVal, Math.min(currentVal + caractLimit,str.length())));
-    		Collections.reverse(result);
-    		currentVal += caractLimit;
-    	}
-    	return result;
+        final List<String> result = new ArrayList<>();
+        int currentVal = 0;
+        while(currentVal < str.length())
+        {
+            result.add(str.substring(currentVal, Math.min(currentVal + caractLimit,str.length())));
+            currentVal += caractLimit;
+        }
+        Collections.reverse(result);
+        return result;
     }
-    
+
     @Override
     public void dispose()
     {

@@ -3,43 +3,30 @@ package fr.fogux.lift_simulator.mind.independant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
+import fr.fogux.lift_simulator.mind.trajets.AlgoPersonne;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.physic.InterfacePhysique;
 import fr.fogux.lift_simulator.structure.AscId;
 
-public class AlgoAscenseur implements VoisinAsc
+public class AlgoB2Ascenseur extends AlgoIndependentAsc implements GloutonAsc
 {
     protected final List<Integer> chargementsEtDechargements;
     protected final List<Integer> dechargements;
 
     protected final List<AlgoPersonne> personnesACharger;
 
-    protected VoisinAsc ascenseurSuperieur;
-    protected final VoisinAsc ascenseurInferieur;
-    protected final AscId id;
+    protected static final int monteeSurvey = AlgoIndependentAsc.debugMonteeSurvey;
 
-    protected final ConfigSimu config;
-    protected final InterfacePhysique phys;
-
-    protected boolean busy;
-
-    protected int objectifActuel;
-    
-    protected int monteeSurvey;
-
-    public AlgoAscenseur(final AscId id,final ConfigSimu config, final InterfacePhysique phys, final VoisinAsc ascPrecedent)
+    public AlgoB2Ascenseur(final AscId id,final ConfigSimu config, final OutputProvider phys, final VoisinAsc ascPrecedent)
     {
-        ascenseurInferieur = ascPrecedent;
+        super(id,config,phys,ascPrecedent);
         personnesACharger = new ArrayList<>();
         chargementsEtDechargements = new ArrayList<>();
         dechargements = new ArrayList<>();
-        this.config = config;
-        this.phys = phys;
-        this.id = id;
         busy = false;
-        monteeSurvey = 1;
     }
+
 
     @Override
     public void setAscenseurSuperieur(final VoisinAsc asc)
@@ -47,12 +34,13 @@ public class AlgoAscenseur implements VoisinAsc
         ascenseurSuperieur = asc;
     }
 
+    @Override
     public void attribuer(final AlgoPersonne personne)
     {
-    	if(id.monteeId == monteeSurvey)
-    	{
-    		phys.println("se voit attribue " + this + " ceci " + personne);
-    	}
+        if(id.monteeId == monteeSurvey)
+        {
+            phys().println("se voit attribue " + this + " ceci " + personne);
+        }
         chargementsEtDechargements.add(personne.depart);
         personnesACharger.add(personne);
         Collections.sort(chargementsEtDechargements);
@@ -62,11 +50,13 @@ public class AlgoAscenseur implements VoisinAsc
         }
     }
 
+    @Override
     public List<Integer> getInvites(final int niveau,final int placesDispo)
     {
         return getPersonnesDontLeNiveaEst(niveau, placesDispo);
     }
 
+    @Override
     public void escaleTerminee()
     {
         reflechir();
@@ -78,7 +68,7 @@ public class AlgoAscenseur implements VoisinAsc
         final List<Integer> invitesId = toIds(invitesP);
         if(id.monteeId == monteeSurvey)
         {
-            phys.println("choisiInvites " + this + " invites " + invitesP);
+            phys().println("choisiInvites " + this + " invites " + invitesP);
         }
         for(final AlgoPersonne p : invitesP)
         {
@@ -98,7 +88,7 @@ public class AlgoAscenseur implements VoisinAsc
         Collections.sort(dechargements);
         if(id.monteeId == monteeSurvey)
         {
-            phys.println("resultat de la reflexion " + this);
+            phys().println("resultat de la reflexion " + this);
         }
 
         return invitesId;
@@ -136,52 +126,7 @@ public class AlgoAscenseur implements VoisinAsc
         return dechargements.size() == config.nbPersMaxAscenseur();
     }
 
-    protected void reflechir()
-    {
-
-        Integer prochainArret;
-        if(estPleins())
-        {
-            prochainArret = getPremierNiveauQuiConvient(dechargements);
-        }
-        else
-        {
-            prochainArret = getPremierNiveauQuiConvient(chargementsEtDechargements);
-        }
-
-        if(prochainArret == null)
-        {
-            if(busy)
-            {
-                if(id.monteeId == monteeSurvey)
-                {
-                    phys.println("devient afk " + toString());
-                }
-                busy = false;
-                updateVoisins();
-            }
-            else
-            {
-                if(id.monteeId == monteeSurvey)
-                {
-                    phys.println("reste afk " + toString());
-                }
-                phys.changerDestination(id, ascenseurInferieur.getLimitSup() + 1, false);
-            }
-        }
-        else
-        {
-            if(id.monteeId == monteeSurvey)
-            {
-                phys.println("trouve escale " + this + " dest " + prochainArret);
-            }
-            busy = true;
-            objectifActuel = prochainArret;
-            phys.changerDestination(id, prochainArret, true);
-            updateVoisins();
-        }
-    }
-
+    @Override
     protected void updateVoisins()
     {
         ascenseurSuperieur.updateLimitVoisin(false);
@@ -227,27 +172,35 @@ public class AlgoAscenseur implements VoisinAsc
     }
 
     @Override
-    public void updateLimitVoisin(final boolean isSup)
-    {
-        if(!busy)
-        {
-            reflechir();
-            if(!busy)// il ne s'est donc rien passé
-            {
-                if(isSup)
-                {
-                    ascenseurInferieur.updateLimitVoisin(true);
-                }
-                else
-                {
-                    ascenseurSuperieur.updateLimitVoisin(false);
-                }
-            }
-        }
-    }
-    
     public String toString()
     {
-    	return id + " d:" + dechargements + " cd:" + chargementsEtDechargements;
+        return id + " d:" + dechargements + " cd:" + chargementsEtDechargements;
+    }
+
+    @Override
+    public Integer prochainArret(final Predicate<Integer> filtre)
+    {
+        if(estPleins())
+        {
+            return dechargements.stream().filter(filtre).findFirst().orElse(null);
+        }
+        else
+        {
+            return chargementsEtDechargements.stream().filter(filtre).findFirst().orElse(null);
+        }
+    }
+
+
+    @Override
+    public int evaluer(final AlgoPersonne p)
+    {
+        if(!atteignable(p))
+        {
+            return Integer.MAX_VALUE;
+        }
+        else
+        {
+            return chargementsEtDechargements.size();
+        }
     }
 }

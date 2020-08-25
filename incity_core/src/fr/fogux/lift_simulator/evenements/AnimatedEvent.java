@@ -78,6 +78,12 @@ public abstract class AnimatedEvent extends PrintableEvenement
         }
     }
 
+    @Override
+    public boolean shadowable(final long registeredT)
+    {
+        return !doNotSimuRun(registeredT);
+    }
+
     protected abstract void runAnimation(AnimationProcess animProcess, long timeDebut, long duree);
 
     protected abstract void sortieAnimation(AnimationProcess animProcess);
