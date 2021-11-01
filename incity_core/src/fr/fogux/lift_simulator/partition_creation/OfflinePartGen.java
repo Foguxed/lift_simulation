@@ -13,6 +13,7 @@ public class OfflinePartGen implements PartitionGenerator
     public static final String NAME = "OfflinePartGen";
     protected final ProfileUsingPartGen innerGen;
     protected final int nbPers;
+    protected final ConfigPartitionOffline config;
 
     public OfflinePartGen(final DataTagCompound c)
     {
@@ -21,6 +22,7 @@ public class OfflinePartGen implements PartitionGenerator
 
     public OfflinePartGen(final ConfigPartitionOffline config)
     {
+        this.config = config;
         innerGen = new ProfileUsingPartGen(config);
         nbPers = innerGen.nbPersToMove;
     }
@@ -52,7 +54,7 @@ public class OfflinePartGen implements PartitionGenerator
     @Override
     public ConfigPartitionGen getConfig()
     {
-        return null;
+        return config;
     }
 
 }

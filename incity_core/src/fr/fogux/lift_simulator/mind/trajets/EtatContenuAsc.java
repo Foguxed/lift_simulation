@@ -83,6 +83,12 @@ public class EtatContenuAsc
         return 2*aDelivrer.size() + contenuAsc.size();
     }
 
+    /**
+     * Probablement faux
+     * @param c
+     * @return
+     */
+    @Deprecated
     public long getMinorantTotalTrajetTime(final ConfigSimu c)
     {
         final Map<Integer,Boolean> escalesmap = new HashMap<>();

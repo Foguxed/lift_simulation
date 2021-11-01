@@ -4,29 +4,24 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.batchs.core.MinorableSimulStatCreator;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.AlgoAscCycliqueIndependant;
-import fr.fogux.lift_simulator.mind.independant.AlgoIndep;
-import fr.fogux.lift_simulator.mind.independant.IndepAscInstantiator;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.mind.trajets.AlgoPersonne;
 import fr.fogux.lift_simulator.mind.trajets.Escale;
-import fr.fogux.lift_simulator.mind.trajets.EtatContenuAsc;
 import fr.fogux.lift_simulator.mind.trajets.EtatMonoAsc;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
-import fr.fogux.lift_simulator.utils.OcamlList;
+import fr.fogux.lift_simulator.utils.BOcamlList;
 
 public class TestAlgoIteratif<T extends Comparable<T>> extends Algorithme implements Comparator<Simulation>
 {
 
     protected EtatMonoAsc etat;
 
-    protected OcamlList<Escale> trajet;
+    protected BOcamlList<Escale> trajet;
 
     protected MinorableSimulStatCreator<T> statCreator;
 
@@ -73,42 +68,17 @@ public class TestAlgoIteratif<T extends Comparable<T>> extends Algorithme implem
     {
         final MonoMemoiser<T> mem = new MonoMemoiser<>(this);
         System.out.println("etatinit " + etat);
-        AlgMonoAscIteratif.etatNextSteps(mem, etat, config, new OcamlList<>(), out().simu);
-        //System.out.println(etat.nbSteps() + " " + mem.currentMap());
-        final Simulation refSimu = new Simulation(out().simu,  Simulateur.getIndepInstantiator(IndepAscInstantiator.CYCLIQUE,"cycliqueasref"));
-        (((AlgoIndep<AlgoAscCycliqueIndependant>)refSimu.getPrgm()).montees.get(0).ascenseurs.get(0)).etat = new EtatContenuAsc(this.etat);
-        try
-        {
-            refSimu.initPrgmAndResume();
-        }
-        catch(final SimulateurAcceptableException e)
-        {
-            e.printStackTrace();
-            throw new SimulateurAcceptableException("pb avec la reference");
-        }
-
-
-        final T ref = statCreator.produceStat(refSimu);
-        System.out.println("ref " + ref);
-
+        AlgMonoAscIteratif.etatNextSteps(mem, etat, config, new BOcamlList<>(), out().simu);
         final long ti = System.currentTimeMillis();
         for(int i = 0; i < etat.nbSteps() - 1; i ++)
         {
-            mem.runStep(statCreator,ref);
-            /*for(final Entry<EtatMonoAsc,Simulation> e : mem.map.entrySet())
-            {
-                if((Integer)statCreator.getMinorant(e.getValue(), e.getKey(), config) >  1301821 )//1198644)
-                {
-                    c ++;
-                }
-            }*/
-            System.out.println("restant " + (etat.nbSteps() - i) + " taille " + mem.map.size());
+            mem.runStep();
+            System.out.println(" restant " + (etat.nbSteps() - i) + " taille " + mem.map.size());
 
         }
         System.out.println((System.currentTimeMillis() - ti));
         trajet = ((AlgMonoAscIteratif)mem.currentMap().values().stream().min(this).get().getPrgm()).trajet;
         trajet = trajet.reverse();
-        //System.out.println("le trajet reverse " + trajet);
     }
 
 

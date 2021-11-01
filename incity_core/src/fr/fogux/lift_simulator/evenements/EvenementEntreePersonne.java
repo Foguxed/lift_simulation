@@ -35,10 +35,14 @@ public class EvenementEntreePersonne extends AnimatedEvent
     @Override
     public void simuRun(final Simulation simu)
     {
-        simu.getPersonne(personneId).entrerDansAscenseur(
-            simu.getImmeubleSimu().getAscenseur(ascenseurId));
-        // Utils.msg(this, "ascenseur " + ascenseur);
+
         simu.getPrgm().appelInterieur(simu.getPersonne(personneId).getDestination(), ascenseurId);
+        if(!simu.interrupted())
+        {
+            simu.getPersonne(personneId).entrerDansAscenseur(
+                simu.getImmeubleSimu().getAscenseur(ascenseurId));
+        }
+        // Utils.msg(this, "ascenseur " + ascenseur);
     }
 
     @Override

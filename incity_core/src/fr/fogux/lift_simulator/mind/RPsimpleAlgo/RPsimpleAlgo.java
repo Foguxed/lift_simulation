@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
 
 public class RPsimpleAlgo extends Algorithme

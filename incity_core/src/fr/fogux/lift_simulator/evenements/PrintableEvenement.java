@@ -1,5 +1,7 @@
 package fr.fogux.lift_simulator.evenements;
 
+import java.io.BufferedWriter;
+
 import fr.fogux.lift_simulator.Simulateur;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
@@ -23,12 +25,8 @@ public abstract class PrintableEvenement extends Evenement
     public void print(final Simulation simu)
     {
         final String str = getEventString(simu.getTime());
-
         GestFichiers.printIn(simu.getJournalOutput(),str );
-
-        Simulateur.println(str);
     }
-
 
 
     protected abstract void printFieldsIn(DataTagCompound compound, long atTime);

@@ -36,6 +36,18 @@ public class EtatAsc
         }
     }
 
+    public int etageAtteignablePlusProche()
+    {
+        if(etat == EtatAscenseur.BLOQUE || etat == EtatAscenseur.ARRET)
+        {
+            return (int) positionActuelle;
+        }
+        else
+        {
+            return premierEtageAtteignable;
+        }
+    }
+
     @Override
     public String toString()
     {

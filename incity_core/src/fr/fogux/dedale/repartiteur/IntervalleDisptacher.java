@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -13,40 +14,40 @@ import fr.fogux.dedale.function.Utils;
 public class IntervalleDisptacher<T extends Intervalle>
 {
     protected final double[] stacksMins;
-    protected final List<Set<T>> intervalleStacks = new ArrayList<Set<T>>();
-    
-    public IntervalleDisptacher(List<T> intervallesInput) 
+    protected final List<Set<T>> intervalleStacks = new ArrayList<>();
+
+    public IntervalleDisptacher(final List<T> intervallesInput)
     {
-        List<Double> stackMinsList = new ArrayList<Double>();
+        final List<Double> stackMinsList = new ArrayList<>();
         if(!intervallesInput.isEmpty())
         {
             intervallesInput.sort
-            (    
+            (
                 new Comparator<Intervalle>()
                 {
                     @Override
-                    public int compare(Intervalle o1, Intervalle o2)
+                    public int compare(final Intervalle o1, final Intervalle o2)
                     {
                         return Double.compare(o1.min,o2.min);
                     }
                 }
-            );
-            List<T> intervallesParMax = new ArrayList<T>(intervallesInput);
+                );
+            final List<T> intervallesParMax = new ArrayList<>(intervallesInput);
             intervallesParMax.sort
-            (    
+            (
                 new Comparator<Intervalle>()
                 {
                     @Override
-                    public int compare(Intervalle o1, Intervalle o2)
+                    public int compare(final Intervalle o1, final Intervalle o2)
                     {
                         return Double.compare(o1.max,o2.max);
                     }
                 }
-            );
-            
-            final Collection<T> currentIntervalles = new HashSet<T>();
-            Iterator<T> iteratorParMin = intervallesInput.iterator();
-            Iterator<T> iteratorParMax = intervallesParMax.iterator();
+                );
+
+            final Collection<T> currentIntervalles = new LinkedHashSet<>();
+            final Iterator<T> iteratorParMin = intervallesInput.iterator();
+            final Iterator<T> iteratorParMax = intervallesParMax.iterator();
             double breakDouble;
             T currentMin = iteratorParMin.next();
             T currentMax = iteratorParMax.next();
@@ -68,11 +69,11 @@ public class IntervalleDisptacher<T extends Intervalle>
                     {
                         currentMin = iteratorParMin.next();
                     }
-                    else 
-                	{
-                    	noMoreMins = true;
-                    	break;
-                	}
+                    else
+                    {
+                        noMoreMins = true;
+                        break;
+                    }
                 }
                 while(currentMax.max == breakDouble)
                 {
@@ -83,7 +84,7 @@ public class IntervalleDisptacher<T extends Intervalle>
                     }
                     else break;
                 }
-                intervalleStacks.add(new HashSet<T>(currentIntervalles));
+                intervalleStacks.add(new HashSet<>(currentIntervalles));
                 stackMinsList.add(breakDouble);
             }
         }
@@ -94,18 +95,19 @@ public class IntervalleDisptacher<T extends Intervalle>
         }
     }
     /**
-     * 
+     *
      * @param x
      * @return les intervalles auxquels appartient x
      */
-    
-    public Set<T> getCollectionAt(double x)
+
+    public Set<T> getCollectionAt(final double x)
     {
         return intervalleStacks.get(Utils.rechercheDichotomiqueBornee(stacksMins, x));
     }
-    
+
+    @Override
     public String toString()
     {
-    	return "mins: " + stacksMins + " intervalles " + intervalleStacks.toString();
+        return "mins: " + stacksMins + " intervalles " + intervalleStacks.toString();
     }
 }

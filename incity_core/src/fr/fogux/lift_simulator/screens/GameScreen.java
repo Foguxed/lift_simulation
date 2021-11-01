@@ -253,7 +253,7 @@ public class GameScreen extends CustomScreen
         @Override
         public boolean keyTyped(final char character)
         {
-            System.out.println(character);
+            //System.out.println(character);
             return false;
         }
 
@@ -287,7 +287,6 @@ public class GameScreen extends CustomScreen
         @Override
         public boolean mouseMoved(final int screenX, final int screenY)
         {
-            // TODO Auto-generated method stub
             return false;
         }
     }

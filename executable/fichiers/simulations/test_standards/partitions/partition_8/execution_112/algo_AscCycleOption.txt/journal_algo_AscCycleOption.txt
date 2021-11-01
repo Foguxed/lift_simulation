@@ -1,0 +1,29 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{etage:3,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 shadowed simulation 1,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on valide PersGroup etage 3 dest 4 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:6928,v:0.0,x:3.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:6:928]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:428]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 debutprise places 5 livr {} prochainClient PersGroup etage 3 dest 4 size 1,type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 apresMerge places 4 livr {4=Livr d=4 n=1} basePrises [personne¤p dest = 4 depart = 3 id = 0],type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 debugCompteur 2,type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 resultat [FC eval 0.5573214 v CetP contenu places 4 livr {4=Livr d=4 n=1} pClient null],type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 contenu consumerupdated from places 4 livr {4=Livr d=4 n=1} to places 4 livr {4=Livr d=4 n=1},type:ligneConsole}
+[0:0:0:9:428]{ascStackId:0,persId:0,animDuree:1200,etage:3,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:10:628]{ascStackId:0,persId:0,animDuree:1200,etage:3,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:10:628]{description:0¤p0¤p0¤p10¤p628 debutprise places 4 livr {4=Livr d=4 n=1} prochainClient null,type:ligneConsole}
+[0:0:0:10:628]{description:0¤p0¤p0¤p10¤p628 apresMerge places 4 livr {4=Livr d=4 n=1} basePrises [],type:ligneConsole}
+[0:0:0:10:628]{description:0¤p0¤p0¤p10¤p628 debugCompteur 3,type:ligneConsole}
+[0:0:0:10:628]{description:0¤p0¤p0¤p10¤p628 resultat [FC eval 0.5573214 v CetP contenu places 4 livr {4=Livr d=4 n=1} pClient null],type:ligneConsole}
+[0:0:0:10:628]{description:0¤p0¤p0¤p10¤p628 contenu consumerupdated from places 4 livr {4=Livr d=4 n=1} to places 4 livr {4=Livr d=4 n=1},type:ligneConsole}
+[0:0:0:10:628]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:13:128]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:13:128]{ascStackId:0,newPlannifier:{listeEtapes:{{t:13128,v:0.0,x:3.0},{t:17128,v:0.0,x:4.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:6928,v:0.0,x:3.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:17:128]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:19:628]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:19:628]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:20:828]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:20:828]{description:0¤p0¤p0¤p20¤p828 debutprise places 5 livr {} prochainClient null,type:ligneConsole}
+[0:0:0:20:828]{description:0¤p0¤p0¤p20¤p828 apresMerge places 5 livr {} basePrises [],type:ligneConsole}
+[0:0:0:20:828]{description:getPossibilitesInvites doit renvoyer une liste non vide au moins,type:Erreur}

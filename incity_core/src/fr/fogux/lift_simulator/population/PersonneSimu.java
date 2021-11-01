@@ -18,9 +18,9 @@ public class PersonneSimu extends Personne implements StatCarrier
     protected int etageActuel;
     protected boolean enAttentePalier;
 
-    protected final long timeInput;
-    protected long heureEntreeAscenseur;
-    protected long heureSortieAscenseur;
+    public final long timeInput;
+    public long heureEntreeAscenseur;
+    public long heureSortieAscenseur;
     protected AscId ascenseurUtilise;
 
     public PersonneSimu(final Simulation simu,final int id, final int destination, final int etageActuel)
@@ -122,6 +122,30 @@ public class PersonneSimu extends Personne implements StatCarrier
         else
         {
             return simu.getTime() - timeInput;
+        }
+    }
+
+    public long getTempsTrajet(final long maintenant)
+    {
+        if(maintenant < timeInput)
+        {
+            return 0;
+        }
+        if(livree())
+        {
+            if(maintenant < heureSortieAscenseur)
+            {
+                return maintenant - timeInput;
+            }
+            else
+            {
+                return heureSortieAscenseur - timeInput;
+            }
+
+        }
+        else
+        {
+            return maintenant - timeInput;
         }
     }
 

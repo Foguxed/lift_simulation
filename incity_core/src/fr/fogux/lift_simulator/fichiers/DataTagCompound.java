@@ -62,24 +62,24 @@ public class DataTagCompound
             map.put(lastKey,data.substring(debutSegment, data.length()));
         }
     }
-    
+
     public List<String> keysByAlphabeticalOrder()
     {
-    	List<String> keys = new ArrayList<>(map.keySet());
-    	Collections.sort(keys);
-    	return keys;
+        final List<String> keys = new ArrayList<>(map.keySet());
+        Collections.sort(keys);
+        return keys;
     }
-    
-    public String toValues(String separator, List<String> keys)
+
+    public String toValues(final String separator, final List<String> keys)
     {
-    	String result = "";
-    	for(String str : keys)
-    	{
-    		result += map.get(str) + separator;
-    	}
-    	return result;
+        String result = "";
+        for(final String str : keys)
+        {
+            result += map.get(str) + separator;
+        }
+        return result;
     }
-    
+
     public DataTagCompound copy()
     {
         final DataTagCompound d = new DataTagCompound();
@@ -131,7 +131,7 @@ public class DataTagCompound
     {
         return new DataTagCompound(map.get(key));
     }
-    
+
     /*
      * format {{valeur_compound1},{valeur_compound2}}
      */
@@ -182,12 +182,12 @@ public class DataTagCompound
     {
         return Long.parseLong(map.get(key));
     }
-    
+
     public byte getByte(final String key)
     {
-    	return Byte.parseByte(map.get(key));
+        return Byte.parseByte(map.get(key));
     }
-    
+
     public int getInt(final String key)
     {
         return Integer.parseInt(map.get(key));
@@ -218,9 +218,9 @@ public class DataTagCompound
 
     public double getDouble(final String key)
     {
-    	return Double.valueOf(map.get(key));
+        return Double.valueOf(map.get(key));
     }
-    
+
     public void setCompoundList(final String key, final List<DataTagCompound> list)
     {
         String val = "";
@@ -231,12 +231,12 @@ public class DataTagCompound
         val = val.substring(0, val.length()-1);
         map.put(key, "{" + val + "}");
     }
-    
+
     public void setDouble(final String key, final double val)
     {
-    	map.put(key, String.valueOf(val));
+        map.put(key, String.valueOf(val));
     }
-    
+
     public void setFloat(final String key, final float val)
     {
         map.put(key, String.valueOf(val));
@@ -251,17 +251,17 @@ public class DataTagCompound
     {
         map.put(key, String.valueOf(val));
     }
-    
+
     public void setByte(final String key, final byte val)
     {
-    	map.put(key, String.valueOf(val));
+        map.put(key, String.valueOf(val));
     }
-    
+
     public void setCompound(final String key, final DataTagCompound compound)
     {
-    	map.put(key, compound.getValueAsString());
+        map.put(key, compound.getValueAsString());
     }
-    
+
     public void setString(final String key, String val)
     {
         val = val.replace("¤", "");

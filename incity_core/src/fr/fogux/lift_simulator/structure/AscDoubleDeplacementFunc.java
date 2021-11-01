@@ -36,7 +36,7 @@ public class AscDoubleDeplacementFunc extends AscDeplacementFunc
     
     public static float bonne_sqrt_value(final float a, final float xi, final float xf, final float vi)
     {
-        Simulateur.println("valeur dans sqrt " + (vi*vi/2f + a * (xf-xi)));
+        //Simulateur.println("valeur dans sqrt " + (vi*vi/2f + a * (xf-xi)));
         if(a >= 0)
         {
             return (float)Math.sqrt(vi*vi/2f + a * (xf-xi));

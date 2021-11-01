@@ -13,7 +13,7 @@ public class NomsFichiers
     //dossiers
     public static final String partitions = "partitions";
     public static final String partition = "partition";
-    
+
     public static final String execution = "execution";
     public static final String fichiers = "fichiers";
     public static final String batchs = "batchs";
@@ -22,16 +22,18 @@ public class NomsFichiers
 
     //batchs
     public static final String config_batch = "config_batch";
-    
+
     public static final String graph_batch_config = "graph_batch_config";
-    
+
+    public static final String grad_batch_config = "grad_batch_config";
+
     public static final String fatalError = "fatalError";
     public static final String errors = "errors";
     public static final String erreur = "erreur";
     public static final String err_infos = "err_infos";
-    
+
     public static final String resultats = "resultats";
     public static final String graph = "graph";
-    
+
     public static final String algo = "algo";
 }

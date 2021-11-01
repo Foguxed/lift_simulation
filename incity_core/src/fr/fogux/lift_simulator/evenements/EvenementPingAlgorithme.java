@@ -1,6 +1,7 @@
 package fr.fogux.lift_simulator.evenements;
 
 import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.EventRunPolicy;
 import fr.fogux.lift_simulator.Simulation;
 
 public class EvenementPingAlgorithme extends Evenement
@@ -33,7 +34,7 @@ public class EvenementPingAlgorithme extends Evenement
     }
 
     @Override
-    public boolean shadowable(final long registeredTime)
+    public boolean shadowable(final long registeredTime, EventRunPolicy newPolicy)
     {
         return true;
     }

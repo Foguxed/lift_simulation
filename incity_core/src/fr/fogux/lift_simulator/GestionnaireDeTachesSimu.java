@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 
 import fr.fogux.lift_simulator.evenements.AnimatedEvent;
 import fr.fogux.lift_simulator.evenements.Evenement;
+import fr.fogux.lift_simulator.evenements.EvenementInterruptSimulation;
 import fr.fogux.lift_simulator.evenements.EvenementPersonnesInput;
 import fr.fogux.lift_simulator.evenements.EvenementPingAlgorithme;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
@@ -23,52 +25,88 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
 
     protected long lastInputTime;
 
-    protected PrintPolicy policy;
+    protected EventRunPolicy policy;
 
     protected boolean paused = true;
+    protected boolean interrupted = false;
 
     protected Evenement toRerun;
 
+    public Evenement currentEv;
+
     public long pingTime;
 
-    public GestionnaireDeTachesSimu(final Simulation newSimulation, final GestionnaireDeTachesSimu shadowed)
+    public GestionnaireDeTachesSimu(final Simulation newSimulation, final GestionnaireDeTachesSimu shadowed, final boolean usejournOutput)
+    {
+        this(newSimulation,shadowed,usejournOutput,shadowed.taches.entrySet());
+    }
+
+    public GestionnaireDeTachesSimu(final Simulation newSimulation, final GestionnaireDeTachesSimu shadowed, final boolean usejournOutput, final long dureeMax)
+    {
+        this(newSimulation,shadowed,usejournOutput,shadowed.taches.headMap(shadowed.innerTime() + dureeMax, true).entrySet());
+        new EvenementInterruptSimulation(shadowed.innerTime() + dureeMax).runOn(simu);
+
+    }
+
+    public GestionnaireDeTachesSimu(final Simulation newSimulation, final GestionnaireDeTachesSimu shadowed, final boolean usejournOutput, final Set<Entry<Long,List<Evenement>>> tachesToShadow)
     {
         super(shadowed);
         simu = newSimulation;
         toRerun = shadowed.toRerun;
-        policy = choosePolyci(false);
+
+        policy = choosePolicy(usejournOutput);
         lastInputTime = shadowed.lastInputTime;
         partition = Collections.emptyIterator();
         long time;
-        for(final Entry<Long,List<Evenement>> entry : shadowed.taches.entrySet())
+        for(final Entry<Long,List<Evenement>> entry : tachesToShadow)
         {
             time = entry.getKey();
             for(final Evenement e : entry.getValue())
             {
-                if(e.shadowable(entry.getKey()))
+                if(e.shadowable(entry.getKey(),policy))
                 {
                     putEventInTaches(e,time);
                 }
             }
         }
+        /*
+        if(shadowed.currentEv != null && shadowed.currentEv.shadowable(shadowed.innerTime(), policy))
+        {
+            final List<Evenement> l = taches.get(shadowed.innerTime());
+            if(l != null)
+            {
+                l.add(0,shadowed.currentEv);
+            }
+            else
+            {
+                putEventInTaches(shadowed.currentEv,shadowed.innerTime());
+            }
+        }*/
         //System.out.println("shadowing taches, shadowed " + shadowed.taches + " mestaches " + taches);
         //pingtime depend de l'algo
     }
-
-
 
     public GestionnaireDeTachesSimu(final Simulation simu, final boolean doPrintEvents, final PartitionSimu partition)
     {
         this.simu = simu;
         toRerun = null;
-        policy = choosePolyci(doPrintEvents);
+        policy = choosePolicy(doPrintEvents);
         this.partition = partition.getInputIterator();
     }
 
-    public void pause()
+    public void thenpause()
     {
         paused = true;
     }
+
+    public void interrupt()
+    {
+        interrupted = true;
+        toRerun = currentEv;
+        thenpause();
+    }
+
+
 
     public void executerA(final Evenement tache, final long timeAbsolu)
     {
@@ -106,6 +144,10 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         final List<Evenement> temp = taches.get(registeredTime);
         if (temp == null || !temp.remove(ev))
         {
+            for(final Entry<Long,List<Evenement>> tlist :taches.entrySet())
+            {
+                System.out.println(tlist.getKey() + " " + tlist.getValue());
+            }
             throw new SimulateurException("unable to cancel " + ev + " at registeredTime " + registeredTime + " innerTime " + innerTime + " evenements a registeredTimetime " + temp);
         }
         policy.onCancel(ev, this, registeredTime);
@@ -131,10 +173,20 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
             throw new SimulateurException("GestioTaches should be paused before any resume");
         }
         paused = false;
+        interrupted = false;
         if(toRerun != null)
         {
-            System.out.println("un truc a rerun " + toRerun);
+            currentEv = toRerun;
             toRerun.reRun(simu);
+            currentEv = null;
+            if(paused)
+            {
+                return;
+            }
+            else
+            {
+                toRerun = null;
+            }
         }
         while (!taches.isEmpty())
         {
@@ -149,12 +201,15 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         }
     }
 
+
+
     public void forecastNextPersInput()
     {
         if(partition.hasNext())
         {
             final EvenementPersonnesInput input = partition.next();
             executerA(input,input.getTime());
+            lastInputTime = input.getTime();
         }
         else
         {
@@ -187,14 +242,14 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         //System.out.println("ev execs " + list + " time " + innerTime);
         while (!list.isEmpty())
         {
-            final Evenement e = list.remove(0);
-            policy.onSimuRun(e);// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
+            currentEv = list.remove(0);
+            policy.onSimuRun(currentEv);// attention on ne peut pas faire sur la fin de la liste car le run peut ajouter des events
             if(paused)
             {
-                toRerun = e;
                 break;
             }
         }
+        currentEv = null;
     }
 
     /*
@@ -225,16 +280,22 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
     }
 
 
+    @Override
+    public String toString()
+    {
+        return " toRerun: " + toRerun + " taches: " + taches;
+    }
+
     public int nbRemainingEventsTimes()
     {
         return taches.size();
     }
 
-    private PrintPolicy choosePolyci(final boolean doPrintEvents)
+    private EventRunPolicy choosePolicy(final boolean doPrintEvents)
     {
         if(doPrintEvents)
         {
-            return new PrintPolicy()
+            return new EventRunPolicy()
             {
 
                 @Override
@@ -271,7 +332,7 @@ public class GestionnaireDeTachesSimu extends GestionnaireDeTaches
         }
         else
         {
-            return new PrintPolicy()
+            return new EventRunPolicy()
             {
 
                 @Override

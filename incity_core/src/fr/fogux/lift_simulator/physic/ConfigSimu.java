@@ -22,6 +22,7 @@ public class ConfigSimu extends ConfigImmeuble
 
     protected final float deltaTMaxPolynome;
     protected final float marge_sup_inter_ascenseur;
+    protected Object algodata;
 
 
     public ConfigSimu(final int niveauMin, final int niveauMax, final int[] repartAsc, final float ascenseurSpeed, final float acceleration,
@@ -36,6 +37,16 @@ public class ConfigSimu extends ConfigImmeuble
         this.margeInterAsc = margeInterAsc;
         deltaTMaxPolynome = 2*ascenseurSpeed/acceleration;
         marge_sup_inter_ascenseur = margeSup(margeInterAsc);
+    }
+
+    public final void setAlgoData(final Object algodata)
+    {
+        this.algodata = algodata;
+    }
+
+    public Object getAlgoData()
+    {
+        return algodata;
     }
 
     private static final float margeSup(final float marge)
@@ -116,6 +127,8 @@ public class ConfigSimu extends ConfigImmeuble
     {
         return deltaTMaxPolynome;
     }
+
+
 
     public boolean faitTroisPhases(final float xi, final float vi, final float xf)
     {

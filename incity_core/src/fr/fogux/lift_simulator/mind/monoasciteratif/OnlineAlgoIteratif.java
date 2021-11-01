@@ -9,31 +9,30 @@ import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.batchs.core.MinorableSimulStatCreator;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.AlgoAscCycliqueIndependant;
-import fr.fogux.lift_simulator.mind.independant.AlgoIndep;
-import fr.fogux.lift_simulator.mind.independant.IndepAscInstantiator;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
+import fr.fogux.lift_simulator.mind.algorithmes.AlgoIndep;
+import fr.fogux.lift_simulator.mind.algorithmes.IndepAscInstantiator;
+import fr.fogux.lift_simulator.mind.ascenseurs.AlgoAscCycliqueIndependant;
 import fr.fogux.lift_simulator.mind.trajets.AlgoPersonne;
 import fr.fogux.lift_simulator.mind.trajets.Escale;
 import fr.fogux.lift_simulator.mind.trajets.EtatContenuAsc;
 import fr.fogux.lift_simulator.mind.trajets.EtatMonoAsc;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.EtatAscenseur;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
 import fr.fogux.lift_simulator.structure.EtatAsc;
-import fr.fogux.lift_simulator.utils.OcamlList;
+import fr.fogux.lift_simulator.utils.BOcamlList;
 
+/**
+ * Algorithme de mémoïsation
+ * @param <T>
+ */
 public class OnlineAlgoIteratif<T extends Comparable<T>> extends Algorithme implements Comparator<Simulation>
 {
-
     protected EtatMonoAsc etat;
-
-    protected OcamlList<Escale> trajet;
-
-    protected MinorableSimulStatCreator<T> statCreator;
-
+    protected BOcamlList<Escale> trajet;
+    protected MinorableSimulStatCreator<T> statCreator;//fonction de coût qui peut être appliquée à des simulations qui ont le même état présent mais qui ne sont pas forcément terminées
     public static final AscId monoAscid = new AscId(0, 0);
-
     protected boolean replanificationNecessaire;
 
     public OnlineAlgoIteratif(final OutputProvider output, final ConfigSimu config, final MinorableSimulStatCreator<T> statCreator)
@@ -59,16 +58,14 @@ public class OnlineAlgoIteratif<T extends Comparable<T>> extends Algorithme impl
     @Override
     public void appelExterieur(final int idPersonne, final int niveau, final int destination)
     {
-        //System.out.println(" arrive id " + idPersonne);
         etat.arrive(new AlgoPersonne(idPersonne, niveau, destination));
-        //System.out.println(" masterPRGM quelqu'un est arrivé " + etat);
-        //output.println(" qlq arrive id " + idPersonne + " niv " + niveau + " et " + etat);
         final EtatAsc ascState = out().getEtat(monoAscid);
         if(ascState.etat == EtatAscenseur.BLOQUE)
         {
-            replanificationNecessaire = true;
+            replanificationNecessaire = true;// la replanification peut avoir lieue à la fin du transfert
         }else
         {
+        	// implémentation de type Replanifier
             plannifier();
             goToNextEscale();
         }
@@ -78,50 +75,32 @@ public class OnlineAlgoIteratif<T extends Comparable<T>> extends Algorithme impl
     protected void plannifier()
     {
         final MonoMemoiser<T> mem = new MonoMemoiser<>(this);
-        if(etat.nbSteps() > 20)
+        if(etat.nbSteps() > 20)//10 personnes max (version online)
         {
-            throw new SimulateurAcceptableException(" l'algoIteratif a été surchagé: temps de calcul trop long ");
+            throw new SimulateurAcceptableException(" la mémoïsation a été surchagée: temps de calcul trop long ");
         }
         if(etat.nbSteps() > 0)
         {
-            //System.out.println("resulution avec " + etat.nbSteps() + " etapes");
             final EtatAsc ascState = out().getEtat(monoAscid);
-            //System.out.println("PLANNIFIER etat " + etat + " time " + output.simu.getTime());
-            AlgMonoAscIteratif.etatNextStepsFiltre(mem, etat, config, new OcamlList<>(), out().simu, ascState.filtreAntiDemiTour());
-            //System.out.println(etat.nbSteps() + " " + mem.currentMap());
-            final Simulation refSimu = new Simulation(out().simu,  Simulateur.getIndepInstantiator(IndepAscInstantiator.CYCLIQUE,"cycliqueasref"));
-            (((AlgoIndep<AlgoAscCycliqueIndependant>)refSimu.getPrgm()).montees.get(0).ascenseurs.get(0)).etat = new EtatContenuAsc(this.etat);
-            try
+            AlgMonoAscIteratif.etatNextStepsFiltre(mem, etat, config, new BOcamlList<>(), out().simu, ascState.filtreAntiDemiTour());// initialise la premiere etape dans la memoïsation, on interdit tout de même les demi-tour d'ascenseur
+            for(int i = 0; i < etat.nbSteps() - 1; i ++)// effectue les 2n-1 etapes restantes par mémoïsation
             {
-                refSimu.initPrgmAndResume();
+                mem.runStep();
             }
-            catch(final SimulateurAcceptableException e)
-            {
-                e.printStackTrace();
-                throw new SimulateurAcceptableException("pb avec la reference " + e.getMessage());
-            }
-            final T ref = statCreator.produceStat(refSimu);
-            //System.out.println("ref " + ref);
-            for(int i = 0; i < etat.nbSteps() - 1; i ++)
-            {
-                mem.runStep(statCreator,ref);
-                //System.out.println("taille " + mem.map.size());
-            }
-            trajet = ((AlgMonoAscIteratif)mem.currentMap().values().stream().min(this).get().getPrgm()).trajet.reverse();
+            //mem contient les états à l'étape 2n (toutes les personnes sont livrées)
+            // this est cet objet qui est (entre autre) un comparateur de simulation, d'où le min(this)
+            trajet = ((AlgMonoAscIteratif)mem.currentMap().values().stream().min(this).get().getPrgm()).trajet.reverse();// choisit le trajet effectué par la meilleure simulation
+            
         }
-
     }
 
 
     @Override
     public List<Integer> listeInvites(final AscId idASc, final int places_disponibles, final int niveau)
     {
+    	// suis les instructions du trajet plannifié
         final List<Integer> invites = new ArrayList<>();
-
-        //output.println("trajet " + trajet);
         etat.contenuAsc.removeIf(p -> p.destination == niveau);
-        //System.out.println(" purge etat au niveau " + niveau + " et " + etat);
-        //output.println("purge etat " + etat);
         while(!trajet.isEmpty() && trajet.head.etage == niveau)
         {
             if(trajet.head.invite != null)
@@ -171,5 +150,4 @@ public class OnlineAlgoIteratif<T extends Comparable<T>> extends Algorithme impl
         final T statB = statCreator.produceStat(o2);
         return statA.compareTo(statB);
     }
-
 }

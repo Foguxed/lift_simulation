@@ -18,22 +18,24 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
         return premier == null;
     }
 
-    public void addFin(obj value)
+    public Maillon<obj> addFin(final obj value)
     {
-        final Maillon<obj> nouveauMaillon = new Maillon<obj>(value);
+        final Maillon<obj> nouveauMaillon = new Maillon<>(value);
         if (isEmpty())
         {
             premier = nouveauMaillon;
         } else
         {
             dernier.suivant = nouveauMaillon;
+            nouveauMaillon.precedent = dernier;
         }
         dernier = nouveauMaillon;
+        return nouveauMaillon;
     }
 
-    public void addDebut(obj value)
+    public Maillon<obj> addDebut(final obj value)
     {
-        final Maillon<obj> nouveauMaillon = new Maillon<obj>(value);
+        final Maillon<obj> nouveauMaillon = new Maillon<>(value);
         if (isEmpty())
         {
             dernier = nouveauMaillon;
@@ -43,6 +45,7 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
             nouveauMaillon.suivant = premier;
         }
         premier = nouveauMaillon;
+        return nouveauMaillon;
     }
 
     public void removeFirst()
@@ -55,13 +58,33 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
         dernier = dernier.precedent;
     }
 
-    public void subListToEnd(Maillon<obj> newFirstMaillon)
+    public void remove(final Maillon<obj> m)
+    {
+        if(premier == m)
+        {
+            premier = m.suivant;
+        }
+        if(dernier == m)
+        {
+            dernier = m.precedent;
+        }
+        if(m.getSuivant() != null)
+        {
+            m.getSuivant().precedent = m.getPrecedent();
+        }
+        if(m.getPrecedent() != null)
+        {
+            m.getPrecedent().suivant = m.getSuivant();
+        }
+    }
+
+    public void cutListToEnd(final Maillon<obj> newFirstMaillon)
     {
         newFirstMaillon.precedent = null;
         premier = newFirstMaillon;
     }
 
-    public void subListToStart(Maillon<obj> newLastMaillon)
+    public void cutListToStart(final Maillon<obj> newLastMaillon)
     {
         newLastMaillon.suivant = null;
         dernier = newLastMaillon;
@@ -72,34 +95,34 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
         return premier;
     }
 
-    public void addAll(Iterable<obj> objs)
+    public void addAll(final Iterable<obj> objs)
     {
-
         if (dernier == null)
         {
-            obj ev = objs.iterator().next();
+            final obj ev = objs.iterator().next();
             addFin(ev);
         }
         Maillon<obj> precedent = dernier;
-        for (obj o : objs)
+        for (final obj o : objs)
         {
-            Maillon<obj> maillon = new Maillon<obj>(precedent, o);
+            final Maillon<obj> maillon = new Maillon<>(precedent, o);
             precedent.suivant = maillon;
             precedent = maillon;
         }
         dernier = precedent;
     }
 
+    @Override
     public Iterator<obj> iterator()
     {
-        return new ChainedIterator<obj>(premier);
+        return new ChainedIterator<>(premier);
     }
 
     class ChainedIterator<T extends Object> implements Iterator<T>
     {
         protected Maillon<T> maillon;
 
-        public ChainedIterator(Maillon<T> premier)
+        public ChainedIterator(final Maillon<T> premier)
         {
             this.maillon = premier;
         }
@@ -113,7 +136,7 @@ public class ChainedList<obj extends Object> implements Iterable<obj>
         @Override
         public T next()
         {
-            T val = maillon.getValue();
+            final T val = maillon.getValue();
             maillon = maillon.suivant;
             return val;
         }

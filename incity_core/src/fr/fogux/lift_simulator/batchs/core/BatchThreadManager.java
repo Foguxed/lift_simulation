@@ -25,6 +25,7 @@ public class BatchThreadManager
     private final AtomicInteger nbThreadsAwaiting;
     private int nbThreadDone = 0;
     private boolean mainThreadWaiting;
+    private String shutdownReason = null;
     private final int nbThreads;
 
     public BatchThreadManager(final File dossierErreurs, final long randomSeed, final int nbThreads)
@@ -65,7 +66,7 @@ public class BatchThreadManager
         if(!service.isShutdown())
         {
             e.printStackTrace();
-            shutdown();
+            shutdown("fatal error");
             notify();
         }
     }
@@ -102,7 +103,7 @@ public class BatchThreadManager
         nbThreadDone ++;
         if(nbThreadDone % 1 == 0)
         {
-            System.out.println("taskDone " + nbThreadDone);
+            System.out.println("taskDone " + nbThreadDone + " shutdown " + shutdownReason);
         }
         if(v < 2*nbThreads & mainThreadWaiting)
         {
@@ -116,8 +117,16 @@ public class BatchThreadManager
         return service.awaitTermination(timeoutInSeconds, TimeUnit.SECONDS);
     }
 
-    public void shutdown()
+    public void shutdown(final String reason)
     {
+        if(shutdownReason!= null)
+        {
+            throw new SimulateurException("BatchThreadManager déjà inactif pour la raison suivante " + shutdownReason);
+        }
+        else
+        {
+            shutdownReason = reason;
+        }
         service.shutdownNow();
     }
 }

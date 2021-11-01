@@ -43,8 +43,8 @@ public class TagNames
     public static final String partitionGenType = "partitionGenType";
     public static final String pingTime = "pingTime";
     //EvenementChangementPlannigier
-    public static final String oldPlannifier = "oldPlannifier";
-    public static final String newPlannifier = "newPlannifier";
+    public static final String oldPlanner = "oldPlannifier";
+    public static final String newPlanner = "newPlannifier";
 
     //DepPlannifier
     public static final String listeEtapes = "listeEtapes";

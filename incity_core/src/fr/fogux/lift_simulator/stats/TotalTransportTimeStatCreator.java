@@ -26,7 +26,7 @@ public class TotalTransportTimeStatCreator implements MinorableSimulStatCreator<
     @Override
     public Integer getMinorant(final Simulation simu, final EtatMonoAsc etat,final ConfigSimu c)
     {
-        return produceStat(simu) + (int)etat.getMinorantTotalTrajetTime(c);
+        return produceStat(simu);
     }
 
 }

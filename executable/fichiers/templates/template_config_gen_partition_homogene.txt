@@ -1,0 +1,2 @@
+{nbPersonnesDeplacees:500,duree:1800000,partitionGenType:homogenePartitionGen}
+{repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},niveauMin:-1,niveauMax:10}

@@ -1,0 +1,13 @@
+{acceleration:0.25E-7,dureePortes:2000,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+{completionTime:531828,totalTransportTime:3720555,nbPersonneTransportees:11,failed:false,maxTransportTime:529828}
+{ascStackId:0,heureEntreeAscenseur:350591,heureSortieAscenseur:529828,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:282546,heureSortieAscenseur:486681,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:327503,heureSortieAscenseur:422656,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:309654,heureSortieAscenseur:445744,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:58592,heureSortieAscenseur:109925,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:239209,heureSortieAscenseur:263497,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:221360,heureSortieAscenseur:262297,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:25108,heureSortieAscenseur:155125,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:404807,heureSortieAscenseur:468832,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:264697,heureSortieAscenseur:377699,monteeIdId:0,heureArrivee:0}
+{ascStackId:0,heureEntreeAscenseur:76441,heureSortieAscenseur:198272,monteeIdId:0,heureArrivee:1}

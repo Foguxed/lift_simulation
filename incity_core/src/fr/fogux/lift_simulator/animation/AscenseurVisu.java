@@ -129,12 +129,12 @@ public class AscenseurVisu extends Ascenseur implements PredictedDrawable, Perso
 
     protected float getPosition(final long time)
     {
-        return plannifier.safeGetX(time);
+        return planificateur.safeGetX(time);
     }
 
-    public void changerPlannifierVers(DataTagCompound newP)
+    public void changerPlanifierVers(DataTagCompound newP)
     {
-    	plannifier.acceptCompound(newP);
+    	planificateur.acceptCompound(newP);
     }
     
     @Override

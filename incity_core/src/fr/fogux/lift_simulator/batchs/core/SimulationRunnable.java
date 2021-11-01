@@ -20,96 +20,97 @@ import fr.fogux.lift_simulator.stats.SimulationStat;
 
 public class SimulationRunnable implements Runnable
 {
-	private final BatchThreadManager manager;
-	private final SimulationStatCreator<?> collecter;
-	private final List<AlgoInstantiator> algos;
-	private final ConfigSimu csimu;
-	private final PartitionGenerator partitionGen;
-	private final SimuTaskReceiver<?> tChecker;
-	private final long randomSeed;
-	
-	
-	public <T extends SimulationStat> SimulationRunnable(BatchThreadManager manager,SimulationStatCreator<?> collecter, List<AlgoInstantiator> algos, ConfigSimu configSimu, PartitionGenerator partitionGen, SimuTaskReceiver<?> taskCompletionChecker, long randomSeed) 
-	{
-		this.manager = manager;
-		this.algos = algos;
-		this.collecter = collecter;
-		this.partitionGen = partitionGen;
-		this.csimu = configSimu;
-		this.randomSeed = randomSeed;
-		this.tChecker = taskCompletionChecker;
-	}
-	
-	@Override
-	public void run() 
-	{
-		try
-		{
-			innerRun();
-		}
-		catch(Exception e)
-		{
-			manager.registerFatalException(e);
-		}
-	}
-	
-	private void innerRun()
-	{
-		final Random r = new Random(randomSeed);
-		PartitionSimu ps = partitionGen.generer(r);
-		List<Object> stats = new ArrayList<>();
-		boolean failed = false;
-		for(AlgoInstantiator a : algos)
-		{
-			try
-			{
-				Simulation s = new Simulation(a, csimu, ps);
-				s.start();
-				stats.add(collecter.produceStat(s));
-			}
-			catch(Exception e)
-			{
-				failed = true;
-				try 
-				{
-					File dossierErreur = manager.getNewErrorDirectory(a);
-					File f = GestFichiers.getErrorInfosFile(dossierErreur);
-					GestFichiers.writeErrorLogs(e, f);
-					exportSimulationState(dossierErreur, partitionGen.generer(new Random(randomSeed)));
-				} 
-				catch (Exception efatal) 
-				{
-					manager.registerFatalException(efatal);
-				}
-				
-				if(e instanceof SimulateurAcceptableException)
-				{
-					manager.registerException();
-				}
-				else
-				{
-					manager.registerFatalException(e);
-				}
-			}
-		}
-		if(failed)
-		{
-			tChecker.taskFailed();
-		}
-		else
-		{
-			tChecker.uncheckedTaskCompleted(stats);
-		}
-		manager.decrementThreadsAwaiting();
-	}
-	
-	private void exportSimulationState(File f, PartitionSimu pSimu) throws IOException
-	{
-		GestFichiers.writeConfigSimu(csimu, f);
-		File dossierPartition = GestFichiers.createNewPartitionDossier(f);
-		File partition = new File(dossierPartition,NomsFichiers.partition + NomsFichiers.extension);
-		GestFichiers.writePartition(new FichierPartition(FichierPartitionConfig.fromConfig(partitionGen.getConfig()), pSimu), partition);
-	
-	}
-	
+    private final BatchThreadManager manager;
+    private final SimulationStatCreator<?> collecter;
+    private final List<AlgoInstantiator> algos;
+    private final ConfigSimu csimu;
+    private final PartitionGenerator partitionGen;
+    private final SimuTaskReceiver<?> tChecker;
+    private final long randomSeed;
+
+
+    public <T extends SimulationStat> SimulationRunnable(final BatchThreadManager manager,final SimulationStatCreator<?> collecter, final List<AlgoInstantiator> algos, final ConfigSimu configSimu, final PartitionGenerator partitionGen, final SimuTaskReceiver<?> taskCompletionChecker, final long randomSeed)
+    {
+        this.manager = manager;
+        this.algos = algos;
+        this.collecter = collecter;
+        this.partitionGen = partitionGen;
+        csimu = configSimu;
+        this.randomSeed = randomSeed;
+        tChecker = taskCompletionChecker;
+    }
+
+    @Override
+    public void run()
+    {
+        try
+        {
+            innerRun();
+        }
+        catch(final Exception e)
+        {
+            manager.registerFatalException(e);
+        }
+    }
+
+    private void innerRun()
+    {
+        final Random r = new Random(randomSeed);
+        final PartitionSimu ps = partitionGen.generer(r);
+        final List<Object> stats = new ArrayList<>();
+        boolean failed = false;
+        for(final AlgoInstantiator a : algos)
+        {
+            try
+            {
+                final Simulation s = new Simulation(a, csimu, ps);
+                s.start();
+                stats.add(collecter.produceStat(s));
+            }
+            catch(final Exception e)
+            {
+                failed = true;
+                try
+                {
+                    final File dossierErreur = manager.getNewErrorDirectory(a);
+                    final File f = GestFichiers.getErrorInfosFile(dossierErreur);
+                    GestFichiers.writeErrorLogs(e, f);
+                    exportSimulationState(dossierErreur, partitionGen.generer(new Random(randomSeed)));
+                }
+                catch (final Exception efatal)
+                {
+                    manager.registerFatalException(efatal);
+                }
+
+                if(e instanceof SimulateurAcceptableException)
+                {
+                    manager.registerException();
+                }
+                else
+                {
+                    manager.registerFatalException(e);
+                }
+            }
+        }
+        if(failed)
+        {
+            tChecker.taskFailed();
+        }
+        else
+        {
+            tChecker.uncheckedTaskCompleted(stats);
+        }
+        manager.decrementThreadsAwaiting();
+    }
+
+    private void exportSimulationState(final File f, final PartitionSimu pSimu) throws IOException
+    {
+        GestFichiers.writeConfigSimu(csimu, f);
+        final File dossierPartition = GestFichiers.createNewPartitionDossier(f);
+        final File partition = new File(dossierPartition,NomsFichiers.partition + NomsFichiers.extension);
+        System.out.println("pgenconfig " + partitionGen.getConfig());
+        GestFichiers.writePartition(new FichierPartition(FichierPartitionConfig.fromConfig(partitionGen.getConfig()), pSimu), partition);
+
+    }
+
 }

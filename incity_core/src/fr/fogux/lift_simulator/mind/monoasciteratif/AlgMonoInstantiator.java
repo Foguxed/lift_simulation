@@ -2,12 +2,12 @@ package fr.fogux.lift_simulator.mind.monoasciteratif;
 
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.mind.trajets.AlgoPersonne;
 import fr.fogux.lift_simulator.mind.trajets.Escale;
 import fr.fogux.lift_simulator.mind.trajets.EtatMonoAsc;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
-import fr.fogux.lift_simulator.utils.OcamlList;
+import fr.fogux.lift_simulator.physic.OutputProvider;
+import fr.fogux.lift_simulator.utils.BOcamlList;
 
 public class AlgMonoInstantiator implements AlgoInstantiator
 {
@@ -15,10 +15,10 @@ public class AlgMonoInstantiator implements AlgoInstantiator
     protected final MonoMemoiser memoiser;
     protected final AlgoPersonne p;
     protected final boolean estRecup;
-    protected final OcamlList<Escale> trajet;
+    protected final BOcamlList<Escale> trajet;
 
 
-    public AlgMonoInstantiator(final EtatMonoAsc etat, final MonoMemoiser memoiser, final AlgoPersonne p, final boolean estRecuperation, final OcamlList<Escale> trajet)
+    public AlgMonoInstantiator(final EtatMonoAsc etat, final MonoMemoiser memoiser, final AlgoPersonne p, final boolean estRecuperation, final BOcamlList<Escale> trajet)
     {
         this.etat = etat;
         this.memoiser = memoiser;

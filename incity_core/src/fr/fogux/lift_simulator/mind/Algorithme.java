@@ -2,11 +2,14 @@ package fr.fogux.lift_simulator.mind;
 
 import java.util.List;
 
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
 
+/**
+ * les algorithmes doivent extend cette classe et implémener les méthodes abstract définies ci-dessous
+ */
 public abstract class Algorithme
 {
 
@@ -19,34 +22,37 @@ public abstract class Algorithme
         this.config = config;
     }
 
+    /**
+     * 
+     * @return l'interface physique avec laquelle doit dialoguer l'algorithme
+     */
     public InterfacePhysique out()
     {
         return output.out();
     }
 
     /**
-     *
-     * @return la config
+     * @return la configuration de la simulation
      */
     public ConfigSimu config()
     {
         return config;
     }
-
+    
     /**
-     * Ne pas utiliser pour un algorithme efficace en temps de calcul
-     * appellé tout les SimuConfig.pingTime, voir TagNames.pingTime
+     * appellé si demandé par l'algorithme à l'aide de init() ou de InterfacePhysique.registerPing
      */
     public abstract void ping();
 
     /**
-     *
-     * @return ping delay time value , <0 if no ping required
+     * permet d'initialiser le programme si nécessaire
+     * @return le temps entre chaque ping, -1 si non nécessaire
      */
     public abstract long init();
 
     /**
      * appelé lorsque quelqu'un arrive dans l'immeuble
+     * @param idPersonne
      * @param niveau
      * @param destination
      */
@@ -55,16 +61,15 @@ public abstract class Algorithme
     /**
      * Appellé lorsque les portes de l'ascenseur s'ouvrent à un étage ou lorsque le transfert
      * est terminé pour demander à l'algorithme si il y a de nouvelles personnes à inviter
-     * liste entreront dans l'ascenseur
      * @param idASc
      * @param places_disponibles
      * @param niveau
-     * @return une liste qui ne compte pas plus de places que de places disponibles, sera copiée
+     * @return la liste des ids des personnes invitées dans l'ascenseur
      */
     public abstract List<Integer> listeInvites(AscId idASc, int places_disponibles, int niveau);
 
     /**
-     * Appellé lorsque l'ascenseur s' arrête à un étage pour lequel l'algorithme n'avais pas demandé
+     * Appellé lorsque l'ascenseur s'arrête à un étage pour lequel l'algorithme n'avais pas demandé
      *  d'ouverture (paramètre booléen dans InterfacePhysique.deplacerAscenseur)
      * @param idAscenseur
      */
@@ -73,7 +78,7 @@ public abstract class Algorithme
     /**
      * appelé lorsque les portes de l'ascenseur se sont fermées
      *
-     * @param niveau      auquel l'actio a lieue
+     * @param niveau      auquel l'action a lieue
      * @param idAscenseur de l'ascenseur ouvert
      */
     public abstract void finDeTransfertDePersonnes(AscId idAscenseur, int niveau);

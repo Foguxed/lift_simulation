@@ -3,8 +3,8 @@ package fr.fogux.lift_simulator.mind;
 import java.lang.reflect.InvocationTargetException;
 
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 
 public class BasicAlgoInstantiator implements AlgoInstantiator
 {
@@ -27,7 +27,6 @@ public class BasicAlgoInstantiator implements AlgoInstantiator
         catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
             | NoSuchMethodException | SecurityException e)
         {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         throw new SimulateurException("l'algorithme " + name + " doit admettre un constructeur de forme (InterfacePhysique output, ConfigSimu c)");

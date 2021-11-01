@@ -1,0 +1,11 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 reste afk ascId ¤p[0¤v0] d¤p,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 reste afk ascId ¤p[0¤v1] d¤p,type:ligneConsole}
+[0:0:0:2:641]{etage:36,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:2:641]{description:0¤p0¤p0¤p2¤p641 reste afk ascId ¤p[0¤v0] d¤p,type:ligneConsole}
+[0:0:0:2:641]{description:0¤p0¤p0¤p2¤p641 etage choisi 36,type:ligneConsole}
+[0:0:0:2:641]{description:0¤p0¤p0¤p2¤p641 trouve escale ascId ¤p[0¤v1] d¤p dest 36,type:ligneConsole}
+[0:0:0:2:641]{ascStackId:1,newPlannifier:{listeEtapes:{{t:2641,v:0.0,x:1.0},{t:31974,v:0.0,x:36.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:0}
+[0:0:0:2:641]{description:0¤p0¤p0¤p2¤p641 reste afk ascId ¤p[0¤v0] d¤p,type:ligneConsole}
+[0:0:0:4:825]{etage:11,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:4:825]{description:pb bestInsert Toutes les personnes n'ont pas etees livrees exemple¤pid 1 destination 5 waiting true,type:Erreur}

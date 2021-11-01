@@ -1,0 +1,3 @@
+/** config immeuble avec variateurs
+/** config partition avec variateurs (sans l'immeuble)
+/** config simu avec variateurs (sans l'immeuble)

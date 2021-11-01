@@ -1,0 +1,6 @@
+{acceleration:1.2000001E-6,dureePortes:2000,ascenseurSpeed:0.005,capaciteAsc:5,pingTime:5000,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:-1,niveauMax:10}
+[0:0:0:0:771]{etage:0,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:7:150]{etage:1,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:14:484]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:14:484]{description:0¤p0¤p0¤p14¤p484 shadowed simulation 3,type:ligneConsole}
+[0:0:0:14:484]{description:FATAL SIMU ERROR¤p class java.lang.NullPointerException msg null,type:Erreur}

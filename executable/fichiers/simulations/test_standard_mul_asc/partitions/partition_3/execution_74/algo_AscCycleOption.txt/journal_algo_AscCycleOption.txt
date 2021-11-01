@@ -1,0 +1,187 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{etage:19,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] exec ascId ¤p[0¤v0] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] exec ascId ¤p[0¤v0] choisit 19 debugV 0,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v1] exec ascId ¤p[0¤v1] choisit null debugV 1,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:18666,v:0.0,x:20.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:0}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:18666,v:0.0,x:19.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v1] exec ascId ¤p[0¤v1] choisit null debugV 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v0] exec ascId ¤p[1¤v0] choisit null debugV 3,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] choisit null debugV 4,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] choisit null debugV 5,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 6,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit null debugV 7,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 8,type:ligneConsole}
+[0:0:0:0:0]{etage:12,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v1] exec ascId ¤p[0¤v1] choisit null debugV 37,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v0] exec ascId ¤p[1¤v0] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v0] exec ascId ¤p[1¤v0] choisit 12 debugV 38,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] choisit null debugV 39,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:14000,v:0.0,x:13.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:1}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:14000,v:0.0,x:12.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:1}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] choisit null debugV 40,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] choisit null debugV 41,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 42,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit null debugV 43,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 44,type:ligneConsole}
+[0:0:0:0:0]{etage:27,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v1] exec ascId ¤p[0¤v1] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v1] exec ascId ¤p[0¤v1] choisit 27 debugV 64,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:23333,v:0.0,x:27.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:18666,v:0.0,x:20.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] choisit null debugV 65,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] choisit null debugV 66,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 67,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit null debugV 68,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 69,type:ligneConsole}
+[0:0:0:0:0]{etage:20,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[1¤v1] exec ascId ¤p[1¤v1] choisit 20 debugV 91,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:18666,v:0.0,x:20.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:14000,v:0.0,x:13.0,softDepType:2}}},monteeIdId:1}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] choisit null debugV 92,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 93,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit null debugV 94,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 95,type:ligneConsole}
+[0:0:0:0:0]{etage:25,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v0] exec ascId ¤p[2¤v0] choisit 25 debugV 120,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 121,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:22666,v:0.0,x:26.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:2}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:22666,v:0.0,x:25.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:2}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 122,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit null debugV 123,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 124,type:ligneConsole}
+[0:0:0:0:0]{etage:11,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 155,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v0] exec ascId ¤p[3¤v0] choisit 11 debugV 156,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 157,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:13333,v:0.0,x:12.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:3}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:13333,v:0.0,x:11.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:3}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit null debugV 158,type:ligneConsole}
+[0:0:0:0:0]{etage:1,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:24,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit null debugV 250,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[3¤v1] exec ascId ¤p[3¤v1] choisit 24 debugV 251,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:21333,v:0.0,x:24.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:13333,v:0.0,x:12.0,softDepType:2}}},monteeIdId:3}
+[0:0:0:0:0]{etage:21,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:5,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:15,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:37,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:21,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:2,destination:7,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] monte  true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[2¤v1] exec ascId ¤p[2¤v1] choisit 37 debugV 1224,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:1,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:30000,v:0.0,x:37.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0},{t:22666,v:0.0,x:26.0,softDepType:2}}},monteeIdId:2}
+[0:0:0:0:0]{etage:6,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:18,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:28,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:12,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:3,destination:16,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:3,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:7,destination:25,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:9,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:31,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:26,destination:35,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:19,destination:37,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:35,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:38,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:19,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:6,destination:16,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:6,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:19,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:38,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:14,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:26,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:34,destination:33,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:23,destination:35,nbPersonnes:2,type:persInput}
+[0:0:0:0:2]{etage:4,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:1,destination:29,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:24,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:32,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:19,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:7,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:28,destination:16,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:25,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:5,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:7,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:21,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:34,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:24,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:11,destination:6,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:3,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:27,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:28,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:7,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:9,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:9,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:12,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:10,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:19,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:32,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:2,destination:25,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:32,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:17,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:32,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:19,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:16,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:13,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:32,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:17,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:17,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:4,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:1,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:1,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:1,destination:7,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:26,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:19,destination:37,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:34,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:19,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:17,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:3,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:21,destination:25,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:6,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:15,destination:29,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:8,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:35,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:38,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:2,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:30,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:26,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:7,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:35,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:6,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:34,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:18,destination:30,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:3,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:21,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:7,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:38,destination:34,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:3,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:19,destination:27,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:2,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:3,destination:37,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:35,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:3,destination:7,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:13,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:18,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:37,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:7,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:33,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:0,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:27,destination:10,nbPersonnes:2,type:persInput}
+[0:0:0:0:6]{etage:11,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:18,destination:27,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:18,destination:37,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:18,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:29,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:28,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{description:FATAL SIMULATION ERRORclass java.lang.RuntimeException jamais utilise,type:Erreur}

@@ -1,0 +1,15 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:1]{etage:36,destination:31,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 on change de structure,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 on valide PersGroup etage 36 dest 31 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 ascId ¤p[0¤v0] exec choix decide par ascId ¤p[0¤v0] d'aller en 36,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 ascId ¤p[0¤v1] exec choix decide par ascId ¤p[0¤v1] d'aller en null,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 ascId ¤p[0¤v1] exec  choix attente par ascId ¤p[0¤v1],type:ligneConsole}
+[0:0:0:0:1]{ascStackId:1,newPlannifier:{listeEtapes:{{t:1,v:0.0,x:1.0},{t:30001,v:0.0,x:37.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:0}
+[0:0:0:0:1]{ascStackId:0,newPlannifier:{listeEtapes:{{t:1,v:0.0,x:0.0},{t:30001,v:0.0,x:36.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 ascId ¤p[0¤v1] exec choix decide par ascId ¤p[0¤v1] d'aller en null,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 ascId ¤p[0¤v1] exec  choix attente par ascId ¤p[0¤v1],type:ligneConsole}
+[0:0:0:0:2]{etage:21,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{description:0¤p0¤p0¤p0¤p2 on change de structure,type:ligneConsole}
+[0:0:0:0:2]{description:0¤p0¤p0¤p0¤p2 ascId ¤p[0¤v1] exec choix decide par ascId ¤p[0¤v0] d'aller en 36,type:ligneConsole}
+[0:0:0:0:2]{description:ascId ¤p[0¤v1] mauvaise destination 36,type:Erreur}

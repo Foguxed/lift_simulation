@@ -1,0 +1,738 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{etage:3,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on change de structure,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on valide PersGroup etage 3 dest 4 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:6928,v:0.0,x:3.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:1]{etage:28,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:12,destination:34,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:31,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:36,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:2]{etage:14,destination:25,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:7,destination:29,nbPersonnes:1,type:persInput}
+[0:0:0:0:3]{etage:33,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:26,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:0:4]{etage:21,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:3,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:23,destination:16,nbPersonnes:1,type:persInput}
+[0:0:0:0:5]{etage:24,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:35,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:27,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:16,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:6]{etage:28,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:7]{etage:38,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:7]{etage:14,destination:29,nbPersonnes:1,type:persInput}
+[0:0:0:0:7]{etage:38,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:8]{etage:27,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:8]{etage:7,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:0:8]{etage:6,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:8]{etage:37,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:9]{etage:24,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:0:12]{etage:15,destination:25,nbPersonnes:1,type:persInput}
+[0:0:0:0:12]{etage:3,destination:27,nbPersonnes:1,type:persInput}
+[0:0:0:0:15]{etage:29,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:16]{etage:8,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:0:17]{etage:24,destination:7,nbPersonnes:1,type:persInput}
+[0:0:0:0:18]{etage:12,destination:21,nbPersonnes:1,type:persInput}
+[0:0:0:0:18]{etage:8,destination:34,nbPersonnes:1,type:persInput}
+[0:0:0:0:18]{etage:29,destination:30,nbPersonnes:2,type:persInput}
+[0:0:0:0:18]{etage:29,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:0:18]{etage:15,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:0:20]{etage:37,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:20]{etage:36,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:20]{etage:12,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:20]{etage:37,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:6:928]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:428]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 debugCompteur 1911,type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 resultat [FC eval 1.7693391 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.7693391 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.3074617 v CetP contenu places 3 livr {4=Livr d=4 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 0.18670887 v CetP contenu places 4 livr {4=Livr d=4 n=1} pClient null¤v FC eval 0.99367094 v CetP contenu places 3 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1} pClient null],type:ligneConsole}
+[0:0:0:9:428]{description:0¤p0¤p0¤p9¤p428 contenu consumerupdated from places 5 livr {} to places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1},type:ligneConsole}
+[0:0:0:9:428]{ascStackId:0,persId:0,animDuree:1200,etage:3,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:10:628]{ascStackId:0,persId:0,animDuree:1200,etage:3,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:10:628]{ascStackId:0,persId:10,animDuree:1200,etage:3,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:11:828]{ascStackId:0,persId:10,animDuree:1200,etage:3,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:11:828]{ascStackId:0,persId:26,animDuree:1200,etage:3,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:13:28]{ascStackId:0,persId:26,animDuree:1200,etage:3,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:13:28]{description:0¤p0¤p0¤p13¤p28 debugCompteur 1912,type:ligneConsole}
+[0:0:0:13:28]{description:0¤p0¤p0¤p13¤p28 resultat [FC eval 1.7693391 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1} pClient null],type:ligneConsole}
+[0:0:0:13:28]{description:0¤p0¤p0¤p13¤p28 contenu consumerupdated from places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1} to places 2 livr {4=Livr d=4 n=1¤v 15=Livr d=15 n=1¤v 27=Livr d=27 n=1},type:ligneConsole}
+[0:0:0:13:28]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:15:528]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:15:528]{ascStackId:0,newPlannifier:{listeEtapes:{{t:15528,v:0.0,x:3.0},{t:19528,v:0.0,x:4.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:6928,v:0.0,x:3.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:19:528]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:22:28]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:22:28]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:23:228]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:23:228]{description:0¤p0¤p0¤p23¤p228 debugCompteur 1913,type:ligneConsole}
+[0:0:0:23:228]{description:0¤p0¤p0¤p23¤p228 resultat [FC eval 2.2798495 v CetP contenu places 3 livr {15=Livr d=15 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.5727228 v CetP contenu places 3 livr {15=Livr d=15 n=1¤v 27=Livr d=27 n=1} pClient PersGroup etage 6 dest 10 size 1],type:ligneConsole}
+[0:0:0:23:228]{description:0¤p0¤p0¤p23¤p228 contenu consumerupdated from places 3 livr {15=Livr d=15 n=1¤v 27=Livr d=27 n=1} to places 3 livr {15=Livr d=15 n=1¤v 27=Livr d=27 n=1},type:ligneConsole}
+[0:0:0:23:228]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:728]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:728]{ascStackId:0,newPlannifier:{listeEtapes:{{t:25728,v:0.0,x:4.0},{t:39061,v:0.0,x:15.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:15528,v:0.0,x:3.0},{t:19528,v:0.0,x:4.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:39:61]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:41:561]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:41:561]{persId:10,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:42:761]{persId:10,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:42:761]{description:0¤p0¤p0¤p42¤p761 debugCompteur 1914,type:ligneConsole}
+[0:0:0:42:761]{description:0¤p0¤p0¤p42¤p761 resultat [FC eval 0.96719193 v CetP contenu places 2 livr {11=Livr d=11 n=1¤v 25=Livr d=25 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.681597 v CetP contenu places 3 livr {25=Livr d=25 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 0.75708264 v CetP contenu places 3 livr {11=Livr d=11 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 0.96719193 v CetP contenu places 2 livr {11=Livr d=11 n=1¤v 25=Livr d=25 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.5669554 v CetP contenu places 4 livr {27=Livr d=27 n=1} pClient null],type:ligneConsole}
+[0:0:0:42:761]{description:0¤p0¤p0¤p42¤p761 contenu consumerupdated from places 4 livr {27=Livr d=27 n=1} to places 3 livr {25=Livr d=25 n=1¤v 27=Livr d=27 n=1},type:ligneConsole}
+[0:0:0:42:761]{ascStackId:0,persId:25,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:43:961]{ascStackId:0,persId:25,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:43:961]{description:0¤p0¤p0¤p43¤p961 debugCompteur 1915,type:ligneConsole}
+[0:0:0:43:961]{description:0¤p0¤p0¤p43¤p961 resultat [FC eval 0.96719193 v CetP contenu places 2 livr {11=Livr d=11 n=1¤v 25=Livr d=25 n=1¤v 27=Livr d=27 n=1} pClient null¤v FC eval 1.681597 v CetP contenu places 3 livr {25=Livr d=25 n=1¤v 27=Livr d=27 n=1} pClient null],type:ligneConsole}
+[0:0:0:43:961]{description:0¤p0¤p0¤p43¤p961 contenu consumerupdated from places 3 livr {25=Livr d=25 n=1¤v 27=Livr d=27 n=1} to places 3 livr {25=Livr d=25 n=1¤v 27=Livr d=27 n=1},type:ligneConsole}
+[0:0:0:43:961]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:461]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:461]{ascStackId:0,newPlannifier:{listeEtapes:{{t:46461,v:0.0,x:15.0},{t:59127,v:0.0,x:25.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:25728,v:0.0,x:4.0},{t:39061,v:0.0,x:15.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:59:127]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:627]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:627]{persId:25,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:2:827]{persId:25,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:2:827]{description:0¤p0¤p1¤p2¤p827 debugCompteur 1916,type:ligneConsole}
+[0:0:1:2:827]{description:0¤p0¤p1¤p2¤p827 resultat [FC eval 0.55133617 v CetP contenu places 4 livr {27=Livr d=27 n=1} pClient null],type:ligneConsole}
+[0:0:1:2:827]{description:0¤p0¤p1¤p2¤p827 contenu consumerupdated from places 4 livr {27=Livr d=27 n=1} to places 4 livr {27=Livr d=27 n=1},type:ligneConsole}
+[0:0:1:2:827]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:5:327]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:5:327]{ascStackId:0,newPlannifier:{listeEtapes:{{t:65327,v:0.0,x:25.0},{t:70983,v:0.0,x:27.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:46461,v:0.0,x:15.0},{t:59127,v:0.0,x:25.0,softDepType:2}}},monteeIdId:0}
+[0:0:1:10:983]{ascStackId:0,animDuree:2500,etage:27,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:13:483]{ascStackId:0,animDuree:2500,etage:27,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:13:483]{persId:26,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:14:683]{persId:26,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:14:683]{description:0¤p0¤p1¤p14¤p683 debugCompteur 1917,type:ligneConsole}
+[0:0:1:14:683]{description:0¤p0¤p1¤p14¤p683 resultat [FC eval 2.228232 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient null¤v FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 1.1004493 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 2.228232 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient null¤v FC eval 1.3591636 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 0.93131363 v CetP contenu places 4 livr {9=Livr d=9 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 1.8084189 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 1.8084189 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 1.0754431 v CetP contenu places 4 livr {9=Livr d=9 n=1} pClient null¤v FC eval 1.5315446 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 1.8130478 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient null¤v FC eval 1.1476794 v CetP contenu places 4 livr {9=Livr d=9 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 1.5315446 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 0.35026065 v CetP contenu places 5 livr {} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 0.6549874 v CetP contenu places 5 livr {} pClient PersGroup etage 38 dest 32 size 1],type:ligneConsole}
+[0:0:1:14:683]{description:0¤p0¤p1¤p14¤p683 contenu consumerupdated from places 5 livr {} to places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1},type:ligneConsole}
+[0:0:1:14:683]{ascStackId:0,persId:20,animDuree:1200,etage:27,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:15:883]{ascStackId:0,persId:20,animDuree:1200,etage:27,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:15:883]{ascStackId:0,persId:14,animDuree:1200,etage:27,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:17:83]{ascStackId:0,persId:14,animDuree:1200,etage:27,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:17:83]{description:0¤p0¤p1¤p17¤p83 debugCompteur 1918,type:ligneConsole}
+[0:0:1:17:83]{description:0¤p0¤p1¤p17¤p83 resultat [FC eval 2.228232 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient null¤v FC eval 1.5315446 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 1.8084189 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient PersGroup etage 29 dest 30 size 2],type:ligneConsole}
+[0:0:1:17:83]{description:0¤p0¤p1¤p17¤p83 contenu consumerupdated from places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1} to places 3 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1},type:ligneConsole}
+[0:0:1:17:83]{ascStackId:0,animDuree:2500,etage:27,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:19:583]{ascStackId:0,animDuree:2500,etage:27,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:19:583]{ascStackId:0,newPlannifier:{listeEtapes:{{t:79583,v:0.0,x:27.0},{t:97583,v:0.0,x:9.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:65327,v:0.0,x:25.0},{t:70983,v:0.0,x:27.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:37:583]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:40:83]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:40:83]{persId:14,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:41:283]{persId:14,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:41:283]{description:0¤p0¤p1¤p41¤p283 debugCompteur 1919,type:ligneConsole}
+[0:0:1:41:283]{description:0¤p0¤p1¤p41¤p283 resultat [FC eval 0.3101266 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient null],type:ligneConsole}
+[0:0:1:41:283]{description:0¤p0¤p1¤p41¤p283 contenu consumerupdated from places 4 livr {8=Livr d=8 n=1} to places 4 livr {8=Livr d=8 n=1},type:ligneConsole}
+[0:0:1:41:283]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:43:783]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:43:783]{ascStackId:0,newPlannifier:{listeEtapes:{{t:103783,v:0.0,x:9.0},{t:107783,v:0.0,x:8.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:79583,v:0.0,x:27.0},{t:97583,v:0.0,x:9.0,softDepType:-2}}},monteeIdId:0}
+[0:0:1:47:783]{ascStackId:0,animDuree:2500,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:50:283]{ascStackId:0,animDuree:2500,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:50:283]{persId:20,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:51:483]{persId:20,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:51:483]{description:0¤p0¤p1¤p51¤p483 debugCompteur 1920,type:ligneConsole}
+[0:0:1:51:483]{description:0¤p0¤p1¤p51¤p483 resultat [FC eval 1.9145571 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 1.5719093 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 1.4308863 v CetP contenu places 4 livr {26=Livr d=26 n=1} pClient null¤v FC eval 0.9715894 v CetP contenu places 4 livr {26=Livr d=26 n=1} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.3481013 v CetP contenu places 5 livr {} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 0.9754282 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 1.1768317 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient null¤v FC eval 1.0592788 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 1.4404192 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 1.5719093 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 1.9145571 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 1.4404192 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 0.9325876 v CetP contenu places 4 livr {26=Livr d=26 n=1} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 0.25718543 v CetP contenu places 5 livr {} pClient PersGroup etage 7 dest 5 size 1],type:ligneConsole}
+[0:0:1:51:483]{description:0¤p0¤p1¤p51¤p483 contenu consumerupdated from places 5 livr {} to places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:1:51:483]{ascStackId:0,persId:28,animDuree:1200,etage:8,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:52:683]{ascStackId:0,persId:28,animDuree:1200,etage:8,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:52:683]{ascStackId:0,persId:31,animDuree:1200,etage:8,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:53:883]{ascStackId:0,persId:31,animDuree:1200,etage:8,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:53:883]{description:0¤p0¤p1¤p53¤p883 debugCompteur 1921,type:ligneConsole}
+[0:0:1:53:883]{description:0¤p0¤p1¤p53¤p883 resultat [FC eval 1.9145571 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 1.4404192 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 6 dest 10 size 1¤v FC eval 1.5719093 v CetP contenu places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 7 dest 5 size 1],type:ligneConsole}
+[0:0:1:53:883]{description:0¤p0¤p1¤p53¤p883 contenu consumerupdated from places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1} to places 3 livr {26=Livr d=26 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:1:53:883]{ascStackId:0,animDuree:2500,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:56:383]{ascStackId:0,animDuree:2500,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:56:383]{ascStackId:0,newPlannifier:{listeEtapes:{{t:116383,v:0.0,x:8.0},{t:134383,v:0.0,x:26.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:103783,v:0.0,x:9.0},{t:107783,v:0.0,x:8.0,softDepType:-1}}},monteeIdId:0}
+[0:0:2:14:383]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:16:883]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:16:883]{persId:28,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:18:83]{persId:28,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:18:83]{description:0¤p0¤p2¤p18¤p83 debugCompteur 1922,type:ligneConsole}
+[0:0:2:18:83]{description:0¤p0¤p2¤p18¤p83 resultat [FC eval 0.89044094 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 0.7294672 v CetP contenu places 3 livr {13=Livr d=13 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.8821009 v CetP contenu places 3 livr {13=Livr d=13 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 29 dest 30 size 2¤v FC eval 0.79662454 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient null],type:ligneConsole}
+[0:0:2:18:83]{description:0¤p0¤p2¤p18¤p83 contenu consumerupdated from places 4 livr {34=Livr d=34 n=1} to places 4 livr {34=Livr d=34 n=1},type:ligneConsole}
+[0:0:2:18:83]{description:0¤p0¤p2¤p18¤p83 on valide PersGroup etage 29 dest 30 size 2 quantite 2 contenu places 4 livr {34=Livr d=34 n=1},type:ligneConsole}
+[0:0:2:18:83]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:20:583]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:20:583]{ascStackId:0,newPlannifier:{listeEtapes:{{t:140583,v:0.0,x:26.0},{t:147511,v:0.0,x:29.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:116383,v:0.0,x:8.0},{t:134383,v:0.0,x:26.0,softDepType:2}}},monteeIdId:0}
+[0:0:2:27:511]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:30:11]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:30:11]{description:0¤p0¤p2¤p30¤p11 debugCompteur 1923,type:ligneConsole}
+[0:0:2:30:11]{description:0¤p0¤p2¤p30¤p11 resultat [FC eval 0.5502998 v CetP contenu places 2 livr {30=Livr d=30 n=2¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.77670884 v CetP contenu places 1 livr {10=Livr d=10 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.94337106 v CetP contenu places 0 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.94337106 v CetP contenu places 0 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.61932695 v CetP contenu places 1 livr {19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1} pClient null],type:ligneConsole}
+[0:0:2:30:11]{description:0¤p0¤p2¤p30¤p11 contenu consumerupdated from places 4 livr {34=Livr d=34 n=1} to places 0 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:2:30:11]{ascStackId:0,persId:32,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:31:211]{ascStackId:0,persId:32,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:31:211]{ascStackId:0,persId:33,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:32:411]{ascStackId:0,persId:33,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:32:411]{ascStackId:0,persId:27,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:33:611]{ascStackId:0,persId:27,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:33:611]{ascStackId:0,persId:34,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:34:811]{ascStackId:0,persId:34,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:34:811]{description:0¤p0¤p2¤p34¤p811 debugCompteur 1924,type:ligneConsole}
+[0:0:2:34:811]{description:0¤p0¤p2¤p34¤p811 contenu consumerupdated from places 0 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1} to places 0 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 30=Livr d=30 n=2¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:2:34:811]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:37:311]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:37:311]{ascStackId:0,newPlannifier:{listeEtapes:{{t:157311,v:0.0,x:29.0},{t:161311,v:0.0,x:30.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:140583,v:0.0,x:26.0},{t:147511,v:0.0,x:29.0,softDepType:1}}},monteeIdId:0}
+[0:0:2:41:311]{ascStackId:0,animDuree:2500,etage:30,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:43:811]{ascStackId:0,animDuree:2500,etage:30,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:43:811]{persId:32,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:45:11]{persId:32,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:45:11]{persId:33,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:46:211]{persId:33,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:46:211]{description:0¤p0¤p2¤p46¤p211 debugCompteur 1925,type:ligneConsole}
+[0:0:2:46:211]{description:0¤p0¤p2¤p46¤p211 resultat [FC eval 0.9099458 v CetP contenu places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 31 dest 32 size 1¤v FC eval 1.0669079 v CetP contenu places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 34=Livr d=34 n=1} pClient null],type:ligneConsole}
+[0:0:2:46:211]{description:0¤p0¤p2¤p46¤p211 contenu consumerupdated from places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 34=Livr d=34 n=1} to places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:2:46:211]{ascStackId:0,animDuree:2500,etage:30,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:48:711]{ascStackId:0,animDuree:2500,etage:30,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:48:711]{ascStackId:0,newPlannifier:{listeEtapes:{{t:168711,v:0.0,x:30.0},{t:176711,v:0.0,x:34.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:157311,v:0.0,x:29.0},{t:161311,v:0.0,x:30.0,softDepType:1}}},monteeIdId:0}
+[0:0:2:56:711]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:59:211]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:59:211]{persId:31,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:0:411]{persId:31,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:0:411]{description:0¤p0¤p3¤p0¤p411 debugCompteur 1926,type:ligneConsole}
+[0:0:3:0:411]{description:0¤p0¤p3¤p0¤p411 resultat [FC eval 1.6395571 v CetP contenu places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1} pClient PersGroup etage 38 dest 32 size 1¤v FC eval 1.532978 v CetP contenu places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1} pClient null],type:ligneConsole}
+[0:0:3:0:411]{description:0¤p0¤p3¤p0¤p411 contenu consumerupdated from places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1} to places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:3:0:411]{description:0¤p0¤p3¤p0¤p411 on valide PersGroup etage 38 dest 32 size 1 quantite 1 contenu places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:3:0:411]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:2:911]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:2:911]{ascStackId:0,newPlannifier:{listeEtapes:{{t:182911,v:0.0,x:34.0},{t:190911,v:0.0,x:38.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:168711,v:0.0,x:30.0},{t:176711,v:0.0,x:34.0,softDepType:1}}},monteeIdId:0}
+[0:0:3:10:911]{ascStackId:0,animDuree:2500,etage:38,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:13:411]{ascStackId:0,animDuree:2500,etage:38,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:13:411]{description:0¤p0¤p3¤p13¤p411 debugCompteur 1927,type:ligneConsole}
+[0:0:3:13:411]{description:0¤p0¤p3¤p13¤p411 resultat [FC eval 4.8140216 v CetP contenu places 1 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 23=Livr d=23 n=1¤v 32=Livr d=32 n=1} pClient PersGroup etage 37 dest 2 size 1¤v FC eval 4.8805566 v CetP contenu places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient PersGroup etage 37 dest 2 size 1¤v FC eval 3.927215 v CetP contenu places 1 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 23=Livr d=23 n=1¤v 32=Livr d=32 n=1} pClient null¤v FC eval 3.2312064 v CetP contenu places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient null],type:ligneConsole}
+[0:0:3:13:411]{description:0¤p0¤p3¤p13¤p411 contenu consumerupdated from places 3 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1} to places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:13:411]{description:0¤p0¤p3¤p13¤p411 on valide PersGroup etage 37 dest 2 size 1 quantite 1 contenu places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:13:411]{ascStackId:0,persId:19,animDuree:1200,etage:38,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:14:611]{ascStackId:0,persId:19,animDuree:1200,etage:38,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:14:611]{ascStackId:0,animDuree:2500,etage:38,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:111]{ascStackId:0,animDuree:2500,etage:38,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:111]{ascStackId:0,newPlannifier:{listeEtapes:{{t:197111,v:0.0,x:38.0},{t:201111,v:0.0,x:37.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:182911,v:0.0,x:34.0},{t:190911,v:0.0,x:38.0,softDepType:1}}},monteeIdId:0}
+[0:0:3:21:111]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:23:611]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:23:611]{description:0¤p0¤p3¤p23¤p611 debugCompteur 1929,type:ligneConsole}
+[0:0:3:23:611]{description:0¤p0¤p3¤p23¤p611 resultat [FC eval 3.290564 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient PersGroup etage 36 dest 12 size 2¤v FC eval 2.5179024 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 4=Livr d=4 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient null¤v FC eval 2.4112117 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 9=Livr d=9 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient null¤v FC eval 2.0152702 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} pClient null],type:ligneConsole}
+[0:0:3:23:611]{description:0¤p0¤p3¤p23¤p611 contenu consumerupdated from places 2 livr {10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} to places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:23:611]{description:0¤p0¤p3¤p23¤p611 on valide PersGroup etage 36 dest 12 size 2 quantite 1 contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:23:611]{ascStackId:0,persId:39,animDuree:1200,etage:37,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:24:811]{ascStackId:0,persId:39,animDuree:1200,etage:37,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:24:811]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:27:311]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:27:311]{ascStackId:0,newPlannifier:{listeEtapes:{{t:207311,v:0.0,x:37.0},{t:211311,v:0.0,x:36.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:197111,v:0.0,x:38.0},{t:201111,v:0.0,x:37.0,softDepType:-1}}},monteeIdId:0}
+[0:0:3:31:311]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:33:811]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:33:811]{description:0¤p0¤p3¤p33¤p811 debugCompteur 1931,type:ligneConsole}
+[0:0:3:33:811]{description:0¤p0¤p3¤p33¤p811 contenu consumerupdated from places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} to places 0 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:33:811]{ascStackId:0,persId:4,animDuree:1200,etage:36,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:35:11]{ascStackId:0,persId:4,animDuree:1200,etage:36,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:35:11]{description:0¤p0¤p3¤p35¤p11 debugCompteur 1932,type:ligneConsole}
+[0:0:3:35:11]{description:0¤p0¤p3¤p35¤p11 contenu consumerupdated from places 0 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1} to places 0 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1¤v 32=Livr d=32 n=1},type:ligneConsole}
+[0:0:3:35:11]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:37:511]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:37:511]{ascStackId:0,newPlannifier:{listeEtapes:{{t:217511,v:0.0,x:36.0},{t:225511,v:0.0,x:32.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:207311,v:0.0,x:37.0},{t:211311,v:0.0,x:36.0,softDepType:-1}}},monteeIdId:0}
+[0:0:3:45:511]{ascStackId:0,animDuree:2500,etage:32,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:48:11]{ascStackId:0,animDuree:2500,etage:32,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:48:11]{persId:19,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:49:211]{persId:19,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:49:211]{description:0¤p0¤p3¤p49¤p211 debugCompteur 1933,type:ligneConsole}
+[0:0:3:49:211]{description:0¤p0¤p3¤p49¤p211 resultat [FC eval 2.731613 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1} pClient null¤v FC eval 2.9105136 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1} pClient PersGroup etage 28 dest 3 size 1],type:ligneConsole}
+[0:0:3:49:211]{description:0¤p0¤p3¤p49¤p211 contenu consumerupdated from places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1} to places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:3:49:211]{description:0¤p0¤p3¤p49¤p211 on valide PersGroup etage 28 dest 3 size 1 quantite 1 contenu places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:3:49:211]{ascStackId:0,animDuree:2500,etage:32,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:51:711]{ascStackId:0,animDuree:2500,etage:32,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:51:711]{ascStackId:0,newPlannifier:{listeEtapes:{{t:231711,v:0.0,x:32.0},{t:239711,v:0.0,x:28.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:217511,v:0.0,x:36.0},{t:225511,v:0.0,x:32.0,softDepType:-1}}},monteeIdId:0}
+[0:0:3:59:711]{ascStackId:0,animDuree:2500,etage:28,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:2:211]{ascStackId:0,animDuree:2500,etage:28,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:2:211]{description:0¤p0¤p4¤p2¤p211 debugCompteur 1934,type:ligneConsole}
+[0:0:4:2:211]{description:0¤p0¤p4¤p2¤p211 contenu consumerupdated from places 1 livr {2=Livr d=2 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1} to places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:4:2:211]{ascStackId:0,persId:1,animDuree:1200,etage:28,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:3:411]{ascStackId:0,persId:1,animDuree:1200,etage:28,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:3:411]{description:0¤p0¤p4¤p3¤p411 debugCompteur 1935,type:ligneConsole}
+[0:0:4:3:411]{description:0¤p0¤p4¤p3¤p411 contenu consumerupdated from places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1} to places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 19=Livr d=19 n=1},type:ligneConsole}
+[0:0:4:3:411]{ascStackId:0,animDuree:2500,etage:28,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:5:911]{ascStackId:0,animDuree:2500,etage:28,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:5:911]{ascStackId:0,newPlannifier:{listeEtapes:{{t:245911,v:0.0,x:28.0},{t:257911,v:0.0,x:19.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:231711,v:0.0,x:32.0},{t:239711,v:0.0,x:28.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:17:911]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:20:411]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:20:411]{persId:34,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:21:611]{persId:34,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:21:611]{description:0¤p0¤p4¤p21¤p611 debugCompteur 1936,type:ligneConsole}
+[0:0:4:21:611]{description:0¤p0¤p4¤p21¤p611 resultat [FC eval 2.029606 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1} pClient null¤v FC eval 1.9249269 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1} pClient PersGroup etage 16 dest 12 size 1],type:ligneConsole}
+[0:0:4:21:611]{description:0¤p0¤p4¤p21¤p611 contenu consumerupdated from places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1} to places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 12=Livr d=12 n=1},type:ligneConsole}
+[0:0:4:21:611]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:24:111]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:24:111]{ascStackId:0,newPlannifier:{listeEtapes:{{t:264111,v:0.0,x:19.0},{t:274694,v:0.0,x:12.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:245911,v:0.0,x:28.0},{t:257911,v:0.0,x:19.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:34:694]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:37:194]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:37:194]{persId:4,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:38:394]{persId:4,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:38:394]{description:0¤p0¤p4¤p38¤p394 debugCompteur 1937,type:ligneConsole}
+[0:0:4:38:394]{description:0¤p0¤p4¤p38¤p394 resultat [FC eval 1.0753905 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.9513069 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 15=Livr d=15 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.9175407 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 1.0118417 v CetP contenu places 2 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1} pClient null¤v FC eval 0.7609829 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 15=Livr d=15 n=1} pClient null¤v FC eval 1.0753905 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.9513069 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 15=Livr d=15 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.85109925 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1} pClient null¤v FC eval 0.87199366 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 15=Livr d=15 n=1¤v 21=Livr d=21 n=1} pClient null¤v FC eval 0.87199366 v CetP contenu places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 15=Livr d=15 n=1¤v 21=Livr d=21 n=1} pClient null],type:ligneConsole}
+[0:0:4:38:394]{description:0¤p0¤p4¤p38¤p394 contenu consumerupdated from places 2 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1} to places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:4:38:394]{ascStackId:0,persId:30,animDuree:1200,etage:12,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:39:594]{ascStackId:0,persId:30,animDuree:1200,etage:12,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:39:594]{ascStackId:0,persId:2,animDuree:1200,etage:12,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:40:794]{ascStackId:0,persId:2,animDuree:1200,etage:12,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:40:794]{description:0¤p0¤p4¤p40¤p794 debugCompteur 1938,type:ligneConsole}
+[0:0:4:40:794]{description:0¤p0¤p4¤p40¤p794 contenu consumerupdated from places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} to places 0 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 10=Livr d=10 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:4:40:794]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:43:294]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:43:294]{ascStackId:0,newPlannifier:{listeEtapes:{{t:283294,v:0.0,x:12.0},{t:288950,v:0.0,x:10.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:264111,v:0.0,x:19.0},{t:274694,v:0.0,x:12.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:48:950]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:51:450]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:51:450]{persId:27,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:52:650]{persId:27,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:52:650]{description:0¤p0¤p4¤p52¤p650 debugCompteur 1939,type:ligneConsole}
+[0:0:4:52:650]{description:0¤p0¤p4¤p52¤p650 resultat [FC eval 1.1037358 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 1.1890357 v CetP contenu places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient null],type:ligneConsole}
+[0:0:4:52:650]{description:0¤p0¤p4¤p52¤p650 contenu consumerupdated from places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} to places 1 livr {2=Livr d=2 n=1¤v 3=Livr d=3 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:4:52:650]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:55:150]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:55:150]{ascStackId:0,newPlannifier:{listeEtapes:{{t:295150,v:0.0,x:10.0},{t:305733,v:0.0,x:3.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:283294,v:0.0,x:12.0},{t:288950,v:0.0,x:10.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:5:733]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:8:233]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:8:233]{persId:1,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:9:433]{persId:1,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:9:433]{description:0¤p0¤p5¤p9¤p433 debugCompteur 1940,type:ligneConsole}
+[0:0:5:9:433]{description:0¤p0¤p5¤p9¤p433 resultat [FC eval 1.5353962 v CetP contenu places 2 livr {2=Livr d=2 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient null],type:ligneConsole}
+[0:0:5:9:433]{description:0¤p0¤p5¤p9¤p433 contenu consumerupdated from places 2 livr {2=Livr d=2 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1} to places 2 livr {2=Livr d=2 n=1¤v 21=Livr d=21 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:5:9:433]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:11:933]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:11:933]{ascStackId:0,newPlannifier:{listeEtapes:{{t:311933,v:0.0,x:3.0},{t:315933,v:0.0,x:2.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:295150,v:0.0,x:10.0},{t:305733,v:0.0,x:3.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:15:933]{ascStackId:0,animDuree:2500,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:18:433]{ascStackId:0,animDuree:2500,etage:2,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:18:433]{persId:39,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:19:633]{persId:39,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:19:633]{description:0¤p0¤p5¤p19¤p633 debugCompteur 1941,type:ligneConsole}
+[0:0:5:19:633]{description:0¤p0¤p5¤p19¤p633 resultat [FC eval 1.9296918 v CetP contenu places 3 livr {21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 1.5954642 v CetP contenu places 3 livr {21=Livr d=21 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 6 dest 10 size 1],type:ligneConsole}
+[0:0:5:19:633]{description:0¤p0¤p5¤p19¤p633 contenu consumerupdated from places 3 livr {21=Livr d=21 n=1¤v 34=Livr d=34 n=1} to places 3 livr {21=Livr d=21 n=1¤v 34=Livr d=34 n=1},type:ligneConsole}
+[0:0:5:19:633]{ascStackId:0,animDuree:2500,etage:2,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:22:133]{ascStackId:0,animDuree:2500,etage:2,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:22:133]{ascStackId:0,newPlannifier:{listeEtapes:{{t:322133,v:0.0,x:2.0},{t:340799,v:0.0,x:21.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:311933,v:0.0,x:3.0},{t:315933,v:0.0,x:2.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:40:799]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:43:299]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:43:299]{persId:30,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:44:499]{persId:30,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:44:499]{description:0¤p0¤p5¤p44¤p499 debugCompteur 1942,type:ligneConsole}
+[0:0:5:44:499]{description:0¤p0¤p5¤p44¤p499 resultat [FC eval 0.68279976 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient PersGroup etage 31 dest 32 size 1¤v FC eval 0.7983414 v CetP contenu places 3 livr {3=Livr d=3 n=1¤v 34=Livr d=34 n=1} pClient null¤v FC eval 0.97088605 v CetP contenu places 4 livr {34=Livr d=34 n=1} pClient null¤v FC eval 0.718706 v CetP contenu places 3 livr {3=Livr d=3 n=1¤v 34=Livr d=34 n=1} pClient PersGroup etage 31 dest 32 size 1],type:ligneConsole}
+[0:0:5:44:499]{description:0¤p0¤p5¤p44¤p499 contenu consumerupdated from places 4 livr {34=Livr d=34 n=1} to places 4 livr {34=Livr d=34 n=1},type:ligneConsole}
+[0:0:5:44:499]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:46:999]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:46:999]{ascStackId:0,newPlannifier:{listeEtapes:{{t:346999,v:0.0,x:21.0},{t:361665,v:0.0,x:34.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:322133,v:0.0,x:2.0},{t:340799,v:0.0,x:21.0,softDepType:2}}},monteeIdId:0}
+[0:0:6:1:665]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:4:165]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:4:165]{persId:2,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:5:365]{persId:2,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:5:365]{description:0¤p0¤p6¤p5¤p365 debugCompteur 1943,type:ligneConsole}
+[0:0:6:5:365]{description:0¤p0¤p6¤p5¤p365 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 1.0155351 v CetP contenu places 5 livr {} pClient PersGroup etage 38 dest 23 size 1],type:ligneConsole}
+[0:0:6:5:365]{description:0¤p0¤p6¤p5¤p365 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:6:5:365]{description:0¤p0¤p6¤p5¤p365 on valide PersGroup etage 38 dest 23 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:6:5:365]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:7:865]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:7:865]{ascStackId:0,newPlannifier:{listeEtapes:{{t:367865,v:0.0,x:34.0},{t:375865,v:0.0,x:38.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:346999,v:0.0,x:21.0},{t:361665,v:0.0,x:34.0,softDepType:2}}},monteeIdId:0}
+[0:0:6:15:865]{ascStackId:0,animDuree:2500,etage:38,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:18:365]{ascStackId:0,animDuree:2500,etage:38,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:18:365]{description:0¤p0¤p6¤p18¤p365 debugCompteur 1944,type:ligneConsole}
+[0:0:6:18:365]{description:0¤p0¤p6¤p18¤p365 resultat [FC eval 3.8156965 v CetP contenu places 4 livr {23=Livr d=23 n=1} pClient PersGroup etage 37 dest 4 size 1¤v FC eval 2.7100117 v CetP contenu places 4 livr {23=Livr d=23 n=1} pClient null],type:ligneConsole}
+[0:0:6:18:365]{description:0¤p0¤p6¤p18¤p365 contenu consumerupdated from places 5 livr {} to places 4 livr {23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:18:365]{description:0¤p0¤p6¤p18¤p365 on valide PersGroup etage 37 dest 4 size 1 quantite 1 contenu places 4 livr {23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:18:365]{ascStackId:0,persId:17,animDuree:1200,etage:38,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:19:565]{ascStackId:0,persId:17,animDuree:1200,etage:38,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:19:565]{ascStackId:0,animDuree:2500,etage:38,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:22:65]{ascStackId:0,animDuree:2500,etage:38,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:22:65]{ascStackId:0,newPlannifier:{listeEtapes:{{t:382065,v:0.0,x:38.0},{t:386065,v:0.0,x:37.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:367865,v:0.0,x:34.0},{t:375865,v:0.0,x:38.0,softDepType:1}}},monteeIdId:0}
+[0:0:6:26:65]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:28:565]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:28:565]{description:0¤p0¤p6¤p28¤p565 debugCompteur 1946,type:ligneConsole}
+[0:0:6:28:565]{description:0¤p0¤p6¤p28¤p565 resultat [FC eval 2.6058452 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 23=Livr d=23 n=1} pClient PersGroup etage 36 dest 12 size 1¤v FC eval 1.7405064 v CetP contenu places 3 livr {4=Livr d=4 n=1¤v 23=Livr d=23 n=1} pClient null¤v FC eval 2.1694853 v CetP contenu places 3 livr {4=Livr d=4 n=1¤v 23=Livr d=23 n=1} pClient PersGroup etage 36 dest 12 size 1¤v FC eval 2.3030941 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 23=Livr d=23 n=1} pClient null],type:ligneConsole}
+[0:0:6:28:565]{description:0¤p0¤p6¤p28¤p565 contenu consumerupdated from places 4 livr {23=Livr d=23 n=1} to places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:28:565]{description:0¤p0¤p6¤p28¤p565 on valide PersGroup etage 36 dest 12 size 1 quantite 1 contenu places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:28:565]{ascStackId:0,persId:36,animDuree:1200,etage:37,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:29:765]{ascStackId:0,persId:36,animDuree:1200,etage:37,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:29:765]{ascStackId:0,persId:23,animDuree:1200,etage:37,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:30:965]{ascStackId:0,persId:23,animDuree:1200,etage:37,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:30:965]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:33:465]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:33:465]{ascStackId:0,newPlannifier:{listeEtapes:{{t:393465,v:0.0,x:37.0},{t:397465,v:0.0,x:36.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:382065,v:0.0,x:38.0},{t:386065,v:0.0,x:37.0,softDepType:-1}}},monteeIdId:0}
+[0:0:6:37:465]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:39:965]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:39:965]{description:0¤p0¤p6¤p39¤p965 debugCompteur 1948,type:ligneConsole}
+[0:0:6:39:965]{description:0¤p0¤p6¤p39¤p965 resultat [FC eval 2.7848103 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1} pClient null¤v FC eval 2.63428 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1} pClient PersGroup etage 35 dest 19 size 1],type:ligneConsole}
+[0:0:6:39:965]{description:0¤p0¤p6¤p39¤p965 contenu consumerupdated from places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 23=Livr d=23 n=1} to places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:39:965]{ascStackId:0,persId:37,animDuree:1200,etage:36,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:41:165]{ascStackId:0,persId:37,animDuree:1200,etage:36,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:41:165]{description:0¤p0¤p6¤p41¤p165 debugCompteur 1949,type:ligneConsole}
+[0:0:6:41:165]{description:0¤p0¤p6¤p41¤p165 resultat [FC eval 2.63428 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1} pClient PersGroup etage 35 dest 19 size 1¤v FC eval 2.7848103 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1} pClient null],type:ligneConsole}
+[0:0:6:41:165]{description:0¤p0¤p6¤p41¤p165 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1} to places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 23=Livr d=23 n=1},type:ligneConsole}
+[0:0:6:41:165]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:43:665]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:43:665]{ascStackId:0,newPlannifier:{listeEtapes:{{t:403665,v:0.0,x:36.0},{t:418331,v:0.0,x:23.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:393465,v:0.0,x:37.0},{t:397465,v:0.0,x:36.0,softDepType:-1}}},monteeIdId:0}
+[0:0:6:58:331]{ascStackId:0,animDuree:2500,etage:23,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:0:831]{ascStackId:0,animDuree:2500,etage:23,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:0:831]{persId:17,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:2:31]{persId:17,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:2:31]{description:0¤p0¤p7¤p2¤p31 debugCompteur 1950,type:ligneConsole}
+[0:0:7:2:31]{description:0¤p0¤p7¤p2¤p31 resultat [FC eval 1.9063752 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1} pClient PersGroup etage 21 dest 3 size 1¤v FC eval 1.8240508 v CetP contenu places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1} pClient null¤v FC eval 1.8886346 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1} pClient null¤v FC eval 1.9370152 v CetP contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1} pClient PersGroup etage 21 dest 3 size 1],type:ligneConsole}
+[0:0:7:2:31]{description:0¤p0¤p7¤p2¤p31 contenu consumerupdated from places 2 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1} to places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1},type:ligneConsole}
+[0:0:7:2:31]{description:0¤p0¤p7¤p2¤p31 on valide PersGroup etage 21 dest 3 size 1 quantite 1 contenu places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1},type:ligneConsole}
+[0:0:7:2:31]{ascStackId:0,persId:11,animDuree:1200,etage:23,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:3:231]{ascStackId:0,persId:11,animDuree:1200,etage:23,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:3:231]{ascStackId:0,animDuree:2500,etage:23,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:5:731]{ascStackId:0,animDuree:2500,etage:23,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:5:731]{ascStackId:0,newPlannifier:{listeEtapes:{{t:425731,v:0.0,x:23.0},{t:431387,v:0.0,x:21.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:403665,v:0.0,x:36.0},{t:418331,v:0.0,x:23.0,softDepType:-2}}},monteeIdId:0}
+[0:0:7:11:387]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:13:887]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:13:887]{description:0¤p0¤p7¤p13¤p887 debugCompteur 1952,type:ligneConsole}
+[0:0:7:13:887]{description:0¤p0¤p7¤p13¤p887 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1} to places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1},type:ligneConsole}
+[0:0:7:13:887]{ascStackId:0,persId:9,animDuree:1200,etage:21,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:15:87]{ascStackId:0,persId:9,animDuree:1200,etage:21,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:15:87]{description:0¤p0¤p7¤p15¤p87 debugCompteur 1953,type:ligneConsole}
+[0:0:7:15:87]{description:0¤p0¤p7¤p15¤p87 contenu consumerupdated from places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1} to places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1¤v 16=Livr d=16 n=1},type:ligneConsole}
+[0:0:7:15:87]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:17:587]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:17:587]{ascStackId:0,newPlannifier:{listeEtapes:{{t:437587,v:0.0,x:21.0},{t:446531,v:0.0,x:16.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:425731,v:0.0,x:23.0},{t:431387,v:0.0,x:21.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:26:531]{ascStackId:0,animDuree:2500,etage:16,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:29:31]{ascStackId:0,animDuree:2500,etage:16,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:29:31]{persId:11,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:30:231]{persId:11,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:30:231]{description:0¤p0¤p7¤p30¤p231 debugCompteur 1954,type:ligneConsole}
+[0:0:7:30:231]{description:0¤p0¤p7¤p30¤p231 contenu consumerupdated from places 1 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=1} to places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=2},type:ligneConsole}
+[0:0:7:30:231]{ascStackId:0,persId:15,animDuree:1200,etage:16,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:31:431]{ascStackId:0,persId:15,animDuree:1200,etage:16,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:31:431]{description:0¤p0¤p7¤p31¤p431 debugCompteur 1955,type:ligneConsole}
+[0:0:7:31:431]{description:0¤p0¤p7¤p31¤p431 contenu consumerupdated from places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=2} to places 0 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 12=Livr d=12 n=2},type:ligneConsole}
+[0:0:7:31:431]{ascStackId:0,animDuree:2500,etage:16,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:33:931]{ascStackId:0,animDuree:2500,etage:16,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:33:931]{ascStackId:0,newPlannifier:{listeEtapes:{{t:453931,v:0.0,x:16.0},{t:461931,v:0.0,x:12.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:437587,v:0.0,x:21.0},{t:446531,v:0.0,x:16.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:41:931]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:44:431]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:44:431]{persId:37,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:45:631]{persId:37,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:45:631]{persId:15,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:46:831]{persId:15,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:46:831]{description:0¤p0¤p7¤p46¤p831 debugCompteur 1956,type:ligneConsole}
+[0:0:7:46:831]{description:0¤p0¤p7¤p46¤p831 resultat [FC eval 0.7590416 v CetP contenu places 1 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1¤v 15=Livr d=15 n=1} pClient null¤v FC eval 0.99578065 v CetP contenu places 2 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1} pClient null],type:ligneConsole}
+[0:0:7:46:831]{description:0¤p0¤p7¤p46¤p831 contenu consumerupdated from places 2 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1} to places 2 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1¤v 9=Livr d=9 n=1},type:ligneConsole}
+[0:0:7:46:831]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:49:331]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:49:331]{ascStackId:0,newPlannifier:{listeEtapes:{{t:469331,v:0.0,x:12.0},{t:476259,v:0.0,x:9.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:453931,v:0.0,x:16.0},{t:461931,v:0.0,x:12.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:56:259]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:58:759]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:58:759]{persId:23,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:59:959]{persId:23,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:59:959]{description:0¤p0¤p7¤p59¤p959 debugCompteur 1957,type:ligneConsole}
+[0:0:7:59:959]{description:0¤p0¤p7¤p59¤p959 resultat [FC eval 0.821519 v CetP contenu places 3 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1} pClient null¤v FC eval 0.73203653 v CetP contenu places 3 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1} pClient PersGroup etage 7 dest 5 size 1],type:ligneConsole}
+[0:0:7:59:959]{description:0¤p0¤p7¤p59¤p959 contenu consumerupdated from places 3 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1} to places 3 livr {3=Livr d=3 n=1¤v 4=Livr d=4 n=1},type:ligneConsole}
+[0:0:7:59:959]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:2:459]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:2:459]{ascStackId:0,newPlannifier:{listeEtapes:{{t:482459,v:0.0,x:9.0},{t:491403,v:0.0,x:4.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:469331,v:0.0,x:12.0},{t:476259,v:0.0,x:9.0,softDepType:-1}}},monteeIdId:0}
+[0:0:8:11:403]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:13:903]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:13:903]{persId:36,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:15:103]{persId:36,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:15:103]{description:0¤p0¤p8¤p15¤p103 debugCompteur 1958,type:ligneConsole}
+[0:0:8:15:103]{description:0¤p0¤p8¤p15¤p103 resultat [FC eval 0.18670887 v CetP contenu places 4 livr {3=Livr d=3 n=1} pClient null],type:ligneConsole}
+[0:0:8:15:103]{description:0¤p0¤p8¤p15¤p103 contenu consumerupdated from places 4 livr {3=Livr d=3 n=1} to places 4 livr {3=Livr d=3 n=1},type:ligneConsole}
+[0:0:8:15:103]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:17:603]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:17:603]{ascStackId:0,newPlannifier:{listeEtapes:{{t:497603,v:0.0,x:4.0},{t:501603,v:0.0,x:3.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:482459,v:0.0,x:9.0},{t:491403,v:0.0,x:4.0,softDepType:-1}}},monteeIdId:0}
+[0:0:8:21:603]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:24:103]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:24:103]{persId:9,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:25:303]{persId:9,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:25:303]{description:0¤p0¤p8¤p25¤p303 debugCompteur 1959,type:ligneConsole}
+[0:0:8:25:303]{description:0¤p0¤p8¤p25¤p303 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.33152503 v CetP contenu places 5 livr {} pClient PersGroup etage 6 dest 10 size 1],type:ligneConsole}
+[0:0:8:25:303]{description:0¤p0¤p8¤p25¤p303 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:8:25:303]{description:0¤p0¤p8¤p25¤p303 on valide PersGroup etage 6 dest 10 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:8:25:303]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:27:803]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:27:803]{ascStackId:0,newPlannifier:{listeEtapes:{{t:507803,v:0.0,x:3.0},{t:514731,v:0.0,x:6.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:497603,v:0.0,x:4.0},{t:501603,v:0.0,x:3.0,softDepType:-1}}},monteeIdId:0}
+[0:0:8:34:731]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:37:231]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:37:231]{description:0¤p0¤p8¤p37¤p231 debugCompteur 1960,type:ligneConsole}
+[0:0:8:37:231]{description:0¤p0¤p8¤p37¤p231 resultat [FC eval 1.1848102 v CetP contenu places 4 livr {10=Livr d=10 n=1} pClient PersGroup etage 7 dest 29 size 1¤v FC eval 0.5431531 v CetP contenu places 4 livr {10=Livr d=10 n=1} pClient null],type:ligneConsole}
+[0:0:8:37:231]{description:0¤p0¤p8¤p37¤p231 contenu consumerupdated from places 5 livr {} to places 4 livr {10=Livr d=10 n=1},type:ligneConsole}
+[0:0:8:37:231]{description:0¤p0¤p8¤p37¤p231 on valide PersGroup etage 7 dest 29 size 1 quantite 1 contenu places 4 livr {10=Livr d=10 n=1},type:ligneConsole}
+[0:0:8:37:231]{ascStackId:0,persId:22,animDuree:1200,etage:6,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:38:431]{ascStackId:0,persId:22,animDuree:1200,etage:6,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:38:431]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:40:931]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:40:931]{ascStackId:0,newPlannifier:{listeEtapes:{{t:520931,v:0.0,x:6.0},{t:524931,v:0.0,x:7.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:507803,v:0.0,x:3.0},{t:514731,v:0.0,x:6.0,softDepType:1}}},monteeIdId:0}
+[0:0:8:44:931]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:47:431]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:47:431]{description:0¤p0¤p8¤p47¤p431 debugCompteur 1962,type:ligneConsole}
+[0:0:8:47:431]{description:0¤p0¤p8¤p47¤p431 resultat [FC eval 0.6019271 v CetP contenu places 2 livr {5=Livr d=5 n=1¤v 10=Livr d=10 n=1¤v 29=Livr d=29 n=1} pClient null¤v FC eval 1.0372715 v CetP contenu places 3 livr {10=Livr d=10 n=1¤v 29=Livr d=29 n=1} pClient null],type:ligneConsole}
+[0:0:8:47:431]{description:0¤p0¤p8¤p47¤p431 contenu consumerupdated from places 4 livr {10=Livr d=10 n=1} to places 3 livr {10=Livr d=10 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:8:47:431]{ascStackId:0,persId:6,animDuree:1200,etage:7,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:48:631]{ascStackId:0,persId:6,animDuree:1200,etage:7,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:48:631]{description:0¤p0¤p8¤p48¤p631 debugCompteur 1963,type:ligneConsole}
+[0:0:8:48:631]{description:0¤p0¤p8¤p48¤p631 resultat [FC eval 1.0372715 v CetP contenu places 3 livr {10=Livr d=10 n=1¤v 29=Livr d=29 n=1} pClient null¤v FC eval 0.6019271 v CetP contenu places 2 livr {5=Livr d=5 n=1¤v 10=Livr d=10 n=1¤v 29=Livr d=29 n=1} pClient null],type:ligneConsole}
+[0:0:8:48:631]{description:0¤p0¤p8¤p48¤p631 contenu consumerupdated from places 3 livr {10=Livr d=10 n=1¤v 29=Livr d=29 n=1} to places 3 livr {10=Livr d=10 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:8:48:631]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:51:131]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:51:131]{ascStackId:0,newPlannifier:{listeEtapes:{{t:531131,v:0.0,x:7.0},{t:538059,v:0.0,x:10.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:520931,v:0.0,x:6.0},{t:524931,v:0.0,x:7.0,softDepType:1}}},monteeIdId:0}
+[0:0:8:58:59]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:0:559]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:0:559]{persId:22,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:1:759]{persId:22,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:1:759]{description:0¤p0¤p9¤p1¤p759 debugCompteur 1964,type:ligneConsole}
+[0:0:9:1:759]{description:0¤p0¤p9¤p1¤p759 resultat [FC eval 1.0915288 v CetP contenu places 4 livr {29=Livr d=29 n=1} pClient null¤v FC eval 1.0025318 v CetP contenu places 4 livr {29=Livr d=29 n=1} pClient PersGroup etage 12 dest 15 size 1],type:ligneConsole}
+[0:0:9:1:759]{description:0¤p0¤p9¤p1¤p759 contenu consumerupdated from places 4 livr {29=Livr d=29 n=1} to places 4 livr {29=Livr d=29 n=1},type:ligneConsole}
+[0:0:9:1:759]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:4:259]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:4:259]{ascStackId:0,newPlannifier:{listeEtapes:{{t:544259,v:0.0,x:10.0},{t:562925,v:0.0,x:29.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:531131,v:0.0,x:7.0},{t:538059,v:0.0,x:10.0,softDepType:1}}},monteeIdId:0}
+[0:0:9:22:925]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:25:425]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:25:425]{persId:6,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:26:625]{persId:6,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:26:625]{description:0¤p0¤p9¤p26¤p625 debugCompteur 1965,type:ligneConsole}
+[0:0:9:26:625]{description:0¤p0¤p9¤p26¤p625 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.77355844 v CetP contenu places 5 livr {} pClient PersGroup etage 35 dest 19 size 1¤v FC eval 0.10238273 v CetP contenu places 5 livr {} pClient PersGroup etage 31 dest 32 size 1],type:ligneConsole}
+[0:0:9:26:625]{description:0¤p0¤p9¤p26¤p625 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:9:26:625]{description:0¤p0¤p9¤p26¤p625 on valide PersGroup etage 35 dest 19 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:9:26:625]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:29:125]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:29:125]{ascStackId:0,newPlannifier:{listeEtapes:{{t:569125,v:0.0,x:29.0},{t:578922,v:0.0,x:35.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:544259,v:0.0,x:10.0},{t:562925,v:0.0,x:29.0,softDepType:2}}},monteeIdId:0}
+[0:0:9:38:922]{ascStackId:0,animDuree:2500,etage:35,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:41:422]{ascStackId:0,animDuree:2500,etage:35,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:41:422]{description:0¤p0¤p9¤p41¤p422 debugCompteur 1966,type:ligneConsole}
+[0:0:9:41:422]{description:0¤p0¤p9¤p41¤p422 resultat [FC eval 1.2996922 v CetP contenu places 4 livr {19=Livr d=19 n=1} pClient PersGroup etage 33 dest 20 size 1¤v FC eval 1.0390755 v CetP contenu places 4 livr {19=Livr d=19 n=1} pClient null],type:ligneConsole}
+[0:0:9:41:422]{description:0¤p0¤p9¤p41¤p422 contenu consumerupdated from places 5 livr {} to places 4 livr {19=Livr d=19 n=1},type:ligneConsole}
+[0:0:9:41:422]{description:0¤p0¤p9¤p41¤p422 on valide PersGroup etage 33 dest 20 size 1 quantite 1 contenu places 4 livr {19=Livr d=19 n=1},type:ligneConsole}
+[0:0:9:41:422]{ascStackId:0,persId:13,animDuree:1200,etage:35,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:42:622]{ascStackId:0,persId:13,animDuree:1200,etage:35,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:42:622]{ascStackId:0,animDuree:2500,etage:35,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:45:122]{ascStackId:0,animDuree:2500,etage:35,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:45:122]{ascStackId:0,newPlannifier:{listeEtapes:{{t:585122,v:0.0,x:35.0},{t:590778,v:0.0,x:33.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:569125,v:0.0,x:29.0},{t:578922,v:0.0,x:35.0,softDepType:1}}},monteeIdId:0}
+[0:0:9:50:778]{ascStackId:0,animDuree:2500,etage:33,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:53:278]{ascStackId:0,animDuree:2500,etage:33,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:53:278]{description:0¤p0¤p9¤p53¤p278 debugCompteur 1968,type:ligneConsole}
+[0:0:9:53:278]{description:0¤p0¤p9¤p53¤p278 resultat [FC eval 1.434022 v CetP contenu places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1} pClient PersGroup etage 28 dest 8 size 1¤v FC eval 1.4403256 v CetP contenu places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1} pClient null],type:ligneConsole}
+[0:0:9:53:278]{description:0¤p0¤p9¤p53¤p278 contenu consumerupdated from places 4 livr {19=Livr d=19 n=1} to places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1},type:ligneConsole}
+[0:0:9:53:278]{ascStackId:0,persId:7,animDuree:1200,etage:33,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:54:478]{ascStackId:0,persId:7,animDuree:1200,etage:33,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:54:478]{description:0¤p0¤p9¤p54¤p478 debugCompteur 1969,type:ligneConsole}
+[0:0:9:54:478]{description:0¤p0¤p9¤p54¤p478 resultat [FC eval 1.4403256 v CetP contenu places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1} pClient null¤v FC eval 1.434022 v CetP contenu places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1} pClient PersGroup etage 28 dest 8 size 1],type:ligneConsole}
+[0:0:9:54:478]{description:0¤p0¤p9¤p54¤p478 contenu consumerupdated from places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1} to places 3 livr {19=Livr d=19 n=1¤v 20=Livr d=20 n=1},type:ligneConsole}
+[0:0:9:54:478]{ascStackId:0,animDuree:2500,etage:33,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:56:978]{ascStackId:0,animDuree:2500,etage:33,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:56:978]{ascStackId:0,newPlannifier:{listeEtapes:{{t:596978,v:0.0,x:33.0},{t:611644,v:0.0,x:20.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:585122,v:0.0,x:35.0},{t:590778,v:0.0,x:33.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:11:644]{ascStackId:0,animDuree:2500,etage:20,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:14:144]{ascStackId:0,animDuree:2500,etage:20,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:14:144]{persId:7,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:15:344]{persId:7,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:15:344]{description:0¤p0¤p10¤p15¤p344 debugCompteur 1970,type:ligneConsole}
+[0:0:10:15:344]{description:0¤p0¤p10¤p15¤p344 resultat [FC eval 0.18670887 v CetP contenu places 4 livr {19=Livr d=19 n=1} pClient null],type:ligneConsole}
+[0:0:10:15:344]{description:0¤p0¤p10¤p15¤p344 contenu consumerupdated from places 4 livr {19=Livr d=19 n=1} to places 4 livr {19=Livr d=19 n=1},type:ligneConsole}
+[0:0:10:15:344]{ascStackId:0,animDuree:2500,etage:20,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:17:844]{ascStackId:0,animDuree:2500,etage:20,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:17:844]{ascStackId:0,newPlannifier:{listeEtapes:{{t:617844,v:0.0,x:20.0},{t:621844,v:0.0,x:19.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:596978,v:0.0,x:33.0},{t:611644,v:0.0,x:20.0,softDepType:-2}}},monteeIdId:0}
+[0:0:10:21:844]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:24:344]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:24:344]{persId:13,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:25:544]{persId:13,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:25:544]{description:0¤p0¤p10¤p25¤p544 debugCompteur 1971,type:ligneConsole}
+[0:0:10:25:544]{description:0¤p0¤p10¤p25¤p544 resultat [FC eval 0.28390598 v CetP contenu places 5 livr {} pClient PersGroup etage 12 dest 15 size 1¤v FC eval 0.31645572 v CetP contenu places 5 livr {} pClient PersGroup etage 15 dest 11 size 1¤v FC eval 0.0 v CetP contenu places 5 livr {} pClient null],type:ligneConsole}
+[0:0:10:25:544]{description:0¤p0¤p10¤p25¤p544 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:10:25:544]{description:0¤p0¤p10¤p25¤p544 on valide PersGroup etage 15 dest 11 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:10:25:544]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:28:44]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:28:44]{ascStackId:0,newPlannifier:{listeEtapes:{{t:628044,v:0.0,x:19.0},{t:636044,v:0.0,x:15.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:617844,v:0.0,x:20.0},{t:621844,v:0.0,x:19.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:36:44]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:38:544]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:38:544]{description:0¤p0¤p10¤p38¤p544 debugCompteur 1972,type:ligneConsole}
+[0:0:10:38:544]{description:0¤p0¤p10¤p38¤p544 resultat [FC eval 0.5431531 v CetP contenu places 4 livr {11=Livr d=11 n=1} pClient null],type:ligneConsole}
+[0:0:10:38:544]{description:0¤p0¤p10¤p38¤p544 contenu consumerupdated from places 5 livr {} to places 4 livr {11=Livr d=11 n=1},type:ligneConsole}
+[0:0:10:38:544]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:39:744]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:39:744]{description:0¤p0¤p10¤p39¤p744 debugCompteur 1973,type:ligneConsole}
+[0:0:10:39:744]{description:0¤p0¤p10¤p39¤p744 resultat [FC eval 0.5431531 v CetP contenu places 4 livr {11=Livr d=11 n=1} pClient null],type:ligneConsole}
+[0:0:10:39:744]{description:0¤p0¤p10¤p39¤p744 contenu consumerupdated from places 4 livr {11=Livr d=11 n=1} to places 4 livr {11=Livr d=11 n=1},type:ligneConsole}
+[0:0:10:39:744]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:42:244]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:42:244]{ascStackId:0,newPlannifier:{listeEtapes:{{t:642244,v:0.0,x:15.0},{t:650244,v:0.0,x:11.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:628044,v:0.0,x:19.0},{t:636044,v:0.0,x:15.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:50:244]{ascStackId:0,animDuree:2500,etage:11,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:52:744]{ascStackId:0,animDuree:2500,etage:11,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:52:744]{persId:35,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:53:944]{persId:35,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:53:944]{description:0¤p0¤p10¤p53¤p944 debugCompteur 1974,type:ligneConsole}
+[0:0:10:53:944]{description:0¤p0¤p10¤p53¤p944 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.17405064 v CetP contenu places 5 livr {} pClient PersGroup etage 7 dest 5 size 1¤v FC eval 0.29008442 v CetP contenu places 5 livr {} pClient PersGroup etage 12 dest 15 size 1],type:ligneConsole}
+[0:0:10:53:944]{description:0¤p0¤p10¤p53¤p944 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:10:53:944]{description:0¤p0¤p10¤p53¤p944 on valide PersGroup etage 12 dest 15 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:10:53:944]{ascStackId:0,animDuree:2500,etage:11,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:56:444]{ascStackId:0,animDuree:2500,etage:11,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:56:444]{ascStackId:0,newPlannifier:{listeEtapes:{{t:656444,v:0.0,x:11.0},{t:660444,v:0.0,x:12.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:642244,v:0.0,x:15.0},{t:650244,v:0.0,x:11.0,softDepType:-1}}},monteeIdId:0}
+[0:0:11:0:444]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:2:944]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:2:944]{description:0¤p0¤p11¤p2¤p944 debugCompteur 1975,type:ligneConsole}
+[0:0:11:2:944]{description:0¤p0¤p11¤p2¤p944 resultat [FC eval 0.82561433 v CetP contenu places 4 livr {15=Livr d=15 n=1} pClient PersGroup etage 14 dest 25 size 1¤v FC eval 0.4481013 v CetP contenu places 4 livr {15=Livr d=15 n=1} pClient null],type:ligneConsole}
+[0:0:11:2:944]{description:0¤p0¤p11¤p2¤p944 contenu consumerupdated from places 5 livr {} to places 4 livr {15=Livr d=15 n=1},type:ligneConsole}
+[0:0:11:2:944]{description:0¤p0¤p11¤p2¤p944 on valide PersGroup etage 14 dest 25 size 1 quantite 1 contenu places 4 livr {15=Livr d=15 n=1},type:ligneConsole}
+[0:0:11:2:944]{ascStackId:0,persId:38,animDuree:1200,etage:12,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:4:144]{ascStackId:0,persId:38,animDuree:1200,etage:12,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:4:144]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:6:644]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:6:644]{ascStackId:0,newPlannifier:{listeEtapes:{{t:666644,v:0.0,x:12.0},{t:672300,v:0.0,x:14.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:656444,v:0.0,x:11.0},{t:660444,v:0.0,x:12.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:12:300]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:14:800]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:14:800]{description:0¤p0¤p11¤p14¤p800 debugCompteur 1977,type:ligneConsole}
+[0:0:11:14:800]{description:0¤p0¤p11¤p14¤p800 resultat [FC eval 1.1202532 v CetP contenu places 2 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1} pClient null¤v FC eval 0.71696204 v CetP contenu places 3 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1} pClient null],type:ligneConsole}
+[0:0:11:14:800]{description:0¤p0¤p11¤p14¤p800 contenu consumerupdated from places 4 livr {15=Livr d=15 n=1} to places 2 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:11:14:800]{ascStackId:0,persId:5,animDuree:1200,etage:14,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:16:0]{ascStackId:0,persId:5,animDuree:1200,etage:14,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:16:0]{ascStackId:0,persId:18,animDuree:1200,etage:14,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:17:200]{ascStackId:0,persId:18,animDuree:1200,etage:14,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:17:200]{description:0¤p0¤p11¤p17¤p200 debugCompteur 1978,type:ligneConsole}
+[0:0:11:17:200]{description:0¤p0¤p11¤p17¤p200 resultat [FC eval 1.1202532 v CetP contenu places 2 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1} pClient null],type:ligneConsole}
+[0:0:11:17:200]{description:0¤p0¤p11¤p17¤p200 contenu consumerupdated from places 2 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1} to places 2 livr {15=Livr d=15 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:11:17:200]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:19:700]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:19:700]{ascStackId:0,newPlannifier:{listeEtapes:{{t:679700,v:0.0,x:14.0},{t:683700,v:0.0,x:15.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:666644,v:0.0,x:12.0},{t:672300,v:0.0,x:14.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:23:700]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:26:200]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:26:200]{persId:38,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:27:400]{persId:38,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:27:400]{description:0¤p0¤p11¤p27¤p400 debugCompteur 1979,type:ligneConsole}
+[0:0:11:27:400]{description:0¤p0¤p11¤p27¤p400 resultat [FC eval 1.2802894 v CetP contenu places 3 livr {25=Livr d=25 n=1¤v 29=Livr d=29 n=1} pClient null],type:ligneConsole}
+[0:0:11:27:400]{description:0¤p0¤p11¤p27¤p400 contenu consumerupdated from places 3 livr {25=Livr d=25 n=1¤v 29=Livr d=29 n=1} to places 3 livr {25=Livr d=25 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:11:27:400]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:29:900]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:29:900]{ascStackId:0,newPlannifier:{listeEtapes:{{t:689900,v:0.0,x:15.0},{t:702566,v:0.0,x:25.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:679700,v:0.0,x:14.0},{t:683700,v:0.0,x:15.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:42:566]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:45:66]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:45:66]{persId:5,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:46:266]{persId:5,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:46:266]{description:0¤p0¤p11¤p46¤p266 debugCompteur 1980,type:ligneConsole}
+[0:0:11:46:266]{description:0¤p0¤p11¤p46¤p266 resultat [FC eval 0.5431531 v CetP contenu places 4 livr {29=Livr d=29 n=1} pClient null],type:ligneConsole}
+[0:0:11:46:266]{description:0¤p0¤p11¤p46¤p266 contenu consumerupdated from places 4 livr {29=Livr d=29 n=1} to places 4 livr {29=Livr d=29 n=1},type:ligneConsole}
+[0:0:11:46:266]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:48:766]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:48:766]{ascStackId:0,newPlannifier:{listeEtapes:{{t:708766,v:0.0,x:25.0},{t:716766,v:0.0,x:29.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:689900,v:0.0,x:15.0},{t:702566,v:0.0,x:25.0,softDepType:2}}},monteeIdId:0}
+[0:0:11:56:766]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:59:266]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:59:266]{persId:18,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:0:466]{persId:18,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:0:466]{description:0¤p0¤p12¤p0¤p466 debugCompteur 1981,type:ligneConsole}
+[0:0:12:0:466]{description:0¤p0¤p12¤p0¤p466 resultat [FC eval 0.99457514 v CetP contenu places 5 livr {} pClient PersGroup etage 28 dest 8 size 1¤v FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.10238273 v CetP contenu places 5 livr {} pClient PersGroup etage 31 dest 32 size 1],type:ligneConsole}
+[0:0:12:0:466]{description:0¤p0¤p12¤p0¤p466 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:12:0:466]{description:0¤p0¤p12¤p0¤p466 on valide PersGroup etage 28 dest 8 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:12:0:466]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:2:966]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:2:966]{ascStackId:0,newPlannifier:{listeEtapes:{{t:722966,v:0.0,x:29.0},{t:726966,v:0.0,x:28.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:708766,v:0.0,x:25.0},{t:716766,v:0.0,x:29.0,softDepType:1}}},monteeIdId:0}
+[0:0:12:6:966]{ascStackId:0,animDuree:2500,etage:28,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:9:466]{ascStackId:0,animDuree:2500,etage:28,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:9:466]{description:0¤p0¤p12¤p9¤p466 debugCompteur 1982,type:ligneConsole}
+[0:0:12:9:466]{description:0¤p0¤p12¤p9¤p466 resultat [FC eval 1.3346713 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient PersGroup etage 26 dest 13 size 1¤v FC eval 1.1064229 v CetP contenu places 4 livr {8=Livr d=8 n=1} pClient null],type:ligneConsole}
+[0:0:12:9:466]{description:0¤p0¤p12¤p9¤p466 contenu consumerupdated from places 5 livr {} to places 4 livr {8=Livr d=8 n=1},type:ligneConsole}
+[0:0:12:9:466]{description:0¤p0¤p12¤p9¤p466 on valide PersGroup etage 26 dest 13 size 1 quantite 1 contenu places 4 livr {8=Livr d=8 n=1},type:ligneConsole}
+[0:0:12:9:466]{ascStackId:0,persId:16,animDuree:1200,etage:28,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:10:666]{ascStackId:0,persId:16,animDuree:1200,etage:28,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:10:666]{ascStackId:0,animDuree:2500,etage:28,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:13:166]{ascStackId:0,animDuree:2500,etage:28,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:13:166]{ascStackId:0,newPlannifier:{listeEtapes:{{t:733166,v:0.0,x:28.0},{t:738822,v:0.0,x:26.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:722966,v:0.0,x:29.0},{t:726966,v:0.0,x:28.0,softDepType:-1}}},monteeIdId:0}
+[0:0:12:18:822]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:21:322]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:21:322]{description:0¤p0¤p12¤p21¤p322 debugCompteur 1984,type:ligneConsole}
+[0:0:12:21:322]{description:0¤p0¤p12¤p21¤p322 resultat [FC eval 1.6045955 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1} pClient PersGroup etage 24 dest 22 size 1¤v FC eval 1.4469937 v CetP contenu places 3 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1} pClient null],type:ligneConsole}
+[0:0:12:21:322]{description:0¤p0¤p12¤p21¤p322 contenu consumerupdated from places 4 livr {8=Livr d=8 n=1} to places 3 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1},type:ligneConsole}
+[0:0:12:21:322]{description:0¤p0¤p12¤p21¤p322 on valide PersGroup etage 24 dest 22 size 1 quantite 1 contenu places 3 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1},type:ligneConsole}
+[0:0:12:21:322]{ascStackId:0,persId:8,animDuree:1200,etage:26,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:22:522]{ascStackId:0,persId:8,animDuree:1200,etage:26,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:22:522]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:25:22]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:25:22]{ascStackId:0,newPlannifier:{listeEtapes:{{t:745022,v:0.0,x:26.0},{t:750678,v:0.0,x:24.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:733166,v:0.0,x:28.0},{t:738822,v:0.0,x:26.0,softDepType:-1}}},monteeIdId:0}
+[0:0:12:30:678]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:33:178]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:33:178]{description:0¤p0¤p12¤p33¤p178 debugCompteur 1986,type:ligneConsole}
+[0:0:12:33:178]{description:0¤p0¤p12¤p33¤p178 resultat [FC eval 1.8680136 v CetP contenu places 0 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} pClient null¤v FC eval 1.653024 v CetP contenu places 1 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} pClient null¤v FC eval 1.493671 v CetP contenu places 1 livr {8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} pClient null¤v FC eval 1.8680136 v CetP contenu places 0 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} pClient null¤v FC eval 1.1707151 v CetP contenu places 2 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} pClient null],type:ligneConsole}
+[0:0:12:33:178]{description:0¤p0¤p12¤p33¤p178 contenu consumerupdated from places 3 livr {8=Livr d=8 n=1¤v 13=Livr d=13 n=1} to places 0 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1},type:ligneConsole}
+[0:0:12:33:178]{ascStackId:0,persId:24,animDuree:1200,etage:24,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:34:378]{ascStackId:0,persId:24,animDuree:1200,etage:24,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:34:378]{ascStackId:0,persId:29,animDuree:1200,etage:24,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:35:578]{ascStackId:0,persId:29,animDuree:1200,etage:24,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:35:578]{ascStackId:0,persId:12,animDuree:1200,etage:24,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:36:778]{ascStackId:0,persId:12,animDuree:1200,etage:24,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:36:778]{description:0¤p0¤p12¤p36¤p778 debugCompteur 1987,type:ligneConsole}
+[0:0:12:36:778]{description:0¤p0¤p12¤p36¤p778 contenu consumerupdated from places 0 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1} to places 0 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 22=Livr d=22 n=1},type:ligneConsole}
+[0:0:12:36:778]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:39:278]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:39:278]{ascStackId:0,newPlannifier:{listeEtapes:{{t:759278,v:0.0,x:24.0},{t:764934,v:0.0,x:22.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:745022,v:0.0,x:26.0},{t:750678,v:0.0,x:24.0,softDepType:-1}}},monteeIdId:0}
+[0:0:12:44:934]{ascStackId:0,animDuree:2500,etage:22,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:47:434]{ascStackId:0,animDuree:2500,etage:22,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:47:434]{persId:24,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:48:634]{persId:24,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:48:634]{description:0¤p0¤p12¤p48¤p634 debugCompteur 1988,type:ligneConsole}
+[0:0:12:48:634]{description:0¤p0¤p12¤p48¤p634 resultat [FC eval 1.9179422 v CetP contenu places 1 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1} pClient null],type:ligneConsole}
+[0:0:12:48:634]{description:0¤p0¤p12¤p48¤p634 contenu consumerupdated from places 1 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1} to places 1 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1¤v 13=Livr d=13 n=1},type:ligneConsole}
+[0:0:12:48:634]{ascStackId:0,animDuree:2500,etage:22,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:51:134]{ascStackId:0,animDuree:2500,etage:22,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:51:134]{ascStackId:0,newPlannifier:{listeEtapes:{{t:771134,v:0.0,x:22.0},{t:783134,v:0.0,x:13.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:759278,v:0.0,x:24.0},{t:764934,v:0.0,x:22.0,softDepType:-1}}},monteeIdId:0}
+[0:0:13:3:134]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:5:634]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:5:634]{persId:8,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:6:834]{persId:8,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:6:834]{description:0¤p0¤p13¤p6¤p834 debugCompteur 1989,type:ligneConsole}
+[0:0:13:6:834]{description:0¤p0¤p13¤p6¤p834 resultat [FC eval 0.92123777 v CetP contenu places 2 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1} pClient null],type:ligneConsole}
+[0:0:13:6:834]{description:0¤p0¤p13¤p6¤p834 contenu consumerupdated from places 2 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1} to places 2 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1¤v 9=Livr d=9 n=1},type:ligneConsole}
+[0:0:13:6:834]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:9:334]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:9:334]{ascStackId:0,newPlannifier:{listeEtapes:{{t:789334,v:0.0,x:13.0},{t:797334,v:0.0,x:9.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:771134,v:0.0,x:22.0},{t:783134,v:0.0,x:13.0,softDepType:-1}}},monteeIdId:0}
+[0:0:13:17:334]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:19:834]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:19:834]{persId:12,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:21:34]{persId:12,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:21:34]{description:0¤p0¤p13¤p21¤p34 debugCompteur 1990,type:ligneConsole}
+[0:0:13:21:34]{description:0¤p0¤p13¤p21¤p34 resultat [FC eval 0.32634497 v CetP contenu places 3 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1} pClient null],type:ligneConsole}
+[0:0:13:21:34]{description:0¤p0¤p13¤p21¤p34 contenu consumerupdated from places 3 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1} to places 3 livr {7=Livr d=7 n=1¤v 8=Livr d=8 n=1},type:ligneConsole}
+[0:0:13:21:34]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:23:534]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:23:534]{ascStackId:0,newPlannifier:{listeEtapes:{{t:803534,v:0.0,x:9.0},{t:807534,v:0.0,x:8.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:789334,v:0.0,x:13.0},{t:797334,v:0.0,x:9.0,softDepType:-1}}},monteeIdId:0}
+[0:0:13:27:534]{ascStackId:0,animDuree:2500,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:30:34]{ascStackId:0,animDuree:2500,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:30:34]{persId:16,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:31:234]{persId:16,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:31:234]{description:0¤p0¤p13¤p31¤p234 debugCompteur 1991,type:ligneConsole}
+[0:0:13:31:234]{description:0¤p0¤p13¤p31¤p234 resultat [FC eval 0.24841774 v CetP contenu places 4 livr {7=Livr d=7 n=1} pClient null¤v FC eval 0.3071482 v CetP contenu places 4 livr {7=Livr d=7 n=1} pClient PersGroup etage 7 dest 5 size 1],type:ligneConsole}
+[0:0:13:31:234]{description:0¤p0¤p13¤p31¤p234 contenu consumerupdated from places 4 livr {7=Livr d=7 n=1} to places 4 livr {7=Livr d=7 n=1},type:ligneConsole}
+[0:0:13:31:234]{description:0¤p0¤p13¤p31¤p234 on valide PersGroup etage 7 dest 5 size 1 quantite 1 contenu places 4 livr {7=Livr d=7 n=1},type:ligneConsole}
+[0:0:13:31:234]{ascStackId:0,animDuree:2500,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:33:734]{ascStackId:0,animDuree:2500,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:33:734]{ascStackId:0,newPlannifier:{listeEtapes:{{t:813734,v:0.0,x:8.0},{t:817734,v:0.0,x:7.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:803534,v:0.0,x:9.0},{t:807534,v:0.0,x:8.0,softDepType:-1}}},monteeIdId:0}
+[0:0:13:37:734]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:40:234]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:40:234]{persId:29,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:41:434]{persId:29,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:41:434]{description:0¤p0¤p13¤p41¤p434 debugCompteur 1992,type:ligneConsole}
+[0:0:13:41:434]{description:0¤p0¤p13¤p41¤p434 resultat [FC eval 0.33192688 v CetP contenu places 4 livr {5=Livr d=5 n=1} pClient null],type:ligneConsole}
+[0:0:13:41:434]{description:0¤p0¤p13¤p41¤p434 contenu consumerupdated from places 5 livr {} to places 4 livr {5=Livr d=5 n=1},type:ligneConsole}
+[0:0:13:41:434]{ascStackId:0,persId:21,animDuree:1200,etage:7,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:13:42:634]{ascStackId:0,persId:21,animDuree:1200,etage:7,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:13:42:634]{description:0¤p0¤p13¤p42¤p634 debugCompteur 1993,type:ligneConsole}
+[0:0:13:42:634]{description:0¤p0¤p13¤p42¤p634 resultat [FC eval 0.33192688 v CetP contenu places 4 livr {5=Livr d=5 n=1} pClient null],type:ligneConsole}
+[0:0:13:42:634]{description:0¤p0¤p13¤p42¤p634 contenu consumerupdated from places 4 livr {5=Livr d=5 n=1} to places 4 livr {5=Livr d=5 n=1},type:ligneConsole}
+[0:0:13:42:634]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:45:134]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:45:134]{ascStackId:0,newPlannifier:{listeEtapes:{{t:825134,v:0.0,x:7.0},{t:830790,v:0.0,x:5.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:813734,v:0.0,x:8.0},{t:817734,v:0.0,x:7.0,softDepType:-1}}},monteeIdId:0}
+[0:0:13:50:790]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:53:290]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:13:53:290]{persId:21,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:13:54:490]{persId:21,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:13:54:490]{description:0¤p0¤p13¤p54¤p490 debugCompteur 1994,type:ligneConsole}
+[0:0:13:54:490]{description:0¤p0¤p13¤p54¤p490 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null¤v FC eval 0.042451374 v CetP contenu places 5 livr {} pClient PersGroup etage 31 dest 32 size 1],type:ligneConsole}
+[0:0:13:54:490]{description:0¤p0¤p13¤p54¤p490 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:13:54:490]{description:0¤p0¤p13¤p54¤p490 on valide PersGroup etage 31 dest 32 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:13:54:490]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:56:990]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:13:56:990]{ascStackId:0,newPlannifier:{listeEtapes:{{t:836990,v:0.0,x:5.0},{t:860323,v:0.0,x:31.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:825134,v:0.0,x:7.0},{t:830790,v:0.0,x:5.0,softDepType:-1}}},monteeIdId:0}
+[0:0:14:20:323]{ascStackId:0,animDuree:2500,etage:31,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:14:22:823]{ascStackId:0,animDuree:2500,etage:31,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:14:22:823]{description:0¤p0¤p14¤p22¤p823 debugCompteur 1995,type:ligneConsole}
+[0:0:14:22:823]{description:0¤p0¤p14¤p22¤p823 resultat [FC eval 0.18670887 v CetP contenu places 4 livr {32=Livr d=32 n=1} pClient null],type:ligneConsole}
+[0:0:14:22:823]{description:0¤p0¤p14¤p22¤p823 contenu consumerupdated from places 5 livr {} to places 4 livr {32=Livr d=32 n=1},type:ligneConsole}
+[0:0:14:22:823]{ascStackId:0,persId:3,animDuree:1200,etage:31,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:14:24:23]{ascStackId:0,persId:3,animDuree:1200,etage:31,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:14:24:23]{description:0¤p0¤p14¤p24¤p23 debugCompteur 1996,type:ligneConsole}
+[0:0:14:24:23]{description:0¤p0¤p14¤p24¤p23 resultat [FC eval 0.18670887 v CetP contenu places 4 livr {32=Livr d=32 n=1} pClient null],type:ligneConsole}
+[0:0:14:24:23]{description:0¤p0¤p14¤p24¤p23 contenu consumerupdated from places 4 livr {32=Livr d=32 n=1} to places 4 livr {32=Livr d=32 n=1},type:ligneConsole}
+[0:0:14:24:23]{ascStackId:0,animDuree:2500,etage:31,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:14:26:523]{ascStackId:0,animDuree:2500,etage:31,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:14:26:523]{ascStackId:0,newPlannifier:{listeEtapes:{{t:866523,v:0.0,x:31.0},{t:870523,v:0.0,x:32.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:836990,v:0.0,x:5.0},{t:860323,v:0.0,x:31.0,softDepType:2}}},monteeIdId:0}
+[0:0:14:30:523]{ascStackId:0,animDuree:2500,etage:32,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:14:33:23]{ascStackId:0,animDuree:2500,etage:32,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:14:33:23]{persId:3,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:14:34:223]{persId:3,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:14:34:223]{description:0¤p0¤p14¤p34¤p223 debugCompteur 1997,type:ligneConsole}
+[0:0:14:34:223]{description:0¤p0¤p14¤p34¤p223 resultat [FC eval 0.0 v CetP contenu places 5 livr {} pClient null],type:ligneConsole}
+[0:0:14:34:223]{description:0¤p0¤p14¤p34¤p223 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:14:34:223]{ascStackId:0,animDuree:2500,etage:32,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:14:36:723]{ascStackId:0,animDuree:2500,etage:32,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}

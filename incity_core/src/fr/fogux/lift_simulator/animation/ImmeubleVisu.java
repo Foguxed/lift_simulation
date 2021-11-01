@@ -76,7 +76,6 @@ public class ImmeubleVisu implements PredictedDrawable
     @Override
     public void update(final long time)
     {
-        // TODO Auto-generated method stub
         for (final PersonneGroup p : new ArrayList<>(sorties))
         {
             p.update(time);

@@ -1,0 +1,7 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:2:81]{etage:19,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 shadowed simulation,type:ligneConsole}
+[0:0:0:2:81]{ascStackId:0,newPlannifier:{listeEtapes:{{t:2081,v:0.0,x:0.0},{t:20747,v:0.0,x:19.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:20:747]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:247]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:247]{description:FATAL SIMU ERROR¤p class java.lang.NullPointerException msg null,type:Erreur}

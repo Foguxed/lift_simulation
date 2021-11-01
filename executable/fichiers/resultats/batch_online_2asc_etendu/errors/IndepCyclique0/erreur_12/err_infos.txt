@@ -1,0 +1,11 @@
+fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException:  plus de 3 heures ecoulees depuis la derniere arriveee 
+	at fr.fogux.lift_simulator.GestionnaireDeTachesSimu.executeEvents(GestionnaireDeTachesSimu.java:175)
+	at fr.fogux.lift_simulator.GestionnaireDeTachesSimu.executeEntry(GestionnaireDeTachesSimu.java:167)
+	at fr.fogux.lift_simulator.GestionnaireDeTachesSimu.resume(GestionnaireDeTachesSimu.java:143)
+	at fr.fogux.lift_simulator.Simulation.resumeTaches(Simulation.java:191)
+	at fr.fogux.lift_simulator.Simulation.start(Simulation.java:170)
+	at fr.fogux.lift_simulator.batchs.core.SimulationRunnable.innerRun(SimulationRunnable.java:67)
+	at fr.fogux.lift_simulator.batchs.core.SimulationRunnable.run(SimulationRunnable.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

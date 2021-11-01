@@ -1,5 +1,6 @@
 package fr.fogux.lift_simulator.evenements.animation;
 
+import fr.fogux.lift_simulator.EventRunPolicy;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.PrintableEvenement;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
@@ -29,10 +30,11 @@ public abstract class EvenementAnimationOnly extends PrintableEvenement
     {
         simuRun(simu);
     }
+    
 
-    @Override
-    public boolean shadowable(final long registeredT)
-    {
-        return false;
-    }
+	@Override
+	public boolean shadowable(long registeredTime, EventRunPolicy policy) 
+	{
+		return policy.doPrint();
+	}
 }

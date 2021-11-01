@@ -1,0 +1,2 @@
+{nbPersonnesDeplacees:11,partitionGenType:OfflinePartGen,inputEventProvider:{valuesAndWeights:{{val:{dateProvider:{dateProviderType:1,min:0,max:10},departEtageProvider:{min:1,max:38},destinationEtageProvider:{min:1,max:38},providerGroupeSize:{valuesAndWeights:{{val:1,weight:1},{val:2,weight:0.03}}}},weight:1}}}}
+{repartAscenseurs:{{val:1}},niveauMin:0,niveauMax:38}

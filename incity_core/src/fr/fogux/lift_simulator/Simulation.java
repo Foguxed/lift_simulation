@@ -1,22 +1,27 @@
 package fr.fogux.lift_simulator;
 
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
+import fr.fogux.lift_simulator.evenements.animation.EvenementErreur;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.GestFichiers;
 import fr.fogux.lift_simulator.mind.AlgoInstantiator;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
 import fr.fogux.lift_simulator.physic.ImmeubleSimu;
 import fr.fogux.lift_simulator.physic.InterfacePhysique;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.population.PersonneSimu;
+import fr.fogux.lift_simulator.utils.TempJournalOutput;
+import fr.fogux.lift_simulator.utils.TempWriter;
+import fr.fogux.lift_simulator.utils.Utils;
 
 public class Simulation
 {
@@ -30,12 +35,13 @@ public class Simulation
     protected boolean completed;
     protected final boolean shadow;
     protected final int persListOfset;
+    protected final boolean canBeIncomplete;
     private final InterfacePhysique phys;
 
 
     public Simulation(final AlgoInstantiator prgminstantiator, final ConfigSimu config, final PartitionSimu partition)
     {
-        this(prgminstantiator,config,partition,null);
+        this(prgminstantiator,config,partition,null,false);
     }
 
     public boolean paused()
@@ -43,11 +49,22 @@ public class Simulation
         return gestioTaches.paused;
     }
 
-    public Simulation(final Simulation shadowed, final AlgoInstantiator prgminstantiator)
+    public boolean interrupted()
+    {
+        return gestioTaches.interrupted;
+    }
+
+    public Simulation(final Simulation shadowed, final AlgoInstantiator prgminstantiator, final boolean canBeincomplete, final long maxSimulationLength)
+    {
+        this(shadowed,prgminstantiator,canBeincomplete);
+    }
+
+    public Simulation(final Simulation shadowed, final AlgoInstantiator prgminstantiator, final boolean canBeincomplete)
     {
         shadow = true;
         completed = shadowed.completed;
-        journalOutput = null;
+        canBeIncomplete = canBeincomplete;
+
         c = shadowed.c;
         phys = new InterfacePhysique(this);
         p = prgminstantiator.getPrgm(new OutputProvider(phys), c);
@@ -63,7 +80,6 @@ public class Simulation
                 }
                 else
                 {
-
                     personnesList.add(new PersonneSimu(p, this));
                 }
             }
@@ -102,7 +118,32 @@ public class Simulation
 
         potentiellementNonLivree = new ArrayList<>(personnesList);
         new ImmeubleSimu(shadowed.immeuble, this);
-        gestioTaches = new GestionnaireDeTachesSimu(this, shadowed.gestioTaches);
+
+        final boolean hasJournalOutput = (shadowed.journalOutput != null && Simulateur.DEBUG_SHADOWED_SIMULATION);
+        gestioTaches = new GestionnaireDeTachesSimu(this, shadowed.gestioTaches,hasJournalOutput);
+        if(hasJournalOutput)
+        {
+            if(shadowed.shadow)
+            {
+                try
+                {
+                    shadowed.journalOutput.flush();
+                } catch (final IOException e)
+                {
+                    e.printStackTrace();
+                }
+                journalOutput = new TempJournalOutput((TempJournalOutput)shadowed.journalOutput);
+            }
+            else
+            {
+                journalOutput = new TempJournalOutput(shadowed.journalOutput, new TempWriter());
+            }
+            printConsoleLine("shadowed simulation " + Utils.newDebugCompteurId());
+        }
+        else
+        {
+            journalOutput = null;
+        }
     }
 
     public void setImmeubleSimu(final ImmeubleSimu i)
@@ -123,9 +164,10 @@ public class Simulation
         return potentiellementNonLivree;
     }
 
-    public Simulation(final AlgoInstantiator prgminstantiator, final ConfigSimu config, final PartitionSimu partition, final BufferedWriter journalOutput)
+    public Simulation(final AlgoInstantiator prgminstantiator, final ConfigSimu config, final PartitionSimu partition, final BufferedWriter journalOutput, final boolean canBeincomplete)
     {
         this.journalOutput = journalOutput;
+        canBeIncomplete = canBeincomplete;
         shadow = false;
         persListOfset = 0;
         c = config;
@@ -187,21 +229,81 @@ public class Simulation
 
     private void resumeTaches()
     {
+        if(journalOutput != null && shadow)
+        {
+            try
+            {
+                innerResumeTaches();
+            }
+            catch(final Exception ex)
+            {
+                SimulateurAcceptableException e;
+                if(ex instanceof SimulateurAcceptableException)
+                {
+                    e = (SimulateurAcceptableException)ex;
+                }
+                else
+                {
+                    ex.printStackTrace();
+                    e = new SimulateurAcceptableException("FATAL SIMU ERROR: " + ex.getClass() + " msg "+ ex.getMessage());
+                }
+                if(!e.printed)
+                {
+                    new EvenementErreur(e.getMessage()).print(this);
+                    e.printed = true;
+                    try
+                    {
+                        ((TempJournalOutput)journalOutput).printInJournOutput();
+                    } catch (final IOException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+                }
+                throw e;
+            }
+        }
+        else
+        {
+            innerResumeTaches();
+        }
 
+    }
+
+    private void innerResumeTaches()
+    {
         gestioTaches.resume();
         //System.out.println("fin gestio resume");
         if(gestioTaches.paused)
         {
             return;
         }
+
+        completed = checkComplet();
+    }
+
+    public boolean hasNoMoreEvents()
+    {
+        return gestioTaches.taches.isEmpty();
+    }
+
+    private boolean checkComplet()
+    {
         for(final PersonneSimu p : personnesList)
         {
             if(p!= null && !p.livree())
             {
-                throw new SimulateurAcceptableException("Toutes les personnes n'ont pas etees livrees exemple:" + p);
+                if(canBeIncomplete)
+                {
+                    return false;
+                }
+                else
+                {
+                    System.out.println("algoPrint " + this.p);
+                    throw new SimulateurAcceptableException("Toutes les personnes n'ont pas etees livrees exemple:" + p);
+                }
             }
         }
-        completed = true;
+        return true;
     }
 
     public boolean completed()
@@ -233,9 +335,24 @@ public class Simulation
     public void inputPersonne(final int etageDepart, final int destination)
     {
         final PersonneSimu newP = new PersonneSimu(this, personnesList.size(), destination, etageDepart);
-        personnesList.add(newP);
-        potentiellementNonLivree.add(newP);
+        innerAddPersonne(newP);
         newP.choisirDestination();
+    }
+
+    public void addShadowPersonne(final PersonneSimu p)
+    {
+        innerAddPersonne(new PersonneSimu(p, this));
+    }
+
+    private void innerAddPersonne(final PersonneSimu p)
+    {
+        personnesList.add(p);
+        potentiellementNonLivree.add(p);
+    }
+
+    public PersonneSimu getLastPersonne()
+    {
+        return personnesList.get(personnesList.size()-1);
     }
 
     public void reRunLastInputPersonne()

@@ -1,0 +1,42 @@
+{acceleration:4.0E-7,dureePortes:2000,ascenseurSpeed:3.2E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:56:331]{description:0¤p0¤p0¤p56¤p331 PLANNIFIER etat {ei 0{ contenu []aDelivrer[personne¤p dest = 18 depart = 21 id = 0]}},type:ligneConsole}
+[0:0:0:56:331]{ascStackId:0,newPlannifier:{listeEtapes:{{t:56331,v:0.0,x:0.0},{t:70822,v:0.0,x:21.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:56:331]{etage:21,destination:18,nbPersonnes:1,type:persInput}
+[0:0:1:7:657]{description:0¤p0¤p1¤p7¤p657 PLANNIFIER etat {ei 0{ contenu []aDelivrer[personne¤p dest = 11 depart = 33 id = 1¤v personne¤p dest = 18 depart = 21 id = 0]}},type:ligneConsole}
+[0:0:1:7:657]{ascStackId:0,newPlannifier:{listeEtapes:{{t:67657,v:0.0012656,x:18.99383},{t:77145,v:0.0,x:33.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:56331,v:0.0,x:0.0},{t:70822,v:0.0,x:21.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:7:657]{etage:33,destination:11,nbPersonnes:1,type:persInput}
+[0:0:1:17:145]{ascStackId:0,animDuree:2000,etage:33,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:19:145]{description:0¤p0¤p1¤p19¤p145 purge etat {ei 0{ contenu []aDelivrer[personne¤p dest = 11 depart = 33 id = 1¤v personne¤p dest = 18 depart = 21 id = 0]}},type:ligneConsole}
+[0:0:1:19:145]{ascStackId:0,animDuree:2000,etage:33,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:19:145]{ascStackId:0,persId:1,animDuree:1200,etage:33,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:20:345]{description:0¤p0¤p1¤p20¤p345 purge etat {ei 0{ contenu [personne¤p dest = 11 depart = 33 id = 1]aDelivrer[personne¤p dest = 18 depart = 21 id = 0]}},type:ligneConsole}
+[0:0:1:20:345]{ascStackId:0,persId:1,animDuree:1200,etage:33,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:20:345]{ascStackId:0,animDuree:2000,etage:33,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:22:345]{ascStackId:0,newPlannifier:{listeEtapes:{{t:82345,v:0.0,x:33.0},{t:93299,v:0.0,x:21.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:67657,v:0.0012656,x:18.99383},{t:77145,v:0.0,x:33.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:22:345]{ascStackId:0,animDuree:2000,etage:33,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:33:299]{ascStackId:0,animDuree:2000,etage:21,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:35:299]{description:0¤p0¤p1¤p35¤p299 purge etat {ei 0{ contenu [personne¤p dest = 11 depart = 33 id = 1]aDelivrer[personne¤p dest = 18 depart = 21 id = 0]}},type:ligneConsole}
+[0:0:1:35:299]{ascStackId:0,animDuree:2000,etage:21,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:35:299]{ascStackId:0,persId:0,animDuree:1200,etage:21,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:36:499]{description:0¤p0¤p1¤p36¤p499 purge etat {ei 0{ contenu [personne¤p dest = 11 depart = 33 id = 1¤v personne¤p dest = 18 depart = 21 id = 0]aDelivrer[]}},type:ligneConsole}
+[0:0:1:36:499]{ascStackId:0,persId:0,animDuree:1200,etage:21,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:36:499]{ascStackId:0,animDuree:2000,etage:21,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:38:499]{ascStackId:0,newPlannifier:{listeEtapes:{{t:98499,v:0.0,x:21.0},{t:103976,v:0.0,x:18.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:82345,v:0.0,x:33.0},{t:93299,v:0.0,x:21.0,softDepType:-1}}},monteeIdId:0}
+[0:0:1:38:499]{ascStackId:0,animDuree:2000,etage:21,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:43:976]{ascStackId:0,animDuree:2000,etage:18,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:45:976]{ascStackId:0,animDuree:2000,etage:18,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:45:976]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:47:176]{description:0¤p0¤p1¤p47¤p176 purge etat {ei 0{ contenu [personne¤p dest = 11 depart = 33 id = 1]aDelivrer[]}},type:ligneConsole}
+[0:0:1:47:176]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:47:176]{ascStackId:0,animDuree:2000,etage:18,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:49:176]{ascStackId:0,newPlannifier:{listeEtapes:{{t:109176,v:0.0,x:18.0},{t:117542,v:0.0,x:11.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:98499,v:0.0,x:21.0},{t:103976,v:0.0,x:18.0,softDepType:-1}}},monteeIdId:0}
+[0:0:1:49:176]{ascStackId:0,animDuree:2000,etage:18,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:57:542]{ascStackId:0,animDuree:2000,etage:11,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:59:542]{ascStackId:0,animDuree:2000,etage:11,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:59:542]{persId:1,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:0:742]{description:0¤p0¤p2¤p0¤p742 purge etat {ei 0{ contenu []aDelivrer[]}},type:ligneConsole}
+[0:0:2:0:742]{persId:1,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:0:742]{ascStackId:0,animDuree:2000,etage:11,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:2:232]{etage:29,destination:24,nbPersonnes:2,type:persInput}
+[0:0:2:2:742]{description:0¤p0¤p2¤p2¤p742 PLANNIFIER etat {ei 0{ contenu []aDelivrer[personne¤p dest = 24 depart = 29 id = 3¤v personne¤p dest = 24 depart = 29 id = 2]}},type:ligneConsole}
+[0:0:2:2:742]{description:erreur dans les sous simulations l'id de personne 3 ne designe aucune personne connue  Ascenseur ¤p ascId ¤p[0¤v0] ,type:Erreur}

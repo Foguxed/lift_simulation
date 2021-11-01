@@ -1,6 +1,7 @@
 package fr.fogux.lift_simulator.evenements;
 
 import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.EventRunPolicy;
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.structure.AscId;
 
@@ -33,7 +34,7 @@ public class EvenementArriveAscSansOuverture extends Evenement
     }
 
     @Override
-    public boolean shadowable(final long t)
+    public boolean shadowable(final long t, EventRunPolicy newPrintPolicy)
     {
         return true;
     }

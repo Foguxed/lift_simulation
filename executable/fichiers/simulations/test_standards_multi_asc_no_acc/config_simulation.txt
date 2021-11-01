@@ -1,0 +1,1 @@
+{acceleration:2.5E-3,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,margeInterAsc:0.8,dureeEntreeSortiePers:1200}

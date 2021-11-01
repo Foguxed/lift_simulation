@@ -1,0 +1,56 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 reste afk ascId ¤p[0¤v0] d¤p,type:ligneConsole}
+[0:0:0:0:0]{etage:27,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 0 niv 27 dest 12,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 27,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 27,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:24000,v:0.0,x:27.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:9,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 1 niv 9 dest 8,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 9,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 9,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:12000,v:0.0,x:9.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:24000,v:0.0,x:27.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [9 entree true personne¤p dest = 8 depart = 9 id = 1¤v 8 entree false personne¤p dest = 8 depart = 9 id = 1¤v 27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:2,destination:21,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 2 niv 2 dest 21,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 2,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:5656,v:0.0,x:2.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:12000,v:0.0,x:9.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [2 entree true personne¤p dest = 21 depart = 2 id = 2¤v 9 entree true personne¤p dest = 8 depart = 9 id = 1¤v 8 entree false personne¤p dest = 8 depart = 9 id = 1¤v 21 entree false personne¤p dest = 21 depart = 2 id = 2¤v 27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:36,destination:34,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 3 niv 36 dest 34,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [2 entree true personne¤p dest = 21 depart = 2 id = 2¤v 9 entree true personne¤p dest = 8 depart = 9 id = 1¤v 8 entree false personne¤p dest = 8 depart = 9 id = 1¤v 21 entree false personne¤p dest = 21 depart = 2 id = 2¤v 36 entree true personne¤p dest = 34 depart = 36 id = 3¤v 34 entree false personne¤p dest = 34 depart = 36 id = 3¤v 27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:30,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 4 niv 30 dest 36,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [2 entree true personne¤p dest = 21 depart = 2 id = 2¤v 9 entree true personne¤p dest = 8 depart = 9 id = 1¤v 8 entree false personne¤p dest = 8 depart = 9 id = 1¤v 21 entree false personne¤p dest = 21 depart = 2 id = 2¤v 30 entree true personne¤p dest = 36 depart = 30 id = 4¤v 36 entree false personne¤p dest = 36 depart = 30 id = 4¤v 36 entree true personne¤p dest = 34 depart = 36 id = 3¤v 34 entree false personne¤p dest = 34 depart = 36 id = 3¤v 27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:23,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 5 niv 23 dest 17,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on va init,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 etage choisi 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 trouve escale ascId ¤p[0¤v0] d¤p dest 2,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 ascId ¤p[0¤v0] tente [2 entree true personne¤p dest = 21 depart = 2 id = 2¤v 9 entree true personne¤p dest = 8 depart = 9 id = 1¤v 8 entree false personne¤p dest = 8 depart = 9 id = 1¤v 21 entree false personne¤p dest = 21 depart = 2 id = 2¤v 30 entree true personne¤p dest = 36 depart = 30 id = 4¤v 36 entree false personne¤p dest = 36 depart = 30 id = 4¤v 36 entree true personne¤p dest = 34 depart = 36 id = 3¤v 34 entree false personne¤p dest = 34 depart = 36 id = 3¤v 27 entree true personne¤p dest = 12 depart = 27 id = 0¤v 23 entree true personne¤p dest = 17 depart = 23 id = 5¤v 17 entree false personne¤p dest = 17 depart = 23 id = 5¤v 12 entree false personne¤p dest = 12 depart = 27 id = 0] contenu [],type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init doit être vrai true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 on a init,type:ligneConsole}
+[0:0:0:0:0]{etage:29,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 mais qui voila 6 niv 29 dest 22,type:ligneConsole}
+[0:0:0:0:0]{description:pb transposition Toutes les personnes n'ont pas etees livrees exemple¤pid 5 destination 17 waiting false,type:Erreur}

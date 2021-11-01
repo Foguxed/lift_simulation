@@ -1,6 +1,7 @@
 package fr.fogux.lift_simulator.evenements.animation;
 
 import fr.fogux.lift_simulator.AnimationProcess;
+import fr.fogux.lift_simulator.EventRunPolicy;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 import fr.fogux.lift_simulator.structure.AscId;
@@ -50,5 +51,6 @@ public class EvenementBoutonAscenseur extends EvenementChangementEtat
         compound.setBoolean(TagNames.newBoutonOn, newBoutonOn);
         compound.setBoolean(TagNames.oldBoutonOn, oldBoutonOn);
     }
+
 
 }

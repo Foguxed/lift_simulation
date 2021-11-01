@@ -9,19 +9,22 @@ import fr.fogux.lift_simulator.batchs.core.MinorableSimulStatCreator;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.exceptions.SimulateurException;
 import fr.fogux.lift_simulator.mind.Algorithme;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.mind.trajets.AlgoPersonne;
 import fr.fogux.lift_simulator.mind.trajets.Escale;
 import fr.fogux.lift_simulator.mind.trajets.EtatMonoAsc;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
-import fr.fogux.lift_simulator.utils.OcamlList;
+import fr.fogux.lift_simulator.utils.BOcamlList;
 
-public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
+/**
+ * Sous algorithme contenu dans les sous simulations de la mémoïsation
+ */
+public class AlgMonoAscIteratif extends Algorithme
 {
     /**
-     * N'est pas une implementation ONLINUE
-     * @param output
+     * N'est pas une implementation ONLINE
+     * @param outputStruct
      * @param config
      */
 
@@ -31,12 +34,12 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
     private final AlgoPersonne pObjectif;
     private final boolean recuperation;
     private boolean ouvertureEffectuee;
-    public final OcamlList<Escale> trajet;
+    public final BOcamlList<Escale> trajet;
     private final MonoMemoiser<?> memoiser;
     private int niveauObj;
 
     public AlgMonoAscIteratif(final OutputProvider output, final ConfigSimu config, final MonoMemoiser<?> memoiser,
-        final EtatMonoAsc etat, final AlgoPersonne objectif, final boolean estRecuperation, final OcamlList<Escale> trajet)
+        final EtatMonoAsc etat, final AlgoPersonne objectif, final boolean estRecuperation, final BOcamlList<Escale> trajet)
     {
         super(output, config);
         if(config.getRepartAscenseurs().length > 1 || config.getRepartAscenseurs()[0] > 1)
@@ -100,15 +103,12 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
         final List<Integer> retour = new ArrayList<>(1);
         if(recuperation)
         {
-
             if(ouvertureEffectuee)
             {
-                trajet.head.todeleteTime = out().simu.getTime();
-                out().pause(); // une personne est entree
+                out().thenpause();
             }
             else
             {
-                //System.out.println("ouverture");
                 ouvertureEffectuee = true;
                 retour.add(pObjectif.id);
                 registerBranches(etat);
@@ -116,43 +116,43 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
         }
         else
         {
-            trajet.head.todeleteTime = out().simu.getTime();
-            out().pause();
+            out().thenpause();
             ouvertureEffectuee = true;
             registerBranches(etat);
         }
         return retour;
     }
-
+    
+    /**
+     * 
+     * @param etat
+     * @return true si de nouveaux états ont étés enregistrés à partir de cette simulation
+     */
     protected boolean registerBranches(final EtatMonoAsc etat)
     {
-        //System.out.println("register branches " + ouvertureEffectuee);
-
         boolean quelqueChoseRegister = false;
-        if(ouvertureEffectuee)
+        if(ouvertureEffectuee) // sinon cette simulation n'a pas atteint le moment satisfaisant pour enregistrer les états de l'étape k+1
         {
+        	// enregistre les états (éventuellement multiples) auquel correspond cette simulation dans la structure de mémoïsation
             for(final AlgoPersonne p : etat.contenuAsc)
             {
                 if(p.destination == etat.getNiveau())
                 {
+                	// les états correspondants à l'étape k+1 sont toutes les manières de faire sortir une personne au palier
                     final EtatMonoAsc newEtat = new EtatMonoAsc(etat);
                     newEtat.sortieDe(p);
-                    memoiser.registerSimulation(newEtat, out().simu); // la simu va aller jusqu'au fin
+                    memoiser.registerSimulation(newEtat, out().simu); 
                     quelqueChoseRegister = true;
                 }
             }
             if(recuperation && etat.aDelivrer.contains(pObjectif))
             {
-                //System.out.println("oldEtat " + etat);
                 final EtatMonoAsc newEtat = new EtatMonoAsc(etat);
                 newEtat.entre(pObjectif);
-                //System.out.println("newEtat " + etat);
                 memoiser.registerSimulation(newEtat, out().simu);
                 quelqueChoseRegister = true;
             }
         }
-
-
         return quelqueChoseRegister;
     }
 
@@ -165,7 +165,6 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
     @Override
     public void appelInterieur(final int niveau, final AscId idAscenseur)
     {
-        // TODO Auto-generated method stub
     }
 
     @Override
@@ -174,22 +173,18 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
 
     }
 
-    public <T extends Comparable<T>> void nextSteps(final EtatMonoAsc registeredEtat,final Simulation s, final MinorableSimulStatCreator<T> statCreator, final T ref)
+    public <T extends Comparable<T>> void nextSteps(final EtatMonoAsc registeredEtat,final Simulation s)
     {
         if(!registerBranches(registeredEtat))
         {
-            if(statCreator.getMinorant(s, registeredEtat, config).compareTo(ref) < 0)
-            {
-                etatNextSteps(memoiser, registeredEtat, config, trajet,s);
-            }
-            else
-            {
-                //System.out.println("statcretor eliminated " + statCreator + " ref " +  ref);
-            }
+            etatNextSteps(memoiser, registeredEtat, config, trajet,s);
         }
     }
-
-    public static <T extends Comparable<T>> void etatNextSteps(final MonoMemoiser<?> memoiser, final EtatMonoAsc etat, final ConfigSimu config, final OcamlList<Escale> trajet, final Simulation s)
+    
+    /**
+     * crée les sous simulations de s vue sous l'angle de l'état etat et les exécutent (elles vont s'enregistrer dans memoiser lorsqu'elles auront atteint l'étape k+1).
+     */
+    public static <T extends Comparable<T>> void etatNextSteps(final MonoMemoiser<?> memoiser, final EtatMonoAsc etat, final ConfigSimu config, final BOcamlList<Escale> trajet, final Simulation s)
     {
         try
         {
@@ -197,12 +192,14 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
             {
                 for(final AlgoPersonne p : etat.aDelivrer)
                 {
-                    new Simulation(s, new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, true,trajet.add(new Escale(p.depart, p)))).initPrgmAndResume();
+                	// on essaye de prendre tous les clients possibles
+                    new Simulation(s, new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, true,trajet.add(new Escale(p.depart, p))),false).initPrgmAndResume();
                 }
             }
             for(final AlgoPersonne p : etat.contenuAsc)
             {
-                new Simulation(s,new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, false,trajet.add(new Escale(p.destination, null)))).initPrgmAndResume();
+            	// on essaye toutes les sorties de client possibles
+                new Simulation(s,new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, false,trajet.add(new Escale(p.destination, null))),false).initPrgmAndResume();
             }
         }
         catch(final SimulateurAcceptableException e)
@@ -211,8 +208,11 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
             throw new SimulateurAcceptableException("erreur dans les sous simulations"  + e.getMessage());
         }
     }
-
-    public static<T extends Comparable<T>> void etatNextStepsFiltre(final MonoMemoiser<?> memoiser, final EtatMonoAsc etat, final ConfigSimu config, final OcamlList<Escale> trajet, final Simulation s,final Predicate<Integer> filtreEtages)
+    
+    /**
+     * même méthode que la précédement mais n'accepte que les choix d'étages qui respectent le filtre
+     */
+    public static<T extends Comparable<T>> void etatNextStepsFiltre(final MonoMemoiser<?> memoiser, final EtatMonoAsc etat, final ConfigSimu config, final BOcamlList<Escale> trajet, final Simulation s,final Predicate<Integer> filtreEtages)
     {
         try
         {
@@ -222,7 +222,7 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
                 {
                     if(filtreEtages.test(p.depart))
                     {
-                        new Simulation(s, new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, true,trajet.add(new Escale(p.depart, p)))).initPrgmAndResume();
+                        new Simulation(s, new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, true,trajet.add(new Escale(p.depart, p))),false).initPrgmAndResume();
                     }
                 }
             }
@@ -230,7 +230,7 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
             {
                 if(filtreEtages.test(p.destination))
                 {
-                    new Simulation(s,new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, false,trajet.add(new Escale(p.destination, null)))).initPrgmAndResume();
+                    new Simulation(s,new AlgMonoInstantiator(new EtatMonoAsc(etat), memoiser, p, false,trajet.add(new Escale(p.destination, null))),false).initPrgmAndResume();
                 }
             }
         }
@@ -240,12 +240,4 @@ public class AlgMonoAscIteratif extends Algorithme //implements AlgoInstantiator
             throw new SimulateurAcceptableException("erreur dans les sous simulations " + e.getMessage());
         }
     }
-    /*
-    @Override
-    public String getName()
-    {
-        // TODO Auto-generated method stub
-        return "algomonoasciteratif";
-    }*/
-
 }

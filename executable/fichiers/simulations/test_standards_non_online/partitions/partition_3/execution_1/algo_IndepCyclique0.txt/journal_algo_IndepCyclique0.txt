@@ -1,0 +1,274 @@
+{acceleration:0.25E-7,dureePortes:2000,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  extremum false,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 chgmtsens ,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi null,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [25] monte false,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 descend 0,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  extremum false,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 chgmtsens ,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 25,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:63245,v:0.0,x:25.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:0]{etage:25,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  extremum true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 31,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:70427,v:0.0,x:31.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:63245,v:0.0,x:25.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:0:0]{etage:31,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  extremum true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 31,type:ligneConsole}
+[0:0:0:0:0]{etage:27,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  extremum true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 31,type:ligneConsole}
+[0:0:0:0:0]{etage:28,destination:16,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 8,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:35777,v:0.0,x:8.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:70427,v:0.0,x:31.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:0:0]{etage:8,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 8,type:ligneConsole}
+[0:0:0:0:0]{etage:34,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 8,type:ligneConsole}
+[0:0:0:0:0]{etage:35,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [3¤v 8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 3,type:ligneConsole}
+[0:0:0:0:0]{ascStackId:0,newPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:21908,v:0.0,x:3.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:35777,v:0.0,x:8.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:0:0]{etage:3,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [3¤v 8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 3,type:ligneConsole}
+[0:0:0:0:0]{etage:19,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 arretsPossibles [3¤v 8] monte true,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 retour1 present,type:ligneConsole}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0  choisi 3,type:ligneConsole}
+[0:0:0:0:0]{etage:32,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 arretsPossibles [3¤v 8¤v 9] monte true,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 retour1 present,type:ligneConsole}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1  choisi 3,type:ligneConsole}
+[0:0:0:0:1]{etage:9,destination:33,nbPersonnes:1,type:persInput}
+[0:0:0:21:908]{ascStackId:0,animDuree:2000,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:908]{ascStackId:0,animDuree:2000,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:908]{ascStackId:0,persId:7,animDuree:1200,etage:3,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:25:108]{ascStackId:0,persId:7,animDuree:1200,etage:3,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:25:108]{ascStackId:0,animDuree:2000,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:27:108]{description:0¤p0¤p0¤p27¤p108 arretsPossibles [24¤v 8¤v 9] monte true,type:ligneConsole}
+[0:0:0:27:108]{description:0¤p0¤p0¤p27¤p108 retour1 present,type:ligneConsole}
+[0:0:0:27:108]{description:0¤p0¤p0¤p27¤p108  choisi 8,type:ligneConsole}
+[0:0:0:27:108]{ascStackId:0,newPlannifier:{listeEtapes:{{t:27108,v:0.0,x:3.0},{t:55392,v:0.0,x:8.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0},{t:21908,v:0.0,x:3.0,softDepType:1}}},monteeIdId:0}
+[0:0:0:27:108]{ascStackId:0,animDuree:2000,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:55:392]{ascStackId:0,animDuree:2000,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:392]{ascStackId:0,animDuree:2000,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:392]{ascStackId:0,persId:4,animDuree:1200,etage:8,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:58:592]{ascStackId:0,persId:4,animDuree:1200,etage:8,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:58:592]{ascStackId:0,animDuree:2000,etage:8,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:0:592]{description:0¤p0¤p1¤p0¤p592 arretsPossibles [24¤v 9¤v 14] monte true,type:ligneConsole}
+[0:0:1:0:592]{description:0¤p0¤p1¤p0¤p592 retour1 present,type:ligneConsole}
+[0:0:1:0:592]{description:0¤p0¤p1¤p0¤p592  choisi 9,type:ligneConsole}
+[0:0:1:0:592]{ascStackId:0,newPlannifier:{listeEtapes:{{t:60592,v:0.0,x:8.0},{t:73241,v:0.0,x:9.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:27108,v:0.0,x:3.0},{t:55392,v:0.0,x:8.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:0:592]{ascStackId:0,animDuree:2000,etage:8,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:13:241]{ascStackId:0,animDuree:2000,etage:9,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:15:241]{ascStackId:0,animDuree:2000,etage:9,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:15:241]{ascStackId:0,persId:10,animDuree:1200,etage:9,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:16:441]{ascStackId:0,persId:10,animDuree:1200,etage:9,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:16:441]{ascStackId:0,animDuree:2000,etage:9,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:18:441]{description:0¤p0¤p1¤p18¤p441 arretsPossibles [33¤v 24¤v 14] monte true,type:ligneConsole}
+[0:0:1:18:441]{description:0¤p0¤p1¤p18¤p441 retour1 present,type:ligneConsole}
+[0:0:1:18:441]{description:0¤p0¤p1¤p18¤p441  choisi 14,type:ligneConsole}
+[0:0:1:18:441]{ascStackId:0,newPlannifier:{listeEtapes:{{t:78441,v:0.0,x:9.0},{t:106725,v:0.0,x:14.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:60592,v:0.0,x:8.0},{t:73241,v:0.0,x:9.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:18:441]{ascStackId:0,animDuree:2000,etage:9,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:46:725]{ascStackId:0,animDuree:2000,etage:14,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:48:725]{ascStackId:0,animDuree:2000,etage:14,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:48:725]{persId:4,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:49:925]{persId:4,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:49:925]{ascStackId:0,animDuree:2000,etage:14,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:51:925]{description:0¤p0¤p1¤p51¤p925 arretsPossibles [33¤v 24] monte true,type:ligneConsole}
+[0:0:1:51:925]{description:0¤p0¤p1¤p51¤p925 retour1 present,type:ligneConsole}
+[0:0:1:51:925]{description:0¤p0¤p1¤p51¤p925  choisi 24,type:ligneConsole}
+[0:0:1:51:925]{ascStackId:0,newPlannifier:{listeEtapes:{{t:111925,v:0.0,x:14.0},{t:151925,v:0.0,x:24.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:78441,v:0.0,x:9.0},{t:106725,v:0.0,x:14.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:51:925]{ascStackId:0,animDuree:2000,etage:14,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:31:925]{ascStackId:0,animDuree:2000,etage:24,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:33:925]{ascStackId:0,animDuree:2000,etage:24,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:33:925]{persId:7,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:35:125]{persId:7,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:35:125]{ascStackId:0,animDuree:2000,etage:24,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:37:125]{description:0¤p0¤p2¤p37¤p125 arretsPossibles [33] monte true,type:ligneConsole}
+[0:0:2:37:125]{description:0¤p0¤p2¤p37¤p125 retour1 present,type:ligneConsole}
+[0:0:2:37:125]{description:0¤p0¤p2¤p37¤p125  choisi 33,type:ligneConsole}
+[0:0:2:37:125]{ascStackId:0,newPlannifier:{listeEtapes:{{t:157125,v:0.0,x:24.0},{t:195072,v:0.0,x:33.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:111925,v:0.0,x:14.0},{t:151925,v:0.0,x:24.0,softDepType:1}}},monteeIdId:0}
+[0:0:2:37:125]{ascStackId:0,animDuree:2000,etage:24,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:15:72]{ascStackId:0,animDuree:2000,etage:33,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:72]{ascStackId:0,animDuree:2000,etage:33,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:72]{persId:10,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:18:272]{persId:10,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:18:272]{ascStackId:0,animDuree:2000,etage:33,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:20:272]{description:0¤p0¤p3¤p20¤p272 arretsPossibles [] monte true,type:ligneConsole}
+[0:0:3:20:272]{description:0¤p0¤p3¤p20¤p272  extremum true,type:ligneConsole}
+[0:0:3:20:272]{description:0¤p0¤p3¤p20¤p272  choisi 35,type:ligneConsole}
+[0:0:3:20:272]{ascStackId:0,newPlannifier:{listeEtapes:{{t:200272,v:0.0,x:33.0},{t:218160,v:0.0,x:35.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:157125,v:0.0,x:24.0},{t:195072,v:0.0,x:33.0,softDepType:1}}},monteeIdId:0}
+[0:0:3:20:272]{ascStackId:0,animDuree:2000,etage:33,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:38:160]{ascStackId:0,animDuree:2000,etage:35,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:40:160]{description:0¤p0¤p3¤p40¤p160 chgmtsens ,type:ligneConsole}
+[0:0:3:40:160]{ascStackId:0,animDuree:2000,etage:35,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:40:160]{ascStackId:0,persId:6,animDuree:1200,etage:35,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:41:360]{ascStackId:0,persId:6,animDuree:1200,etage:35,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:41:360]{ascStackId:0,animDuree:2000,etage:35,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:43:360]{description:0¤p0¤p3¤p43¤p360 arretsPossibles [32¤v 34¤v 19¤v 25¤v 27¤v 28¤v 31] monte false,type:ligneConsole}
+[0:0:3:43:360]{description:0¤p0¤p3¤p43¤p360 descend 7,type:ligneConsole}
+[0:0:3:43:360]{description:0¤p0¤p3¤p43¤p360 retour1 present,type:ligneConsole}
+[0:0:3:43:360]{description:0¤p0¤p3¤p43¤p360  choisi 34,type:ligneConsole}
+[0:0:3:43:360]{ascStackId:0,newPlannifier:{listeEtapes:{{t:223360,v:0.0,x:35.0},{t:236009,v:0.0,x:34.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:200272,v:0.0,x:33.0},{t:218160,v:0.0,x:35.0,softDepType:1}}},monteeIdId:0}
+[0:0:3:43:360]{ascStackId:0,animDuree:2000,etage:35,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:56:9]{ascStackId:0,animDuree:2000,etage:34,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:58:9]{ascStackId:0,animDuree:2000,etage:34,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:58:9]{ascStackId:0,persId:5,animDuree:1200,etage:34,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:59:209]{ascStackId:0,persId:5,animDuree:1200,etage:34,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:59:209]{ascStackId:0,animDuree:2000,etage:34,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:1:209]{description:0¤p0¤p4¤p1¤p209 arretsPossibles [32¤v 19¤v 25¤v 27¤v 28¤v 31] monte false,type:ligneConsole}
+[0:0:4:1:209]{description:0¤p0¤p4¤p1¤p209 descend 6,type:ligneConsole}
+[0:0:4:1:209]{description:0¤p0¤p4¤p1¤p209 retour1 present,type:ligneConsole}
+[0:0:4:1:209]{description:0¤p0¤p4¤p1¤p209  choisi 32,type:ligneConsole}
+[0:0:4:1:209]{ascStackId:0,newPlannifier:{listeEtapes:{{t:241209,v:0.0,x:34.0},{t:259097,v:0.0,x:32.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:223360,v:0.0,x:35.0},{t:236009,v:0.0,x:34.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:1:209]{ascStackId:0,animDuree:2000,etage:34,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:19:97]{ascStackId:0,animDuree:2000,etage:32,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:21:97]{ascStackId:0,animDuree:2000,etage:32,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:21:97]{persId:6,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:22:297]{persId:6,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:22:297]{persId:5,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:23:497]{persId:5,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:23:497]{ascStackId:0,persId:9,animDuree:1200,etage:32,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:24:697]{ascStackId:0,persId:9,animDuree:1200,etage:32,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:24:697]{ascStackId:0,animDuree:2000,etage:32,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:26:697]{description:0¤p0¤p4¤p26¤p697 arretsPossibles [19¤v 22¤v 25¤v 27¤v 28¤v 31] monte false,type:ligneConsole}
+[0:0:4:26:697]{description:0¤p0¤p4¤p26¤p697 descend 6,type:ligneConsole}
+[0:0:4:26:697]{description:0¤p0¤p4¤p26¤p697 retour1 present,type:ligneConsole}
+[0:0:4:26:697]{description:0¤p0¤p4¤p26¤p697  choisi 31,type:ligneConsole}
+[0:0:4:26:697]{ascStackId:0,newPlannifier:{listeEtapes:{{t:266697,v:0.0,x:32.0},{t:279346,v:0.0,x:31.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:241209,v:0.0,x:34.0},{t:259097,v:0.0,x:32.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:26:697]{ascStackId:0,animDuree:2000,etage:32,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:39:346]{ascStackId:0,animDuree:2000,etage:31,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:41:346]{ascStackId:0,animDuree:2000,etage:31,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:41:346]{ascStackId:0,persId:1,animDuree:1200,etage:31,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:42:546]{ascStackId:0,persId:1,animDuree:1200,etage:31,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:42:546]{ascStackId:0,animDuree:2000,etage:31,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:44:546]{description:0¤p0¤p4¤p44¤p546 arretsPossibles [19¤v 22¤v 25¤v 27¤v 28¤v 13] monte false,type:ligneConsole}
+[0:0:4:44:546]{description:0¤p0¤p4¤p44¤p546 descend 6,type:ligneConsole}
+[0:0:4:44:546]{description:0¤p0¤p4¤p44¤p546 retour1 present,type:ligneConsole}
+[0:0:4:44:546]{description:0¤p0¤p4¤p44¤p546  choisi 28,type:ligneConsole}
+[0:0:4:44:546]{ascStackId:0,newPlannifier:{listeEtapes:{{t:284546,v:0.0,x:31.0},{t:306454,v:0.0,x:28.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:266697,v:0.0,x:32.0},{t:279346,v:0.0,x:31.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:44:546]{ascStackId:0,animDuree:2000,etage:31,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:6:454]{ascStackId:0,animDuree:2000,etage:28,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:8:454]{ascStackId:0,animDuree:2000,etage:28,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:8:454]{ascStackId:0,persId:3,animDuree:1200,etage:28,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:9:654]{ascStackId:0,persId:3,animDuree:1200,etage:28,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:9:654]{ascStackId:0,animDuree:2000,etage:28,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:11:654]{description:0¤p0¤p5¤p11¤p654 arretsPossibles [16¤v 19¤v 22¤v 25¤v 27¤v 13] monte false,type:ligneConsole}
+[0:0:5:11:654]{description:0¤p0¤p5¤p11¤p654 descend 6,type:ligneConsole}
+[0:0:5:11:654]{description:0¤p0¤p5¤p11¤p654 retour1 present,type:ligneConsole}
+[0:0:5:11:654]{description:0¤p0¤p5¤p11¤p654  choisi 27,type:ligneConsole}
+[0:0:5:11:654]{ascStackId:0,newPlannifier:{listeEtapes:{{t:311654,v:0.0,x:28.0},{t:324303,v:0.0,x:27.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:284546,v:0.0,x:31.0},{t:306454,v:0.0,x:28.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:11:654]{ascStackId:0,animDuree:2000,etage:28,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:24:303]{ascStackId:0,animDuree:2000,etage:27,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:26:303]{ascStackId:0,animDuree:2000,etage:27,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:26:303]{ascStackId:0,persId:2,animDuree:1200,etage:27,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:27:503]{ascStackId:0,persId:2,animDuree:1200,etage:27,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:27:503]{ascStackId:0,animDuree:2000,etage:27,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:29:503]{description:0¤p0¤p5¤p29¤p503 arretsPossibles [16¤v 18¤v 19¤v 22¤v 25¤v 13] monte false,type:ligneConsole}
+[0:0:5:29:503]{description:0¤p0¤p5¤p29¤p503 descend 6,type:ligneConsole}
+[0:0:5:29:503]{description:0¤p0¤p5¤p29¤p503 retour1 present,type:ligneConsole}
+[0:0:5:29:503]{description:0¤p0¤p5¤p29¤p503  choisi 25,type:ligneConsole}
+[0:0:5:29:503]{ascStackId:0,newPlannifier:{listeEtapes:{{t:329503,v:0.0,x:27.0},{t:347391,v:0.0,x:25.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:311654,v:0.0,x:28.0},{t:324303,v:0.0,x:27.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:29:503]{ascStackId:0,animDuree:2000,etage:27,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:47:391]{ascStackId:0,animDuree:2000,etage:25,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:49:391]{ascStackId:0,animDuree:2000,etage:25,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:49:391]{ascStackId:0,persId:0,animDuree:1200,etage:25,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:50:591]{ascStackId:0,persId:0,animDuree:1200,etage:25,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:50:591]{ascStackId:0,animDuree:2000,etage:25,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:52:591]{description:0¤p0¤p5¤p52¤p591 arretsPossibles [16¤v 18¤v 4¤v 22¤v 13] monte false,type:ligneConsole}
+[0:0:5:52:591]{description:0¤p0¤p5¤p52¤p591 descend 5,type:ligneConsole}
+[0:0:5:52:591]{description:0¤p0¤p5¤p52¤p591 retour1 present,type:ligneConsole}
+[0:0:5:52:591]{description:0¤p0¤p5¤p52¤p591  choisi 22,type:ligneConsole}
+[0:0:5:52:591]{ascStackId:0,newPlannifier:{listeEtapes:{{t:352591,v:0.0,x:25.0},{t:374499,v:0.0,x:22.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:329503,v:0.0,x:27.0},{t:347391,v:0.0,x:25.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:52:591]{ascStackId:0,animDuree:2000,etage:25,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:14:499]{ascStackId:0,animDuree:2000,etage:22,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:16:499]{ascStackId:0,animDuree:2000,etage:22,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:16:499]{persId:9,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:17:699]{persId:9,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:17:699]{ascStackId:0,animDuree:2000,etage:22,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:19:699]{description:0¤p0¤p6¤p19¤p699 arretsPossibles [16¤v 18¤v 19¤v 4¤v 13] monte false,type:ligneConsole}
+[0:0:6:19:699]{description:0¤p0¤p6¤p19¤p699 descend 5,type:ligneConsole}
+[0:0:6:19:699]{description:0¤p0¤p6¤p19¤p699 retour1 present,type:ligneConsole}
+[0:0:6:19:699]{description:0¤p0¤p6¤p19¤p699  choisi 19,type:ligneConsole}
+[0:0:6:19:699]{ascStackId:0,newPlannifier:{listeEtapes:{{t:379699,v:0.0,x:22.0},{t:401607,v:0.0,x:19.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:352591,v:0.0,x:25.0},{t:374499,v:0.0,x:22.0,softDepType:-1}}},monteeIdId:0}
+[0:0:6:19:699]{ascStackId:0,animDuree:2000,etage:22,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:41:607]{ascStackId:0,animDuree:2000,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:43:607]{ascStackId:0,animDuree:2000,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:43:607]{ascStackId:0,persId:8,animDuree:1200,etage:19,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:44:807]{ascStackId:0,persId:8,animDuree:1200,etage:19,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:44:807]{ascStackId:0,animDuree:2000,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:46:807]{description:0¤p0¤p6¤p46¤p807 arretsPossibles [16¤v 18¤v 4¤v 13¤v 14] monte false,type:ligneConsole}
+[0:0:6:46:807]{description:0¤p0¤p6¤p46¤p807 descend 5,type:ligneConsole}
+[0:0:6:46:807]{description:0¤p0¤p6¤p46¤p807 retour1 present,type:ligneConsole}
+[0:0:6:46:807]{description:0¤p0¤p6¤p46¤p807  choisi 18,type:ligneConsole}
+[0:0:6:46:807]{ascStackId:0,newPlannifier:{listeEtapes:{{t:406807,v:0.0,x:19.0},{t:419456,v:0.0,x:18.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:379699,v:0.0,x:22.0},{t:401607,v:0.0,x:19.0,softDepType:-1}}},monteeIdId:0}
+[0:0:6:46:807]{ascStackId:0,animDuree:2000,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:59:456]{ascStackId:0,animDuree:2000,etage:18,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:1:456]{ascStackId:0,animDuree:2000,etage:18,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:1:456]{persId:2,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:2:656]{persId:2,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:2:656]{ascStackId:0,animDuree:2000,etage:18,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:4:656]{description:0¤p0¤p7¤p4¤p656 arretsPossibles [16¤v 4¤v 13¤v 14] monte false,type:ligneConsole}
+[0:0:7:4:656]{description:0¤p0¤p7¤p4¤p656 descend 4,type:ligneConsole}
+[0:0:7:4:656]{description:0¤p0¤p7¤p4¤p656 retour1 present,type:ligneConsole}
+[0:0:7:4:656]{description:0¤p0¤p7¤p4¤p656  choisi 16,type:ligneConsole}
+[0:0:7:4:656]{ascStackId:0,newPlannifier:{listeEtapes:{{t:424656,v:0.0,x:18.0},{t:442544,v:0.0,x:16.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:406807,v:0.0,x:19.0},{t:419456,v:0.0,x:18.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:4:656]{ascStackId:0,animDuree:2000,etage:18,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:22:544]{ascStackId:0,animDuree:2000,etage:16,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:24:544]{ascStackId:0,animDuree:2000,etage:16,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:24:544]{persId:3,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:25:744]{persId:3,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:25:744]{ascStackId:0,animDuree:2000,etage:16,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:27:744]{description:0¤p0¤p7¤p27¤p744 arretsPossibles [4¤v 13¤v 14] monte false,type:ligneConsole}
+[0:0:7:27:744]{description:0¤p0¤p7¤p27¤p744 descend 3,type:ligneConsole}
+[0:0:7:27:744]{description:0¤p0¤p7¤p27¤p744 retour1 present,type:ligneConsole}
+[0:0:7:27:744]{description:0¤p0¤p7¤p27¤p744  choisi 14,type:ligneConsole}
+[0:0:7:27:744]{ascStackId:0,newPlannifier:{listeEtapes:{{t:447744,v:0.0,x:16.0},{t:465632,v:0.0,x:14.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:424656,v:0.0,x:18.0},{t:442544,v:0.0,x:16.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:27:744]{ascStackId:0,animDuree:2000,etage:16,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:45:632]{ascStackId:0,animDuree:2000,etage:14,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:47:632]{ascStackId:0,animDuree:2000,etage:14,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:47:632]{persId:8,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:48:832]{persId:8,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:48:832]{ascStackId:0,animDuree:2000,etage:14,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:50:832]{description:0¤p0¤p7¤p50¤p832 arretsPossibles [4¤v 13] monte false,type:ligneConsole}
+[0:0:7:50:832]{description:0¤p0¤p7¤p50¤p832 descend 2,type:ligneConsole}
+[0:0:7:50:832]{description:0¤p0¤p7¤p50¤p832 retour1 present,type:ligneConsole}
+[0:0:7:50:832]{description:0¤p0¤p7¤p50¤p832  choisi 13,type:ligneConsole}
+[0:0:7:50:832]{ascStackId:0,newPlannifier:{listeEtapes:{{t:470832,v:0.0,x:14.0},{t:483481,v:0.0,x:13.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:447744,v:0.0,x:16.0},{t:465632,v:0.0,x:14.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:50:832]{ascStackId:0,animDuree:2000,etage:14,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:3:481]{ascStackId:0,animDuree:2000,etage:13,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:5:481]{ascStackId:0,animDuree:2000,etage:13,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:5:481]{persId:1,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:6:681]{persId:1,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:6:681]{ascStackId:0,animDuree:2000,etage:13,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:8:681]{description:0¤p0¤p8¤p8¤p681 arretsPossibles [4] monte false,type:ligneConsole}
+[0:0:8:8:681]{description:0¤p0¤p8¤p8¤p681 descend 1,type:ligneConsole}
+[0:0:8:8:681]{description:0¤p0¤p8¤p8¤p681 retour1 present,type:ligneConsole}
+[0:0:8:8:681]{description:0¤p0¤p8¤p8¤p681  choisi 4,type:ligneConsole}
+[0:0:8:8:681]{ascStackId:0,newPlannifier:{listeEtapes:{{t:488681,v:0.0,x:13.0},{t:526628,v:0.0,x:4.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:470832,v:0.0,x:14.0},{t:483481,v:0.0,x:13.0,softDepType:-1}}},monteeIdId:0}
+[0:0:8:8:681]{ascStackId:0,animDuree:2000,etage:13,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:46:628]{ascStackId:0,animDuree:2000,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:48:628]{ascStackId:0,animDuree:2000,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:48:628]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:49:828]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:49:828]{ascStackId:0,animDuree:2000,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:51:828]{description:0¤p0¤p8¤p51¤p828 arretsPossibles [] monte false,type:ligneConsole}
+[0:0:8:51:828]{description:0¤p0¤p8¤p51¤p828 descend 0,type:ligneConsole}
+[0:0:8:51:828]{description:0¤p0¤p8¤p51¤p828  extremum false,type:ligneConsole}
+[0:0:8:51:828]{description:0¤p0¤p8¤p51¤p828 chgmtsens ,type:ligneConsole}
+[0:0:8:51:828]{description:0¤p0¤p8¤p51¤p828  choisi null,type:ligneConsole}
+[0:0:8:51:828]{ascStackId:0,animDuree:2000,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}

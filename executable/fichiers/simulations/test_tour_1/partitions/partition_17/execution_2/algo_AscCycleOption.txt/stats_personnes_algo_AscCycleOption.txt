@@ -1,0 +1,5 @@
+{acceleration:1.2000001E-6,dureePortes:2000,ascenseurSpeed:0.005,capaciteAsc:5,pingTime:5000,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:-1,niveauMax:10}
+{completionTime:0,totalTransportTime:0,nbPersonneTransportees:0,failed:true,maxTransportTime:0}
+{heureEntreeAscenseur:0,heureSortieAscenseur:0,heureArrivee:771}
+{heureEntreeAscenseur:0,heureSortieAscenseur:0,heureArrivee:7150}
+{heureEntreeAscenseur:0,heureSortieAscenseur:0,heureArrivee:14484}

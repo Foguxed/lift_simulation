@@ -1,0 +1,1 @@
+{acceleration:1.2000001E-6,dureePortes:2000,ascenseurSpeed:0.005,capaciteAsc:5,margeInterAsc:0.8,dureeEntreeSortiePers:1200,pingTime:5000}

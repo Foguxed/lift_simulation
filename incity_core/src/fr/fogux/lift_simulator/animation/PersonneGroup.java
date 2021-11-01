@@ -84,7 +84,10 @@ public class PersonneGroup implements PredictedDrawable
     public void animationDeplacement(final long time, final long duree, final EtageVisu depart, final AscenseurVisu arrivee)
     {
         update(animation.getTime());
-        container.unregister(this);
+        if(container!=null)
+        {
+            container.unregister(this);
+        }
         container = null;
         depart.registerPourAnimation(this);
         animationDep = new AnimationDeplacement(time, duree, depart, arrivee);

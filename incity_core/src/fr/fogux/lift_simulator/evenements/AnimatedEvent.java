@@ -2,6 +2,7 @@ package fr.fogux.lift_simulator.evenements;
 
 import fr.fogux.lift_simulator.AnimationProcess;
 import fr.fogux.lift_simulator.GestionnaireDeTachesSimu;
+import fr.fogux.lift_simulator.EventRunPolicy;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
 
@@ -79,9 +80,16 @@ public abstract class AnimatedEvent extends PrintableEvenement
     }
 
     @Override
-    public boolean shadowable(final long registeredT)
+    public boolean shadowable(final long registeredT,EventRunPolicy newPolicy)
     {
-        return !doNotSimuRun(registeredT);
+    	if(newPolicy.doPrint())
+    	{
+    		return true;
+    	}
+    	else
+    	{
+            return !doNotSimuRun(registeredT);
+    	}
     }
 
     protected abstract void runAnimation(AnimationProcess animProcess, long timeDebut, long duree);

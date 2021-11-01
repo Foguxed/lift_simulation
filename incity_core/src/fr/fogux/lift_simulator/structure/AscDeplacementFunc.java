@@ -43,7 +43,7 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
         else
         {
             final float a = choixAcceleration(xi,xf,vi,c);
-            Simulateur.println("choix a " + a);
+            //Simulateur.println("choix a " + a);
             return new AscDoubleDeplacementFunc(t0, xi, vi, xf, a);
         }
     }
@@ -72,7 +72,7 @@ public abstract class AscDeplacementFunc implements DeplacementFunc
     }
     public static AscSoftDep getSoftDepStraightToObjective(final ConfigSimu c, final long t0, final float vi, final float xi, final float xf)
     {
-        Simulateur.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
+        //Simulateur.println("time straight to O t0 " + t0 + " vi " + vi + " xi " + xi + " xf " + xf + " Config " + c.toString());
         final long time;
         final float a;
         byte type;

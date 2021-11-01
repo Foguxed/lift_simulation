@@ -1,59 +1,21 @@
 package fr.fogux.lift_simulator.utils;
 
-public class OcamlList<E>
+public interface OcamlList<E>
 {
-    public final E head;
-    public final OcamlList<E> queue;
+    OcamlList<E> add(final E element);
+    boolean isEmpty();
+    E getHead();
+    OcamlList<E> getQueue();
 
-    public OcamlList()
+    default E lastItem()
     {
-        head = null;
-        queue = null;
-    }
-
-    private OcamlList(final E head, final OcamlList<E> queue)
-    {
-        this.head = head;
-        this.queue = queue;
-    }
-
-    public OcamlList<E> add(final E element)
-    {
-        return new OcamlList<>(element,this);
-    }
-
-    public boolean isEmpty()
-    {
-        return queue == null;
-    }
-
-    @Override
-    public String toString()
-    {
-        if(isEmpty())
+        OcamlList<E> c = this;
+        E last = null;
+        while(!c.isEmpty())
         {
-            return "()";
+            last = c.getHead();
+            c = c.getQueue();
         }
-        else
-        {
-            return head + "->" + queue;
-        }
-    }
-
-    public OcamlList<E> reverse()
-    {
-        return innerReverse(this,new OcamlList<E>());
-    }
-
-    private static <C> OcamlList<C> innerReverse(final OcamlList<C> reversed, final OcamlList<C> retour)
-    {
-        if(reversed.isEmpty())
-        {
-            return retour;
-        }
-        else
-        {
-            return innerReverse(reversed.queue,retour.add(reversed.head));
-        }
+        return last;
     }
 }

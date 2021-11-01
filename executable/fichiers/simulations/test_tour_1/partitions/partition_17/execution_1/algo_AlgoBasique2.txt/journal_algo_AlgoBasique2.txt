@@ -1,0 +1,13 @@
+{acceleration:1.2000001E-6,dureePortes:2000,ascenseurSpeed:0.005,capaciteAsc:5,pingTime:5000,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:-1,niveauMax:10}
+[0:0:0:0:771]{ascStackId:0,newPlannifier:{listeEtapes:{{t:771,v:0.0,x:0.0},{t:2596,v:0.0,x:-1.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:0:771]{etage:0,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:7:150]{description:0¤p0¤p0¤p7¤p150 se voit attribue ascId ¤p[1¤v0] d¤p[] cd¤p[] ceci personne¤p dest = 1 depart = 12,type:ligneConsole}
+[0:0:0:7:150]{description:0¤p0¤p0¤p7¤p150 reste afk ascId ¤p[1¤v0] d¤p[] cd¤p[12],type:ligneConsole}
+[0:0:0:7:150]{ascStackId:0,newPlannifier:{listeEtapes:{{t:7150,v:0.0,x:0.0},{t:8975,v:0.0,x:-1.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:1}
+[0:0:0:7:150]{etage:1,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:14:484]{ascStackId:0,newPlannifier:{listeEtapes:{{t:14484,v:0.0,x:0.0},{t:15300,v:0.0,x:0.19999999,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:2}
+[0:0:0:14:484]{ascStackId:1,newPlannifier:{listeEtapes:{{t:14484,v:0.0,x:1.0},{t:17065,v:0.0,x:3.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:2}
+[0:0:0:14:484]{ascStackId:0,newPlannifier:{listeEtapes:{{t:14484,v:0.0,x:0.0},{t:17065,v:0.0,x:2.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:14484,v:0.0,x:0.0},{t:15300,v:0.0,x:0.19999999,softDepType:1}}},monteeIdId:2}
+[0:0:0:14:484]{etage:0,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:17:65]{ascStackId:0,animDuree:2000,etage:2,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:2}
+[0:0:0:19:65]{description:presonne 2 destination 2 est au niveau 0 impossible de la faire entrer dans  Ascenseur ¤p ascId ¤p[2¤v0]  au niveau 2,type:Erreur}

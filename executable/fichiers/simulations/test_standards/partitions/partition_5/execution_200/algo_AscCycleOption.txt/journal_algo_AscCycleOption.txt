@@ -1,0 +1,911 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:2:81]{etage:19,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 on change de structure,type:ligneConsole}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 ssize2 1,type:ligneConsole}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 on valide PersGroup etage 19 dest 3 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:0:2:81]{ascStackId:0,newPlannifier:{listeEtapes:{{t:2081,v:0.0,x:0.0},{t:20747,v:0.0,x:19.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:9:324]{etage:22,destination:21,nbPersonnes:1,type:persInput}
+[0:0:0:10:944]{etage:38,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:13:727]{etage:38,destination:30,nbPersonnes:1,type:persInput}
+[0:0:0:15:893]{etage:13,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:17:138]{etage:24,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:18:621]{etage:35,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:18:669]{etage:15,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:20:747]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:22:332]{etage:27,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:23:247]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:247]{description:0¤p0¤p0¤p23¤p247 ssize2 1,type:ligneConsole}
+[0:0:0:23:247]{description:0¤p0¤p0¤p23¤p247 contenu consumerupdated from places 5 livr {} to places 4 livr {3=Livr d=3 n=1},type:ligneConsole}
+[0:0:0:23:247]{ascStackId:0,persId:0,animDuree:1200,etage:19,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:24:447]{ascStackId:0,persId:0,animDuree:1200,etage:19,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:24:447]{description:0¤p0¤p0¤p24¤p447 ssize2 1,type:ligneConsole}
+[0:0:0:24:447]{description:0¤p0¤p0¤p24¤p447 contenu consumerupdated from places 4 livr {3=Livr d=3 n=1} to places 4 livr {3=Livr d=3 n=1},type:ligneConsole}
+[0:0:0:24:447]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:735]{etage:15,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:26:947]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:26:947]{description:0¤p0¤p0¤p26¤p947 ssize2 1,type:ligneConsole}
+[0:0:0:26:947]{ascStackId:0,newPlannifier:{listeEtapes:{{t:26947,v:0.0,x:19.0},{t:43613,v:0.0,x:3.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:2081,v:0.0,x:0.0},{t:20747,v:0.0,x:19.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:28:938]{etage:15,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:29:4]{etage:8,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:31:387]{etage:20,destination:22,nbPersonnes:2,type:persInput}
+[0:0:0:31:527]{etage:5,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:33:436]{etage:37,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:34:500]{etage:12,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:34:572]{etage:19,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:35:722]{etage:16,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:41:397]{etage:19,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:43:613]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:44:953]{etage:38,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:45:500]{etage:11,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:46:113]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:113]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:47:313]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 ssize2 1,type:ligneConsole}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 contenu consumerupdated from places 5 livr {} to places 5 livr {},type:ligneConsole}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 on valide PersGroup etage 5 dest 15 size 1 quantite 1 contenu places 5 livr {},type:ligneConsole}
+[0:0:0:47:313]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:47:641]{etage:26,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:48:498]{etage:10,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:49:813]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:49:813]{description:0¤p0¤p0¤p49¤p813 ssize2 1,type:ligneConsole}
+[0:0:0:49:813]{ascStackId:0,newPlannifier:{listeEtapes:{{t:49813,v:0.0,x:3.0},{t:55469,v:0.0,x:5.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:26947,v:0.0,x:19.0},{t:43613,v:0.0,x:3.0,softDepType:-2}}},monteeIdId:0}
+[0:0:0:55:469]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:969]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:969]{description:0¤p0¤p0¤p57¤p969 ssize2 1,type:ligneConsole}
+[0:0:0:57:969]{description:0¤p0¤p0¤p57¤p969 contenu consumerupdated from places 5 livr {} to places 4 livr {15=Livr d=15 n=1},type:ligneConsole}
+[0:0:0:57:969]{ascStackId:0,persId:14,animDuree:1200,etage:5,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:58:5]{etage:32,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:59:169]{ascStackId:0,persId:14,animDuree:1200,etage:5,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:59:169]{description:0¤p0¤p0¤p59¤p169 ssize2 1,type:ligneConsole}
+[0:0:0:59:169]{description:0¤p0¤p0¤p59¤p169 contenu consumerupdated from places 4 livr {15=Livr d=15 n=1} to places 4 livr {15=Livr d=15 n=1},type:ligneConsole}
+[0:0:0:59:169]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:531]{etage:16,destination:7,nbPersonnes:1,type:persInput}
+[0:0:1:1:669]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:669]{description:0¤p0¤p1¤p1¤p669 ssize2 1,type:ligneConsole}
+[0:0:1:1:669]{ascStackId:0,newPlannifier:{listeEtapes:{{t:61669,v:0.0,x:5.0},{t:74335,v:0.0,x:15.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:49813,v:0.0,x:3.0},{t:55469,v:0.0,x:5.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:2:641]{etage:9,destination:33,nbPersonnes:1,type:persInput}
+[0:0:1:6:8]{etage:7,destination:25,nbPersonnes:1,type:persInput}
+[0:0:1:7:360]{etage:27,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:12:634]{etage:5,destination:17,nbPersonnes:1,type:persInput}
+[0:0:1:13:728]{etage:16,destination:1,nbPersonnes:1,type:persInput}
+[0:0:1:14:218]{etage:13,destination:9,nbPersonnes:1,type:persInput}
+[0:0:1:14:335]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:16:835]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:16:835]{persId:14,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:16:961]{etage:33,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:18:35]{persId:14,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:18:35]{description:0¤p0¤p1¤p18¤p35 ssize2 1,type:ligneConsole}
+[0:0:1:18:35]{description:0¤p0¤p1¤p18¤p35 contenu consumerupdated from places 5 livr {} to places 2 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:1:18:35]{ascStackId:0,persId:7,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:18:42]{etage:12,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:18:924]{etage:29,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:19:235]{ascStackId:0,persId:7,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:19:235]{ascStackId:0,persId:9,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:19:605]{etage:15,destination:34,nbPersonnes:1,type:persInput}
+[0:0:1:20:86]{etage:1,destination:21,nbPersonnes:1,type:persInput}
+[0:0:1:20:435]{ascStackId:0,persId:9,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:20:435]{ascStackId:0,persId:10,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:21:635]{ascStackId:0,persId:10,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:21:635]{description:0¤p0¤p1¤p21¤p635 ssize2 1,type:ligneConsole}
+[0:0:1:21:635]{description:0¤p0¤p1¤p21¤p635 contenu consumerupdated from places 2 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 36=Livr d=36 n=1} to places 1 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 34=Livr d=34 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:1:21:635]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:22:835]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:22:835]{description:0¤p0¤p1¤p22¤p835 ssize2 1,type:ligneConsole}
+[0:0:1:22:835]{description:0¤p0¤p1¤p22¤p835 contenu consumerupdated from places 1 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 34=Livr d=34 n=1¤v 36=Livr d=36 n=1} to places 1 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 34=Livr d=34 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:1:22:835]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:25:335]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:25:335]{description:0¤p0¤p1¤p25¤p335 ssize2 1,type:ligneConsole}
+[0:0:1:25:335]{ascStackId:0,newPlannifier:{listeEtapes:{{t:85335,v:0.0,x:15.0},{t:104001,v:0.0,x:34.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:61669,v:0.0,x:5.0},{t:74335,v:0.0,x:15.0,softDepType:2}}},monteeIdId:0}
+[0:0:1:28:442]{etage:1,destination:24,nbPersonnes:1,type:persInput}
+[0:0:1:30:211]{etage:30,destination:24,nbPersonnes:1,type:persInput}
+[0:0:1:31:67]{etage:4,destination:19,nbPersonnes:1,type:persInput}
+[0:0:1:34:607]{etage:24,destination:30,nbPersonnes:1,type:persInput}
+[0:0:1:42:184]{etage:6,destination:11,nbPersonnes:1,type:persInput}
+[0:0:1:44:1]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:44:76]{etage:29,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:46:501]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:46:501]{persId:35,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:47:457]{etage:8,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:47:701]{persId:35,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:47:701]{description:0¤p0¤p1¤p47¤p701 ssize2 1,type:ligneConsole}
+[0:0:1:47:701]{description:0¤p0¤p1¤p47¤p701 contenu consumerupdated from places 2 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 36=Livr d=36 n=1} to places 2 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:1:47:701]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:48:209]{etage:15,destination:17,nbPersonnes:1,type:persInput}
+[0:0:1:50:201]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:50:201]{description:0¤p0¤p1¤p50¤p201 ssize2 1,type:ligneConsole}
+[0:0:1:50:201]{ascStackId:0,newPlannifier:{listeEtapes:{{t:110201,v:0.0,x:34.0},{t:115857,v:0.0,x:36.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:85335,v:0.0,x:15.0},{t:104001,v:0.0,x:34.0,softDepType:2}}},monteeIdId:0}
+[0:0:1:53:294]{etage:3,destination:16,nbPersonnes:1,type:persInput}
+[0:0:1:55:857]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:58:357]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:58:357]{persId:10,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:59:250]{etage:16,destination:29,nbPersonnes:1,type:persInput}
+[0:0:1:59:557]{persId:10,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:59:557]{description:0¤p0¤p1¤p59¤p557 ssize2 1,type:ligneConsole}
+[0:0:1:59:557]{description:0¤p0¤p1¤p59¤p557 contenu consumerupdated from places 3 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1} to places 3 livr {9=Livr d=9 n=1¤v 13=Livr d=13 n=1},type:ligneConsole}
+[0:0:1:59:557]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:2:57]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:2:57]{description:0¤p0¤p2¤p2¤p57 ssize2 1,type:ligneConsole}
+[0:0:2:2:57]{ascStackId:0,newPlannifier:{listeEtapes:{{t:122057,v:0.0,x:36.0},{t:143390,v:0.0,x:13.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:110201,v:0.0,x:34.0},{t:115857,v:0.0,x:36.0,softDepType:1}}},monteeIdId:0}
+[0:0:2:10:694]{etage:4,destination:6,nbPersonnes:1,type:persInput}
+[0:0:2:11:101]{etage:17,destination:14,nbPersonnes:1,type:persInput}
+[0:0:2:12:517]{etage:3,destination:10,nbPersonnes:1,type:persInput}
+[0:0:2:13:903]{etage:13,destination:12,nbPersonnes:1,type:persInput}
+[0:0:2:15:804]{etage:1,destination:15,nbPersonnes:1,type:persInput}
+[0:0:2:17:397]{etage:20,destination:9,nbPersonnes:1,type:persInput}
+[0:0:2:19:738]{etage:4,destination:8,nbPersonnes:1,type:persInput}
+[0:0:2:22:410]{etage:25,destination:31,nbPersonnes:1,type:persInput}
+[0:0:2:23:390]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:25:890]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:25:890]{persId:9,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:27:90]{persId:9,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:27:90]{description:0¤p0¤p2¤p27¤p90 ssize2 1,type:ligneConsole}
+[0:0:2:27:90]{description:0¤p0¤p2¤p27¤p90 contenu consumerupdated from places 4 livr {9=Livr d=9 n=1} to places 3 livr {9=Livr d=9 n=2},type:ligneConsole}
+[0:0:2:27:90]{ascStackId:0,persId:31,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:27:349]{etage:12,destination:27,nbPersonnes:1,type:persInput}
+[0:0:2:28:290]{ascStackId:0,persId:31,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:28:290]{description:0¤p0¤p2¤p28¤p290 ssize2 1,type:ligneConsole}
+[0:0:2:28:290]{description:0¤p0¤p2¤p28¤p290 contenu consumerupdated from places 3 livr {9=Livr d=9 n=2} to places 3 livr {9=Livr d=9 n=2},type:ligneConsole}
+[0:0:2:28:290]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:30:790]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:30:790]{description:0¤p0¤p2¤p30¤p790 ssize2 1,type:ligneConsole}
+[0:0:2:30:790]{ascStackId:0,newPlannifier:{listeEtapes:{{t:150790,v:0.0,x:13.0},{t:158790,v:0.0,x:9.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:122057,v:0.0,x:36.0},{t:143390,v:0.0,x:13.0,softDepType:-2}}},monteeIdId:0}
+[0:0:2:32:763]{etage:25,destination:14,nbPersonnes:1,type:persInput}
+[0:0:2:38:730]{etage:12,destination:36,nbPersonnes:1,type:persInput}
+[0:0:2:38:790]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:41:290]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:2:41:290]{persId:7,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:42:233]{etage:31,destination:29,nbPersonnes:1,type:persInput}
+[0:0:2:42:490]{persId:7,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:42:490]{persId:31,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:2:43:690]{persId:31,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:2:43:690]{description:0¤p0¤p2¤p43¤p690 ssize2 1,type:ligneConsole}
+[0:0:2:43:690]{description:0¤p0¤p2¤p43¤p690 contenu consumerupdated from places 5 livr {} to places 4 livr {33=Livr d=33 n=1},type:ligneConsole}
+[0:0:2:43:690]{ascStackId:0,persId:26,animDuree:1200,etage:9,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:2:44:890]{ascStackId:0,persId:26,animDuree:1200,etage:9,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:2:44:890]{description:0¤p0¤p2¤p44¤p890 ssize2 1,type:ligneConsole}
+[0:0:2:44:890]{description:0¤p0¤p2¤p44¤p890 contenu consumerupdated from places 4 livr {33=Livr d=33 n=1} to places 4 livr {33=Livr d=33 n=1},type:ligneConsole}
+[0:0:2:44:890]{ascStackId:0,animDuree:2500,etage:9,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:45:604]{etage:27,destination:35,nbPersonnes:1,type:persInput}
+[0:0:2:47:390]{ascStackId:0,animDuree:2500,etage:9,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:47:390]{description:0¤p0¤p2¤p47¤p390 ssize2 1,type:ligneConsole}
+[0:0:2:47:390]{ascStackId:0,newPlannifier:{listeEtapes:{{t:167390,v:0.0,x:9.0},{t:189390,v:0.0,x:33.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:150790,v:0.0,x:13.0},{t:158790,v:0.0,x:9.0,softDepType:-1}}},monteeIdId:0}
+[0:0:2:47:518]{etage:33,destination:21,nbPersonnes:1,type:persInput}
+[0:0:2:47:685]{etage:3,destination:13,nbPersonnes:1,type:persInput}
+[0:0:2:53:490]{etage:28,destination:16,nbPersonnes:1,type:persInput}
+[0:0:2:54:825]{etage:6,destination:18,nbPersonnes:1,type:persInput}
+[0:0:2:56:683]{etage:9,destination:22,nbPersonnes:1,type:persInput}
+[0:0:2:56:916]{etage:21,destination:16,nbPersonnes:1,type:persInput}
+[0:0:3:1:870]{etage:7,destination:31,nbPersonnes:1,type:persInput}
+[0:0:3:1:885]{etage:19,destination:32,nbPersonnes:1,type:persInput}
+[0:0:3:2:594]{etage:24,destination:13,nbPersonnes:1,type:persInput}
+[0:0:3:2:743]{etage:9,destination:17,nbPersonnes:1,type:persInput}
+[0:0:3:6:470]{etage:12,destination:35,nbPersonnes:1,type:persInput}
+[0:0:3:9:35]{etage:23,destination:6,nbPersonnes:1,type:persInput}
+[0:0:3:9:390]{ascStackId:0,animDuree:2500,etage:33,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:11:435]{etage:27,destination:1,nbPersonnes:1,type:persInput}
+[0:0:3:11:890]{ascStackId:0,animDuree:2500,etage:33,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:11:890]{persId:26,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:11:901]{etage:21,destination:18,nbPersonnes:1,type:persInput}
+[0:0:3:13:90]{persId:26,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:13:90]{description:0¤p0¤p3¤p13¤p90 ssize2 1,type:ligneConsole}
+[0:0:3:13:90]{description:0¤p0¤p3¤p13¤p90 contenu consumerupdated from places 5 livr {} to places 3 livr {4=Livr d=4 n=1¤v 21=Livr d=21 n=1},type:ligneConsole}
+[0:0:3:13:90]{ascStackId:0,persId:32,animDuree:1200,etage:33,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:13:146]{etage:24,destination:26,nbPersonnes:1,type:persInput}
+[0:0:3:13:928]{etage:11,destination:17,nbPersonnes:1,type:persInput}
+[0:0:3:14:290]{ascStackId:0,persId:32,animDuree:1200,etage:33,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:14:290]{ascStackId:0,persId:60,animDuree:1200,etage:33,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:14:796]{etage:1,destination:35,nbPersonnes:1,type:persInput}
+[0:0:3:15:490]{ascStackId:0,persId:60,animDuree:1200,etage:33,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:15:490]{description:0¤p0¤p3¤p15¤p490 ssize2 1,type:ligneConsole}
+[0:0:3:15:490]{description:0¤p0¤p3¤p15¤p490 contenu consumerupdated from places 3 livr {4=Livr d=4 n=1¤v 21=Livr d=21 n=1} to places 3 livr {4=Livr d=4 n=1¤v 21=Livr d=21 n=1},type:ligneConsole}
+[0:0:3:15:490]{ascStackId:0,animDuree:2500,etage:33,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:203]{etage:1,destination:15,nbPersonnes:1,type:persInput}
+[0:0:3:17:990]{ascStackId:0,animDuree:2500,etage:33,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:17:990]{description:0¤p0¤p3¤p17¤p990 ssize2 1,type:ligneConsole}
+[0:0:3:17:990]{ascStackId:0,newPlannifier:{listeEtapes:{{t:197990,v:0.0,x:33.0},{t:211990,v:0.0,x:21.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:167390,v:0.0,x:9.0},{t:189390,v:0.0,x:33.0,softDepType:2}}},monteeIdId:0}
+[0:0:3:22:247]{etage:17,destination:15,nbPersonnes:1,type:persInput}
+[0:0:3:24:21]{etage:22,destination:32,nbPersonnes:1,type:persInput}
+[0:0:3:31:811]{etage:10,destination:5,nbPersonnes:1,type:persInput}
+[0:0:3:31:990]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:32:101]{etage:6,destination:16,nbPersonnes:1,type:persInput}
+[0:0:3:34:8]{etage:10,destination:29,nbPersonnes:1,type:persInput}
+[0:0:3:34:490]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:34:490]{persId:60,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:35:690]{persId:60,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:35:690]{description:0¤p0¤p3¤p35¤p690 ssize2 1,type:ligneConsole}
+[0:0:3:35:690]{description:0¤p0¤p3¤p35¤p690 contenu consumerupdated from places 4 livr {4=Livr d=4 n=1} to places 2 livr {4=Livr d=4 n=1¤v 16=Livr d=16 n=1¤v 18=Livr d=18 n=1},type:ligneConsole}
+[0:0:3:35:690]{ascStackId:0,persId:65,animDuree:1200,etage:21,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:36:890]{ascStackId:0,persId:65,animDuree:1200,etage:21,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:36:890]{ascStackId:0,persId:73,animDuree:1200,etage:21,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:37:72]{etage:16,destination:36,nbPersonnes:1,type:persInput}
+[0:0:3:38:90]{ascStackId:0,persId:73,animDuree:1200,etage:21,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:38:90]{description:0¤p0¤p3¤p38¤p90 ssize2 1,type:ligneConsole}
+[0:0:3:38:90]{description:0¤p0¤p3¤p38¤p90 contenu consumerupdated from places 2 livr {4=Livr d=4 n=1¤v 16=Livr d=16 n=1¤v 18=Livr d=18 n=1} to places 2 livr {4=Livr d=4 n=1¤v 16=Livr d=16 n=1¤v 18=Livr d=18 n=1},type:ligneConsole}
+[0:0:3:38:90]{ascStackId:0,animDuree:2500,etage:21,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:40:590]{ascStackId:0,animDuree:2500,etage:21,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:40:590]{description:0¤p0¤p3¤p40¤p590 ssize2 1,type:ligneConsole}
+[0:0:3:40:590]{ascStackId:0,newPlannifier:{listeEtapes:{{t:220590,v:0.0,x:21.0},{t:227518,v:0.0,x:18.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:197990,v:0.0,x:33.0},{t:211990,v:0.0,x:21.0,softDepType:-2}}},monteeIdId:0}
+[0:0:3:42:267]{etage:19,destination:33,nbPersonnes:1,type:persInput}
+[0:0:3:42:714]{etage:21,destination:4,nbPersonnes:1,type:persInput}
+[0:0:3:42:781]{etage:37,destination:32,nbPersonnes:1,type:persInput}
+[0:0:3:43:504]{etage:21,destination:4,nbPersonnes:1,type:persInput}
+[0:0:3:44:879]{etage:24,destination:33,nbPersonnes:1,type:persInput}
+[0:0:3:47:518]{ascStackId:0,animDuree:2500,etage:18,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:47:971]{etage:14,destination:7,nbPersonnes:1,type:persInput}
+[0:0:3:48:342]{etage:17,destination:33,nbPersonnes:1,type:persInput}
+[0:0:3:49:430]{etage:10,destination:24,nbPersonnes:1,type:persInput}
+[0:0:3:50:18]{ascStackId:0,animDuree:2500,etage:18,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:50:18]{persId:73,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:3:50:965]{etage:33,destination:27,nbPersonnes:1,type:persInput}
+[0:0:3:51:218]{persId:73,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:3:51:218]{description:0¤p0¤p3¤p51¤p218 ssize2 1,type:ligneConsole}
+[0:0:3:51:218]{description:0¤p0¤p3¤p51¤p218 contenu consumerupdated from places 3 livr {4=Livr d=4 n=1¤v 16=Livr d=16 n=1} to places 3 livr {4=Livr d=4 n=1¤v 16=Livr d=16 n=1},type:ligneConsole}
+[0:0:3:51:218]{ascStackId:0,animDuree:2500,etage:18,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:52:146]{etage:16,destination:30,nbPersonnes:1,type:persInput}
+[0:0:3:53:718]{ascStackId:0,animDuree:2500,etage:18,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:53:718]{description:0¤p0¤p3¤p53¤p718 ssize2 1,type:ligneConsole}
+[0:0:3:53:718]{ascStackId:0,newPlannifier:{listeEtapes:{{t:233718,v:0.0,x:18.0},{t:239374,v:0.0,x:16.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:220590,v:0.0,x:21.0},{t:227518,v:0.0,x:18.0,softDepType:-1}}},monteeIdId:0}
+[0:0:3:56:482]{etage:18,destination:27,nbPersonnes:1,type:persInput}
+[0:0:3:59:16]{etage:11,destination:20,nbPersonnes:1,type:persInput}
+[0:0:3:59:374]{ascStackId:0,animDuree:2500,etage:16,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:1:874]{ascStackId:0,animDuree:2500,etage:16,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:1:874]{persId:65,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:3:74]{persId:65,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:3:74]{description:0¤p0¤p4¤p3¤p74 ssize2 1,type:ligneConsole}
+[0:0:4:3:74]{description:0¤p0¤p4¤p3¤p74 contenu consumerupdated from places 4 livr {4=Livr d=4 n=1} to places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 7=Livr d=7 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:3:74]{ascStackId:0,persId:30,animDuree:1200,etage:16,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:3:194]{etage:10,destination:21,nbPersonnes:1,type:persInput}
+[0:0:4:4:274]{ascStackId:0,persId:30,animDuree:1200,etage:16,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:4:274]{ascStackId:0,persId:25,animDuree:1200,etage:16,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:5:457]{etage:31,destination:6,nbPersonnes:1,type:persInput}
+[0:0:4:5:474]{ascStackId:0,persId:25,animDuree:1200,etage:16,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:5:474]{ascStackId:0,persId:46,animDuree:1200,etage:16,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:6:674]{ascStackId:0,persId:46,animDuree:1200,etage:16,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:6:674]{ascStackId:0,persId:83,animDuree:1200,etage:16,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:7:874]{ascStackId:0,persId:83,animDuree:1200,etage:16,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:7:874]{description:0¤p0¤p4¤p7¤p874 ssize2 1,type:ligneConsole}
+[0:0:4:7:874]{description:0¤p0¤p4¤p7¤p874 contenu consumerupdated from places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 7=Livr d=7 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 7=Livr d=7 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:7:874]{ascStackId:0,animDuree:2500,etage:16,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:7:914]{etage:16,destination:15,nbPersonnes:1,type:persInput}
+[0:0:4:10:374]{ascStackId:0,animDuree:2500,etage:16,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:10:374]{description:0¤p0¤p4¤p10¤p374 ssize2 1,type:ligneConsole}
+[0:0:4:10:374]{ascStackId:0,newPlannifier:{listeEtapes:{{t:250374,v:0.0,x:16.0},{t:262374,v:0.0,x:7.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:233718,v:0.0,x:18.0},{t:239374,v:0.0,x:16.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:20:349]{etage:13,destination:24,nbPersonnes:1,type:persInput}
+[0:0:4:22:87]{etage:21,destination:20,nbPersonnes:2,type:persInput}
+[0:0:4:22:374]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:24:311]{etage:27,destination:16,nbPersonnes:1,type:persInput}
+[0:0:4:24:874]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:24:874]{persId:25,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:26:74]{persId:25,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:26:74]{description:0¤p0¤p4¤p26¤p74 ssize2 1,type:ligneConsole}
+[0:0:4:26:74]{description:0¤p0¤p4¤p26¤p74 contenu consumerupdated from places 1 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:26:74]{ascStackId:0,persId:27,animDuree:1200,etage:7,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:27:274]{ascStackId:0,persId:27,animDuree:1200,etage:7,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:27:274]{description:0¤p0¤p4¤p27¤p274 ssize2 1,type:ligneConsole}
+[0:0:4:27:274]{description:0¤p0¤p4¤p27¤p274 contenu consumerupdated from places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {1=Livr d=1 n=1¤v 4=Livr d=4 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:27:274]{ascStackId:0,animDuree:2500,etage:7,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:27:800]{etage:5,destination:29,nbPersonnes:1,type:persInput}
+[0:0:4:29:774]{ascStackId:0,animDuree:2500,etage:7,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:29:774]{description:0¤p0¤p4¤p29¤p774 ssize2 1,type:ligneConsole}
+[0:0:4:29:774]{ascStackId:0,newPlannifier:{listeEtapes:{{t:269774,v:0.0,x:7.0},{t:276702,v:0.0,x:4.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:250374,v:0.0,x:16.0},{t:262374,v:0.0,x:7.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:35:748]{etage:4,destination:30,nbPersonnes:1,type:persInput}
+[0:0:4:36:211]{etage:36,destination:30,nbPersonnes:1,type:persInput}
+[0:0:4:36:702]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:37:759]{etage:35,destination:30,nbPersonnes:1,type:persInput}
+[0:0:4:38:674]{etage:28,destination:20,nbPersonnes:2,type:persInput}
+[0:0:4:39:202]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:39:202]{persId:32,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:40:402]{persId:32,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:40:402]{description:0¤p0¤p4¤p40¤p402 ssize2 1,type:ligneConsole}
+[0:0:4:40:402]{description:0¤p0¤p4¤p40¤p402 contenu consumerupdated from places 1 livr {1=Livr d=1 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {1=Livr d=1 n=1¤v 6=Livr d=6 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:40:402]{ascStackId:0,persId:47,animDuree:1200,etage:4,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:41:602]{ascStackId:0,persId:47,animDuree:1200,etage:4,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:41:602]{description:0¤p0¤p4¤p41¤p602 ssize2 1,type:ligneConsole}
+[0:0:4:41:602]{description:0¤p0¤p4¤p41¤p602 contenu consumerupdated from places 0 livr {1=Livr d=1 n=1¤v 6=Livr d=6 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {1=Livr d=1 n=1¤v 6=Livr d=6 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:41:602]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:42:583]{etage:38,destination:32,nbPersonnes:1,type:persInput}
+[0:0:4:44:102]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:44:102]{description:0¤p0¤p4¤p44¤p102 ssize2 1,type:ligneConsole}
+[0:0:4:44:102]{ascStackId:0,newPlannifier:{listeEtapes:{{t:284102,v:0.0,x:4.0},{t:291030,v:0.0,x:1.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:269774,v:0.0,x:7.0},{t:276702,v:0.0,x:4.0,softDepType:-1}}},monteeIdId:0}
+[0:0:4:47:814]{etage:6,destination:26,nbPersonnes:1,type:persInput}
+[0:0:4:48:523]{etage:32,destination:9,nbPersonnes:1,type:persInput}
+[0:0:4:51:30]{ascStackId:0,animDuree:2500,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:53:530]{ascStackId:0,animDuree:2500,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:4:53:530]{persId:30,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:4:54:730]{persId:30,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:4:54:730]{description:0¤p0¤p4¤p54¤p730 ssize2 1,type:ligneConsole}
+[0:0:4:54:730]{description:0¤p0¤p4¤p54¤p730 contenu consumerupdated from places 1 livr {6=Livr d=6 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {6=Livr d=6 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:54:730]{ascStackId:0,persId:37,animDuree:1200,etage:1,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:4:55:930]{ascStackId:0,persId:37,animDuree:1200,etage:1,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:4:55:930]{description:0¤p0¤p4¤p55¤p930 ssize2 1,type:ligneConsole}
+[0:0:4:55:930]{description:0¤p0¤p4¤p55¤p930 contenu consumerupdated from places 0 livr {6=Livr d=6 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {6=Livr d=6 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:4:55:930]{ascStackId:0,animDuree:2500,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:56:25]{etage:4,destination:8,nbPersonnes:1,type:persInput}
+[0:0:4:58:430]{ascStackId:0,animDuree:2500,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:4:58:430]{description:0¤p0¤p4¤p58¤p430 ssize2 1,type:ligneConsole}
+[0:0:4:58:430]{ascStackId:0,newPlannifier:{listeEtapes:{{t:298430,v:0.0,x:1.0},{t:307374,v:0.0,x:6.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:284102,v:0.0,x:4.0},{t:291030,v:0.0,x:1.0,softDepType:-1}}},monteeIdId:0}
+[0:0:5:7:374]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:8:573]{etage:23,destination:35,nbPersonnes:1,type:persInput}
+[0:0:5:8:594]{etage:14,destination:13,nbPersonnes:1,type:persInput}
+[0:0:5:9:874]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:9:874]{persId:47,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:10:443]{etage:32,destination:16,nbPersonnes:1,type:persInput}
+[0:0:5:11:74]{persId:47,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:11:74]{description:0¤p0¤p5¤p11¤p74 ssize2 1,type:ligneConsole}
+[0:0:5:11:74]{description:0¤p0¤p5¤p11¤p74 contenu consumerupdated from places 1 livr {24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {11=Livr d=11 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:11:74]{ascStackId:0,persId:41,animDuree:1200,etage:6,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:12:274]{ascStackId:0,persId:41,animDuree:1200,etage:6,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:12:274]{description:0¤p0¤p5¤p12¤p274 ssize2 1,type:ligneConsole}
+[0:0:5:12:274]{description:0¤p0¤p5¤p12¤p274 contenu consumerupdated from places 0 livr {11=Livr d=11 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {11=Livr d=11 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:12:274]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:13:356]{etage:22,destination:30,nbPersonnes:1,type:persInput}
+[0:0:5:14:774]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:14:774]{description:0¤p0¤p5¤p14¤p774 ssize2 1,type:ligneConsole}
+[0:0:5:14:774]{ascStackId:0,newPlannifier:{listeEtapes:{{t:314774,v:0.0,x:6.0},{t:323718,v:0.0,x:11.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:298430,v:0.0,x:1.0},{t:307374,v:0.0,x:6.0,softDepType:1}}},monteeIdId:0}
+[0:0:5:18:289]{etage:8,destination:13,nbPersonnes:1,type:persInput}
+[0:0:5:23:718]{ascStackId:0,animDuree:2500,etage:11,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:26:218]{ascStackId:0,animDuree:2500,etage:11,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:26:218]{persId:41,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:27:418]{persId:41,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:27:418]{description:0¤p0¤p5¤p27¤p418 ssize2 1,type:ligneConsole}
+[0:0:5:27:418]{description:0¤p0¤p5¤p27¤p418 contenu consumerupdated from places 1 livr {24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:27:418]{ascStackId:0,persId:21,animDuree:1200,etage:11,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:28:618]{ascStackId:0,persId:21,animDuree:1200,etage:11,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:28:618]{description:0¤p0¤p5¤p28¤p618 ssize2 1,type:ligneConsole}
+[0:0:5:28:618]{description:0¤p0¤p5¤p28¤p618 contenu consumerupdated from places 0 livr {10=Livr d=10 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 24=Livr d=24 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:28:618]{ascStackId:0,animDuree:2500,etage:11,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:30:909]{etage:11,destination:22,nbPersonnes:1,type:persInput}
+[0:0:5:31:118]{ascStackId:0,animDuree:2500,etage:11,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:31:118]{description:0¤p0¤p5¤p31¤p118 ssize2 1,type:ligneConsole}
+[0:0:5:31:118]{ascStackId:0,newPlannifier:{listeEtapes:{{t:331118,v:0.0,x:11.0},{t:345784,v:0.0,x:24.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:314774,v:0.0,x:6.0},{t:323718,v:0.0,x:11.0,softDepType:1}}},monteeIdId:0}
+[0:0:5:31:589]{etage:2,destination:36,nbPersonnes:1,type:persInput}
+[0:0:5:35:957]{etage:29,destination:6,nbPersonnes:1,type:persInput}
+[0:0:5:38:414]{etage:38,destination:18,nbPersonnes:1,type:persInput}
+[0:0:5:40:559]{etage:19,destination:26,nbPersonnes:2,type:persInput}
+[0:0:5:45:784]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:48:284]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:48:284]{persId:37,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:5:49:484]{persId:37,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:5:49:484]{description:0¤p0¤p5¤p49¤p484 ssize2 1,type:ligneConsole}
+[0:0:5:49:484]{description:0¤p0¤p5¤p49¤p484 contenu consumerupdated from places 1 livr {10=Livr d=10 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:49:484]{ascStackId:0,persId:68,animDuree:1200,etage:24,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:5:50:684]{ascStackId:0,persId:68,animDuree:1200,etage:24,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:5:50:684]{description:0¤p0¤p5¤p50¤p684 ssize2 1,type:ligneConsole}
+[0:0:5:50:684]{description:0¤p0¤p5¤p50¤p684 contenu consumerupdated from places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 25=Livr d=25 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:5:50:684]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:53:184]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:5:53:184]{description:0¤p0¤p5¤p53¤p184 ssize2 1,type:ligneConsole}
+[0:0:5:53:184]{ascStackId:0,newPlannifier:{listeEtapes:{{t:353184,v:0.0,x:24.0},{t:357184,v:0.0,x:25.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:331118,v:0.0,x:11.0},{t:345784,v:0.0,x:24.0,softDepType:2}}},monteeIdId:0}
+[0:0:5:53:364]{etage:12,destination:9,nbPersonnes:1,type:persInput}
+[0:0:5:53:555]{etage:32,destination:35,nbPersonnes:1,type:persInput}
+[0:0:5:55:167]{etage:8,destination:5,nbPersonnes:1,type:persInput}
+[0:0:5:55:501]{etage:2,destination:18,nbPersonnes:2,type:persInput}
+[0:0:5:57:114]{etage:28,destination:35,nbPersonnes:1,type:persInput}
+[0:0:5:57:184]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:59:326]{etage:27,destination:20,nbPersonnes:1,type:persInput}
+[0:0:5:59:684]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:5:59:684]{persId:27,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:0:213]{etage:26,destination:29,nbPersonnes:1,type:persInput}
+[0:0:6:0:884]{persId:27,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:0:884]{description:0¤p0¤p6¤p0¤p884 ssize2 1,type:ligneConsole}
+[0:0:6:0:884]{description:0¤p0¤p6¤p0¤p884 contenu consumerupdated from places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 14=Livr d=14 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:6:0:884]{ascStackId:0,persId:56,animDuree:1200,etage:25,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:2:84]{ascStackId:0,persId:56,animDuree:1200,etage:25,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:2:84]{description:0¤p0¤p6¤p2¤p84 ssize2 1,type:ligneConsole}
+[0:0:6:2:84]{description:0¤p0¤p6¤p2¤p84 contenu consumerupdated from places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 14=Livr d=14 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 14=Livr d=14 n=1¤v 29=Livr d=29 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:6:2:84]{ascStackId:0,animDuree:2500,etage:25,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:4:584]{ascStackId:0,animDuree:2500,etage:25,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:4:584]{description:0¤p0¤p6¤p4¤p584 ssize2 1,type:ligneConsole}
+[0:0:6:4:584]{ascStackId:0,newPlannifier:{listeEtapes:{{t:364584,v:0.0,x:25.0},{t:372584,v:0.0,x:29.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:353184,v:0.0,x:24.0},{t:357184,v:0.0,x:25.0,softDepType:1}}},monteeIdId:0}
+[0:0:6:4:821]{etage:30,destination:26,nbPersonnes:1,type:persInput}
+[0:0:6:5:520]{etage:22,destination:18,nbPersonnes:1,type:persInput}
+[0:0:6:7:42]{etage:2,destination:1,nbPersonnes:1,type:persInput}
+[0:0:6:7:939]{etage:1,destination:6,nbPersonnes:1,type:persInput}
+[0:0:6:8:51]{etage:32,destination:3,nbPersonnes:1,type:persInput}
+[0:0:6:12:559]{etage:28,destination:20,nbPersonnes:1,type:persInput}
+[0:0:6:12:584]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:12:647]{etage:36,destination:7,nbPersonnes:1,type:persInput}
+[0:0:6:12:927]{etage:21,destination:8,nbPersonnes:1,type:persInput}
+[0:0:6:15:84]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:15:84]{persId:46,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:16:284]{persId:46,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:16:284]{description:0¤p0¤p6¤p16¤p284 ssize2 1,type:ligneConsole}
+[0:0:6:16:284]{description:0¤p0¤p6¤p16¤p284 contenu consumerupdated from places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=1¤v 14=Livr d=14 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:6:16:284]{ascStackId:0,persId:34,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:6:17:484]{ascStackId:0,persId:34,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:6:17:484]{description:0¤p0¤p6¤p17¤p484 ssize2 1,type:ligneConsole}
+[0:0:6:17:484]{description:0¤p0¤p6¤p17¤p484 contenu consumerupdated from places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 36=Livr d=36 n=1} to places 0 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 36=Livr d=36 n=1},type:ligneConsole}
+[0:0:6:17:484]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:19:418]{etage:25,destination:33,nbPersonnes:1,type:persInput}
+[0:0:6:19:768]{etage:1,destination:28,nbPersonnes:1,type:persInput}
+[0:0:6:19:984]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:19:984]{description:0¤p0¤p6¤p19¤p984 ssize2 1,type:ligneConsole}
+[0:0:6:19:984]{ascStackId:0,newPlannifier:{listeEtapes:{{t:379984,v:0.0,x:29.0},{t:390567,v:0.0,x:36.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:364584,v:0.0,x:25.0},{t:372584,v:0.0,x:29.0,softDepType:1}}},monteeIdId:0}
+[0:0:6:30:567]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:32:833]{etage:31,destination:33,nbPersonnes:1,type:persInput}
+[0:0:6:33:67]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:33:67]{persId:83,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:6:34:123]{etage:22,destination:14,nbPersonnes:1,type:persInput}
+[0:0:6:34:267]{persId:83,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:6:34:267]{description:0¤p0¤p6¤p34¤p267 ssize2 1,type:ligneConsole}
+[0:0:6:34:267]{description:0¤p0¤p6¤p34¤p267 contenu consumerupdated from places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2¤v 14=Livr d=14 n=1} to places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2¤v 14=Livr d=14 n=1},type:ligneConsole}
+[0:0:6:34:267]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:35:271]{etage:4,destination:26,nbPersonnes:1,type:persInput}
+[0:0:6:35:299]{etage:24,destination:22,nbPersonnes:1,type:persInput}
+[0:0:6:35:617]{etage:2,destination:23,nbPersonnes:1,type:persInput}
+[0:0:6:35:768]{etage:33,destination:28,nbPersonnes:1,type:persInput}
+[0:0:6:36:767]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:6:36:767]{description:0¤p0¤p6¤p36¤p767 ssize2 1,type:ligneConsole}
+[0:0:6:36:767]{ascStackId:0,newPlannifier:{listeEtapes:{{t:396767,v:0.0,x:36.0},{t:417433,v:0.0,x:14.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:379984,v:0.0,x:29.0},{t:390567,v:0.0,x:36.0,softDepType:1}}},monteeIdId:0}
+[0:0:6:37:54]{etage:31,destination:22,nbPersonnes:1,type:persInput}
+[0:0:6:39:756]{etage:12,destination:24,nbPersonnes:1,type:persInput}
+[0:0:6:42:151]{etage:30,destination:21,nbPersonnes:1,type:persInput}
+[0:0:6:43:555]{etage:5,destination:6,nbPersonnes:1,type:persInput}
+[0:0:6:47:953]{etage:30,destination:35,nbPersonnes:1,type:persInput}
+[0:0:6:48:55]{etage:10,destination:28,nbPersonnes:1,type:persInput}
+[0:0:6:49:268]{etage:29,destination:17,nbPersonnes:1,type:persInput}
+[0:0:6:52:801]{etage:23,destination:24,nbPersonnes:1,type:persInput}
+[0:0:6:56:478]{etage:37,destination:30,nbPersonnes:1,type:persInput}
+[0:0:6:57:433]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:58:553]{etage:25,destination:28,nbPersonnes:1,type:persInput}
+[0:0:6:59:933]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:6:59:933]{persId:56,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:0:426]{etage:19,destination:26,nbPersonnes:1,type:persInput}
+[0:0:7:1:12]{etage:36,destination:15,nbPersonnes:1,type:persInput}
+[0:0:7:1:133]{persId:56,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:1:133]{description:0¤p0¤p7¤p1¤p133 ssize2 1,type:ligneConsole}
+[0:0:7:1:133]{description:0¤p0¤p7¤p1¤p133 contenu consumerupdated from places 2 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=2} to places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=3},type:ligneConsole}
+[0:0:7:1:133]{ascStackId:0,persId:114,animDuree:1200,etage:14,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:2:333]{ascStackId:0,persId:114,animDuree:1200,etage:14,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:2:333]{description:0¤p0¤p7¤p2¤p333 ssize2 1,type:ligneConsole}
+[0:0:7:2:333]{description:0¤p0¤p7¤p2¤p333 contenu consumerupdated from places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=3} to places 1 livr {10=Livr d=10 n=1¤v 13=Livr d=13 n=3},type:ligneConsole}
+[0:0:7:2:333]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:4:833]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:4:833]{description:0¤p0¤p7¤p4¤p833 ssize2 1,type:ligneConsole}
+[0:0:7:4:833]{ascStackId:0,newPlannifier:{listeEtapes:{{t:424833,v:0.0,x:14.0},{t:428833,v:0.0,x:13.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:396767,v:0.0,x:36.0},{t:417433,v:0.0,x:14.0,softDepType:-2}}},monteeIdId:0}
+[0:0:7:4:934]{etage:15,destination:27,nbPersonnes:1,type:persInput}
+[0:0:7:7:60]{etage:4,destination:17,nbPersonnes:1,type:persInput}
+[0:0:7:8:190]{etage:22,destination:19,nbPersonnes:1,type:persInput}
+[0:0:7:8:833]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:9:145]{etage:18,destination:2,nbPersonnes:1,type:persInput}
+[0:0:7:10:401]{etage:17,destination:23,nbPersonnes:1,type:persInput}
+[0:0:7:11:333]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:11:333]{persId:68,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:12:533]{persId:68,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:12:533]{persId:34,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:13:733]{persId:34,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:13:733]{persId:114,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:14:933]{persId:114,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:14:933]{description:0¤p0¤p7¤p14¤p933 ssize2 1,type:ligneConsole}
+[0:0:7:14:933]{description:0¤p0¤p7¤p14¤p933 contenu consumerupdated from places 4 livr {10=Livr d=10 n=1} to places 1 livr {10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 24=Livr d=24 n=1¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:14:933]{description:0¤p0¤p7¤p14¤p933 on valide PersGroup etage 12 dest 4 size 1 quantite 1 contenu places 1 livr {10=Livr d=10 n=1¤v 12=Livr d=12 n=1¤v 24=Livr d=24 n=1¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:14:933]{ascStackId:0,persId:50,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:16:133]{ascStackId:0,persId:50,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:16:133]{ascStackId:0,persId:99,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:17:333]{ascStackId:0,persId:99,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:17:333]{ascStackId:0,persId:4,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:18:533]{ascStackId:0,persId:4,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:18:533]{description:0¤p0¤p7¤p18¤p533 ssize2 1,type:ligneConsole}
+[0:0:7:18:533]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:18:557]{etage:15,destination:37,nbPersonnes:1,type:persInput}
+[0:0:7:20:86]{etage:34,destination:28,nbPersonnes:2,type:persInput}
+[0:0:7:21:33]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:21:33]{description:0¤p0¤p7¤p21¤p33 ssize2 1,type:ligneConsole}
+[0:0:7:21:33]{ascStackId:0,newPlannifier:{listeEtapes:{{t:441033,v:0.0,x:13.0},{t:445033,v:0.0,x:12.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:424833,v:0.0,x:14.0},{t:428833,v:0.0,x:13.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:21:472]{etage:35,destination:14,nbPersonnes:1,type:persInput}
+[0:0:7:21:848]{etage:3,destination:28,nbPersonnes:1,type:persInput}
+[0:0:7:22:183]{etage:13,destination:34,nbPersonnes:1,type:persInput}
+[0:0:7:23:889]{etage:5,destination:22,nbPersonnes:1,type:persInput}
+[0:0:7:24:420]{etage:27,destination:12,nbPersonnes:2,type:persInput}
+[0:0:7:24:546]{etage:5,destination:34,nbPersonnes:1,type:persInput}
+[0:0:7:24:829]{etage:34,destination:36,nbPersonnes:1,type:persInput}
+[0:0:7:25:33]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:26:421]{etage:4,destination:7,nbPersonnes:1,type:persInput}
+[0:0:7:26:592]{etage:14,destination:21,nbPersonnes:1,type:persInput}
+[0:0:7:26:625]{etage:28,destination:24,nbPersonnes:1,type:persInput}
+[0:0:7:27:533]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:27:533]{persId:50,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:28:733]{persId:50,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:28:733]{description:0¤p0¤p7¤p28¤p733 ssize2 1,type:ligneConsole}
+[0:0:7:28:733]{description:0¤p0¤p7¤p28¤p733 contenu consumerupdated from places 2 livr {10=Livr d=10 n=1¤v 24=Livr d=24 n=1¤v 26=Livr d=26 n=1} to places 0 livr {4=Livr d=4 n=1¤v 10=Livr d=10 n=1¤v 24=Livr d=24 n=2¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:28:733]{ascStackId:0,persId:33,animDuree:1200,etage:12,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:29:933]{ascStackId:0,persId:33,animDuree:1200,etage:12,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:29:933]{ascStackId:0,persId:149,animDuree:1200,etage:12,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:30:192]{etage:23,destination:16,nbPersonnes:1,type:persInput}
+[0:0:7:31:133]{ascStackId:0,persId:149,animDuree:1200,etage:12,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:31:133]{description:0¤p0¤p7¤p31¤p133 ssize2 1,type:ligneConsole}
+[0:0:7:31:133]{description:0¤p0¤p7¤p31¤p133 contenu consumerupdated from places 0 livr {4=Livr d=4 n=1¤v 10=Livr d=10 n=1¤v 24=Livr d=24 n=2¤v 26=Livr d=26 n=1} to places 0 livr {4=Livr d=4 n=1¤v 10=Livr d=10 n=1¤v 24=Livr d=24 n=2¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:31:133]{ascStackId:0,animDuree:2500,etage:12,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:33:633]{ascStackId:0,animDuree:2500,etage:12,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:33:633]{description:0¤p0¤p7¤p33¤p633 ssize2 1,type:ligneConsole}
+[0:0:7:33:633]{ascStackId:0,newPlannifier:{listeEtapes:{{t:453633,v:0.0,x:12.0},{t:459289,v:0.0,x:10.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:441033,v:0.0,x:13.0},{t:445033,v:0.0,x:12.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:34:501]{etage:4,destination:3,nbPersonnes:1,type:persInput}
+[0:0:7:39:289]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:41:789]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:41:789]{persId:21,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:7:42:989]{persId:21,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:7:42:989]{description:0¤p0¤p7¤p42¤p989 ssize2 1,type:ligneConsole}
+[0:0:7:42:989]{description:0¤p0¤p7¤p42¤p989 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 24=Livr d=24 n=2¤v 26=Livr d=26 n=1} to places 0 livr {4=Livr d=4 n=1¤v 24=Livr d=24 n=3¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:42:989]{ascStackId:0,persId:91,animDuree:1200,etage:10,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:7:44:189]{ascStackId:0,persId:91,animDuree:1200,etage:10,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:7:44:189]{description:0¤p0¤p7¤p44¤p189 ssize2 1,type:ligneConsole}
+[0:0:7:44:189]{description:0¤p0¤p7¤p44¤p189 contenu consumerupdated from places 0 livr {4=Livr d=4 n=1¤v 24=Livr d=24 n=3¤v 26=Livr d=26 n=1} to places 0 livr {4=Livr d=4 n=1¤v 24=Livr d=24 n=3¤v 26=Livr d=26 n=1},type:ligneConsole}
+[0:0:7:44:189]{ascStackId:0,animDuree:2500,etage:10,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:45:674]{etage:5,destination:33,nbPersonnes:1,type:persInput}
+[0:0:7:46:689]{ascStackId:0,animDuree:2500,etage:10,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:7:46:689]{description:0¤p0¤p7¤p46¤p689 ssize2 1,type:ligneConsole}
+[0:0:7:46:689]{ascStackId:0,newPlannifier:{listeEtapes:{{t:466689,v:0.0,x:10.0},{t:476486,v:0.0,x:4.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:453633,v:0.0,x:12.0},{t:459289,v:0.0,x:10.0,softDepType:-1}}},monteeIdId:0}
+[0:0:7:47:232]{etage:22,destination:7,nbPersonnes:1,type:persInput}
+[0:0:7:48:660]{etage:27,destination:15,nbPersonnes:1,type:persInput}
+[0:0:7:53:209]{etage:32,destination:26,nbPersonnes:1,type:persInput}
+[0:0:7:54:707]{etage:27,destination:23,nbPersonnes:1,type:persInput}
+[0:0:7:55:921]{etage:1,destination:15,nbPersonnes:1,type:persInput}
+[0:0:7:56:7]{etage:24,destination:29,nbPersonnes:1,type:persInput}
+[0:0:7:56:305]{etage:30,destination:21,nbPersonnes:1,type:persInput}
+[0:0:7:56:486]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:58:876]{etage:20,destination:34,nbPersonnes:1,type:persInput}
+[0:0:7:58:986]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:7:58:986]{persId:33,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:0:186]{persId:33,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:0:186]{description:0¤p0¤p8¤p0¤p186 ssize2 1,type:ligneConsole}
+[0:0:8:0:186]{description:0¤p0¤p8¤p0¤p186 contenu consumerupdated from places 1 livr {24=Livr d=24 n=3¤v 26=Livr d=26 n=1} to places 0 livr {24=Livr d=24 n=3¤v 26=Livr d=26 n=2},type:ligneConsole}
+[0:0:8:0:186]{ascStackId:0,persId:144,animDuree:1200,etage:4,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:1:386]{ascStackId:0,persId:144,animDuree:1200,etage:4,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:1:386]{description:0¤p0¤p8¤p1¤p386 ssize2 1,type:ligneConsole}
+[0:0:8:1:386]{description:0¤p0¤p8¤p1¤p386 contenu consumerupdated from places 0 livr {24=Livr d=24 n=3¤v 26=Livr d=26 n=2} to places 0 livr {24=Livr d=24 n=3¤v 26=Livr d=26 n=2},type:ligneConsole}
+[0:0:8:1:386]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:3:882]{etage:23,destination:13,nbPersonnes:1,type:persInput}
+[0:0:8:3:886]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:3:886]{description:0¤p0¤p8¤p3¤p886 ssize2 1,type:ligneConsole}
+[0:0:8:3:886]{ascStackId:0,newPlannifier:{listeEtapes:{{t:483886,v:0.0,x:4.0},{t:503219,v:0.0,x:24.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:466689,v:0.0,x:10.0},{t:476486,v:0.0,x:4.0,softDepType:-1}}},monteeIdId:0}
+[0:0:8:5:568]{etage:31,destination:28,nbPersonnes:1,type:persInput}
+[0:0:8:5:680]{etage:19,destination:33,nbPersonnes:1,type:persInput}
+[0:0:8:7:646]{etage:28,destination:33,nbPersonnes:1,type:persInput}
+[0:0:8:9:37]{etage:16,destination:14,nbPersonnes:1,type:persInput}
+[0:0:8:10:137]{etage:25,destination:31,nbPersonnes:1,type:persInput}
+[0:0:8:13:485]{etage:28,destination:8,nbPersonnes:1,type:persInput}
+[0:0:8:13:701]{etage:28,destination:17,nbPersonnes:1,type:persInput}
+[0:0:8:21:36]{etage:5,destination:32,nbPersonnes:1,type:persInput}
+[0:0:8:21:125]{etage:1,destination:32,nbPersonnes:1,type:persInput}
+[0:0:8:21:591]{etage:35,destination:3,nbPersonnes:1,type:persInput}
+[0:0:8:23:219]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:25:719]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:25:719]{persId:99,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:26:347]{etage:6,destination:25,nbPersonnes:1,type:persInput}
+[0:0:8:26:919]{persId:99,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:26:919]{persId:149,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:28:119]{persId:149,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:28:119]{persId:91,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:29:319]{persId:91,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:29:319]{description:0¤p0¤p8¤p29¤p319 ssize2 1,type:ligneConsole}
+[0:0:8:29:319]{description:0¤p0¤p8¤p29¤p319 contenu consumerupdated from places 3 livr {26=Livr d=26 n=2} to places 2 livr {26=Livr d=26 n=3},type:ligneConsole}
+[0:0:8:29:319]{ascStackId:0,persId:74,animDuree:1200,etage:24,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:30:519]{ascStackId:0,persId:74,animDuree:1200,etage:24,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:30:519]{description:0¤p0¤p8¤p30¤p519 ssize2 1,type:ligneConsole}
+[0:0:8:30:519]{description:0¤p0¤p8¤p30¤p519 contenu consumerupdated from places 2 livr {26=Livr d=26 n=3} to places 2 livr {26=Livr d=26 n=3},type:ligneConsole}
+[0:0:8:30:519]{ascStackId:0,animDuree:2500,etage:24,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:32:289]{etage:18,destination:23,nbPersonnes:1,type:persInput}
+[0:0:8:33:19]{ascStackId:0,animDuree:2500,etage:24,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:33:19]{description:0¤p0¤p8¤p33¤p19 ssize2 1,type:ligneConsole}
+[0:0:8:33:19]{ascStackId:0,newPlannifier:{listeEtapes:{{t:513019,v:0.0,x:24.0},{t:518675,v:0.0,x:26.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:483886,v:0.0,x:4.0},{t:503219,v:0.0,x:24.0,softDepType:2}}},monteeIdId:0}
+[0:0:8:33:249]{etage:5,destination:7,nbPersonnes:1,type:persInput}
+[0:0:8:33:278]{etage:36,destination:11,nbPersonnes:1,type:persInput}
+[0:0:8:37:34]{etage:23,destination:13,nbPersonnes:1,type:persInput}
+[0:0:8:38:675]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:38:903]{etage:38,destination:6,nbPersonnes:1,type:persInput}
+[0:0:8:41:175]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:41:175]{persId:4,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:42:375]{persId:4,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:42:375]{persId:144,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:43:575]{persId:144,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:43:575]{persId:74,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:8:44:21]{etage:31,destination:8,nbPersonnes:1,type:persInput}
+[0:0:8:44:414]{etage:23,destination:11,nbPersonnes:1,type:persInput}
+[0:0:8:44:576]{etage:5,destination:28,nbPersonnes:1,type:persInput}
+[0:0:8:44:775]{persId:74,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:8:44:775]{description:0¤p0¤p8¤p44¤p775 ssize2 1,type:ligneConsole}
+[0:0:8:44:775]{description:0¤p0¤p8¤p44¤p775 contenu consumerupdated from places 5 livr {} to places 3 livr {15=Livr d=15 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:8:44:775]{ascStackId:0,persId:22,animDuree:1200,etage:26,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:45:975]{ascStackId:0,persId:22,animDuree:1200,etage:26,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:45:975]{ascStackId:0,persId:131,animDuree:1200,etage:26,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:8:47:175]{ascStackId:0,persId:131,animDuree:1200,etage:26,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:8:47:175]{description:0¤p0¤p8¤p47¤p175 ssize2 1,type:ligneConsole}
+[0:0:8:47:175]{description:0¤p0¤p8¤p47¤p175 contenu consumerupdated from places 3 livr {15=Livr d=15 n=1¤v 29=Livr d=29 n=1} to places 3 livr {15=Livr d=15 n=1¤v 29=Livr d=29 n=1},type:ligneConsole}
+[0:0:8:47:175]{ascStackId:0,animDuree:2500,etage:26,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:47:385]{etage:36,destination:27,nbPersonnes:1,type:persInput}
+[0:0:8:49:675]{ascStackId:0,animDuree:2500,etage:26,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:8:49:675]{description:0¤p0¤p8¤p49¤p675 ssize2 1,type:ligneConsole}
+[0:0:8:49:675]{ascStackId:0,newPlannifier:{listeEtapes:{{t:529675,v:0.0,x:26.0},{t:536603,v:0.0,x:29.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:513019,v:0.0,x:24.0},{t:518675,v:0.0,x:26.0,softDepType:1}}},monteeIdId:0}
+[0:0:8:50:728]{etage:20,destination:13,nbPersonnes:1,type:persInput}
+[0:0:8:54:764]{etage:34,destination:11,nbPersonnes:1,type:persInput}
+[0:0:8:55:437]{etage:36,destination:8,nbPersonnes:1,type:persInput}
+[0:0:8:56:261]{etage:8,destination:5,nbPersonnes:1,type:persInput}
+[0:0:8:56:603]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:57:434]{etage:3,destination:12,nbPersonnes:1,type:persInput}
+[0:0:8:57:681]{etage:20,destination:3,nbPersonnes:1,type:persInput}
+[0:0:8:58:161]{etage:13,destination:8,nbPersonnes:1,type:persInput}
+[0:0:8:58:635]{etage:8,destination:6,nbPersonnes:1,type:persInput}
+[0:0:8:59:103]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:8:59:103]{persId:131,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:0:303]{persId:131,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:0:303]{description:0¤p0¤p9¤p0¤p303 ssize2 1,type:ligneConsole}
+[0:0:9:0:303]{description:0¤p0¤p9¤p0¤p303 contenu consumerupdated from places 4 livr {15=Livr d=15 n=1} to places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=1¤v 17=Livr d=17 n=1},type:ligneConsole}
+[0:0:9:0:303]{ascStackId:0,persId:42,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:0:614]{etage:21,destination:10,nbPersonnes:1,type:persInput}
+[0:0:9:1:487]{etage:21,destination:29,nbPersonnes:1,type:persInput}
+[0:0:9:1:503]{ascStackId:0,persId:42,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:1:503]{ascStackId:0,persId:120,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:2:703]{ascStackId:0,persId:120,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:2:703]{ascStackId:0,persId:154,animDuree:1200,etage:29,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:3:903]{ascStackId:0,persId:154,animDuree:1200,etage:29,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:3:903]{description:0¤p0¤p9¤p3¤p903 ssize2 1,type:ligneConsole}
+[0:0:9:3:903]{description:0¤p0¤p9¤p3¤p903 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=1¤v 17=Livr d=17 n=1} to places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=1¤v 17=Livr d=17 n=1},type:ligneConsole}
+[0:0:9:3:903]{ascStackId:0,animDuree:2500,etage:29,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:6:403]{ascStackId:0,animDuree:2500,etage:29,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:6:403]{description:0¤p0¤p9¤p6¤p403 ssize2 1,type:ligneConsole}
+[0:0:9:6:403]{ascStackId:0,newPlannifier:{listeEtapes:{{t:546403,v:0.0,x:29.0},{t:560403,v:0.0,x:17.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:529675,v:0.0,x:26.0},{t:536603,v:0.0,x:29.0,softDepType:1}}},monteeIdId:0}
+[0:0:9:6:882]{etage:34,destination:31,nbPersonnes:1,type:persInput}
+[0:0:9:7:66]{etage:25,destination:34,nbPersonnes:1,type:persInput}
+[0:0:9:11:267]{etage:12,destination:15,nbPersonnes:1,type:persInput}
+[0:0:9:11:626]{etage:28,destination:2,nbPersonnes:1,type:persInput}
+[0:0:9:12:412]{etage:21,destination:38,nbPersonnes:1,type:persInput}
+[0:0:9:12:720]{etage:1,destination:4,nbPersonnes:1,type:persInput}
+[0:0:9:13:448]{etage:16,destination:33,nbPersonnes:1,type:persInput}
+[0:0:9:17:698]{etage:19,destination:13,nbPersonnes:1,type:persInput}
+[0:0:9:18:733]{etage:13,destination:38,nbPersonnes:1,type:persInput}
+[0:0:9:20:403]{ascStackId:0,animDuree:2500,etage:17,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:20:411]{etage:6,destination:25,nbPersonnes:1,type:persInput}
+[0:0:9:20:694]{etage:8,destination:18,nbPersonnes:1,type:persInput}
+[0:0:9:20:994]{etage:8,destination:15,nbPersonnes:1,type:persInput}
+[0:0:9:22:903]{ascStackId:0,animDuree:2500,etage:17,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:22:903]{persId:154,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:24:103]{persId:154,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:24:103]{description:0¤p0¤p9¤p24¤p103 ssize2 1,type:ligneConsole}
+[0:0:9:24:103]{description:0¤p0¤p9¤p24¤p103 contenu consumerupdated from places 2 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=1} to places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=2},type:ligneConsole}
+[0:0:9:24:103]{ascStackId:0,persId:78,animDuree:1200,etage:17,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:25:164]{etage:32,destination:37,nbPersonnes:1,type:persInput}
+[0:0:9:25:303]{ascStackId:0,persId:78,animDuree:1200,etage:17,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:25:303]{description:0¤p0¤p9¤p25¤p303 ssize2 1,type:ligneConsole}
+[0:0:9:25:303]{description:0¤p0¤p9¤p25¤p303 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=2} to places 1 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 15=Livr d=15 n=2},type:ligneConsole}
+[0:0:9:25:303]{ascStackId:0,animDuree:2500,etage:17,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:25:368]{etage:12,destination:38,nbPersonnes:1,type:persInput}
+[0:0:9:27:803]{ascStackId:0,animDuree:2500,etage:17,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:27:803]{description:0¤p0¤p9¤p27¤p803 ssize2 1,type:ligneConsole}
+[0:0:9:27:803]{ascStackId:0,newPlannifier:{listeEtapes:{{t:567803,v:0.0,x:17.0},{t:573459,v:0.0,x:15.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:546403,v:0.0,x:29.0},{t:560403,v:0.0,x:17.0,softDepType:-2}}},monteeIdId:0}
+[0:0:9:28:657]{etage:28,destination:12,nbPersonnes:1,type:persInput}
+[0:0:9:30:507]{etage:20,destination:35,nbPersonnes:1,type:persInput}
+[0:0:9:31:271]{etage:33,destination:25,nbPersonnes:1,type:persInput}
+[0:0:9:33:459]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:35:959]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:35:959]{persId:22,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:37:159]{persId:22,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:37:159]{persId:78,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:9:38:359]{persId:78,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:9:38:359]{description:0¤p0¤p9¤p38¤p359 ssize2 1,type:ligneConsole}
+[0:0:9:38:359]{description:0¤p0¤p9¤p38¤p359 contenu consumerupdated from places 3 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1} to places 0 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:9:38:359]{ascStackId:0,persId:44,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:39:559]{ascStackId:0,persId:44,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:39:559]{ascStackId:0,persId:160,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:40:146]{etage:16,destination:23,nbPersonnes:1,type:persInput}
+[0:0:9:40:759]{ascStackId:0,persId:160,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:40:759]{ascStackId:0,persId:165,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:9:41:959]{ascStackId:0,persId:165,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:9:41:959]{description:0¤p0¤p9¤p41¤p959 ssize2 1,type:ligneConsole}
+[0:0:9:41:959]{description:0¤p0¤p9¤p41¤p959 contenu consumerupdated from places 0 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {4=Livr d=4 n=1¤v 6=Livr d=6 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:9:41:959]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:44:459]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:9:44:459]{description:0¤p0¤p9¤p44¤p459 ssize2 1,type:ligneConsole}
+[0:0:9:44:459]{ascStackId:0,newPlannifier:{listeEtapes:{{t:584459,v:0.0,x:15.0},{t:596459,v:0.0,x:6.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:567803,v:0.0,x:17.0},{t:573459,v:0.0,x:15.0,softDepType:-1}}},monteeIdId:0}
+[0:0:9:47:221]{etage:8,destination:7,nbPersonnes:1,type:persInput}
+[0:0:9:50:659]{etage:21,destination:17,nbPersonnes:1,type:persInput}
+[0:0:9:50:958]{etage:23,destination:21,nbPersonnes:1,type:persInput}
+[0:0:9:55:60]{etage:24,destination:26,nbPersonnes:1,type:persInput}
+[0:0:9:56:459]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:56:893]{etage:1,destination:25,nbPersonnes:1,type:persInput}
+[0:0:9:58:119]{etage:38,destination:3,nbPersonnes:1,type:persInput}
+[0:0:9:58:959]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:9:58:959]{persId:120,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:0:159]{persId:120,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:0:159]{description:0¤p0¤p10¤p0¤p159 ssize2 1,type:ligneConsole}
+[0:0:10:0:159]{description:0¤p0¤p10¤p0¤p159 contenu consumerupdated from places 1 livr {4=Livr d=4 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 1 livr {4=Livr d=4 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:0:159]{description:0¤p0¤p10¤p0¤p159 on valide PersGroup etage 4 dest 3 size 1 quantite 1 contenu places 1 livr {4=Livr d=4 n=1¤v 17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:0:159]{ascStackId:0,animDuree:2500,etage:6,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:1:147]{etage:18,destination:10,nbPersonnes:1,type:persInput}
+[0:0:10:2:659]{ascStackId:0,animDuree:2500,etage:6,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:2:659]{description:0¤p0¤p10¤p2¤p659 ssize2 1,type:ligneConsole}
+[0:0:10:2:659]{ascStackId:0,newPlannifier:{listeEtapes:{{t:602659,v:0.0,x:6.0},{t:608315,v:0.0,x:4.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:584459,v:0.0,x:15.0},{t:596459,v:0.0,x:6.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:5:419]{etage:34,destination:12,nbPersonnes:1,type:persInput}
+[0:0:10:8:315]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:10:815]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:10:815]{persId:42,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:12:15]{persId:42,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:12:15]{description:0¤p0¤p10¤p12¤p15 ssize2 1,type:ligneConsole}
+[0:0:10:12:15]{description:0¤p0¤p10¤p12¤p15 contenu consumerupdated from places 2 livr {17=Livr d=17 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {3=Livr d=3 n=1¤v 17=Livr d=17 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:12:15]{ascStackId:0,persId:180,animDuree:1200,etage:4,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:13:215]{ascStackId:0,persId:180,animDuree:1200,etage:4,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:13:215]{ascStackId:0,persId:161,animDuree:1200,etage:4,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:14:415]{ascStackId:0,persId:161,animDuree:1200,etage:4,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:14:415]{description:0¤p0¤p10¤p14¤p415 ssize2 1,type:ligneConsole}
+[0:0:10:14:415]{description:0¤p0¤p10¤p14¤p415 contenu consumerupdated from places 0 livr {3=Livr d=3 n=1¤v 17=Livr d=17 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {3=Livr d=3 n=1¤v 17=Livr d=17 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:14:415]{ascStackId:0,animDuree:2500,etage:4,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:15:53]{etage:32,destination:4,nbPersonnes:1,type:persInput}
+[0:0:10:16:915]{ascStackId:0,animDuree:2500,etage:4,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:16:915]{description:0¤p0¤p10¤p16¤p915 ssize2 1,type:ligneConsole}
+[0:0:10:16:915]{ascStackId:0,newPlannifier:{listeEtapes:{{t:616915,v:0.0,x:4.0},{t:620915,v:0.0,x:3.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:602659,v:0.0,x:6.0},{t:608315,v:0.0,x:4.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:18:206]{etage:2,destination:7,nbPersonnes:1,type:persInput}
+[0:0:10:20:915]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:23:415]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:23:415]{persId:180,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:24:615]{persId:180,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:24:615]{description:0¤p0¤p10¤p24¤p615 ssize2 1,type:ligneConsole}
+[0:0:10:24:615]{description:0¤p0¤p10¤p24¤p615 contenu consumerupdated from places 1 livr {17=Livr d=17 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 1 livr {17=Livr d=17 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:24:615]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:24:777]{etage:31,destination:12,nbPersonnes:1,type:persInput}
+[0:0:10:27:115]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:27:115]{description:0¤p0¤p10¤p27¤p115 ssize2 1,type:ligneConsole}
+[0:0:10:27:115]{ascStackId:0,newPlannifier:{listeEtapes:{{t:627115,v:0.0,x:3.0},{t:642448,v:0.0,x:17.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:616915,v:0.0,x:4.0},{t:620915,v:0.0,x:3.0,softDepType:-1}}},monteeIdId:0}
+[0:0:10:28:378]{etage:36,destination:14,nbPersonnes:1,type:persInput}
+[0:0:10:29:539]{etage:16,destination:37,nbPersonnes:2,type:persInput}
+[0:0:10:30:88]{etage:26,destination:18,nbPersonnes:1,type:persInput}
+[0:0:10:32:879]{etage:14,destination:26,nbPersonnes:1,type:persInput}
+[0:0:10:35:898]{etage:22,destination:7,nbPersonnes:1,type:persInput}
+[0:0:10:41:82]{etage:34,destination:28,nbPersonnes:1,type:persInput}
+[0:0:10:42:311]{etage:24,destination:30,nbPersonnes:1,type:persInput}
+[0:0:10:42:448]{ascStackId:0,animDuree:2500,etage:17,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:44:158]{etage:11,destination:34,nbPersonnes:1,type:persInput}
+[0:0:10:44:948]{ascStackId:0,animDuree:2500,etage:17,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:44:948]{persId:44,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:45:310]{etage:34,destination:10,nbPersonnes:1,type:persInput}
+[0:0:10:46:148]{persId:44,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:46:148]{persId:161,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:10:47:348]{persId:161,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:10:47:348]{description:0¤p0¤p10¤p47¤p348 ssize2 1,type:ligneConsole}
+[0:0:10:47:348]{description:0¤p0¤p10¤p47¤p348 contenu consumerupdated from places 3 livr {27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 1 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:47:348]{description:0¤p0¤p10¤p47¤p348 on valide PersGroup etage 18 dest 23 size 1 quantite 1 contenu places 1 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:47:348]{ascStackId:0,persId:48,animDuree:1200,etage:17,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:47:387]{etage:2,destination:37,nbPersonnes:1,type:persInput}
+[0:0:10:48:548]{ascStackId:0,persId:48,animDuree:1200,etage:17,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:48:548]{ascStackId:0,persId:164,animDuree:1200,etage:17,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:49:748]{ascStackId:0,persId:164,animDuree:1200,etage:17,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:49:748]{description:0¤p0¤p10¤p49¤p748 ssize2 1,type:ligneConsole}
+[0:0:10:49:748]{ascStackId:0,animDuree:2500,etage:17,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:50:586]{etage:16,destination:6,nbPersonnes:1,type:persInput}
+[0:0:10:52:248]{ascStackId:0,animDuree:2500,etage:17,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:10:52:248]{description:0¤p0¤p10¤p52¤p248 ssize2 1,type:ligneConsole}
+[0:0:10:52:248]{ascStackId:0,newPlannifier:{listeEtapes:{{t:652248,v:0.0,x:17.0},{t:656248,v:0.0,x:18.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:627115,v:0.0,x:3.0},{t:642448,v:0.0,x:17.0,softDepType:2}}},monteeIdId:0}
+[0:0:10:53:427]{etage:18,destination:30,nbPersonnes:1,type:persInput}
+[0:0:10:56:102]{etage:4,destination:12,nbPersonnes:1,type:persInput}
+[0:0:10:56:248]{ascStackId:0,animDuree:2500,etage:18,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:57:578]{etage:26,destination:31,nbPersonnes:1,type:persInput}
+[0:0:10:58:748]{ascStackId:0,animDuree:2500,etage:18,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:10:58:748]{description:0¤p0¤p10¤p58¤p748 ssize2 1,type:ligneConsole}
+[0:0:10:58:748]{description:0¤p0¤p10¤p58¤p748 contenu consumerupdated from places 1 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:58:748]{ascStackId:0,persId:202,animDuree:1200,etage:18,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:10:59:948]{ascStackId:0,persId:202,animDuree:1200,etage:18,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:10:59:948]{description:0¤p0¤p10¤p59¤p948 ssize2 1,type:ligneConsole}
+[0:0:10:59:948]{description:0¤p0¤p10¤p59¤p948 contenu consumerupdated from places 0 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {14=Livr d=14 n=1¤v 23=Livr d=23 n=2¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:10:59:948]{ascStackId:0,animDuree:2500,etage:18,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:1:511]{etage:4,destination:3,nbPersonnes:2,type:persInput}
+[0:0:11:2:448]{ascStackId:0,animDuree:2500,etage:18,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:2:448]{description:0¤p0¤p11¤p2¤p448 ssize2 1,type:ligneConsole}
+[0:0:11:2:448]{ascStackId:0,newPlannifier:{listeEtapes:{{t:662448,v:0.0,x:18.0},{t:671392,v:0.0,x:23.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:652248,v:0.0,x:17.0},{t:656248,v:0.0,x:18.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:3:658]{etage:3,destination:24,nbPersonnes:1,type:persInput}
+[0:0:11:5:802]{etage:32,destination:10,nbPersonnes:1,type:persInput}
+[0:0:11:6:725]{etage:3,destination:28,nbPersonnes:1,type:persInput}
+[0:0:11:7:443]{etage:10,destination:28,nbPersonnes:1,type:persInput}
+[0:0:11:11:392]{ascStackId:0,animDuree:2500,etage:23,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:11:861]{etage:18,destination:34,nbPersonnes:1,type:persInput}
+[0:0:11:13:892]{ascStackId:0,animDuree:2500,etage:23,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:13:892]{persId:164,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:15:92]{persId:164,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:15:92]{persId:202,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:16:292]{persId:202,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:16:292]{description:0¤p0¤p11¤p16¤p292 ssize2 1,type:ligneConsole}
+[0:0:11:16:292]{description:0¤p0¤p11¤p16¤p292 contenu consumerupdated from places 2 livr {14=Livr d=14 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:11:16:292]{ascStackId:0,persId:205,animDuree:1200,etage:23,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:17:152]{etage:1,destination:18,nbPersonnes:1,type:persInput}
+[0:0:11:17:479]{etage:6,destination:11,nbPersonnes:1,type:persInput}
+[0:0:11:17:492]{ascStackId:0,persId:205,animDuree:1200,etage:23,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:17:492]{ascStackId:0,persId:190,animDuree:1200,etage:23,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:18:692]{ascStackId:0,persId:190,animDuree:1200,etage:23,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:18:692]{description:0¤p0¤p11¤p18¤p692 ssize2 1,type:ligneConsole}
+[0:0:11:18:692]{description:0¤p0¤p11¤p18¤p692 contenu consumerupdated from places 0 livr {13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1} to places 0 livr {13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 27=Livr d=27 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:11:18:692]{ascStackId:0,animDuree:2500,etage:23,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:21:192]{ascStackId:0,animDuree:2500,etage:23,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:21:192]{description:0¤p0¤p11¤p21¤p192 ssize2 1,type:ligneConsole}
+[0:0:11:21:192]{ascStackId:0,newPlannifier:{listeEtapes:{{t:681192,v:0.0,x:23.0},{t:689192,v:0.0,x:27.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:662448,v:0.0,x:18.0},{t:671392,v:0.0,x:23.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:21:242]{etage:13,destination:1,nbPersonnes:1,type:persInput}
+[0:0:11:24:769]{etage:6,destination:27,nbPersonnes:1,type:persInput}
+[0:0:11:25:849]{etage:30,destination:29,nbPersonnes:1,type:persInput}
+[0:0:11:29:192]{ascStackId:0,animDuree:2500,etage:27,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:31:692]{ascStackId:0,animDuree:2500,etage:27,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:31:692]{persId:160,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:32:892]{persId:160,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:32:892]{description:0¤p0¤p11¤p32¤p892 ssize2 1,type:ligneConsole}
+[0:0:11:32:892]{description:0¤p0¤p11¤p32¤p892 contenu consumerupdated from places 1 livr {13=Livr d=13 n=2¤v 14=Livr d=14 n=1¤v 37=Livr d=37 n=1} to places 0 livr {13=Livr d=13 n=3¤v 14=Livr d=14 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:11:32:892]{ascStackId:0,persId:28,animDuree:1200,etage:27,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:11:34:92]{ascStackId:0,persId:28,animDuree:1200,etage:27,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:11:34:92]{description:0¤p0¤p11¤p34¤p92 ssize2 1,type:ligneConsole}
+[0:0:11:34:92]{description:0¤p0¤p11¤p34¤p92 contenu consumerupdated from places 0 livr {13=Livr d=13 n=3¤v 14=Livr d=14 n=1¤v 37=Livr d=37 n=1} to places 0 livr {13=Livr d=13 n=3¤v 14=Livr d=14 n=1¤v 37=Livr d=37 n=1},type:ligneConsole}
+[0:0:11:34:92]{ascStackId:0,animDuree:2500,etage:27,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:36:592]{ascStackId:0,animDuree:2500,etage:27,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:36:592]{description:0¤p0¤p11¤p36¤p592 ssize2 1,type:ligneConsole}
+[0:0:11:36:592]{ascStackId:0,newPlannifier:{listeEtapes:{{t:696592,v:0.0,x:27.0},{t:709258,v:0.0,x:37.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:681192,v:0.0,x:23.0},{t:689192,v:0.0,x:27.0,softDepType:1}}},monteeIdId:0}
+[0:0:11:40:684]{etage:12,destination:5,nbPersonnes:1,type:persInput}
+[0:0:11:43:111]{etage:29,destination:32,nbPersonnes:1,type:persInput}
+[0:0:11:43:873]{etage:33,destination:3,nbPersonnes:1,type:persInput}
+[0:0:11:47:687]{etage:21,destination:26,nbPersonnes:1,type:persInput}
+[0:0:11:49:258]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:49:372]{etage:21,destination:4,nbPersonnes:1,type:persInput}
+[0:0:11:51:758]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:11:51:758]{persId:165,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:11:52:958]{persId:165,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:11:52:958]{description:0¤p0¤p11¤p52¤p958 ssize2 1,type:ligneConsole}
+[0:0:11:52:958]{description:0¤p0¤p11¤p52¤p958 contenu consumerupdated from places 1 livr {13=Livr d=13 n=3¤v 14=Livr d=14 n=1} to places 1 livr {13=Livr d=13 n=3¤v 14=Livr d=14 n=1},type:ligneConsole}
+[0:0:11:52:958]{ascStackId:0,animDuree:2500,etage:37,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:54:77]{etage:20,destination:25,nbPersonnes:1,type:persInput}
+[0:0:11:55:458]{ascStackId:0,animDuree:2500,etage:37,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:11:55:458]{description:0¤p0¤p11¤p55¤p458 ssize2 1,type:ligneConsole}
+[0:0:11:55:458]{ascStackId:0,newPlannifier:{listeEtapes:{{t:715458,v:0.0,x:37.0},{t:736791,v:0.0,x:14.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:696592,v:0.0,x:27.0},{t:709258,v:0.0,x:37.0,softDepType:2}}},monteeIdId:0}
+[0:0:11:56:892]{etage:32,destination:14,nbPersonnes:1,type:persInput}
+[0:0:11:57:253]{etage:11,destination:29,nbPersonnes:1,type:persInput}
+[0:0:12:0:236]{etage:15,destination:29,nbPersonnes:1,type:persInput}
+[0:0:12:5:733]{etage:19,destination:31,nbPersonnes:1,type:persInput}
+[0:0:12:7:525]{etage:25,destination:19,nbPersonnes:1,type:persInput}
+[0:0:12:10:358]{etage:12,destination:32,nbPersonnes:1,type:persInput}
+[0:0:12:10:360]{etage:6,destination:37,nbPersonnes:1,type:persInput}
+[0:0:12:13:775]{etage:16,destination:13,nbPersonnes:1,type:persInput}
+[0:0:12:13:867]{etage:26,destination:14,nbPersonnes:1,type:persInput}
+[0:0:12:16:791]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:16:964]{etage:37,destination:3,nbPersonnes:1,type:persInput}
+[0:0:12:17:858]{etage:25,destination:35,nbPersonnes:1,type:persInput}
+[0:0:12:19:291]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:19:291]{persId:48,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:20:491]{persId:48,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:20:491]{description:0¤p0¤p12¤p20¤p491 ssize2 1,type:ligneConsole}
+[0:0:12:20:491]{description:0¤p0¤p12¤p20¤p491 contenu consumerupdated from places 2 livr {13=Livr d=13 n=3} to places 2 livr {13=Livr d=13 n=3},type:ligneConsole}
+[0:0:12:20:491]{ascStackId:0,animDuree:2500,etage:14,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:22:991]{ascStackId:0,animDuree:2500,etage:14,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:22:991]{description:0¤p0¤p12¤p22¤p991 ssize2 1,type:ligneConsole}
+[0:0:12:22:991]{ascStackId:0,newPlannifier:{listeEtapes:{{t:742991,v:0.0,x:14.0},{t:746991,v:0.0,x:13.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:715458,v:0.0,x:37.0},{t:736791,v:0.0,x:14.0,softDepType:-2}}},monteeIdId:0}
+[0:0:12:23:442]{etage:37,destination:7,nbPersonnes:1,type:persInput}
+[0:0:12:24:230]{etage:32,destination:7,nbPersonnes:1,type:persInput}
+[0:0:12:24:344]{etage:19,destination:10,nbPersonnes:1,type:persInput}
+[0:0:12:26:991]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:28:989]{etage:9,destination:24,nbPersonnes:1,type:persInput}
+[0:0:12:29:491]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:29:491]{persId:205,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:30:691]{persId:205,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:30:691]{persId:190,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:31:516]{etage:15,destination:32,nbPersonnes:1,type:persInput}
+[0:0:12:31:891]{persId:190,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:31:891]{persId:28,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:33:91]{persId:28,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:33:91]{description:0¤p0¤p12¤p33¤p91 ssize2 1,type:ligneConsole}
+[0:0:12:33:91]{description:0¤p0¤p12¤p33¤p91 contenu consumerupdated from places 5 livr {} to places 1 livr {1=Livr d=1 n=1¤v 8=Livr d=8 n=1¤v 34=Livr d=34 n=1¤v 38=Livr d=38 n=1},type:ligneConsole}
+[0:0:12:33:91]{ascStackId:0,persId:274,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:34:291]{ascStackId:0,persId:274,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:34:291]{ascStackId:0,persId:217,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:34:401]{etage:37,destination:16,nbPersonnes:1,type:persInput}
+[0:0:12:35:491]{ascStackId:0,persId:217,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:35:491]{ascStackId:0,persId:170,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:36:47]{etage:5,destination:32,nbPersonnes:1,type:persInput}
+[0:0:12:36:691]{ascStackId:0,persId:170,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:36:691]{ascStackId:0,persId:229,animDuree:1200,etage:13,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:12:37:891]{ascStackId:0,persId:229,animDuree:1200,etage:13,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:12:37:891]{description:0¤p0¤p12¤p37¤p891 ssize2 1,type:ligneConsole}
+[0:0:12:37:891]{description:0¤p0¤p12¤p37¤p891 contenu consumerupdated from places 1 livr {1=Livr d=1 n=1¤v 8=Livr d=8 n=1¤v 34=Livr d=34 n=1¤v 38=Livr d=38 n=1} to places 1 livr {1=Livr d=1 n=1¤v 8=Livr d=8 n=1¤v 34=Livr d=34 n=1¤v 38=Livr d=38 n=1},type:ligneConsole}
+[0:0:12:37:891]{ascStackId:0,animDuree:2500,etage:13,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:40:391]{ascStackId:0,animDuree:2500,etage:13,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:12:40:391]{description:0¤p0¤p12¤p40¤p391 ssize2 1,type:ligneConsole}
+[0:0:12:40:391]{ascStackId:0,newPlannifier:{listeEtapes:{{t:760391,v:0.0,x:13.0},{t:769335,v:0.0,x:8.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:742991,v:0.0,x:14.0},{t:746991,v:0.0,x:13.0,softDepType:-1}}},monteeIdId:0}
+[0:0:12:40:565]{etage:13,destination:3,nbPersonnes:1,type:persInput}
+[0:0:12:48:627]{etage:26,destination:25,nbPersonnes:1,type:persInput}
+[0:0:12:49:335]{ascStackId:0,animDuree:2500,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:49:482]{etage:18,destination:36,nbPersonnes:1,type:persInput}
+[0:0:12:51:169]{etage:23,destination:37,nbPersonnes:1,type:persInput}
+[0:0:12:51:835]{ascStackId:0,animDuree:2500,etage:8,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:12:51:835]{persId:217,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:12:53:35]{persId:217,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:12:53:35]{description:0¤p0¤p12¤p53¤p35 ssize2 1,type:ligneConsole}
+[0:0:12:53:35]{description:0¤p0¤p12¤p53¤p35 contenu consumerupdated from places 2 livr {1=Livr d=1 n=1¤v 34=Livr d=34 n=1¤v 38=Livr d=38 n=1} to places 0 livr {1=Livr d=1 n=1¤v 5=Livr d=5 n=2¤v 34=Livr d=34 n=1¤v 38=Livr d=38 n=1},type:ligneConsol

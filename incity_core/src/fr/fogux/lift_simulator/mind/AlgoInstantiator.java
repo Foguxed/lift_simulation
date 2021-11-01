@@ -1,8 +1,8 @@
 package fr.fogux.lift_simulator.mind;
 
 
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 
 public interface AlgoInstantiator
 {

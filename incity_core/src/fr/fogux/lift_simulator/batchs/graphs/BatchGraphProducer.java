@@ -49,6 +49,7 @@ public class BatchGraphProducer extends SimuBatch
     public BatchGraphProducer(final File dossierDuBatch, final DataTagCompound batchConfig) throws IOException
     {
         super(dossierDuBatch,batchConfig.getLong(TagNames.seed), batchConfig.getInt(TagNames.nbThreads));
+        System.out.println("RandomSeed is " + batchConfig.getLong(TagNames.seed));
         echantillonage = batchConfig.getInt(TagNames.echantillonage);
         final File configFile = GestFichiers.getUniqueFile(dossierDuBatch, NomsFichiers.graph_batch_config);
         final FichierGraphBatchConfig graphBatchConfigFile = GestFichiers.getGraphBatchConfig(configFile);
@@ -57,8 +58,8 @@ public class BatchGraphProducer extends SimuBatch
         strPartition = new DynamicString(graphBatchConfigFile.config_partition_raw);
         strSimu = new DynamicString(graphBatchConfigFile.config_simu_raw);
         queue = new PriorityQueue<>();
-        System.out.println("RandomSeed is " + batchConfig.getLong(TagNames.seed));
     }
+
 
     private List<StringProvider> getAbscisse()
     {
@@ -82,13 +83,14 @@ public class BatchGraphProducer extends SimuBatch
         while(!queue.isEmpty() && queue.peek().id == nextToWrite)
         {
             // threadsafe car il n'y a qu'un seul premier element correct
+            final String str = queue.poll().getString();
             try
             {
-                graphWriter.write(queue.poll().getString() + "\n");
+                graphWriter.write(str + "\n");
             } catch (final IOException e)
             {
                 e.printStackTrace();
-                throw new SimulateurException("unexpected IO Exception while writing graph batch results " + e.getMessage());
+                throw new SimulateurException("unexpected IO Exception while writing graph batch results trying to write " + str + " erreur " + e.getMessage());
             }
             nextToWrite ++;
         }
@@ -125,33 +127,49 @@ public class BatchGraphProducer extends SimuBatch
         try
         {
 
-            final boolean b = dessiner(60*60*1000);
+            final boolean b = dessiner(13*60*60*1000);
             if(!b)
             {
+                shutdown("fin par timeout");
                 System.out.println("timeout des points");
             }
             try
             {
                 manager.closeAndWait(20*60);
+                graphWriter.close();
                 System.out.println("completed in " + (System.currentTimeMillis() - initialTime) + " millis");
             } catch (final InterruptedException e)
             {
                 e.printStackTrace();
             }
+
         }
         catch(final Exception e)
         {
             e.printStackTrace();
+            shutdown("shutdown pour exeption " + e.getMessage());
         }
 
+    }
 
+    public void shutdown(final String motif)
+    {
         try {
             graphWriter.close();
         } catch (final IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        manager.shutdown();
+        manager.shutdown(motif);
+    }
+
+
+
+    protected void shutdownIfStopped()
+    {
+        if(stop())
+        {
+            shutdown("stop.txt exists");
+        }
     }
 
     protected boolean dessiner(final long timeOut)
@@ -159,7 +177,6 @@ public class BatchGraphProducer extends SimuBatch
         final long initialTime = System.currentTimeMillis();
         final List<AlgoInstantiator> algos = Simulateur.getAllAlgos();
         writeAlgoOrder(algos);
-
         final SimulationStatCreator<StandardSimulationStat> creator = new StandardStatCreator();
 
         final PartitionGenInstantiator pgenInstantiator = new PartitionGenInstantiator(strPartition,new DataTagCompound(strImmeuble.getString()));
@@ -184,6 +201,7 @@ public class BatchGraphProducer extends SimuBatch
                     identifiantPoint ++;
                     for(int i = 0; i < echantillonage; i ++)
                     {
+                        shutdownIfStopped();
                         manager.plannifySimulation(creator, algos, pGen, cSimu, point);
                     }
                 }

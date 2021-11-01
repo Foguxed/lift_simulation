@@ -5,6 +5,8 @@ import java.util.List;
 
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
 import fr.fogux.lift_simulator.fichiers.TagNames;
+import fr.fogux.lift_simulator.structure.AscId;
+import fr.fogux.lift_simulator.utils.IntEnsemble;
 
 public class ConfigImmeuble
 {
@@ -65,7 +67,25 @@ public class ConfigImmeuble
     {
         return repartAsc;
     }
-
+    
+    public List<AscId> getTousAscId()
+    {
+    	List<AscId> retour = new ArrayList<AscId>();
+    	for(int i = 0; i < repartAsc.length;i++)
+    	{
+    		for(int j = 0; j < repartAsc[i]; j ++)
+    		{
+    			retour.add(new AscId(i, j));
+    		}
+    	}
+    	return retour;
+    }
+    
+    public IntEnsemble getToutImmeuble()
+    {
+    	return new IntEnsemble(niveauMin, niveauMax+1);
+    }
+    
     @Override
     public String toString()
     {

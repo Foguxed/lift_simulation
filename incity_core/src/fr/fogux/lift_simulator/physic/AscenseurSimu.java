@@ -1,16 +1,14 @@
 package fr.fogux.lift_simulator.physic;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import fr.fogux.lift_simulator.Simulation;
 import fr.fogux.lift_simulator.evenements.Evenement;
 import fr.fogux.lift_simulator.evenements.EvenementArriveAscSansOuverture;
 import fr.fogux.lift_simulator.evenements.EvenementMouvementPortes;
 import fr.fogux.lift_simulator.evenements.animation.EvenementBoutonAscenseur;
-import fr.fogux.lift_simulator.evenements.animation.EvenementChangementPlannifier;
+import fr.fogux.lift_simulator.evenements.animation.EvenementChangementPlanifier;
 import fr.fogux.lift_simulator.exceptions.SimulateurAcceptableException;
 import fr.fogux.lift_simulator.fichiers.Compoundable;
 import fr.fogux.lift_simulator.fichiers.DataTagCompound;
@@ -43,7 +41,7 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
 
     protected Evenement prochainEventArrivee = null;
 
-    protected final Set<AscenseurSimu> listeners = new HashSet<>();
+    protected final List<AscenseurSimu> listeners = new ArrayList<>();
 
     protected final List<Integer> invites;
     protected int inviteIndex = 0;
@@ -167,7 +165,7 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
 
     protected boolean bloque()
     {
-        return etageTransfert != null || (prochainEventArrivee instanceof EvenementMouvementPortes && plannifier.notMoving(simu.getTime()));
+        return etageTransfert != null || (prochainEventArrivee instanceof EvenementMouvementPortes && planificateur.notMoving(simu.getTime()));
     }
 
     public void setObjectif(final int newEtageObjectif, final boolean ouvrirPortes)
@@ -247,7 +245,6 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     {
         if(ouvrirPortesProchaineDest)
         {
-            //System.out.println("on lance ouverture porte ");
             prochainEventArrivee = new EvenementMouvementPortes(Math.max(getInstantProchainArret(), simu.getTime()),simu.getConfig(), id, etageObjectif, true);
         }
         else
@@ -259,32 +256,33 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
 
     private long getInstantProchainArret()
     {
-        return plannifier.EF.t;
+        return planificateur.EF.t;
     }
 
     protected void bruteDeplacer(final float newXObjectif)
     {
-        DataTagCompound oldPlannifier = null;
+        DataTagCompound oldPlanificateur = null;
         if(simu.doPrint())
         {
-            oldPlannifier = Compoundable.compound(plannifier);
+            oldPlanificateur = Compoundable.compound(planificateur);
         }
 
         final long timeChangement = simu.getTime();
 
-        final float oldXi = plannifier.EI.x;
-        plannifier.initiateMovement(timeChangement, newXObjectif, ascSuperieur, ascInferieur);
+        final float oldXi = planificateur.EI.x;
+        planificateur.initiateMovement(timeChangement, newXObjectif, ascSuperieur, ascInferieur);
 
         if(simu.doPrint())
         {
-            final DataTagCompound newPlannifier = Compoundable.compound(plannifier);
-            new EvenementChangementPlannifier(id, oldPlannifier, newPlannifier).print(simu);
+            final DataTagCompound newPlanifier = Compoundable.compound(planificateur);
+            new EvenementChangementPlanifier(id, oldPlanificateur, newPlanifier).print(simu);
         }
 
-        deplacementTotal += Math.abs(oldXi - plannifier.EI.x);
+        deplacementTotal += Math.abs(oldXi - planificateur.EI.x);
         xObjectifActuel = newXObjectif;
 
-        for(final AscenseurSimu a : listeners)
+        final List<AscenseurSimu> voisins = new ArrayList<>(listeners);
+        for(final AscenseurSimu a : voisins)
         {
             a.neighboorMoved();
         }
@@ -322,7 +320,7 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     public EtatAsc getEtat()
     {
         final long time = simu.getTime();
-        if(plannifier.notMoving(time))
+        if(planificateur.notMoving(time))
         {
             if(bloque())
             {
@@ -335,7 +333,7 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
         }
         else
         {
-            return plannifier.getFullMovingEtat(time);
+            return planificateur.getFullMovingEtat(time);
         }
     }
 
@@ -387,11 +385,15 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     {
         inviteIndex = 0;
         invites.clear();
-        invites.addAll(simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau()));
+        final List<Integer> listeInvites = simu.getPrgm().listeInvites(id, simu.getConfig().nbPersMaxAscenseur() - getNbPersonnesIn(), etageTransfert.getNiveau());
+        if(simu.interrupted())
+        {
+            return;// l'évènement est annulé
+        }
+        invites.addAll(listeInvites);
         if(simu.paused())
         {
             invites.clear();// on va refaire une demande
-            return;
         }
         if(!invites.isEmpty())
         {
@@ -439,6 +441,16 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
         enterNext();
     }
 
+    public boolean contient(final int persId)
+    {
+        final boolean b;
+        if(invites != null && invites.stream().anyMatch(id -> id == persId))
+        {
+            return true;
+        }
+        return listeDePersonne.stream().anyMatch(p -> p.getId() == persId);
+    }
+
     public void finirLeTransfert()
     {
         evacuationIndex = 0;
@@ -450,9 +462,10 @@ public class AscenseurSimu extends Ascenseur implements StatCarrier// extends As
     public void finFermeturePortes(final int niveau)
     {
         final EtageSimu etageSimutemp = etageTransfert;
+
         etageTransfert = null;
+
         simu.getPrgm().finDeTransfertDePersonnes(id, niveau);// l'asc n'est plus bloque ici
-        //System.out.println("finfermPortes ");
         if(!simu.paused())
         {
             //System.out.println("etageSimutemp " + etageSimutemp);

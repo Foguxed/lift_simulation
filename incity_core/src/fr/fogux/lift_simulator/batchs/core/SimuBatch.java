@@ -24,7 +24,16 @@ public abstract class SimuBatch
     public void run()
     {
         runBatch();
-        manager.shutdown();
+    }
+
+
+    protected boolean stop()
+    {
+        if(new File(dossier,"stop.txt").exists())
+        {
+            return true;
+        }
+        return false;
     }
 
     protected abstract void runBatch();

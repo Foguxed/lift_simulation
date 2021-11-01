@@ -1,0 +1,24 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{etage:2,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:17,destination:0,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:3,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:5,destination:7,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:8,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:22,destination:20,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:27,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:23,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:14,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:0]{etage:11,destination:6,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{description:0¤p0¤p0¤p0¤p0 unappel,type:ligneConsole}
+[0:0:0:0:1]{etage:5,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{description:0¤p0¤p0¤p0¤p1 unappel,type:ligneConsole}
+[0:0:0:0:1]{description:FATAL SIMULATION ERRORclass java.lang.NullPointerException null,type:Erreur}

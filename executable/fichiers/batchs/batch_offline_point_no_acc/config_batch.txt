@@ -1,0 +1,1 @@
+{batchType:graphProducer,echantillonage:40,nbThreads:1,seed:3}

@@ -6,5 +6,6 @@ import fr.fogux.lift_simulator.physic.ConfigSimu;
 
 public interface MinorableSimulStatCreator<S> extends SimulationStatCreator<S>
 {
+	@Deprecated
     S getMinorant(Simulation simu, EtatMonoAsc etat, ConfigSimu c);
 }

@@ -1,0 +1,13 @@
+{nbPersonnesDeplacees:11,inputEventProvider:{valuesAndWeights:{{val:{dateProvider:{dateProviderType:1,min:0,max:10},departEtageProvider:{min:1,max:38},destinationEtageProvider:{min:1,max:38},providerGroupeSize:{valuesAndWeights:{{val:1,weight:1},{val:2,weight:0.03}}}},weight:1}}},partitionGenType:OfflinePartGen}
+{repartAscenseurs:{{val:1}},niveauMin:0,niveauMax:38}
+[0:0:0:0:0]{etage:35,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:15,destination:18,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:29,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:25,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:9,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:4,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:7,destination:21,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:29,destination:38,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:11,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:0:0]{etage:32,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:0:1]{etage:5,destination:23,nbPersonnes:1,type:persInput}

@@ -1,0 +1,162 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:2:81]{etage:19,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 on change de structure,type:ligneConsole}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 ssize post push 1,type:ligneConsole}
+[0:0:0:2:81]{description:0¤p0¤p0¤p2¤p81 ssize2 1,type:ligneConsole}
+[0:0:0:2:81]{ascStackId:0,newPlannifier:{listeEtapes:{{t:2081,v:0.0,x:0.0},{t:20747,v:0.0,x:19.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:9:324]{etage:22,destination:21,nbPersonnes:1,type:persInput}
+[0:0:0:10:944]{etage:38,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:13:727]{etage:38,destination:30,nbPersonnes:1,type:persInput}
+[0:0:0:15:893]{etage:13,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:17:138]{etage:24,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:18:621]{etage:35,destination:4,nbPersonnes:1,type:persInput}
+[0:0:0:18:669]{etage:15,destination:9,nbPersonnes:1,type:persInput}
+[0:0:0:20:747]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:22:332]{etage:27,destination:11,nbPersonnes:1,type:persInput}
+[0:0:0:23:247]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:23:247]{description:0¤p0¤p0¤p23¤p247 ssize post push 1,type:ligneConsole}
+[0:0:0:23:247]{description:0¤p0¤p0¤p23¤p247 ssize2 1,type:ligneConsole}
+[0:0:0:23:247]{description:0¤p0¤p0¤p23¤p247 debugCompteur 98,type:ligneConsole}
+[0:0:0:23:247]{ascStackId:0,persId:0,animDuree:1200,etage:19,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:24:447]{ascStackId:0,persId:0,animDuree:1200,etage:19,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:24:447]{description:0¤p0¤p0¤p24¤p447 ssize post push 1,type:ligneConsole}
+[0:0:0:24:447]{description:0¤p0¤p0¤p24¤p447 ssize2 1,type:ligneConsole}
+[0:0:0:24:447]{description:0¤p0¤p0¤p24¤p447 debugCompteur 99,type:ligneConsole}
+[0:0:0:24:447]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:735]{etage:15,destination:13,nbPersonnes:1,type:persInput}
+[0:0:0:26:947]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:26:947]{description:0¤p0¤p0¤p26¤p947 ssize post push 1,type:ligneConsole}
+[0:0:0:26:947]{description:0¤p0¤p0¤p26¤p947 ssize2 1,type:ligneConsole}
+[0:0:0:26:947]{ascStackId:0,newPlannifier:{listeEtapes:{{t:26947,v:0.0,x:19.0},{t:43613,v:0.0,x:3.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:2081,v:0.0,x:0.0},{t:20747,v:0.0,x:19.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:28:938]{etage:15,destination:36,nbPersonnes:1,type:persInput}
+[0:0:0:29:4]{etage:8,destination:24,nbPersonnes:1,type:persInput}
+[0:0:0:31:387]{etage:20,destination:22,nbPersonnes:2,type:persInput}
+[0:0:0:31:527]{etage:5,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:33:436]{etage:37,destination:22,nbPersonnes:1,type:persInput}
+[0:0:0:34:500]{etage:12,destination:23,nbPersonnes:1,type:persInput}
+[0:0:0:34:572]{etage:19,destination:32,nbPersonnes:1,type:persInput}
+[0:0:0:35:722]{etage:16,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:41:397]{etage:19,destination:26,nbPersonnes:1,type:persInput}
+[0:0:0:43:613]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:44:953]{etage:38,destination:2,nbPersonnes:1,type:persInput}
+[0:0:0:45:500]{etage:11,destination:10,nbPersonnes:1,type:persInput}
+[0:0:0:46:113]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:113]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:47:313]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 ssize post push 24,type:ligneConsole}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 ssize2 24,type:ligneConsole}
+[0:0:0:47:313]{description:0¤p0¤p0¤p47¤p313 debugCompteur 1442,type:ligneConsole}
+[0:0:0:47:313]{ascStackId:0,animDuree:2500,etage:3,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:47:641]{etage:26,destination:15,nbPersonnes:1,type:persInput}
+[0:0:0:48:498]{etage:10,destination:1,nbPersonnes:1,type:persInput}
+[0:0:0:49:813]{ascStackId:0,animDuree:2500,etage:3,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:49:813]{description:0¤p0¤p0¤p49¤p813 ssize post push 18,type:ligneConsole}
+[0:0:0:49:813]{description:0¤p0¤p0¤p49¤p813 ssize2 18,type:ligneConsole}
+[0:0:0:49:813]{ascStackId:0,newPlannifier:{listeEtapes:{{t:49813,v:0.0,x:3.0},{t:55469,v:0.0,x:5.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:26947,v:0.0,x:19.0},{t:43613,v:0.0,x:3.0,softDepType:-2}}},monteeIdId:0}
+[0:0:0:55:469]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:969]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:57:969]{description:0¤p0¤p0¤p57¤p969 ssize post push 33,type:ligneConsole}
+[0:0:0:57:969]{description:0¤p0¤p0¤p57¤p969 ssize2 33,type:ligneConsole}
+[0:0:0:57:969]{description:0¤p0¤p0¤p57¤p969 debugCompteur 2072,type:ligneConsole}
+[0:0:0:57:969]{ascStackId:0,persId:14,animDuree:1200,etage:5,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:58:5]{etage:32,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:59:169]{ascStackId:0,persId:14,animDuree:1200,etage:5,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:59:169]{description:0¤p0¤p0¤p59¤p169 ssize post push 33,type:ligneConsole}
+[0:0:0:59:169]{description:0¤p0¤p0¤p59¤p169 ssize2 33,type:ligneConsole}
+[0:0:0:59:169]{description:0¤p0¤p0¤p59¤p169 debugCompteur 2342,type:ligneConsole}
+[0:0:0:59:169]{ascStackId:0,animDuree:2500,etage:5,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:531]{etage:16,destination:7,nbPersonnes:1,type:persInput}
+[0:0:1:1:669]{ascStackId:0,animDuree:2500,etage:5,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:1:669]{description:0¤p0¤p1¤p1¤p669 ssize post push 36,type:ligneConsole}
+[0:0:1:1:669]{description:0¤p0¤p1¤p1¤p669 ssize2 36,type:ligneConsole}
+[0:0:1:1:669]{ascStackId:0,newPlannifier:{listeEtapes:{{t:61669,v:0.0,x:5.0},{t:74335,v:0.0,x:15.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:49813,v:0.0,x:3.0},{t:55469,v:0.0,x:5.0,softDepType:1}}},monteeIdId:0}
+[0:0:1:2:641]{etage:9,destination:33,nbPersonnes:1,type:persInput}
+[0:0:1:6:8]{etage:7,destination:25,nbPersonnes:1,type:persInput}
+[0:0:1:7:360]{etage:27,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:12:634]{etage:5,destination:17,nbPersonnes:1,type:persInput}
+[0:0:1:13:728]{etage:16,destination:1,nbPersonnes:1,type:persInput}
+[0:0:1:14:218]{etage:13,destination:9,nbPersonnes:1,type:persInput}
+[0:0:1:14:335]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:16:835]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:16:835]{persId:14,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:16:961]{etage:33,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:18:35]{persId:14,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:18:35]{description:0¤p0¤p1¤p18¤p35 ssize post push 48,type:ligneConsole}
+[0:0:1:18:35]{description:0¤p0¤p1¤p18¤p35 ssize2 16,type:ligneConsole}
+[0:0:1:18:35]{description:0¤p0¤p1¤p18¤p35 debugCompteur 6617,type:ligneConsole}
+[0:0:1:18:35]{ascStackId:0,persId:7,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:18:42]{etage:12,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:18:924]{etage:29,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:19:235]{ascStackId:0,persId:7,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:19:235]{ascStackId:0,persId:9,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:19:605]{etage:15,destination:34,nbPersonnes:1,type:persInput}
+[0:0:1:20:86]{etage:1,destination:21,nbPersonnes:1,type:persInput}
+[0:0:1:20:435]{ascStackId:0,persId:9,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:20:435]{ascStackId:0,persId:10,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:21:635]{ascStackId:0,persId:10,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:21:635]{description:0¤p0¤p1¤p21¤p635 ssize post push 36,type:ligneConsole}
+[0:0:1:21:635]{description:0¤p0¤p1¤p21¤p635 ssize2 4,type:ligneConsole}
+[0:0:1:21:635]{description:0¤p0¤p1¤p21¤p635 debugCompteur 8012,type:ligneConsole}
+[0:0:1:21:635]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:1:22:835]{ascStackId:0,persId:35,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:1:22:835]{description:0¤p0¤p1¤p22¤p835 ssize post push 4,type:ligneConsole}
+[0:0:1:22:835]{description:0¤p0¤p1¤p22¤p835 ssize2 4,type:ligneConsole}
+[0:0:1:22:835]{description:0¤p0¤p1¤p22¤p835 debugCompteur 8023,type:ligneConsole}
+[0:0:1:22:835]{ascStackId:0,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:25:335]{ascStackId:0,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:25:335]{description:0¤p0¤p1¤p25¤p335 ssize post push 4,type:ligneConsole}
+[0:0:1:25:335]{description:0¤p0¤p1¤p25¤p335 ssize2 4,type:ligneConsole}
+[0:0:1:25:335]{ascStackId:0,newPlannifier:{listeEtapes:{{t:85335,v:0.0,x:15.0},{t:104001,v:0.0,x:34.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:61669,v:0.0,x:5.0},{t:74335,v:0.0,x:15.0,softDepType:2}}},monteeIdId:0}
+[0:0:1:28:442]{etage:1,destination:24,nbPersonnes:1,type:persInput}
+[0:0:1:30:211]{etage:30,destination:24,nbPersonnes:1,type:persInput}
+[0:0:1:31:67]{etage:4,destination:19,nbPersonnes:1,type:persInput}
+[0:0:1:34:607]{etage:24,destination:30,nbPersonnes:1,type:persInput}
+[0:0:1:42:184]{etage:6,destination:11,nbPersonnes:1,type:persInput}
+[0:0:1:44:1]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:44:76]{etage:29,destination:4,nbPersonnes:1,type:persInput}
+[0:0:1:46:501]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:46:501]{persId:35,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:47:457]{etage:8,destination:13,nbPersonnes:1,type:persInput}
+[0:0:1:47:701]{persId:35,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:47:701]{description:0¤p0¤p1¤p47¤p701 ssize post push 22,type:ligneConsole}
+[0:0:1:47:701]{description:0¤p0¤p1¤p47¤p701 ssize2 22,type:ligneConsole}
+[0:0:1:47:701]{description:0¤p0¤p1¤p47¤p701 debugCompteur 9115,type:ligneConsole}
+[0:0:1:47:701]{ascStackId:0,animDuree:2500,etage:34,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:48:209]{etage:15,destination:17,nbPersonnes:1,type:persInput}
+[0:0:1:50:201]{ascStackId:0,animDuree:2500,etage:34,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:1:50:201]{description:0¤p0¤p1¤p50¤p201 ssize post push 316,type:ligneConsole}
+[0:0:1:50:201]{description:0¤p0¤p1¤p50¤p201 ssize2 316,type:ligneConsole}
+[0:0:1:50:201]{ascStackId:0,newPlannifier:{listeEtapes:{{t:110201,v:0.0,x:34.0},{t:115857,v:0.0,x:36.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:85335,v:0.0,x:15.0},{t:104001,v:0.0,x:34.0,softDepType:2}}},monteeIdId:0}
+[0:0:1:53:294]{etage:3,destination:16,nbPersonnes:1,type:persInput}
+[0:0:1:55:857]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:58:357]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:1:58:357]{persId:10,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:1:59:250]{etage:16,destination:29,nbPersonnes:1,type:persInput}
+[0:0:1:59:557]{persId:10,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:1:59:557]{description:0¤p0¤p1¤p59¤p557 ssize post push 452,type:ligneConsole}
+[0:0:1:59:557]{description:0¤p0¤p1¤p59¤p557 ssize2 452,type:ligneConsole}
+[0:0:1:59:557]{description:0¤p0¤p1¤p59¤p557 debugCompteur 15394,type:ligneConsole}
+[0:0:1:59:557]{ascStackId:0,animDuree:2500,etage:36,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:2:57]{ascStackId:0,animDuree:2500,etage:36,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:2:2:57]{description:0¤p0¤p2¤p2¤p57 ssize post push 452,type:ligneConsole}
+[0:0:2:2:57]{description:0¤p0¤p2¤p2¤p57 ssize2 452,type:ligneConsole}
+[0:0:2:2:57]{ascStackId:0,newPlannifier:{listeEtapes:{{t:122057,v:0.0,x:36.0},{t:143390,v:0.0,x:13.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:110201,v:0.0,x:34.0},{t:115857,v:0.0,x:36.0,softDepType:1}}},monteeIdId:0}
+[0:0:2:10:694]{etage:4,destination:6,nbPersonnes:1,type:persInput}
+[0:0:2:11:101]{etage:17,destination:14,nbPersonnes:1,type:persInput}
+[0:0:2:12:517]{etage:3,destination:10,nbPersonnes:1,type:persInput}
+[0:0:2:13:903]{etage:13,destination:12,nbPersonnes:1,type:persInput}
+[0:0:3:36:162]{description:0¤p0¤p3¤p36¤p162 shadowed simulation,type:ligneConsole}
+[0:0:3:36:162]{description:0¤p0¤p3¤p36¤p162 debugCompteur 70982,type:ligneConsole}
+[0:0:3:36:162]{ascStackId:0,persId:19,animDuree:1200,etage:19,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:37:362]{ascStackId:0,persId:19,animDuree:1200,etage:19,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:37:362]{ascStackId:0,persId:17,animDuree:1200,etage:19,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:38:562]{ascStackId:0,persId:17,animDuree:1200,etage:19,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:38:562]{ascStackId:0,animDuree:2500,etage:19,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:41:62]{ascStackId:0,animDuree:2500,etage:19,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:3:41:62]{ascStackId:0,newPlannifier:{listeEtapes:{{t:221062,v:0.0,x:19.0},{t:225062,v:0.0,x:20.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:196462,v:0.0,x:4.0},{t:212462,v:0.0,x:19.0,softDepType:2}}},monteeIdId:0}
+[0:0:3:45:62]{ascStackId:0,animDuree:2500,etage:20,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:47:562]{ascStackId:0,animDuree:2500,etage:20,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:3:47:562]{description:0¤p0¤p3¤p47¤p562 debugCompteur 71249,type:ligneConsole}
+[0:0:3:47:562]{ascStackId:0,persId:12,animDuree:1200,etage:20,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:3:48:762]{ascStackId:0,persId:12,animDuree:1200,etage:20,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:3:48:762]{description: Ascenseur ¤p ascId ¤p[0¤v0]  est déjà plein et ne peut pas acceuillir id 13 destination 22 waiting true,type:Erreur}

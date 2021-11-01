@@ -162,7 +162,7 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
             }
             if (switchExecuteurs)
             {
-                System.out.println("SWITCHING Executeurs");
+                //System.out.println("SWITCHING Executeurs");
                 final Executeur temp = executeur;
                 executeur = executeurInnactif;
                 executeurInnactif = temp;
@@ -227,9 +227,9 @@ public class GestionnaireDeTachesVisu extends GestionnaireDeTaches
 
         protected void runEvent(final Evenement event)
         {
-            System.out.println(
+            /*System.out.println(
                 "RUN event" + event.getClass().getSimpleName() + " time " + event.getTime() + " innerTime " + innerTime
-                + " sensPositif " + isSensPositif() + " sensPosVitesse " + !marcheArriereEnCours());
+                + " sensPositif " + isSensPositif() + " sensPosVitesse " + !marcheArriereEnCours());*/
             innerTime = event.getTime();
             event.visuRun(anim);
         }

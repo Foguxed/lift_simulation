@@ -5,8 +5,8 @@ import java.util.List;
 
 import fr.fogux.lift_simulator.mind.Algorithme;
 import fr.fogux.lift_simulator.mind.RPsimpleAlgo.TripletPnd;
-import fr.fogux.lift_simulator.mind.independant.OutputProvider;
 import fr.fogux.lift_simulator.physic.ConfigSimu;
+import fr.fogux.lift_simulator.physic.OutputProvider;
 import fr.fogux.lift_simulator.structure.AscId;
 
 public class RPsimpleAlgo2 extends Algorithme

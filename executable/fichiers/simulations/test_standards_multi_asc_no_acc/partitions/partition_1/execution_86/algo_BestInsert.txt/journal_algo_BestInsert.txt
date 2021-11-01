@@ -1,0 +1,88 @@
+{acceleration:2.5E-7,dureePortes:2500,ascenseurSpeed:1.5E-3,capaciteAsc:5,repartAscenseurs:{{val:2},{val:2},{val:2},{val:2},{val:2}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:3:414]{etage:1,destination:12,nbPersonnes:1,type:persInput}
+[0:0:0:3:414]{description:0¤p0¤p0¤p3¤p414 etage choisi 1,type:ligneConsole}
+[0:0:0:3:414]{description:0¤p0¤p0¤p3¤p414 trouve escale ascId ¤p[0¤v1] d¤p dest 1,type:ligneConsole}
+[0:0:0:3:414]{ascStackId:1,animDuree:2500,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:5:914]{ascStackId:1,animDuree:2500,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:5:914]{ascStackId:1,persId:0,animDuree:1200,etage:1,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:7:114]{ascStackId:1,persId:0,animDuree:1200,etage:1,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:7:114]{ascStackId:1,animDuree:2500,etage:1,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:614]{ascStackId:1,animDuree:2500,etage:1,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:9:614]{description:0¤p0¤p0¤p9¤p614 etage choisi 12,type:ligneConsole}
+[0:0:0:9:614]{description:0¤p0¤p0¤p9¤p614 trouve escale ascId ¤p[0¤v1] d¤p dest 12,type:ligneConsole}
+[0:0:0:9:614]{ascStackId:1,newPlannifier:{listeEtapes:{{t:9614,v:0.0,x:1.0},{t:22947,v:0.0,x:12.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:0}
+[0:0:0:11:371]{etage:15,destination:3,nbPersonnes:1,type:persInput}
+[0:0:0:11:371]{description:0¤p0¤p0¤p11¤p371 etage choisi 12,type:ligneConsole}
+[0:0:0:11:371]{description:0¤p0¤p0¤p11¤p371 trouve escale ascId ¤p[0¤v1] d¤p dest 12,type:ligneConsole}
+[0:0:0:11:371]{description:0¤p0¤p0¤p11¤p371 etage choisi 15,type:ligneConsole}
+[0:0:0:11:371]{ascStackId:1,newPlannifier:{listeEtapes:{{t:11371,v:0.0,x:1.0},{t:26704,v:0.0,x:15.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:1}
+[0:0:0:22:783]{etage:11,destination:8,nbPersonnes:1,type:persInput}
+[0:0:0:22:783]{description:0¤p0¤p0¤p22¤p783 etage choisi 12,type:ligneConsole}
+[0:0:0:22:783]{description:0¤p0¤p0¤p22¤p783 trouve escale ascId ¤p[0¤v1] d¤p dest 12,type:ligneConsole}
+[0:0:0:22:783]{description:0¤p0¤p0¤p22¤p783 etage choisi 15,type:ligneConsole}
+[0:0:0:22:947]{ascStackId:1,animDuree:2500,etage:12,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:447]{ascStackId:1,animDuree:2500,etage:12,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:25:447]{persId:0,animDuree:1200,creationNotice:true,type:persSortie}
+[0:0:0:26:647]{persId:0,animDuree:1200,creationNotice:false,type:persSortie}
+[0:0:0:26:647]{ascStackId:1,animDuree:2500,etage:12,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:26:704]{ascStackId:1,animDuree:2500,etage:15,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:1}
+[0:0:0:26:728]{etage:35,destination:19,nbPersonnes:1,type:persInput}
+[0:0:0:26:728]{description:0¤p0¤p0¤p26¤p728 etage choisi 11,type:ligneConsole}
+[0:0:0:26:728]{description:0¤p0¤p0¤p26¤p728 trouve escale ascId ¤p[0¤v1] d¤p dest 11,type:ligneConsole}
+[0:0:0:26:728]{description:0¤p0¤p0¤p26¤p728 etage choisi 15,type:ligneConsole}
+[0:0:0:26:728]{description:0¤p0¤p0¤p26¤p728 etage choisi 35,type:ligneConsole}
+[0:0:0:26:728]{ascStackId:1,newPlannifier:{listeEtapes:{{t:26728,v:0.0,x:1.0},{t:55394,v:0.0,x:35.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:2}
+[0:0:0:28:415]{etage:31,destination:5,nbPersonnes:1,type:persInput}
+[0:0:0:28:415]{description:0¤p0¤p0¤p28¤p415 etage choisi 11,type:ligneConsole}
+[0:0:0:28:415]{description:0¤p0¤p0¤p28¤p415 trouve escale ascId ¤p[0¤v1] d¤p dest 11,type:ligneConsole}
+[0:0:0:28:415]{description:0¤p0¤p0¤p28¤p415 etage choisi 15,type:ligneConsole}
+[0:0:0:28:415]{description:0¤p0¤p0¤p28¤p415 etage choisi 35,type:ligneConsole}
+[0:0:0:28:415]{description:0¤p0¤p0¤p28¤p415 etage choisi 31,type:ligneConsole}
+[0:0:0:28:415]{ascStackId:1,newPlannifier:{listeEtapes:{{t:28415,v:0.0,x:1.0},{t:54415,v:0.0,x:31.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:3}
+[0:0:0:29:147]{ascStackId:1,animDuree:2500,etage:12,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:29:147]{description:0¤p0¤p0¤p29¤p147 etage choisi 11,type:ligneConsole}
+[0:0:0:29:147]{description:0¤p0¤p0¤p29¤p147 trouve escale ascId ¤p[0¤v1] d¤p dest 11,type:ligneConsole}
+[0:0:0:29:147]{ascStackId:1,newPlannifier:{listeEtapes:{{t:29147,v:0.0,x:12.0},{t:33147,v:0.0,x:11.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:9614,v:0.0,x:1.0},{t:22947,v:0.0,x:12.0,softDepType:2}}},monteeIdId:0}
+[0:0:0:29:204]{ascStackId:1,animDuree:2500,etage:15,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:1}
+[0:0:0:29:204]{ascStackId:1,persId:1,animDuree:1200,etage:15,creationNotice:true,type:persEntree,monteeIdId:1}
+[0:0:0:30:404]{ascStackId:1,persId:1,animDuree:1200,etage:15,creationNotice:false,type:persEntree,monteeIdId:1}
+[0:0:0:30:404]{ascStackId:1,animDuree:2500,etage:15,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:1}
+[0:0:0:32:904]{ascStackId:1,animDuree:2500,etage:15,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:1}
+[0:0:0:32:904]{description:0¤p0¤p0¤p32¤p904 etage choisi 3,type:ligneConsole}
+[0:0:0:32:904]{ascStackId:1,newPlannifier:{listeEtapes:{{t:32904,v:0.0,x:15.0},{t:46904,v:0.0,x:3.0,softDepType:-2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:11371,v:0.0,x:1.0},{t:26704,v:0.0,x:15.0,softDepType:2}}},monteeIdId:1}
+[0:0:0:33:52]{etage:21,destination:17,nbPersonnes:1,type:persInput}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 etage choisi 11,type:ligneConsole}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 trouve escale ascId ¤p[0¤v1] d¤p dest 11,type:ligneConsole}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 etage choisi 3,type:ligneConsole}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 etage choisi 35,type:ligneConsole}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 etage choisi 31,type:ligneConsole}
+[0:0:0:33:52]{description:0¤p0¤p0¤p33¤p52 etage choisi 21,type:ligneConsole}
+[0:0:0:33:52]{ascStackId:1,newPlannifier:{listeEtapes:{{t:33052,v:0.0,x:1.0},{t:52385,v:0.0,x:21.0,softDepType:2}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:1.0}}},monteeIdId:4}
+[0:0:0:33:147]{ascStackId:1,animDuree:2500,etage:11,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:35:647]{ascStackId:1,animDuree:2500,etage:11,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:35:647]{ascStackId:1,persId:2,animDuree:1200,etage:11,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:36:847]{ascStackId:1,persId:2,animDuree:1200,etage:11,creationNotice:false,type:persEntree,monteeIdId:0}
+[0:0:0:36:847]{ascStackId:1,animDuree:2500,etage:11,creationNotice:true,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:39:347]{ascStackId:1,animDuree:2500,etage:11,creationNotice:false,isOuv:false,type:mvmtPortes,monteeIdId:0}
+[0:0:0:39:347]{description:0¤p0¤p0¤p39¤p347 etage choisi 8,type:ligneConsole}
+[0:0:0:39:347]{description:0¤p0¤p0¤p39¤p347 trouve escale ascId ¤p[0¤v1] d¤p dest 8,type:ligneConsole}
+[0:0:0:39:347]{ascStackId:1,newPlannifier:{listeEtapes:{{t:39347,v:0.0,x:11.0},{t:46275,v:0.0,x:8.0,softDepType:-1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:29147,v:0.0,x:12.0},{t:33147,v:0.0,x:11.0,softDepType:-1}}},monteeIdId:0}
+[0:0:0:42:25]{etage:1,destination:28,nbPersonnes:1,type:persInput}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 1,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 trouve escale ascId ¤p[0¤v0] d¤p dest 1,type:ligneConsole}
+[0:0:0:42:25]{ascStackId:0,newPlannifier:{listeEtapes:{{t:42025,v:0.0,x:0.0},{t:46025,v:0.0,x:1.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 8,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 trouve escale ascId ¤p[0¤v1] d¤p dest 8,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 8,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 trouve escale ascId ¤p[0¤v1] d¤p dest 8,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 3,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 35,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 31,type:ligneConsole}
+[0:0:0:42:25]{description:0¤p0¤p0¤p42¤p25 etage choisi 21,type:ligneConsole}
+[0:0:0:46:25]{ascStackId:0,animDuree:2500,etage:1,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:275]{ascStackId:1,animDuree:2500,etage:8,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:46:904]{ascStackId:1,animDuree:2500,etage:3,creationNotice:true,isOuv:true,type:mvmtPortes,monteeIdId:1}
+[0:0:0:48:525]{ascStackId:0,animDuree:2500,etage:1,creationNotice:false,isOuv:true,type:mvmtPortes,monteeIdId:0}
+[0:0:0:48:525]{ascStackId:0,persId:6,animDuree:1200,etage:1,creationNotice:true,type:persEntree,monteeIdId:0}
+[0:0:0:48:676]{etage:27,destination:14,nbPersonnes:1,type:persInput}
+[0:0:0:48:676]{description:pb bestInsert Toutes les personnes n'ont pas etees livrees exemple¤pid 6 destination 28 waiting false,type:Erreur}

@@ -1,0 +1,4 @@
+{acceleration:4.0E-7,dureePortes:2000,ascenseurSpeed:3.2E-3,capaciteAsc:5,repartAscenseurs:{{val:1}},margeInterAsc:0.8,dureeEntreeSortiePers:1200,niveauMin:0,niveauMax:38}
+[0:0:0:56:331]{description:0¤p0¤p0¤p56¤p331 unappel,type:ligneConsole}
+[0:0:0:56:331]{ascStackId:0,newPlannifier:{listeEtapes:{{t:56331,v:0.0,x:0.0},{t:70822,v:0.0,x:21.0,softDepType:1}}},type:ascChgmtPlannifier,oldPlannifier:{listeEtapes:{{t:0,v:0.0,x:0.0}}},monteeIdId:0}
+[0:0:0:56:331]{description:ce prg n'est pas fait pour une partition standard,type:Erreur}
